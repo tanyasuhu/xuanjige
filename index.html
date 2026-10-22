@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XuanJi Ge · BaZi, Wajah, Mimpi, Tanya Suhu</title>
+<title>Rumah Rahasia · BaZi, Wajah, Mimpi, Tanya Suhu</title>
 <style>
 /* ========== 基础 ========== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,6 +13,7 @@
   --text:#efe8d8;--text2:#a99dc6;--border:rgba(217,180,91,.3);
   --violet:#9a7fe0;--red:#d97070;--amber:#e0a458;--jade:#8fd0a4;
   --kai:"Kaiti SC","STKaiti","KaiTi","楷体","BiauKai","Songti SC",serif;
+  --serif:Georgia,"Palatino Linotype","Book Antiqua","Times New Roman",serif;
   --song:"Songti SC","STSong","SimSun",serif;
 }
 html{min-height:100%}
@@ -46,16 +47,16 @@ body>*{position:relative;z-index:1}
   background:linear-gradient(180deg,rgba(11,6,20,.30) 0%,rgba(11,6,20,.12) 40%,rgba(11,6,20,.88) 100%)}
 .hero-inner{position:relative;z-index:1;padding:44px 24px 34px;text-align:center}
 .bagua{width:196px;height:196px;margin:0 auto 8px;display:block;filter:drop-shadow(0 0 22px rgba(217,180,91,.35))}
-.hero-inner h1{font-family:var(--kai);font-size:44px;letter-spacing:14px;text-indent:14px;color:var(--gold-hi);
+.hero-inner h1{font-family:var(--serif);font-size:44px;letter-spacing:3px;text-indent:3px;color:var(--gold-hi);
   text-shadow:0 2px 18px rgba(0,0,0,.65);margin:2px 0 6px;font-weight:700}
 .hero-inner .sub{font-family:var(--kai);font-size:16px;color:#e6d9b8;letter-spacing:5px}
 .accent-line{width:220px;height:1px;margin:16px auto;
   background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold) 80%,transparent)}
 .hero-inner p{font-size:13.5px;color:#cfc2a6;letter-spacing:2px;margin:0}
-.vtxt{position:absolute;top:54px;font-family:var(--kai);writing-mode:vertical-rl;letter-spacing:10px;
-  font-size:15px;color:rgba(233,215,170,.55);z-index:1}
+.vtxt{position:absolute;top:54px;font-family:var(--serif);writing-mode:vertical-rl;letter-spacing:7px;
+  font-size:14px;color:rgba(233,215,170,.55);z-index:1}
 .vtxt.l{left:34px}.vtxt.r{right:34px}
-@media (max-width:640px){.vtxt{display:none}.hero-inner h1{font-size:34px;letter-spacing:10px;text-indent:10px}}
+@media (max-width:640px){.vtxt{display:none}.hero-inner h1{font-size:30px;letter-spacing:2px;text-indent:2px}}
 .scroll-hint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);color:rgba(233,215,170,.6);
   font-size:12px;letter-spacing:3px;z-index:1;animation:bob 2.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
@@ -132,7 +133,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 .end_page{margin-top:26px;padding:56px 24px 50px;text-align:center;border-radius:22px;position:relative;overflow:hidden;
   background:radial-gradient(600px 300px at 50% 0%, rgba(90,52,160,.35) 0%, transparent 70%),linear-gradient(170deg,#1a0f30,#0e081d);
   border:1px solid rgba(217,180,91,.22)}
-.end_page h1{font-family:var(--kai);font-size:26px;color:var(--gold-hi);letter-spacing:10px;margin:10px 0 14px;font-weight:600}
+.end_page h1{font-family:var(--serif);font-size:26px;color:var(--gold-hi);letter-spacing:3px;margin:10px 0 14px;font-weight:600}
 .end_page p{font-family:var(--kai);font-size:13.5px;color:var(--text2);letter-spacing:4px;line-height:2.2}
 
 /* ========== 八字命盘 ========== */
@@ -214,12 +215,13 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 .intro-center{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 20px}
 .intro-center .bagua{width:min(58vw,236px);height:min(58vw,236px);margin:0;opacity:0;
   filter:drop-shadow(0 0 30px rgba(217,180,91,.5));animation:introRise 1.6s ease .75s forwards}
-.intro-title{font-family:var(--kai);font-size:clamp(34px,9vw,62px);font-weight:700;color:var(--gold-hi);
-  letter-spacing:.34em;text-indent:.34em;margin:10px 0 0;opacity:0;
+.intro-title{font-family:var(--serif);font-size:clamp(30px,8.8vw,58px);font-weight:700;color:var(--gold-hi);
+  letter-spacing:.16em;text-indent:.16em;margin:10px 0 0;opacity:0;
   text-shadow:0 0 26px rgba(244,224,163,.55),0 2px 22px rgba(0,0,0,.8);
   animation:introTitle 1.5s cubic-bezier(.2,.7,.3,1) 1.55s forwards}
-.intro-sub{font-family:var(--kai);font-size:clamp(12px,2.6vw,16px);color:#cfc2a6;letter-spacing:.5em;text-indent:.5em;
+.intro-sub{font-family:var(--serif);font-size:clamp(12px,2.6vw,16px);color:#cfc2a6;letter-spacing:.22em;text-indent:.22em;
   margin:4px 0 0;opacity:0;animation:introRise 1.2s ease 2.35s forwards}
+.intro-center .accent-line{opacity:0;margin:10px auto 12px;animation:introRise 1s ease 2.15s forwards}
 .intro-enter{position:absolute;bottom:16vh;left:0;right:0;margin:0 auto;width:fit-content;
   font-family:var(--kai);font-size:clamp(15px,3.4vw,19px);letter-spacing:.32em;text-indent:.32em;
   color:var(--gold-hi);background:rgba(20,11,40,.35);border:1px solid rgba(217,180,91,.55);
@@ -229,12 +231,12 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   animation:introRise .9s ease 3s forwards, introBreath 2.6s ease-in-out 3.9s infinite;
   transition:border-color .3s, box-shadow .3s}
 .intro-enter:hover{border-color:var(--gold-hi);box-shadow:0 0 34px rgba(217,180,91,.4), inset 0 0 18px rgba(217,180,91,.12)}
-.intro-skip{position:absolute;top:22px;right:26px;font-family:var(--kai);font-size:12.5px;letter-spacing:3px;
-  color:rgba(207,194,166,.6);background:none;border:none;cursor:pointer;padding:8px 10px;opacity:0;
+.intro-skip{position:absolute;top:22px;right:26px;font-family:var(--serif);font-size:14px;letter-spacing:3px;
+  color:rgba(207,194,166,.78);background:none;border:none;cursor:pointer;padding:9px 13px;opacity:0;
   animation:introRise .8s ease .55s forwards;transition:color .25s}
 .intro-skip:hover{color:var(--gold-hi)}
 @keyframes introRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes introTitle{from{opacity:0;letter-spacing:.55em;filter:blur(10px)}to{opacity:1;letter-spacing:.34em;filter:blur(0)}}
+@keyframes introTitle{from{opacity:0;letter-spacing:.4em;filter:blur(10px)}to{opacity:1;letter-spacing:.16em;filter:blur(0)}}
 @keyframes introBreath{0%,100%{box-shadow:0 0 24px rgba(217,180,91,.18), inset 0 0 14px rgba(217,180,91,.07)}50%{box-shadow:0 0 44px rgba(217,180,91,.45), inset 0 0 22px rgba(217,180,91,.14)}}
 .intro-title{transform:none}
 
@@ -392,7 +394,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 <div class="stars" id="stars" aria-hidden="true"></div>
 
 <!-- ===== 开场仪式层 ===== -->
-<div class="intro-layer" id="intro" role="dialog" aria-label="开场仪式">
+<div class="intro-layer" id="intro" role="dialog" aria-label="Ritual pembukaan">
   <video class="intro-video" id="introVideo" autoplay muted playsinline loop preload="auto">
     <source src="intro.mp4" type="video/mp4">
   </video>
@@ -400,7 +402,8 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   <div class="intro-veil"></div>
   <div class="intro-center">
     <svg id="introBagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="太极八卦法阵"></svg>
-    <h1 class="intro-title">玄机阁</h1>
+    <h1 class="intro-title">RUMAH RAHASIA</h1>
+    <span class="accent-line" aria-hidden="true"></span>
     <p class="intro-sub">BaZi · Wajah · Mimpi · Tanya Suhu</p>
   </div>
   <button class="intro-enter" id="introEnter">M A S U K</button>
@@ -410,11 +413,11 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 <!-- ===== 封面 ===== -->
 <section class="title hero">
   <div class="hero-bg" aria-hidden="true"></div>
-  <span class="vtxt l" aria-hidden="true">观天之道</span>
-  <span class="vtxt r" aria-hidden="true">执天之行</span>
+  <span class="vtxt l" aria-hidden="true">Membaca Langit</span>
+  <span class="vtxt r" aria-hidden="true">Menapaki Takdir</span>
   <div class="hero-inner">
     <svg id="bagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="太极八卦图"></svg>
-    <h1>玄机阁</h1>
+    <h1>RUMAH RAHASIA</h1>
     <p class="sub">Ramalan BaZi · Wajah · Mimpi · Tanya Suhu</p>
     <div class="accent-line"></div>
     <p>Tenangkan hati · empat cara bertanya · takdir di tangan sendiri</p>
@@ -532,7 +535,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
       <button class="btn" id="aiSave">SIMPAN</button>
       <button class="btn ghost" id="aiTest">UJI KONEKSI</button>
     </div>
-    <p class="bazi-note" style="text-align:left">※ Tanya Suhu butuh internet lewat koneksi yang Anda atur sendiri; BaZi, Wajah, dan Mimpi tetap sepenuhnya offline. Kunci tersimpan hanya di komputer Anda — XuanJi Ge tidak menyentuh server siapa pun.</p>
+    <p class="bazi-note" style="text-align:left">※ Tanya Suhu butuh internet lewat koneksi yang Anda atur sendiri; BaZi, Wajah, dan Mimpi tetap sepenuhnya offline. Kunci tersimpan hanya di komputer Anda — Rumah Rahasia tidak menyentuh server siapa pun.</p>
   </div>
 </section>
 
@@ -565,7 +568,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <!-- ===== 尾页 ===== -->
 <section class="title end_page">
   <div class="orn">❖</div>
-  <h1>玄 机 阁</h1>
+  <h1>RUMAH RAHASIA</h1>
   <p>Langit tak memihak · berpihak pada hati yang baik<br>Hindari sial, kejar berkah · mulai dari diri sendiri</p>
 </section>
 
@@ -1675,7 +1678,7 @@ function renderToday(){
   '</div>';
 }
 (function(){var b=$('#bazi-btn');if(b)b.addEventListener('click',function(){setTimeout(renderToday,80)});})();
-/* ================= 问天台 · AI 阁主 ================= */
+/* ================= Tanya Suhu ================= */
 var AIP={
   gemini:{n:'Google Gemini · gratis (rekomendasi)',ep:'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',m:'gemini-2.0-flash',web:false,
     g:'Paketnya <b>gratis</b> — cukup punya akun Google (Gmail atau Android). Tiga langkah:<br>① <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Klik untuk membuka halaman API Key Google AI Studio</a> — login dengan akun Google Anda<br>② Klik <b>「Create API key」</b> → kunci langsung dibuat<br>③ <b>Salin kuncinya</b>, kembali ke halaman ini, tempel di kolom Kunci di atas → klik「Simpan」→ selesai<br>Model gemini-2.0-flash gratis dengan batas wajar per hari — untuk tanya-tanya takdir lebih dari cukup.<br>Kalau kunci terlupakan: buat ulang kapan saja di halaman yang sama.'},
@@ -1721,7 +1724,7 @@ function aiFmt(t){
   return out;
 }
 function aiSys(){
-  var s='Anda adalah「Suhu」di XuanJi Ge — menguasai BaZi (empat pilar), pembacaan wajah, tafsir mimpi gaya Tionghoa, dan pengetahuan umum. Aturan bertutur: 1、selalu Bahasa Indonesia santai yang mudah dipahami, seperti kawan lama yang paham dunia — tanpa kata kaku, tanpa istilah menumpuk; 2、kesimpulan dulu, alasan belakangan, hal penting di depan; 3、bila terpaksa memakai istilah fengshui (Day Master, Shi Shen, unsur berkah), langsung jelaskan artinya dengan bahasa manusia; 4、kalimat pendek, tiap paragraf maksimal tiga baris; 5、saran harus konkret: apa yang boleh dilakukan, apa yang dihindari, langkah pertama apa; 6、urusan medis, hukum, dan uang besar — ingatkan untuk berkonsultasi dengan profesional; 7、jangan menakut-nakuti, jangan mendewakan takdir — sering katakan「takdir bisa diubah dengan usaha」; 8、Anda adalah Suhu itu sendiri, sebut diri「Suhu」, jangan menyebut diri sebagai AI, model, atau program. Maksimal 500 kata; kesimpulan terpenting tandai dengan【】.';
+  var s='Anda adalah「Suhu」di Rumah Rahasia — menguasai BaZi (empat pilar), pembacaan wajah, tafsir mimpi gaya Tionghoa, dan pengetahuan umum. Aturan bertutur: 1、selalu Bahasa Indonesia santai yang mudah dipahami, seperti kawan lama yang paham dunia — tanpa kata kaku, tanpa istilah menumpuk; 2、kesimpulan dulu, alasan belakangan, hal penting di depan; 3、bila terpaksa memakai istilah fengshui (Day Master, Shi Shen, unsur berkah), langsung jelaskan artinya dengan bahasa manusia; 4、kalimat pendek, tiap paragraf maksimal tiga baris; 5、saran harus konkret: apa yang boleh dilakukan, apa yang dihindari, langkah pertama apa; 6、urusan medis, hukum, dan uang besar — ingatkan untuk berkonsultasi dengan profesional; 7、jangan menakut-nakuti, jangan mendewakan takdir — sering katakan「takdir bisa diubah dengan usaha」; 8、Anda adalah Suhu itu sendiri, sebut diri「Suhu」, jangan menyebut diri sebagai AI, model, atau program. Maksimal 500 kata; kesimpulan terpenting tandai dengan【】.';
   try{
     var sv=JSON.parse(localStorage.getItem('xjid_bazi')||'null');
     if(sv&&sv.y){
@@ -1755,7 +1758,7 @@ function aiHistLoad(){
 }
 function aiWelcome(){
   var hasB=false;try{hasB=!!JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){}
-  var html='Saya Suhu dari XuanJi Ge — <b>tanya apa saja</b>: takdir dan rezeki, cinta dan karier, kesehatan, pengetahuan umum.'+(hasB?' BaZi Anda sudah tersimpan — tanya takdir, saya jawab berdasarkan papan lahir Anda.':' Sebaiknya hitung dulu BaZi Anda di tab「☰ BaZi」— setelah itu jawaban soal takdir jauh lebih tepat.')+'<br>Aturannya tiga saja: <b>kesimpulan dulu baru alasan; bicara lugas tanpa berputar; saran bisa langsung dijalankan.</b>';
+  var html='Saya Suhu dari Rumah Rahasia — <b>tanya apa saja</b>: takdir dan rezeki, cinta dan karier, kesehatan, pengetahuan umum.'+(hasB?' BaZi Anda sudah tersimpan — tanya takdir, saya jawab berdasarkan papan lahir Anda.':' Sebaiknya hitung dulu BaZi Anda di tab「☰ BaZi」— setelah itu jawaban soal takdir jauh lebih tepat.')+'<br>Aturannya tiga saja: <b>kesimpulan dulu baru alasan; bicara lugas tanpa berputar; saran bisa langsung dijalankan.</b>';
   if(!AIC.k)html+='<br><span style="color:var(--amber)">※ Suhu belum terhubung — klik「⚙ Atur Koneksi」di atas, ikuti panduannya 2-3 menit untuk mengambil kunci gratis, lalu kita mulai berbincang.</span>';
   aiMsg('ai',html);
 }
