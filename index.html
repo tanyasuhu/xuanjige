@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rumah Rahasia · BaZi, Wajah, Mimpi, Tanya Suhu</title>
+<title>Rumah Rahasia · Mimpi, Tanya Suhu</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230b0616'/%3E%3Cpath d='M50 8a42 42 0 0 1 0 84 21 21 0 0 1 0-42 21 21 0 0 0 0-42z' fill='%23d9b45b'/%3E%3Ccircle cx='50' cy='29' r='6' fill='%230b0616'/%3E%3Ccircle cx='50' cy='71' r='6' fill='%23d9b45b'/%3E%3C/svg%3E">
 <style>
 /* ========== 基础 ========== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -404,7 +405,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
     <svg id="introBagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="太极八卦法阵"></svg>
     <h1 class="intro-title">RUMAH RAHASIA</h1>
     <span class="accent-line" aria-hidden="true"></span>
-    <p class="intro-sub">BaZi · Wajah · Mimpi · Tanya Suhu</p>
+    <p class="intro-sub">Mimpi · Tanya Suhu</p>
   </div>
   <button class="intro-enter" id="introEnter">M A S U K</button>
   <button class="intro-skip" id="introSkip">Lewati ✦</button>
@@ -418,67 +419,21 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   <div class="hero-inner">
     <svg id="bagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="太极八卦图"></svg>
     <h1>RUMAH RAHASIA</h1>
-    <p class="sub">Ramalan BaZi · Wajah · Mimpi · Tanya Suhu</p>
+    <p class="sub">Ramalan Mimpi · Tanya Suhu</p>
     <div class="accent-line"></div>
-    <p>Tenangkan hati · empat cara bertanya · takdir di tangan sendiri</p>
+    <p>Tenangkan hati · dua cara bertanya · takdir di tangan sendiri</p>
   </div>
   <div class="scroll-hint">▼ Gulir untuk memulai</div>
 </section>
 
-<!-- ===== 四法切换 ===== -->
+<!-- ===== 切换 ===== -->
 <nav class="tab-nav" role="tablist" aria-label="cara ramalan">
-  <button class="tab-btn active" data-tab="bazi" role="tab" aria-selected="true">☰ BaZi</button>
-  <button class="tab-btn" data-tab="xiang" role="tab" aria-selected="false">👁 Wajah</button>
-  <button class="tab-btn" data-tab="dream" role="tab" aria-selected="false">🌙 Mimpi</button>
+  <button class="tab-btn active" data-tab="dream" role="tab" aria-selected="true">🌙 Mimpi</button>
   <button class="tab-btn" data-tab="ai" role="tab" aria-selected="false">✦ Tanya Suhu</button>
 </nav>
 
-<!-- ===== 八字命盘面板 ===== -->
-<section class="tab-panel active" id="panel-bazi" role="tabpanel">
-  <div id="todayCard"></div>
-  <div class="card bazi-form">
-    <div class="frow">
-      <input type="text" class="bazi-inp" id="ba-name" maxlength="12" placeholder="Nama panggilan (boleh dikosongkan)">
-      <select class="bazi-sel" id="ba-gender">
-        <option value="">Jenis kelamin</option>
-        <option value="男">Pria</option>
-        <option value="女">Wanita</option>
-      </select>
-    </div>
-    <div class="frow">
-      <select class="bazi-sel" id="ba-y"></select>
-      <select class="bazi-sel" id="ba-m"></select>
-      <select class="bazi-sel" id="ba-d"></select>
-      <select class="bazi-sel" id="ba-h"></select>
-    </div>
-    <div style="text-align:center;margin-top:6px"><button class="btn" id="bazi-btn">HITUNG & BACA</button></div>
-    <p class="bazi-note">※ Isi tanggal lahir Masehi (Gregorian); kalau punya tanggal kalender lunar, ubah dulu ke Masehi. Tanggal pergantian musim (awal Februari, awal Maret, dst.) dihitung menurut kalender standar — bisa meleset setengah hari. Lahir antara jam 23.00–24.00: pilar hari memakai tanggal besoknya (aturan lama).</p>
-    <div class="bazi-err" id="ba-err"></div>
-  </div>
-  <div id="bazi-result"></div>
-</section>
-
-<!-- ===== 观相台面板 ===== -->
-<section class="tab-panel" id="panel-xiang" role="tabpanel">
-  <div class="card">
-    <div class="orn" style="margin-bottom:12px">PEMBACA WAJAH</div>
-    <div class="xiang-wrap">
-      <div class="up-zone" id="upZone">
-        <div class="uz-icon">☯</div>
-        <div class="uz-t1">Klik untuk unggah foto wajah · atau seret fotonya ke kotak ini</div>
-        <div class="uz-t2">Menghadap kamera, tanpa topi, cahaya cukup, wajah jangan tertutup<br>Diproses hanya di komputer Anda: tanpa internet, tanpa unggah, tanpa simpan — hilang saat halaman ditutup</div>
-      </div>
-      <input type="file" accept="image/*" class="up-input" id="upInput">
-      <div class="x-hint" id="xHint"></div>
-      <div id="xStageWrap"></div>
-      <div class="qa-flow" id="qaFlow"></div>
-      <div id="xResult"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 解梦阁面板 ===== -->
-<section class="tab-panel" id="panel-dream" role="tabpanel">
+<!-- ===== 解梦阁面板（默认页） ===== -->
+<section class="tab-panel active" id="panel-dream" role="tabpanel">
   <div class="card">
     <div class="orn" style="margin-bottom:12px">TAFSIR MIMPI</div>
     <div class="dream-wrap">
@@ -502,7 +457,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <section class="tab-panel" id="panel-ai" role="tabpanel">
   <div class="card">
     <div class="orn" style="margin-bottom:12px">BILIK TANYA SUHU</div>
-    <div class="ai-note">Suhu tahu banyak hal — rezeki, wajah, mimpi, pengetahuan umum, <b>tanya apa saja</b>; kalau BaZi sudah Anda hitung, jawaban soal takdir otomatis memakai papan Anda.<br>🔒 Obrolan hanya dikirim ke layanan pilihan Anda sendiri — halaman ini tidak menyimpan</div>
+    <div class="ai-note">Suhu tahu banyak hal — rezeki, mimpi, cinta dan karier, pengetahuan umum, <b>tanya apa saja</b>.<br>🔒 Obrolan hanya dikirim ke layanan pilihan Anda sendiri — halaman ini tidak menyimpan</div>
     <div class="ai-bar">
       <span style="flex:1"></span>
       <button class="ai-chip" id="aiCfgBtn">⚙ Atur Koneksi</button>
@@ -535,7 +490,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
       <button class="btn" id="aiSave">SIMPAN</button>
       <button class="btn ghost" id="aiTest">UJI KONEKSI</button>
     </div>
-    <p class="bazi-note" style="text-align:left">※ Tanya Suhu butuh internet lewat koneksi yang Anda atur sendiri; BaZi, Wajah, dan Mimpi tetap sepenuhnya offline. Kunci tersimpan hanya di komputer Anda — Rumah Rahasia tidak menyentuh server siapa pun.</p>
+    <p class="bazi-note" style="text-align:left">※ Tanya Suhu butuh internet lewat koneksi yang Anda atur sendiri; tafsir mimpi tetap sepenuhnya offline. Kunci tersimpan hanya di komputer Anda — Rumah Rahasia tidak menyentuh server siapa pun.</p>
   </div>
 </section>
 
@@ -543,20 +498,12 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <h2 class="heading">PANDUAN SINGKAT</h2>
 <div class="knowledge">
   <div class="card kcard">
-    <h3>☰ BaZi · Empat Pilar Takdir</h3>
-    <p class="paragraph">Tahun, bulan, tanggal, dan jam lahir Anda masing-masing diwakili dua karakter — total delapan karakter, itulah "BaZi". Seperti formulir bawaan pabrik: memperlihatkan sifat dasar dan jalan yang cocok untuk Anda. Semua dihitung di komputer Anda, tanpa internet.</p>
-  </div>
-  <div class="card kcard">
-    <h3>👁 Wajah · Cerminan Hati</h3>
-    <p class="paragraph">Kata orang, "wajah lahir dari hati". Membaca bentuk wajah, lima fitur, dan warna kulit — yang dibaca adalah kecenderungan sifat dan kondisi Anda saat ini, bukan vonis takdir. Wajah bisa saling menguatkan dengan BaZi. Foto dilihat hanya di komputer Anda, tidak diunggah.</p>
-  </div>
-  <div class="card kcard">
     <h3>🌙 Mimpi · Tafsir Zhou Gong</h3>
     <p class="paragraph">Mimpi adalah kata-kata hati yang belum selesai diucap. Di sini tafsir klasik kuno "Zhou Gong Jie Meng" dipasangkan dengan sudut pandang psikologi — seperti bercermin: yang terpantul adalah Anda sendiri. Mimpi ditafsir di komputer ini, tidak disimpan.</p>
   </div>
   <div class="card kcard">
     <h3>✦ Tanya Suhu</h3>
-    <p class="paragraph">Suhu sakti tahu segalanya — takdir, kabar terkini, pengetahuan umum. Soal takdir otomatis memakai BaZi yang sudah Anda hitung. Perlu koneksi gratis yang Anda atur sendiri (Gemini dari Google bisa dipakai gratis) — kunci tersimpan hanya di komputer Anda.</p>
+    <p class="paragraph">Suhu sakti tahu segalanya — takdir, kabar terkini, pengetahuan umum. Perlu koneksi gratis yang Anda atur sendiri (Gemini dari Google bisa dipakai gratis) — kunci tersimpan hanya di komputer Anda.</p>
   </div>
 </div>
 
@@ -689,624 +636,6 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
   });
 });
 
-/* ================= 八字命盘 ================= */
-var GAN=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
-var ZHI=['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
-var WXN=['Kayu','Api','Tanah','Logam','Air'];
-var GAN_WX=[0,0,1,1,2,2,3,3,4,4];
-var ZHI_WX=[4,2,0,0,2,1,1,2,3,3,2,4];
-var SXN=['Tikus','Kerbau','Macan','Kelinci','Naga','Ular','Kuda','Kambing','Monyet','Ayam','Anjing','Babi'];
-var NAYIN=['Logam di Laut','Api Tungku','Kayu Hutan Raya','Tanah Pinggir Jalan','Logam Mata Pedang','Api Puncak Gunung','Air Anak Sungai','Tanah Tembok Kota','Logam Lilin Putih','Kayu Willow','Air Mata Air','Tanah Atap Rumah','Api Halilintar','Kayu Pinus','Air Mengalir Panjang','Logam Pasir Batu','Api Kaki Gunung','Kayu Tanah Datar','Tanah Dinding','Logam Daun Emas','Api Lampu Tertutup','Air Sungai Langit','Tanah Pos Raya','Logam Hiasan Rambut','Kayu Murbei','Air Sungai Besar','Tanah Pasiran','Api di Langit','Kayu Delima','Air Samudra'];
-var STEM_IMG=['seperti pohon raksasa: tegak, tumbuh ke atas, tak suka membungkuk','seperti sulur dan ranting: lentur, cepat tanggap, pandai mencari celah','seperti matahari: terang, terbuka, hangat pada semua orang','seperti api lilin: lembut, tekun, menerangi sekitarnya','seperti gunung dan tanah: mantap, dapat diandalkan, pemaaf','seperti tanah kebun: halus, teliti, merawat segalanya','seperti pedang dan bijih: tegas, pantang menyerah, makin ditempa makin kuat','seperti mutiara dan giok: peka, halus, lembut tapi kuat','seperti sungai dan laut: berani, luwes, bisa menyesuaikan diri','seperti embun dan hujan: cerdas, tenang, diam-diam dalam'];
-var WXF=['warna hijau, arah Timur','warna merah, arah Selatan','warna kuning, posisi tengah','warna putih, arah Barat','warna hitam, arah Utara'];
-var WXD=['pendidikan, penerbitan, seni dan karya kreatif','energi, kuliner, hiburan dan perfilman','properti, konstruksi, pertanian, pergudangan','keuangan, mesin, hukum, logam','pengiriman, logistik, pariwisata, perdagangan'];
-var WXNUM=['3 & 8','2 & 7','5 & 0','4 & 9','1 & 6'];
-var COMPOUND=['欧阳','司马','上官','诸葛','东方','独孤','南宫','万俟','闻人','夏侯','令狐','慕容','宇文','长孙','尉迟','公孙','轩辕','澹台','公冶','宗政','濮阳','淳于','太叔','申屠','呼延'];
-var KX='王4 李7 张11 刘15 陈16 杨13 赵14 黄12 周8 吴7 徐10 孙10 马10 朱6 胡9 郭15 何7 高10 林8 罗20 郑19 梁11 宋7 唐10 许11 韩17 冯12 邓19 曹11 彭12 曾12 田5 董15 潘16 袁10 蔡17 蒋17 余7 于3 杜4 叶15 程12 苏22 魏20 吕7 丁2 任6 沈8 姜9 崔11 谭19 陆16 范11 汪8 廖14 石5 贾13 金8 夏10 傅12 方4 白5 邹17 熊14 孟8 秦10 邱12 江7 尹4 薛19 段9 雷13 侯9 龙16 史4 陶16 黎15 贺12 顾21 毛4 郝14 龚22 邵12 万15 钱16 严20 赖16 洪10 武8 莫13 汤13 温13 康11 施9 齐14 谷7 房8 凌10 庞19 全6 倪10 单12 路13 童12 颜18 孔4 姚9 钟17 谢17 卢16 滕14 常11 乐15 阎16 聂18 岳8 欧15 阳17 司5 官8 上3 诸16 葛15 东8 独17 孤9 南9 宫10 闻14 令5 狐9 慕15 容10 宇6 公4 轩10 尉11 迟17 伟11 芳10 敏11 静16 丽19 强12 军9 洋10 勇9 艳24 杰12 娜10 晓16 刚10 平5 涛18 磊15 婷12 雪11 慧15 巧5 兰23 凤14 梅12 琳13 素10 云12 莲17 真10 环18 英11 丹4 虹9 霞17 楠13 青8 红9 玲10 荣14 婉11 清12 岚12 宸10 睿14 泽17 欣8 怡9 子3 浩11 雨8 涵12 晨11 琪13 嘉14 佳8 悦11 心4 思9 文4 博12 锦16 鑫24 森12 栋12 国11 建9 健11 世5 永5 长8 俊9 帅9 飞9 鹏19 山3 星9 辰7 冠9 婕11 雯12 溪14 楚13 政8 正5 明8 亮9 光6 辉15 振11 兴16 隆17 旺8 昌8 春9 夏10 秋9 冬5 西6 北5 香9 月4 日4 年6 瑞14 祥11 吉6 安6 宁14 泰9 福14 禄13 寿14 喜12 庆15 德15 仁4 义13 智12 信9 忠8 孝7 廉13 勤13 诚14 谦17 和8 雅12 韵19 诗13 书10 伦10 元4 兆6 天4 才3 学16 斌12 双18 如6 意13 竹6 松8 柏9 桂10 花10 荷13 菊14 芝10 剑15 锋15 钢16 银14 铜14 铭14 锐15 钦12 雄12 峰10 岩8 峻10 崇11 川3 河9 海11 泉9 波9 润16 淳12 源14 游13 洲10 珍10 珠11 瑶15 璇16 玫9 珊10 玉5 玮14 琦13 琬13 琰13 豪14 威9 猛12 毅15 恒10 儒16 仪15 娴15 妍7 妮8 婵15 媚12 婧11 妤7 姝9 娇15 妙7 杉7 权22 树16 根10 培11 城10 坤8 硕14 砚12 炎9 灿17 炜13 煜13 炫9 熠15 曦20 晴12 晗11 暖13 旭6 昭9 晋10 景12 暄13 霖16 霏16 露21 霄15 震15 霜17 风9 冰6 洁16 桥16 杭8 榕14 槿15 梓11 梦14 柳9 枫13 桃10 恩10 惠12 慈13 志7 念8 淑12 贤15 颖16 曼11 瑾16 璟17 佑7 佐7 承8 中4 成7 昊8 昱9 圣13 尧12 舜12 禹9 良7 善12 开12 来8 彦9 然12 帆6 航10 行6 进15 达16 远17 通14 道16 运16 一1 二2 三3 四5 五4 六4 七2 八2 九2 十2 百6 千3 生5 民5 家10 华14 娟10 秀7 媛12 言7 语14 芊9 若11 之4 可5 楷13 凯12 骏17 莹15 滢19 沁8';
-var KANGXI={};
-(function(){var p=KX.split(' ');for(var i=0;i<p.length;i++){if(p[i].length>1)KANGXI[p[i].charAt(0)]=parseInt(p[i].slice(1),10);}})();
-var N81G=['吉','凶','吉','凶','吉','吉','吉','吉','凶','凶','吉','凶','吉','凶','吉','吉','吉','吉','凶','凶','吉','凶','吉','吉','吉','凶','半','凶','吉','半','吉','吉','吉','凶','吉','凶','吉','半','吉','半','吉','半','凶','凶','吉','凶','吉','吉','凶','凶','半','吉','凶','凶','半','凶','吉','半','凶','凶','吉','凶','吉','凶','吉','凶','吉','吉','凶','凶','半','凶','半','凶','半','凶','半','半','凶','凶','吉'];
-var N81T=['太极之数，万物开泰','两仪之数，混沌未定','三才之数，天地人和','四象之数，身遭凶变','五行俱全，循环相生','六爻之数，安稳余庆','七政之数，刚毅果断','八卦之数，意志坚刚','大成之数，蕴涵凶险','终结之数，雪暗飘零','早苗逢雨，枯木逢春','掘井无泉，意志薄弱','春日牡丹，才艺多能','破兆之数，家庭缘薄','福寿圆满，雅量厚重','厚重载德，贵人相助','刚柔兼备，突破万难','铁镜重磨，有志竟成','多难之数，风云蔽月','屋下藏金，非业破运','明月中天，光风霁月','秋草逢霜，怀才不遇','旭日东升，壮丽壮观','家门余庆，金钱丰盈','资性英敏，才能奇特','变怪之谜，波澜重叠','增长之数，欲望无止','阔水浮萍，豪杰气概','智谋兼备，名闻海内','非运之数，浮沉不定','春日花开，智勇得志','宝马金鞍，侥幸多能','旭日升天，鸾凤相会','破家亡身，见识短小','温和平安，优雅发展','波澜重叠，侠肝义胆','权威显达，猛虎出林','磨铁成针，艺术才能','富贵荣华，财帛丰盈','谨慎保安，胆识过人','德望高大，纯阳独秀','寒蝉悲风，多艺不精','雨夜之花，散财破产','愁眉难展，愁苦之数','顺风扬帆，新生泰和','载宝沉舟，浪里淘金','点石成金，花开之象','古松立鹤，德智兼备','吉凶参半，先富后贫','小舟入海，盛衰参半','盛衰交加，盛极而衰','眼望高山，通达之数','忧愁困苦，外祥内苦','多难悲运，愁苦之相','外美内苦，善克难关','浪里行舟，历尽艰辛','寒雪青松，寒莺吟春','磨铁成针，先苦后甘','寒蝉悲风，意志宜坚','无谋之数，争利忘义','名利双收，修德养性','衰败之数，基业空虚','富贵荣华，万物化育','骨肉分离，愁苦频来','富贵长寿，室家欢乐','内外不和，多欲失福','通达之数，万商云集','顺风通达，兴家立业','非业之数，动摇不安','残菊经霜，家运衰退','石上金花，内心劳苦','劳苦愁闷，外祥内苦','志高力微，乐极生悲','沉沦逆境，坐食山空','守则可安，进则失机','倾覆之数，倾覆离散','乐极生悲，宜守其成','晚境凄怆，先甘后苦','回头之数，云头望月','凶星入度，最凶之数','还本归元，万物回春'];
-function gzIdx(s,b){for(var n=0;n<60;n++){if(n%10===s&&n%12===b)return n;}return 0;}
-function shuLi(n){n=n%81;if(n===0)n=81;return n;}
-function elOf(n){return Math.floor(((n-1)%10)/2);}
-function baziCalc(y,m,d,h){
-  var yy=((m===1)||(m===2&&d<4))?y-1:y;
-  var yi=((yy-1984)%60+60)%60;
-  var td=m*100+d,mb;
-  if(td<106)mb=0;else if(td<204)mb=1;else if(td<306)mb=2;else if(td<405)mb=3;
-  else if(td<506)mb=4;else if(td<606)mb=5;else if(td<707)mb=6;else if(td<808)mb=7;
-  else if(td<908)mb=8;else if(td<1008)mb=9;else if(td<1107)mb=10;else if(td<1207)mb=11;else mb=0;
-  var ys=yi%10;
-  var ms=((ys%5)*2+2+(mb-2+12)%12)%10;
-  var dd=Math.round((Date.UTC(y,m-1,d)-Date.UTC(2000,0,1))/86400000);
-  var di=((54+dd)%60+60)%60;
-  var night=false;
-  if(h===23){di=(di+1)%60;night=true;}
-  var out={yi:yi,ys:ys,yb:yi%12,ms:ms,mb:mb,di:di,night:night,h:h};
-  if(h>=0&&h<=23){
-    var hb=Math.floor(((h+1)%24)/2);
-    out.hs=((di%10)%5*2+hb)%10;
-    out.hb=hb;
-  }
-  return out;
-}
-function tenGod(day,other){
-  var de=GAN_WX[day],oe=GAN_WX[other];
-  var dp=day%2===0,op=other%2===0;
-  if(oe===de)return op===dp?'比肩':'劫财';
-  if(oe===(de+1)%5)return op===dp?'食神':'伤官';
-  if(oe===(de+2)%5)return op===dp?'偏财':'正财';
-  if(oe===(de+3)%5)return op===dp?'七杀':'正官';
-  return op===dp?'偏印':'正印';
-}
-var TID={'比肩':'Bi Jian (sahabat sejajar)','劫财':'Jie Cai (perebut rezeki)','食神':'Shi Shen (pencipta rezeki)','伤官':'Shang Guan (lidah tajam)','偏财':'Pian Cai (rezeki tak terduga)','正财':'Zheng Cai (rezeki tetap)','七杀':'Qi Sha (tekanan hebat)','正官':'Zheng Guan (jabatan resmi)','偏印':'Pian Yin (ide dan firasat)','正印':'Zheng Yin (restu dan ilmu)'};
-var MONTH_ID=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-function fmtPillar(label,s,b,tag){
-  var ny=NAYIN[Math.floor(gzIdx(s,b)/2)];
-  return '<div class="pcol"><div class="ph">'+label+'</div>'+
-    '<div class="pg"><span class="w'+GAN_WX[s]+'">'+GAN[s]+'</span><span class="w'+ZHI_WX[b]+'">'+ZHI[b]+'</span></div>'+
-    '<div class="pt">'+(tag?tag+'<br>':'')+ZHI[b]+' · '+WXN[ZHI_WX[b]]+' ('+SXN[b]+')</div>'+
-    '<div class="pn">'+ny+'</div></div>';
-}
-function nameGrids(raw){
-  var cs=raw.replace(/[^\u4e00-\u9fa5]/g,'');
-  if(cs.length<2)return{err:'姓名不足两字（姓+名），五格暂略'};
-  var miss=[];
-  for(var i=0;i<cs.length;i++){if(!KANGXI[cs.charAt(i)])miss.push(cs.charAt(i));}
-  if(miss.length)return{err:'「'+miss.join('、')+'」未收录于康熙笔画库（生僻字或繁体），姓名五格暂无法精算，可另查笔画后核对。八字命盘不受影响。'};
-  var sur=null;
-  for(var i=0;i<COMPOUND.length;i++){if(cs.indexOf(COMPOUND[i])===0&&cs.length>2){sur=COMPOUND[i];break;}}
-  var gvn,sl;
-  if(sur){sl=2;gvn=cs.slice(2);}else{sl=1;sur=cs.charAt(0);gvn=cs.slice(1);}
-  var st=[];for(var i=0;i<cs.length;i++)st.push(KANGXI[cs.charAt(i)]);
-  var gl=gvn.length,zong=0;
-  for(var i=0;i<st.length;i++)zong+=st[i];
-  var tian,ren,di,wai;
-  if(sl===1){
-    tian=st[0]+1;
-    if(gl===1){ren=st[0]+st[1];di=st[1]+1;wai=2;}
-    else if(gl===2){ren=st[0]+st[1];di=st[1]+st[2];wai=st[2]+1;}
-    else{ren=st[0]+st[1];di=zong-st[0];wai=zong-ren+1;}
-  }else{
-    tian=st[0]+st[1];
-    if(gl===1){ren=st[1]+st[2];di=st[2]+1;wai=st[0]+1;}
-    else if(gl===2){ren=st[1]+st[2];di=st[2]+st[3];wai=st[0]+st[3];}
-    else{ren=st[1]+st[2];di=zong-st[0]-st[1];wai=zong-ren+1;}
-  }
-  return{cs:cs,sur:sur,gvn:gvn,grids:{tian:tian,ren:ren,di:di,wai:wai,zong:zong}};
-}
-function relOf(a,b){
-  if(a===b)return '相同';
-  if(b===(a+1)%5||b===(a+4)%5)return '相生';
-  return '相克';
-}
-/* ================= 大运流年 ================= */
-var JIE=[[12,7],[1,6],[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,8],[9,8],[10,8],[11,7]];
-function dnum(y,m,d){return Math.round((Date.UTC(y,m-1,d)-Date.UTC(2000,0,1))/86400000)}
-function luckRuns(p,gender,y,m,d){
-  var fwd=((p.ys%2===0)===(gender==='男'));
-  var bn=dnum(y,m,d);
-  function jd(idx,yy){return dnum(yy,JIE[idx][0],JIE[idx][1])}
-  var ni=(p.mb+1)%12,ny=y;
-  while(jd(ni,ny)<bn)ny++;
-  var pi=p.mb,py=y;
-  while(jd(pi,py)>bn)py--;
-  var days=fwd?(jd(ni,ny)-bn):(bn-jd(pi,py));
-  var sa=Math.max(1,Math.min(10,Math.round(days/3)));
-  var mgz=gzIdx(p.ms,p.mb),runs=[];
-  for(var i=1;i<=8;i++){
-    var g=fwd?((mgz+i)%60):((mgz-i+60)%60);
-    runs.push({g:g,a1:sa+(i-1)*10,a2:sa+(i-1)*10+9});
-  }
-  return{fwd:fwd,sa:sa,runs:runs};
-}
-function renderLuckHtml(p,gender,y,m,d,ds,fav,avoid){
-  var L=luckRuns(p,gender,y,m,d);
-  var age=new Date().getFullYear()-y;
-  var ZH=['ke-1','ke-2','ke-3','ke-4','ke-5','ke-6','ke-7','ke-8'];
-  var rows='';
-  L.runs.forEach(function(r,i){
-    var st=r.g%10,b=r.g%12,e=GAN_WX[st];
-    var tg=TID[tenGod(ds,st)]||tenGod(ds,st);
-    var tag,tc;
-    if(fav&&fav.indexOf(e)>=0){tag='Berkah';tc='f1';}
-    else if(avoid&&avoid.indexOf(e)>=0){tag='Hati-hati';tc='f3';}
-    else if(e===GAN_WX[ds]){tag='Biasa';tc='f2';}
-    else{tag='Biasa';tc='f2';}
-    var cur=(age>=r.a1&&age<=r.a2);
-    rows+='<div class="run-row'+(cur?' cur':'')+'">'+
-      '<span class="rn">Periode '+ZH[i]+(cur?'<i>sekarang</i>':'')+'</span>'+
-      '<span class="rg">'+GAN[st]+ZHI[b]+'</span>'+
-      '<span class="rn2">'+NAYIN[Math.floor(r.g/2)]+'</span>'+
-      '<span class="rt2">Fokus: '+tg+'</span>'+
-      '<span class="fate '+tc+'">'+tag+'</span>'+
-      '<span class="ra">'+r.a1+'–'+r.a2+' tahun</span></div>';
-  });
-  var cy=new Date().getFullYear(),lys='';
-  for(var k=0;k<5;k++){
-    var Y=cy+k,gy=((Y-1984)%60+60)%60,gs2=gy%10;
-    var tg2=TID[tenGod(ds,gs2)]||tenGod(ds,gs2);
-    var e2=GAN_WX[gs2];
-    var t2c=(fav&&fav.indexOf(e2)>=0)?'f1':((avoid&&avoid.indexOf(e2)>=0)?'f3':'f2');
-    lys+='<div class="ly-item'+(k===0?' cur':'')+'"><b>Tahun '+GAN[gs2]+ZHI[gy%12]+'</b><i>'+Y+'</i><span class="fate '+t2c+'">'+tg2+'</span></div>';
-  }
-  return '<div class="gsplit"></div>'+
-    '<div class="b-title" style="font-size:18px">Periode 10 Tahun & Ramalan Tahunan <span style="font-size:12px;color:var(--text2);letter-spacing:1px">(Periode＝nasib per 10 tahun · mulai usia ~'+L.sa+' tahun · baris keemasan＝posisi Anda sekarang)</span></div>'+
-    '<div class="run-list">'+rows+'</div>'+
-    '<div class="ly-title">5 Tahun ke Depan<i>hijau＝mulus · merah＝rintangan besar · abu＝biasa saja</i></div>'+
-    '<div class="ly-list">'+lys+'</div>'+
-    '<p class="bazi-note" style="text-align:left">※ Ringkasnya: <b>Periode 10 Tahun</b>＝nasib dipelesetkan per 10 tahun; <b>Ramalan Tahunan</b>＝nasib satu tahun. "Berkah"＝era ini cocok untuk maju; "Hati-hati"＝rintangan besar, utamakan aman; "Biasa"＝jalan datar saja. Kamus Sepuluh Dewa: Zheng Cai＝penghasilan tetap, Pian Cai＝rezeki tak terduga, Zheng Guan＝jabatan & promosi, Qi Sha＝tekanan & tantangan, Shi Shen＝bakat & kenikmatan, Shang Guan＝lidah tajam & konflik, Zheng Yin＝restu & perlindungan, Pian Yin＝ide & firasat, Bi Jian＝bantuan kawan, Jie Cai＝persaingan & bocornya uang. Usia mulai dihitung dari titik musim — bisa meleset beberapa bulan, sekadar rujukan.</p>';
-}
-function renderBazi(name,gender,y,m,d,h){
-  var p=baziCalc(y,m,d,h);
-  var known=(h>=0&&h<=23);
-  var ds=p.di%10,de=GAN_WX[ds];
-  var ph='';
-    ph+=fmtPillar('Pilar Tahun',p.ys,p.yb,TID[tenGod(ds,p.ys)]);
-    ph+=fmtPillar('Pilar Bulan',p.ms,p.mb,TID[tenGod(ds,p.ms)]);
-    ph+=fmtPillar('Pilar Hari',ds,p.di%12,'Day Master');
-  if(known){ph+=fmtPillar('Pilar Jam',p.hs,p.hb,TID[tenGod(ds,p.hs)]);}
-  else{ph+='<div class="pcol"><div class="ph">Pilar Jam</div><div class="pg" style="opacity:.35">— —</div><div class="pt">jam tidak diketahui<br>tidak dihitung</div><div class="pn">—</div></div>';}
-  /* 加权五行（月令加倍） */
-  var w=[0,0,0,0,0],c=[0,0,0,0,0];
-  function cnt(s,b){w[GAN_WX[s]]+=1;c[GAN_WX[s]]++;w[ZHI_WX[b]]+=1.5;c[ZHI_WX[b]]++;}
-  cnt(p.ys,p.yb);cnt(p.ms,p.mb);cnt(p.di%10,p.di%12);
-  w[ZHI_WX[p.mb]]+=0.5;
-  if(known)cnt(p.hs,p.hb);
-  var total=w[0]+w[1]+w[2]+w[3]+w[4];
-  var nChars=known?8:6;
-  var r=w[de]/total;
-  var strength=r>=0.34?'Kuat':(r<=0.2?'Lemah':'Seimbang');
-  var fav,avoid;
-  if(strength==='Kuat'){fav=[(de+3)%5,(de+1)%5,(de+2)%5];avoid=[de,(de+4)%5];}
-  else if(strength==='Lemah'){fav=[(de+4)%5,de];avoid=[(de+3)%5,(de+1)%5,(de+2)%5];}
-  else{fav=null;avoid=null;}
-  var lacking=[],maxI=0;
-  for(var i=0;i<5;i++){if(c[i]===0)lacking.push(WXN[i]);if(w[i]>w[maxI])maxI=i;}
-  var mw=w[maxI];
-  var bars='';
-  for(var i=0;i<5;i++){
-    bars+='<div class="wx-row"><span class="wl w'+i+'"><i>'+WXN[i]+'</i></span>'+
-      '<div class="wb"><div class="bf c'+i+'" style="width:'+Math.round(w[i]/mw*100)+'%"></div></div>'+
-      '<span class="wn">'+c[i]+'/'+nChars+'</span></div>';
-  }
-  var call=name||'Sahabat';
-  var gtxt=(gender==='男')?'Pria':((gender==='女')?'Wanita':'');
-  var hourTxt=known?(h+'.00 · jam '+ZHI[Math.floor(((h+1)%24)/2)]+(p.night?' (awal Zi)':'')):'jam tidak diketahui';
-  var b8=GAN[p.ys]+ZHI[p.yb]+'　'+GAN[p.ms]+ZHI[p.mb]+'　'+GAN[ds]+ZHI[p.di%12]+(known?'　'+GAN[p.hs]+ZHI[p.hb]:'');
-  /* 命书文字 */
-  var t1=call+' ('+gtxt+'), lahir '+d+' '+MONTH_ID[m-1]+' '+y+', '+hourTxt+'. Delapan karakter Anda: <b>'+b8+'</b>; unsur tahun「'+NAYIN[Math.floor(p.yi/2)]+'」; shio '+SXN[p.yb]+'.';
-  var t2='Karakter yang mewakili Anda — "Day Master" — adalah <b>'+GAN[ds]+' ('+WXN[de]+')</b>: '+STEM_IMG[ds]+'. Unsur <b>'+WXN[maxI]+'</b> paling dominan'+(lacking.length?(', yang tidak ada: <b>'+lacking.join(', ')+'</b>'):'')+'; kekuatan Day Master sekitar '+Math.round(r*10)+' dari 10 — tergolong <b>'+strength+'</b>'+(strength==='Lemah'?' (modal tipis — perlu dukungan dan istirahat)':(strength==='Kuat'?' (modal tebal — sanggup urusan besar)':' (tidak tebal tidak tipis — maju mundur sama aman)'))+'.';
-  var t3;
-  if(fav){
-    var fn=[],fc=[],fi=[],fnum=[];
-    fav.forEach(function(e){fn.push(WXN[e]);fc.push(WXF[e]);fi.push(WXD[e]);fnum.push(WXNUM[e]);});
-    var avoidStr=(function(){var a=[];avoid.forEach(function(e){a.push(WXN[e])});return a.join(', ')})();
-    t3='Yang paling membantu Anda: <b>'+fn.join(', ')+'</b> (istilah kuno menyebutnya "unsur berkah") — dekatilah '+fc.join(', ')+'; urusan seperti '+fi.join(', ')+' lebih mudah berjalan mulus; angka hoki Anda '+fnum.join(', ')+'. Sebaliknya, hal-hal bernuansa '+avoidStr+' sebaiknya dikurangi.';
-  }else{
-    t3='Lima unsur Anda cukup seimbang — tidak ada yang harus dikejar khusus. Jalan tengah saja: jangan nekat, jangan pula terlalu takut.';
-  }
-  var notes=[];
-  if(p.night)notes.push('Lahir pukul 23.00–24.00 (awal hari Zi): sesuai aturan lama, pilar hari memakai tanggal setelahnya.');
-  if(!known)notes.push('Jam lahir tidak diisi — hanya 3 pilar (6 karakter) yang dihitung.');
-  notes.push('Papan ini menunjukkan kecenderungan, bukan vonis — sial bisa dihindari, berkah bisa dikejar dengan usaha.');
-  /* 姓名五格 */
-  var nameBlock='';
-  if(false&&name){
-    var g=nameGrids(name);
-    if(g.err){nameBlock='<p class="gread-mid" style="color:var(--text2)">※ 姓名玄机：'+g.err+'</p>';}
-    else{
-      var G=g.grids,items=[['天格',G.tian,'祖上'],['人格',G.ren,'主运'],['地格',G.di,'早年'],['外格',G.wai,'人脉'],['总格',G.zong,'晚年']];
-      var g5='';
-      items.forEach(function(it){
-        var n=shuLi(it[1]),gi=N81G[n-1],cls=(gi==='吉')?'j':((gi==='半')?'h':'x');
-        g5+='<div class="g5"><div class="gh">'+it[0]+' · '+it[2]+'</div><div class="gv">'+it[1]+'</div>'+
-          '<div class="gg">'+N81T[n-1]+'</div><span class="gb '+cls+'">'+gi+'</span></div>';
-      });
-      var et=elOf(G.tian),er=elOf(G.ren),ed=elOf(G.di);
-      var r1=relOf(et,er),r2=relOf(er,ed);
-      var good=(r1==='相生'||r1==='相同'?1:0)+(r2==='相生'||r2==='相同'?1:0);
-      var sc='三才配置（天格、人格、地格的五行）<b>'+WXN[et]+'·'+WXN[er]+'·'+WXN[ed]+'</b>：天格人格'+r1+'，人格地格'+r2+'——'+(good===2?'上下都顺、气脉贯通，配置好。':(good===1?'一顺一逆，成败各半，稳着来。':'两处相克，费心神，养点定力。'));
-      var pe=elOf(G.ren);
-      var pmatch=(fav&&fav.indexOf(pe)>=0)?'人格的五行属'+WXN[pe]+'，正好是八字喜欢的——名字和命互相帮衬。':(fav?'人格的五行属'+WXN[pe]+'，不是八字最缺的，没关系，名字寓意好就行。':'人格的五行属'+WXN[pe]+'，和五行均衡的命局合得来。');
-      nameBlock='<div class="gread-mid"><b>「'+g.cs+'」五格数理</b>（按康熙笔画算，仅供参考）</div><div class="grid5">'+g5+'</div><p class="sancai">'+sc+'　'+pmatch+'</p>';
-    }
-  }
-  var noteHtml=notes.map(function(n){return '※ '+n}).join('<br>');
-  var html='<div class="card bazi-out">'+
-    '<div class="b-head"><span class="b-title">Papan Empat Pilar · '+(gtxt?(gender==='男'?'Pria':'Wanita'):'Papan')+'</span><span class="b-sub">'+d+' '+MONTH_ID[m-1]+' '+y+'</span></div>'+
-    '<div class="b-tagrow"><span class="b-tag">Shio · '+SXN[p.yb]+'</span><span class="b-tag">Unsur Tahun · '+NAYIN[Math.floor(p.yi/2)]+'</span><span class="b-tag">Day Master · '+GAN[ds]+'('+WXN[de]+')</span><span class="b-tag">Kondisi · '+strength+'</span></div>'+
-    '<div class="pillars">'+ph+'</div>'+
-    '<div class="gsplit"></div>'+
-    '<div class="b-title" style="font-size:18px">Kekuatan Lima Unsur'+(known?' (8 karakter)':' (6 karakter)')+'</div>'+
-    '<div class="wx-chart">'+bars+'</div>'+
-    '<div class="ming-text">'+t1+'<br>'+t2+'<br>'+t3+'</div>'+
-    renderLuckHtml(p,gender,y,m,d,ds,fav,avoid)+
-    (name?('<div class="gsplit"></div>'+nameBlock):'')+
-    '<p class="bazi-note" style="text-align:left">'+noteHtml+'</p>'+
-    '</div>';
-  $('#bazi-result').innerHTML=html;
-  setTimeout(function(){$('#bazi-result').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
-}
-function baziGo(){
-  var err=$('#ba-err');err.textContent='';
-  var name=$('#ba-name').value.trim();
-  var gender=$('#ba-gender').value;
-  var y=parseInt($('#ba-y').value,10),m=parseInt($('#ba-m').value,10),d=parseInt($('#ba-d').value,10),h=parseInt($('#ba-h').value,10);
-  if(isNaN(y)||isNaN(m)||isNaN(d)){err.textContent='Lengkapi dulu tahun, bulan, dan tanggal lahir (Masehi)';return;}
-  if(isNaN(h)){err.textContent='Pilih jam lahir; kalau tidak ingat, pilih paling bawah「Tidak tahu jamnya」';return;}
-  if(!gender){err.textContent='Pilih jenis kelamin — arah periode 10 tahun beda untuk pria & wanita, kalau kosong hasilnya salah';return;}
-  var dt=new Date(y,m-1,d);
-  if(dt.getFullYear()!==y||dt.getMonth()!==m-1||dt.getDate()!==d){err.textContent='Tanggal ini tidak ada di kalender — periksa lagi (Februari tidak punya tanggal 30)';return;}
-  var today=new Date();today.setHours(0,0,0,0);
-  if(dt>today){err.textContent='Tanggal lahir tidak boleh di masa depan';return;}
-  try{localStorage.setItem('xjid_bazi',JSON.stringify({n:name,g:gender,y:y,m:m,d:d,h:h}))}catch(e){}
-  renderBazi(name,gender,y,m,d,h);
-}
-function initBazi(){
-  var ys=$('#ba-y'),msel=$('#ba-m'),dsel=$('#ba-d'),hsel=$('#ba-h');
-  var ya=['<option value="">Tahun lahir</option>'];
-  var ny=new Date().getFullYear();for(var i=ny;i>=1900;i--)ya.push('<option value="'+i+'">'+i+'</option>');
-  ys.innerHTML=ya.join('');
-  var ma=['<option value="">Bulan</option>'];
-  for(var i=1;i<=12;i++)ma.push('<option value="'+i+'">'+MONTH_ID[i-1]+'</option>');
-  msel.innerHTML=ma.join('');
-  var da=['<option value="">Tanggal</option>'];
-  for(var i=1;i<=31;i++)da.push('<option value="'+i+'">'+i+'</option>');
-  dsel.innerHTML=da.join('');
-  var ha=['<option value="">Jam lahir</option>'];
-  for(var i=0;i<24;i++){
-    var b=Math.floor(((i+1)%24)/2);
-    ha.push('<option value="'+i+'">'+i+'.00 · '+ZHI[b]+' ('+SXN[b]+')'+(i===23?' · awal Zi':'')+'</option>');
-  }
-  ha.push('<option value="-1">Tidak tahu jamnya</option>');
-  hsel.innerHTML=ha.join('');
-  try{
-    var sv=JSON.parse(localStorage.getItem('xjid_bazi')||'null');
-    if(sv&&sv.y){$('#ba-name').value=sv.n||'';$('#ba-gender').value=sv.g||'';ys.value=sv.y;msel.value=sv.m;dsel.value=sv.d;hsel.value=String(sv.h);}
-  }catch(e){}
-  $('#bazi-btn').addEventListener('click',baziGo);
-}
-
-/* ================= 观相台数据 ================= */
-var FACE5=[
-{k:'Logam',name:'Wajah Persegi',t:'kotak tegas, tulang menonjol',p:'Wajah Logam berarti tegas dan berpendirian: taat prinsip, bicara pasti — pemimpin dan eksekutor alami; hanya kurang pandai melentur, belajarlah sedikit lembut.'},
-{k:'Kayu',name:'Wajah Memanjang',t:'bentuk memanjang, ramping dan tegap',p:'Wajah Kayu berarti haus berkembang: berpikir jauh, semua ingin lebih baik; rawan capai dan lelah — belajarlah rileks dan melepas.'},
-{k:'Air',name:'Wajah Bulat',t:'garis mengalir, bulat dan berisi',p:'Wajah Air berarti cerdas dan luwes: otak encer, mudah menyesuaikan diri, punya banyak kawan; kesabarannya kurang kuat — pasang target jangka panjang.'},
-{k:'Api',name:'Wajah Atas Lebar',t:'dahi dan pipi penuh, dagu lancip',p:'Wajah Api berarti hangat dan terbuka: gerak cepat, menular ke sekitar, jadi pusat suasana; sifat agak terburu-buru — beri jeda tiga hitungan sebelum bertindak.'},
-{k:'Tanah',name:'Wajah Tebal',t:'tebal membulat, daging padat tidak kendur',p:'Wajah Tanah berarti tenang dan bisa diandalkan: menjaga kata, kuat menanggung — orang yang pantas dipercaya; kurang cepat berubah — perbanyak hal baru.'}];
-var FEAT={
-brow:{t:'Alis',o:[
- ['Alis tebal tegas','Anda tegas dan berwibawa — bertindak cepat, berani menanggung; daya aksi adalah modal terbesar Anda, tapi jangan memutuskan saat emosi menyala.'],
- ['Alis melengkung halus','Anda hangat dan teliti — mudah disukai, banyak keberuntungan datang dari sini; kelembutan adalah kekuatan, tapi saat perlu tegas jangan terus mundur.'],
- ['Alis tipis lembut','Anda santai dan lapang dada — tidak suka bersaing, hidup terasa lega; daya dorong agak terpencar — buat beberapa target kecil untuk memusatkan hati.'],
-['Alis lebat agak liar','Anda lugas dan terbuka — apa adanya, benci basa-basi; kadang melukai orang tanpa sadar — beri jeda tiga detik sebelum bicara, berkah Anda bertambah.']]},
-eye:{t:'Mata',o:[
- ['Besar dan jernih','Anda perasa dan hangat — suka duka tampak di wajah, mudah menuai ketulusan orang; emosi datang dan pergi cepat, jangan biarkan emosi memegang kemudi.'],
- ['Sepit memanjang','Anda pendiam dan jeli — menilai orang dan situasi dengan tajam; hati tersimpan rapat, sesekali buka diri, justru lebih banyak pintu terbuka.'],
- ['Bulat dan bercahaya','Anda terus terang dan cekatan — berenergi, aksi lebih cepat dari keraguan; keterusterangan itu watak, hanya bicara terlalu lurus kadang melukai tanpa sengaja.'],
-['Samar dan dalam','Anda pemikir — tenang, penuh strategi, bergerak setelah hitungan matang; terlalu banyak pikiran melelahkan kepala — sebelum tidur kurangi memikirkan urusan; menjaga pikiran sama dengan menjaga hoki.']]},
-nose:{t:'Hidung (inti rezeki)',o:[
- ['Punggung hidung tinggi','Anda mandiri dan berprinsip — hidup dari kemampuan sendiri, enggan bergantung; ambisi tinggi itu baik, jangan sampai jadi keras kepala menolak saran.'],
- ['Ujung hidung membulat','Anda pandai menabung dan ramah — rezeki bagus dan bisa ditahan; sifat aman itu berkah — sebelum belanja besar, tanya sekali「perlukah?」'],
- ['Punggung hidung rata','Anda mudah bergaul dan realistis — enak diajak kerja, maju selangkah demi selangkah; sisi juang bisa dinaikkan lagi — jangan terlalu sering menyerahkan kesempatan.'],
-['Hidung agak lancip','Anda cerdas memutuskan dan peka peluang — selalu selangkah lebih dulu mencium peluang; di luar kepandaian sisakan tiga bagian kebaikan — relasi yang baik adalah rezeki paling awet.']]},
-mouth:{t:'Bibir',o:[
- ['Bibir rata ujung terangkat','Anda pegang janji dan optimis — ujung bibir terangkat membawa wibawa alami, hari tua terutama berkah; jaga hati yang lapang ini, berkah datang sendiri.'],
- ['Bibir tebal lembap','Anda setia dan berjiwa besar — mengingat masa lalu, menjaga keluarga, bisa dipegang; jangan sampai karena setia Anda memaksa diri — belajarlah menolak.'],
- ['Bibir tipis cekatan bicara','Anda pintar bicara dan tanggap — makan dari mulut dan otak; lidah tajam adalah pedang bermata dua — menang jangan menuntas, itu menabung berkah.'],
-['Bibir proporsional','Anda tahu batas dan pilihan kata — wajah orang yang mampu urusan besar; sering menyuarakan pendapat, jangan biarkan bakat terkubur.']]},
-ear:{t:'Telinga',o:[
- ['Telinga besar dan jelas','Anda berakar kuat — bekal bawaan lahir bagus, langkah pasti; jangan sia-siakan bakat — maju mantap, hasil pasti datang.'],
- ['Telinga kecil menempel','Anda cerdas dan low profile — fokus tinggi, mudah menjadi ahli di satu bidang; buka sisi sosial Anda — peluang sering bersembunyi di relasi.'],
- ['Cuping tebal','Anda berbekal hari tua yang manis — hati lapang adalah wajah berkah yang diakui semua orang; hari tua cenderung aman. Berbuat baik selagi muda, berkahnya makin tebal.'],
-['Cuping tak menonjol','Anda pekerja keras tanpa gimmick — semua diperoleh dengan tangan sendiri; sisakan waktu luang di sela kesibukan — seimbang itu kunci jangka panjang.']]}};
-var STOP_TXT={
-  top:{long:'Bagian atas penuh — bekal hari muda tebal, dibantu senior dan guru, titik awal lebih tinggi; sayangnya yang berhasil muda mudah sombong — di usia tengah harus lebih tahan hati.',short:'Bagian atas sempit — hari muda banyak mengandalkan diri sendiri; jalan susah tapi akarnya kuat. Bagian atas bicara bakat dan latar: kerja keras bisa menambal bakat — banyak orang sukses telat termasuk tipe ini.',mid:'Bagian atas seimbang — hari muda lumayan: bekal sekolah dan dukungan keluarga ada, tidak menonjol juga tidak tertinggal.'},
-  mid:{long:'Bagian tengah memanjang — masa keemasan di usia 31–50: karier dan keteguhan hati dipetik di sini; manfaatkan usia produktif, berikan yang terbaik.',short:'Bagian tengah pendek — di usia tengah utamakan aman, lindungi dengan bekal dan relasi dari masa sebelumnya; hindari nekat mempertaruhkan besar — menjaga modal sambil menunggu waktu adalah strategi terbaik.',mid:'Bagian tengah seimbang — nasib usia tengah rata: karier dan keluarga saling menopang, pelan-pelan pasti sampai.'},
-bot:{long:'Bagian bawah lebar — masa tua paling berisi: tabungan tebal, anak berkah, bawahan cakap; setelah usia 51 makin lancar — perlakukan bawahan dan anak muda dengan baik, itu sama dengan merawat masa tua Anda sendiri.',short:'Bagian bawah sempit — untuk hari tua, rencanakan lebih awal; urus uang dan aset dengan prinsip「aman」. Perbanyak kebaikan dan bekal kesehatan — berkah hari tua datang dari usaha.',mid:'Bagian bawah seimbang — hari tua tenang dan tercukupi; waktu yang tepat untuk menikmati hasil.'}};
-
-/* ================= 观相台逻辑 ================= */
-var XS={mode:null,ptY:[],face:null,feat:{},qi:null,cross:null,imgUrl:null};
-var QIC=[
-  ['Cerah berkilau','Warna kulit cerah berarti tubuh dan pikiran sedang prima — ini tanda「sedang dalam masa berkah」: maju saja, temui orang, lakukan hal besar.'],
-  ['Kusam tak bercahaya','Kusam berarti lelah dan tekanan sudah tercetak di wajah — ini bukan sial, ini pengingat dari tubuh: saatnya tidur dan bergerak; memulihkan diri adalah mengubah nasib.'],
-  ['Kemerahan','Wajah memerah berarti panas dalam dan emosi gampang menyala — hati-hati pertengkaran dan keputusan ngawur; turunkan「panasnya」dulu baru bertindak.'],
-  ['Kebiruan atau pucat','Warna kebiruan/pucat biasanya menandai peredaran dan tenaga kurang prima — sering ke tempat terbuka, makan teratur; tenaga balik, warna wajah ikut balik.']];
-var XSTEP=0;
-function xNext(){XSTEP++;renderQA();}
-function renderQA(){
-  var flow=$('#qaFlow');var html='';var no=1;
-  function card(q,opts,key,extra){
-    var v=key==='face'?XS.face:XS.feat[key];
-    html+='<div class="qa-card'+((v!==undefined&&v!==null&&v!=='')?' done':'')+'">'+
-      '<div class="qa-q"><span class="qno">Tanya '+(no++)+'</span>'+q+'</div><div class="qa-opts" data-key="'+key+'">';
-    opts.forEach(function(o,i){
-      html+='<button class="qa-opt'+(v===i?' sel':'')+'" data-i="'+i+'">'+o+'</button>';
-    });
-    html+='</div>'+(extra||'')+'</div>';
-  }
-  if(XS.mode==='photo'){
-    var n=XS.ptY.length;
-    html+='<div class="qa-card'+(n>=4?' done':'')+'"><div class="qa-q"><span class="qno">Tanya '+(no++)+'</span>Ketuk empat titik pada foto, berurutan: tengah garis rambut, antara dua alis, pangkal hidung, ujung dagu</div>'+
-      '<div class="qa-sub">(sudah '+n+'/4 · '+['menunggu garis rambut','menunggu antara alis','menunggu pangkal hidung','menunggu ujung dagu','ketiga bagian terbentuk'][n]+')'+
-      (n>0?'　<button class="x-reset" id="xUndo">↶ batalkan titik terakhir</button>　<button class="x-reset" id="xReset">✦ ulangi penandaan</button>':'')+'</div></div>';
-  }
-  if(XS.mode==='nophoto'){
-    var gl=XS.stopsGuess,gs=XS.guessShort;
-    ['guessLong','guessShort'].forEach(function(key){
-      var isLong=key==='guessLong';
-      var v=isLong?gl:gs;
-      if(!isLong&&gl===undefined)return;
-      var q=isLong?'Tanpa foto juga bisa — lihat cermin: bagian mana yang paling <b style="color:var(--gold-hi)">panjang</b>?':'Lalu bagian mana yang paling <b style="color:var(--gold-hi)">pendek</b>?';
-      var opts=['Dahi (atas)','Alis–Hidung (tengah)','Dagu (bawah)'];
-      html+='<div class="qa-card'+(v!==undefined?' done':'')+'"><div class="qa-q"><span class="qno">Tanya '+(no++)+'</span>'+q+'</div>'+
-        '<div class="qa-opts" data-key="'+key+'">'+
-        opts.map(function(o,i){return '<button class="qa-opt'+(v===i?' sel':'')+'" data-i="'+i+'">'+o+'</button>'}).join('')+
-        '</div>'+(isLong?'<div class="qa-sub">Atas＝garis rambut sampai antara alis · Tengah＝antar alis sampai pangkal hidung · Bawah＝pangkal hidung sampai dagu</div>':'')+'</div>';
-    });
-  }
-  if(XS.mode!==null&&!(XS.mode==='nophoto'&&XS.stopsGuess===undefined)){
-    var names=FACE5.map(function(f){return f.name});
-    card('Lihat bentuk wajah Anda — paling mendekati yang mana?',names,'face','<div class="qa-sub">Logam kotak · Kayu memanjang · Air bulat · Api lancip · Tanah tebal — pilih yang paling mirip</div>');
-  }
-  if(XS.face!==null){
-    ['brow','eye','nose','mouth','ear'].forEach(function(k){
-      var F=FEAT[k];
-      card('Bentuk '+F.t+' Anda paling mendekati yang mana?',F.o.map(function(o){return o[0]}),k,'<div class="qa-sub">Lihat cermin, atau ingat bagaimana orang menilai Anda — pilih yang paling tepat</div>');
-    });
-  }
-  var featDone=['brow','eye','nose','mouth','ear'].every(function(k){return XS.feat[k]!==undefined});
-  if(featDone&&XS.face!==null){
-    html+='<div class="qa-card'+(XS.qi!==null?' done':'')+'"><div class="qa-q"><span class="qno">Tanya '+(no++)+'</span>Sekarang warna kulit — hari ini wajah Anda paling mendekati yang mana?</div>'+
-      '<div class="qa-opts" data-key="qi">'+
-      QIC.map(function(q,i){return '<button class="qa-opt'+(XS.qi===i?' sel':'')+'" data-i="'+i+'">'+q[0]+'</button>'}).join('')+
-      '</div><div class="qa-sub">Warna wajah berubah mengikuti pola tidur dan suasana hati — pilih yang paling mirip saat ini</div></div>';
-  }
-  if(featDone&&XS.face!==null&&XS.qi!==null){
-    var hasBazi=false;try{hasBazi=!!JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){}
-    var crossOpts=hasBazi?['Gabungkan dengan BaZi (disarankan)','Hanya baca wajah']:['Hanya baca wajah'];
-    html+='<div class="qa-card'+(XS.cross!==null?' done':'')+'"><div class="qa-q"><span class="qno">Tanya '+(no++)+'</span>'+(hasBazi?'Anda sudah menghitung BaZi — wajah dan papan lahir mau <b style="color:var(--gold-hi)">dibaca bersama</b>?':'Belum ada BaZi — kali ini hanya membaca wajah')+'</div>'+
-      '<div class="qa-opts" data-key="cross">'+
-      crossOpts.map(function(o,i){
-        var sel=hasBazi?(XS.cross===(i===0)):(i===0&&XS.cross!==null);
-        return '<button class="qa-opt'+(sel?' sel':'')+'" data-i="'+i+'">'+o+'</button>';
-      }).join('')+
-      '</div>'+(hasBazi?'':'<div class="qa-sub">Mau pembacaan gabungan? Hitung BaZi dulu di tab「☰ BaZi」lalu kembali ke sini</div>')+'</div>';
-  }
-  if(html===''){html='<div class="qa-card done"><div class="qa-q">Pembacaan selesai — laporan lengkap ada di bawah ✦</div></div>';}
-  flow.innerHTML=html;
-  flow.querySelectorAll('.qa-opts').forEach(function(box){
-    box.querySelectorAll('.qa-opt').forEach(function(btn){
-      btn.addEventListener('click',function(){
-        var key=box.getAttribute('data-key'),i=parseInt(btn.getAttribute('data-i'),10);
-        if(key==='guessLong'){XS.stopsGuess=i;}
-        else if(key==='guessShort'){XS.guessShort=i;}
-        else if(key==='face'){XS.face=i;}
-        else if(key==='cross'){XS.cross=(i===0);}
-        else if(key==='qi'){XS.qi=i;}
-        else{XS.feat[key]=i;}
-        xNext();
-      });
-    });
-  });
-  var rs=$('#xReset');if(rs)rs.addEventListener('click',function(){XS.ptY=[];drawStops();renderQA();});
-  var un=$('#xUndo');if(un)un.addEventListener('click',function(){XS.ptY.pop();drawStops();renderQA();});
-  var featDoneAll=['brow','eye','nose','mouth','ear'].every(function(k){return XS.feat[k]!==undefined});
-  var crossDone=XS.cross!==null;
-  var stopsDone=(XS.mode==='photo'&&XS.ptY.length===4)||(XS.mode==='nophoto'&&XS.guessShort!==undefined&&XS.stopsGuess!==undefined);
-  if(XS.mode!==null&&stopsDone&&XS.face!==null&&featDoneAll&&XS.qi!==null&&crossDone){genXiang();}
-}
-function drawStops(){
-  var w=$('#xStageWrap');
-  if(XS.mode!=='photo'||!XS.img){return;}
-  if(!w.querySelector('#xStage')){
-    w.innerHTML='<div class="x-stage" id="xStage"></div>';
-    $('#xStage').appendChild(XS.img);
-  }
-  var st=$('#xStage');
-  st.querySelectorAll('.x-pt,.x-line,.x-zone').forEach(function(e){e.remove()});
-  var pts=['garis rambut','antar alis','pangkal hidung','dagu'];
-  XS.ptY.forEach(function(y,i){
-    var el=document.createElement('div');el.className='x-pt';el.setAttribute('data-n',pts[i]);
-    el.style.left='50%';el.style.top=(y*100)+'%';st.appendChild(el);
-  });
-  if(XS.ptY.length===4){
-    ['Atas · hari muda','Tengah · usia tengah','Bawah · hari tua'].forEach(function(t,i){
-      var mid=(XS.ptY[i]+XS.ptY[i+1])/2;
-      var ln=document.createElement('div');ln.className='x-line';ln.style.top=(XS.ptY[i+1]*100)+'%';st.appendChild(ln);
-      var zn=document.createElement('div');zn.className='x-zone';zn.style.top=(mid*100)+'%';zn.textContent=t;st.appendChild(zn);
-    });
-  }
-  bindStage();
-}
-function bindStage(){
-  var st=$('#xStage');if(!st)return;
-  st.onclick=function(e){
-    if(XS.ptY.length>=4)return;
-    var r=st.getBoundingClientRect();
-    var y=(e.clientY-r.top)/r.height;
-    if(y<0||y>1)return;
-    XS.ptY.push(y);
-    drawStops();renderQA();
-  };
-}
-function initXiang(){
-  var uz=$('#upZone'),ui=$('#upInput');
-  if(!uz)return;
-  var skip=null;
-  uz.addEventListener('click',function(){ui.click()});
-  uz.addEventListener('dragover',function(e){e.preventDefault()});
-  uz.addEventListener('drop',function(e){e.preventDefault();if(e.dataTransfer.files[0])loadPic(e.dataTransfer.files[0])});
-  ui.addEventListener('change',function(){if(ui.files[0])loadPic(ui.files[0])});
-  function loadPic(f){
-    if(!/^image\//.test(f.type)){$('#xHint').textContent='Pilih berkas gambar';return;}
-    if(XS.imgUrl){try{URL.revokeObjectURL(XS.imgUrl)}catch(e){}}
-    var url=URL.createObjectURL(f);
-    XS.imgUrl=url;
-    var im=new Image();
-    im.onload=function(){
-      XS.mode='photo';XS.img=im;XS.ptY=[];XS.stopsGuess=undefined;XS.guessShort=undefined;
-      uz.classList.remove('haspic');uz.classList.add('mini');
-      uz.innerHTML='<div class="uz-t1">✦ Foto siap · klik di sini untuk mengganti</div>';
-      if(skip)skip.style.display='none';
-      $('#xHint').textContent='Foto siap · ikuti petunjuk di bawah: ketuk 4 titik pada foto';
-      XSTEP=1;
-      $('#xStageWrap').innerHTML='';
-      drawStops();renderQA();
-    };
-    im.onerror=function(){$('#xHint').textContent='Gambar ini tidak terbaca — coba yang lain';};
-    im.src=url;
-  }
-  var skip=document.createElement('button');
-  skip.id='xSkip';
-  skip.className='btn ghost';skip.textContent='▦ Tanpa foto juga bisa · jawab lewat cermin';
-  skip.style.cssText='display:block;margin:12px auto 0';
-  skip.addEventListener('click',function(){
-    XS.mode='nophoto';XS.ptY=[];XS.stopsGuess=undefined;XS.guessShort=undefined;
-    $('#xHint').textContent='Mode tanpa foto · tiga bagian dihitung lewat beberapa pertanyaan';
-    XSTEP=1;
-    $('#xStageWrap').innerHTML='';
-    renderQA();
-  });
-  uz.parentElement.insertBefore(skip,uz.nextSibling);  var priv=document.createElement('p');
-  priv.className='xiang-priv';priv.textContent='🔒 Privasi: foto hanya dilihat di peramban komputer Anda sendiri — tanpa internet, tanpa unggah, tanpa simpan; hilang saat halaman ditutup';
-  uz.parentElement.insertBefore(priv,skip);
-}
-function stopRatio(){
-  if(XS.mode==='photo'&&XS.ptY.length===4){
-    var a=XS.ptY[1]-XS.ptY[0],b=XS.ptY[2]-XS.ptY[1],c=XS.ptY[3]-XS.ptY[2];
-    var s=a+b+c;
-    return {top:a/s,mid:b/s,bot:c/s,exact:true};
-  }
-  if(XS.mode==='nophoto'&&XS.stopsGuess!==undefined&&XS.guessShort!==undefined){
-    if(XS.stopsGuess===XS.guessShort){return{top:.33,mid:.33,bot:.33,exact:false};}
-    var m=3-XS.stopsGuess-XS.guessShort;
-    var r={top:.33,mid:.33,bot:.33,exact:false};
-    r[['top','mid','bot'][XS.stopsGuess]]=.42;
-    r[['top','mid','bot'][XS.guessShort]]=.24;
-    r[['top','mid','bot'][m]]=.34;
-    return r;
-  }
-  return null;
-}
-function lvl(r){
-  if(r>.385)return 'long';
-  if(r<.285)return 'short';
-  return 'mid';
-}
-function genXiang(){
-  var r=stopRatio();if(!r)return;
-  var f=FACE5[XS.face];
-  var lt=lvl(r.top),lm=lvl(r.mid),lb=lvl(r.bot);
-  var call='Sahabat';
-  var bz=null;
-  if(XS.cross){
-    try{
-      var sv=JSON.parse(localStorage.getItem('xjid_bazi')||'null');
-      if(sv&&sv.y){bz=sv;if(sv.n)call=sv.n;}
-    }catch(e){}
-  }
-  var outs=[];
-  outs.push('<div class="rsec"><div class="rt">Laporan Wajah · Ringkasan<i>'+(XS.mode==='photo'?'diukur dari foto':'dihitung dari jawaban Anda')+'</i></div>'+
-    '<p>'+call+' — wajah Anda: '+(XS.mode==='photo'?'terukur':'perkiraan')+' bagian atas ±<b>'+Math.round(r.top*100)+'%</b>, tengah ±<b>'+Math.round(r.mid*100)+'%</b>, bawah ±<b>'+Math.round(r.bot*100)+'%</b> (idealnya masing-masing sekitar sepertiga)'+(r.exact?'':'; angka ini perkiraan Anda sendiri dari cermin')+'. Bentuk wajah termasuk <b>'+f.k+' — '+f.name+'</b>: '+f.t+'. '+f.p+'</p>'+
-    '<div class="stops3">'+
-    '<div class="st3"><div class="sh">Atas · muda</div><div class="sv">'+Math.round(r.top*100)+'%</div><div class="sl">'+(lt==='long'?'penuh':(lt==='short'?'sempit':'seimbang'))+'</div></div>'+
-    '<div class="st3"><div class="sh">Tengah · tengah baya</div><div class="sv">'+Math.round(r.mid*100)+'%</div><div class="sl">'+(lm==='long'?'memanjang':(lm==='short'?'sempit':'seimbang'))+'</div></div>'+
-    '<div class="st3"><div class="sh">Bawah · tua</div><div class="sv">'+Math.round(r.bot*100)+'%</div><div class="sl">'+(lb==='long'?'lebar':(lb==='short'?'sempit':'seimbang'))+'</div></div></div></div>');
-  outs.push('<div class="rsec"><div class="rt">Tiga Bagian Wajah<i>nasib tiga babak hidup</i></div>'+
-    '<p><b>Bagian atas (dahi, usia 15–30):</b> '+STOP_TXT.top[lt]+'</p>'+
-    '<p><b>Bagian tengah (alis ke ujung hidung, usia 31–50):</b> '+STOP_TXT.mid[lm]+'</p>'+
-    '<p><b>Bagian bawah (pangkal hidung ke dagu, usia 51+):</b> '+STOP_TXT.bot[lb]+'</p></div>');
-  var fs=['brow','eye','nose','mouth','ear'];
-  var fts=fs.map(function(k){return FEAT[k].o[XS.feat[k]]});
-  outs.push('<div class="rsec"><div class="rt">Lima Fitur<i>dasar kepribadian Anda</i></div>'+
-    fs.map(function(k,i){return '<p><b>'+FEAT[k].t+' · '+fts[i][0]+':</b> '+fts[i][1]+'</p>'}).join('')+'</div>');
-  outs.push('<div class="rsec"><div class="rt">Warna Kulit<i>kondisi terkini</i></div>'+
-    '<p><b>Warna kulit · '+QIC[XS.qi][0]+':</b> '+QIC[XS.qi][1]+'</p></div>');
-  if(bz){
-    var p=baziCalc(bz.y,bz.m,bz.d,bz.h);
-    var ds=p.di%10,de=GAN_WX[ds];
-    var w=[0,0,0,0,0];
-    function cnt(s,b){w[GAN_WX[s]]+=1;w[ZHI_WX[b]]+=1.5;}
-    cnt(p.ys,p.yb);cnt(p.ms,p.mb);cnt(p.di%10,p.di%12);
-    w[ZHI_WX[p.mb]]+=.5;
-    if(bz.h>=0&&bz.h<=23)cnt(p.hs,p.hb);
-    var total=w[0]+w[1]+w[2]+w[3]+w[4];
-    var rr=w[de]/total;
-    var strength=rr>=0.34?'Kuat':(rr<=0.2?'Lemah':'Seimbang');
-    var fav;
-    if(strength==='Kuat'){fav=[(de+3)%5,(de+1)%5,(de+2)%5];}
-    else if(strength==='Lemah'){fav=[(de+4)%5,de];}
-    else{fav=null;}
-    var fIdx=WXN.indexOf(f.k);
-    var crossTxt;
-    if(fav){
-      if(fav.indexOf(fIdx)>=0){crossTxt='Bentuk wajah <b>'+f.k+'</b> Anda kebetulan unsur yang paling dibutuhkan papan Anda — <b>kombinasi penguat</b>: keunggulan watak Anda jatuh tepat di arah paling mulus; apa pun yang cocok dengan watak '+f.k+', kerjakan dengan yakin.';}
-      else if(fav.some(function(x){return (x+1)%5===fIdx||(x+4)%5===fIdx;})){crossTxt='Bentuk wajah <b>'+f.k+'</b> Anda saling menumbuhkan dengan unsur yang Anda butuhkan — <b>tidak bertabrakan</b>: jalanilah sesuai watak, pelan-pelan pasti makin baik.';}
-      else{crossTxt='Bentuk wajah <b>'+f.k+'</b> Anda kurang cocok dengan unsur yang Anda butuhkan — <b>saling tarik-menarik</b>: tak perlu mengubah watak; cukup saat keputusan besar, berpegang sedikit pada warna, arah, dan bidang yang menjadi berkah papan Anda.';}
-    }else{
-      crossTxt='Papan Anda seimbang tanpa kebutuhan khusus — watak <b>'+f.k+'</b> silakan dipakai seluruhnya, jalani dengan mantap.';
-    }
-    var seg=[['atas','hari muda','pilar tahun'],['tengah','usia tengah','pilar bulan & hari'],['bawah','hari tua','pilar jam']];
-    var segTxt=seg.map(function(s){
-      var l=s[0]==='atas'?lt:(s[0]==='tengah'?lm:lb);
-      if(l==='long')return 'Babak '+s[1]+' (bagian '+s[0]+' penuh): ada angin punggung — silakan melangkah besar dan berani';
-      if(l==='short')return 'Babak '+s[1]+' (bagian '+s[0]+' tipis): utamakan aman — jangan pertaruhkan besar, jangan nekat; jaga modal utama';
-      return 'Babak '+s[1]+' (bagian '+s[0]+' seimbang): pelan tapi menanjak — tanpa drama, hasil datang saat waktunya tiba';
-    }).join('.')+'.';
-    outs.push('<div class="rsec"><div class="rt">Wajah × BaZi<i>dibaca bersama</i></div>'+
-      '<p>Papan Anda: tahun '+GAN[p.ys]+ZHI[p.yb]+', bulan '+GAN[p.ms]+ZHI[p.mb]+', hari '+GAN[ds]+ZHI[p.di%12]+(bz.h>=0&&bz.h<=23?', jam '+GAN[p.hs]+ZHI[p.hb]:'')+' — Day Master '+GAN[ds]+' ('+WXN[de]+'), kondisi <b>'+strength+'</b>. '+crossTxt+'</p>'+
-      '<p>'+segTxt+'</p></div>');
-  }else if(XS.cross===false){
-    outs.push('<div class="rsec"><div class="rt">Wajah × BaZi<i>dilewati</i></div><p>Kali ini hanya wajah yang dibaca. Untuk pembacaan gabungan, hitung BaZi dulu di tab「☰ BaZi」lalu kembali — dua sisi saling menguatkan, hasilnya lebih utuh.</p></div>');
-  }
-  var adv=[];
-  if(lt==='short')adv.push('Bekal hari muda sudah fixed — yang bisa ditambal sekarang adalah ilmu: perdalam satu keahlian dan kumpulkan sertifikat, jalan paling nyata untuk berdiri.');
-  if(lm==='short')adv.push('Usia tengah: utamakan aman — sebelum menaruh besar, siapkan pintu keluar; jangan taruh semua telur di satu keranjang.');
-  if(lb==='short')adv.push('Hari tua perlu dikelola: mulai sekarang atur uang dan aset dengan prinsip「aman」, dan tabung juga kesehatan.');
-  if(XS.feat.eye===3)adv.push('Banyak pikiran sedikit tidur — itu pencuri keberuntungan yang tak terlihat; tinggalkan ponsel satu jam sebelum tidur, menjaga pikiran sama dengan menjaga hoki.');
-  if(XS.feat.brow===3)adv.push('Beri jeda tiga detik sebelum bicara — terus terang itu watak, mengukur itu kearifan.');
-  if(XS.feat.mouth===2)adv.push('Menang jangan menuntas; sisakan tiga bagian kebaikan dalam ucapan — relasi yang baik adalah rezeki paling awet.');
-  if(f.k==='Api')adv.push('Sifat cepat itu pedang bermata dua — keputusan besar tidurkan semalam dulu; curahkan gairah untuk urusan, bukan untuk amarah.');
-  if(f.k==='Tanah')adv.push('Perbanyak jalan-jalan dan hal baru — melengkapi sisi kelenturan; peluang sering menunggu di luar lingkaran biasa.');
-  if(f.k==='Kayu')adv.push('Ambisi tinggi tapi rawan capai — atur jadwal istirahat; di tempat「kosong」justru lahir ide.');
-  if(f.k==='Air')adv.push('Cerdas dan luwes itu bakat; yang kurang adalah ketekunan — pasang target tiga tahun, tekuni satu bidang.');
-  if(lt==='long')adv.push('Sukses dini paling rawan lengah — titik awal tinggi makin harus menahan diri; ubah keunggulan menjadi benteng.');
-  if(lm==='long')adv.push('Usia tengah adalah masa berkuasa — boleh lebih agresif; karier dan tabungan sama layak diperjuangkan habis.');
-  if(lb==='long')adv.push('Hari tua tebal itu kartu andalan — perlakukan anak muda dan bawahan dengan baik; itu sama dengan merawat masa tua Anda sendiri.');
-  if(XS.qi===1)adv.push('Kusam adalah catatan utang tubuh — tidur cepat seminggu penuh dan berjemur 20 menit sehari; warna wajah dan hoki pulang bersamaan.');
-  if(XS.qi===2)adv.push('Wajah memerah berarti panas dalam — tunda keputusan besar 24 jam, tarik napas tiga kali sebelum bicara; panas turun, berkah naik.');
-  if(XS.qi===3)adv.push('Pucat kebiruan menandai tenaga kurang prima — makan teratur ditambah jalan cepat setengah jam sehari; dua bulan kemudian wajah memancar sendiri.');
-  if(XS.feat.ear===2)adv.push('Cuping telinga tebal adalah wajah berkah yang tersohor — perbanyak kebaikan kecil dan rasa syukur; berkah tua makin bertambah.');
-  if(XS.feat.nose===1)adv.push('Ujung hidung membulat pandai menabung — dompet dijaga rapat; sebelum belanja besar tanyakan「perlukah?」, rezeki jadi stabil.');
-  if(f.k==='Logam')adv.push('Taat prinsip itu fondasi — ucapkan kata tegas dengan suara lembut; di luar ketegasan sisakan tiga bagian hangat.');
-  if(adv.length<3)adv.push('Wajah lahir dari hati, nasib mengikuti perbuatan — sering tersenyum, sering bergerak, kurangi begadang; wajah mengikuti hati perlahan membaik. Ini「ritual pembuka hoki」paling ampuh.');
-  if(adv.length<3)adv.push('Jaga dua hal kecil: membaca dan berolahraga — setahun kemudian warna wajah dan keadaan Anda akan berubah.');
-  adv=adv.slice(0,5);
-  outs.push('<div class="rsec"><div class="rt">Saran untuk Anda<i>langsung bisa dijalankan</i></div>'+
-    adv.map(function(a){return '<div class="rli">'+a+'</div>'}).join('')+'</div>');
-  var html='<div class="card bazi-out" style="animation:fadein .7s ease">'+
-    '<div class="b-head"><span class="b-title">Laporan Wajah · '+call+'</span><span class="b-sub">'+(XS.mode==='photo'?'diukur dari foto':'dijawab via cermin')+(bz?' · digabung BaZi':' · hanya wajah')+'</span></div>'+
-    outs.join('')+
-    '<p class="bazi-note" style="text-align:left">※ Perbandingan tiga bagian hanya perkiraan; lima fitur adalah pilihan Anda sendiri. Wajah berubah perlahan mengikuti hati — gunakan ini untuk mengenal diri, jangan memenjara diri dengan label.</p>'+
-    '<div class="gactions"><button class="btn ghost" id="xAgain">↺ BACA ULANG WAJAH</button></div></div>';
-  $('#xResult').innerHTML=html;
-  var ag=$('#xAgain');
-  if(ag)ag.addEventListener('click',function(){
-    if(XS.imgUrl){try{URL.revokeObjectURL(XS.imgUrl)}catch(e){}}
-    XS={mode:null,ptY:[],face:null,feat:{},qi:null,cross:null,imgUrl:null};XSTEP=0;
-    $('#xResult').innerHTML='';$('#qaFlow').innerHTML='';$('#xStageWrap').innerHTML='';
-    $('#upZone').classList.remove('haspic','mini');
-    $('#upZone').innerHTML='<div class="uz-icon">☯</div><div class="uz-t1">Klik untuk unggah foto wajah · atau seret fotonya ke kotak ini</div><div class="uz-t2">Menghadap kamera, tanpa topi, cahaya cukup, wajah jangan tertutup<br>Diproses hanya di komputer Anda: tanpa internet, tanpa unggah, tanpa simpan — hilang saat halaman ditutup</div>';
-    var sk=document.querySelector('#xSkip');if(sk)sk.style.display='block';
-    $('#xHint').textContent='';
-    $('#upInput').value='';
-  });
-  setTimeout(function(){$('#xResult').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
-}
-
 /* ================= 解梦阁数据 ================= */
 var SYM=[
  {k:'Air',ic:'🌊',kw:['air','banjir','sungai','danau','laut','renang','berenang','hujan','tenggelam','gelombang','ombak','tsunami','meluap'],q:'Air dalam mimpi Anda seperti apa?',opts:['Jernih dan tenang','Keruh dan deras'],
@@ -1404,7 +733,7 @@ life:'「Kekhawatiran Anda akhir-akhir ini, mimpi sudah mengatakannya duluan。�
 cross:'「Mimpi dan papan lahir digabung — jawabannya di bawah。」'};
 
 /* ================= 解梦阁逻辑 ================= */
-var DM={text:'',ids:[],vars:{},emo:null,life:null,cross:null,picks:[],pickDone:false};
+var DM={text:'',ids:[],vars:{},emo:null,life:null,picks:[],pickDone:false};
 function dmScan(t){
   var found=[];
   SYM.forEach(function(s,i){if(s.kw.some(function(w){
@@ -1453,13 +782,6 @@ function renderDM(){
     }else{
       card('Kehidupan Anda akhir-akhir ini paling mendekati kalimat yang mana?',LIFE.map(function(l){return l.t}),'life',DM.life);
     }
-    var hasBazi=false;try{hasBazi=!!JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){}
-    if(DM.cross===null){
-      var co=hasBazi?['Gabungkan dengan BaZi (disarankan)','Hanya mimpi ini']:['Hanya mimpi ini'];
-      card(hasBazi?'Anda sudah menghitung BaZi — mimpi ini dan papan lahir mau <b style="color:var(--gold-hi)">dibaca bersama</b>?':'Belum ada BaZi — hanya menafsirkan mimpi ini',co,'cross',DM.cross);
-    }else{
-      card(hasBazi?'Anda sudah menghitung BaZi — mimpi ini dan papan lahir mau <b style="color:var(--gold-hi)">dibaca bersama</b>?':'Belum ada BaZi — hanya menafsirkan mimpi ini',hasBazi?['Gabungkan dengan BaZi (disarankan)','Hanya mimpi ini']:['Hanya mimpi ini'],'cross',DM.cross);
-    }
   }
   flow.innerHTML=html;
   flow.querySelectorAll('.qa-opts[data-key]').forEach(function(box){
@@ -1469,7 +791,6 @@ function renderDM(){
         if(key.indexOf('sym')===0){var si=parseInt(key.slice(3),10);DM.vars[si]=i;dmMaster('sym');}
         else if(key==='emo'){DM.emo=i;dmMaster('emo');}
         else if(key==='life'){DM.life=i;dmMaster('life');}
-        else if(key==='cross'){DM.cross=(i===0&&hasBaziFlag());dmMaster('cross');}
         renderDM();
       });
     });
@@ -1494,18 +815,15 @@ function renderDM(){
   }
   var symQDone=DM.ids.length>0&&DM.ids.slice(0,3).every(function(i){return DM.vars[i]!==undefined});
   if(DM.pickDone!==false||DM.ids.length>0){
-    if(symQDone&&DM.emo!==null&&DM.life!==null&&DM.cross!==null)genDream();
+    if(symQDone&&DM.emo!==null&&DM.life!==null)genDream();
   }
-}
-function hasBaziFlag(){
-  try{return !!JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){return false}
 }
 function dmStart(){
   var err=$('#dmErr');err.textContent='';
   var t=$('#dmInp').value.trim();
   if(t.length<8){err.textContent='Ceritanya terlalu pendek — tulis beberapa kalimat lagi; makin detail mimpinya, makin tepat tafsirannya';return;}
   var ids=dmScan(t);
-  DM={text:t,ids:ids,vars:{},emo:null,life:null,cross:null,picks:[],pickDone:ids.length>0};
+  DM={text:t,ids:ids,vars:{},emo:null,life:null,picks:[],pickDone:ids.length>0};
   $('#dmResult').innerHTML='';
   dmMaster('start');
   if(DM.ids.length>0){dmEcho();renderDM();}
@@ -1548,22 +866,6 @@ function genDream(){
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Perasaan dan Tubuh<i>emosi dan fisik</i></div>'+
     '<p>Perasaan saat terbangun「<b>'+emoObj.t+'」</b>: '+emoObj.psy+'</p>'+
     '<p>Menurut pengobatan tradisional Tiongkok, lima organ mengurus lima emosi: mimpi ini paling berhubungan dengan <b>'+domOrgan+'</b>, sedangkan perasaan Anda berhubungan dengan <b>'+emoObj.organ+'</b>. Bila mimpi semacam ini sering muncul akhir-akhir ini, itu tubuh mengingatkan lewat mimpi — kualitas tidur sedang membayar tagihan tekanan siang hari.</p></div>');
-  var bz=null;
-  if(DM.cross===true){
-    try{bz=JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){}
-  }
-  if(bz&&bz.y){
-    var p=baziCalc(bz.y,bz.m,bz.d,bz.h);
-    var de=GAN_WX[p.di%10];
-    var cntW=[0,0,0,0,0];
-    qIds.forEach(function(i){cntW[SYM[i].wx]++});
-    var dw=cntW.indexOf(Math.max.apply(null,cntW));
-    var rel=(dw-de+5)%5;
-    var rq=LIUQIN[rel];
-    outs.push('<div class="rsec"><div class="rt">'+SN()+'Mimpi × Papan Lahir<i>dibaca bersama</i></div>'+
-      '<p>Day Master Anda (karakter yang mewakili diri Anda) adalah <b>'+GAN[p.di%10]+' ('+WXN[de]+')</b>; unsur utama mimpi ini adalah <b>'+WXN[dw]+'</b> — menurut relasi lima unsur, ini termasuk mimpi jenis <b>'+rq.t+'</b>.</p>'+
-      '<p>'+rq.d+'</p></div>');
-  }
   var adv=[];
   qIds.forEach(function(i){adv.push(SYM[i].v[DM.vars[i]].adv)});
   adv.push(emoObj.adv);
@@ -1575,14 +877,14 @@ function genDream(){
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Saran untuk Anda<i>langsung bisa dijalankan</i></div>'+
     adv.map(function(a){return '<div class="rli">'+a+'</div>'}).join('')+'</div>');
   var html='<div class="card bazi-out" style="animation:fadein .7s ease">'+
-    '<div class="b-head"><span class="b-title">Laporan Mimpi · Tafsir Lengkap</span><span class="b-sub">'+(bz?'digabung BaZi':'mimpi saja')+'</span></div>'+
+    '<div class="b-head"><span class="b-title">Laporan Mimpi · Tafsir Lengkap</span></div>'+
     outs.join('')+
     '<p class="bazi-note" style="text-align:left">※ Tafsir lambang mimpi diambil dari buku klasik「Zhou Gong Jie Meng」dan psikologi modern — hanya pengalaman budaya untuk mengenali diri, bukan rujukan medis atau dasar keputusan. Yang dipikirkan siang hari hadir dalam mimpi malam — mimpi lahir dari hati, dan bisa berubah mengikuti hati.</p>'+
     '<div class="gactions"><button class="btn ghost" id="dmAgain">↺ TAFSIR MIMPI LAIN</button></div></div>';
   $('#dmResult').innerHTML=html;
   var ag=$('#dmAgain');
   if(ag)ag.addEventListener('click',function(){
-    DM={text:'',ids:[],vars:{},emo:null,life:null,cross:null,picks:[],pickDone:false};
+    DM={text:'',ids:[],vars:{},emo:null,life:null,picks:[],pickDone:false};
     $('#dmResult').innerHTML='';$('#dmFlow').innerHTML='';
     $('#dmEcho').style.display='none';$('#dmMaster').textContent='';
     $('#dmInp').value='';
@@ -1595,89 +897,6 @@ function initDream(){
   btn.addEventListener('click',dmStart);
 }
 
-/* ================= 今日运势共用：方位 / 色 / 生肖冲合 ================= */
-var WXDIR=['Timur','Selatan','tengah','Barat','Utara'];
-var WXCOL=['#3fa06b','#d95f5f','#d9b45b','#e8e4d8','#565d73'];
-function zhiRel(a,b){
-  if(a===b)return{k:'same'};
-  var s=(a+b)%12;
-  if(s===1)return{k:'liuhe'};
-  if(s===7)return{k:'liuhai'};
-  if(Math.abs(a-b)===6)return{k:'chong'};
-  var G=[[0,4,8],[3,7,11],[2,6,10],[1,5,9]];
-  for(var i=0;i<4;i++){if(G[i].indexOf(a)>=0&&G[i].indexOf(b)>=0)return{k:'sanhe'};}
-  return{k:'none'};
-}
-/* ================= 今日运势（八字页内嵌） ================= */
-var TG={
- '比肩':['Teman sejajar saling menopang — kerja sama lancar; jaga dompet, jangan jadi penjamin utang','Cocok: kolaborasi, silaturahmi, olahraga ｜ Hindari: pinjaman, jadi penjamin, gaya hidup pamer'],
- '劫财':['Ramaie tapi pengeluaran bocor diam-diam — hari ini jaga lebih dulu, tunda belanja besar','Cocok: menabung, menolak dengan sopan, merapikan barang ｜ Hindari: investasi, untung-untungan, belanja impulsif'],
- '食神':['Selera dan ide sama bagus — berkah datang saat tenang; cocok berkarya dan menikmati makanan','Cocok: berkarya, makan bersama, mengasah hobi ｜ Hindari: begadang, makan berlebihan'],
- '伤官':['Bakat menonjol tapi lidah tajam — bicara dipikir tiga kali; kontrak dan surat dibaca teliti','Cocok: tampil, presentasi, mengusulkan ide ｜ Hindari: berdebat, tanda tangan buru-buru, bicara tanpa saring'],
- '偏财':['Ada rezeki kecil yang tak terduga — raih secukupnya, jangan serakah dan jangan bertahan terlalu lama','Cocok: meraih peluang, kenalan baru ｜ Hindari: nambah porsi, percaya「uang cepat」'],
- '正财':['Rezeki tetap mengalir — gaji dan harta ada berkahnya; kerja tenang, pasti ada hasil','Cocok: atur keuangan, urus urusan resmi, survei properti ｜ Hindari: bermalas-malasan, angan-angan tinggi'],
- '七杀':['Tekanan naik, banyak ujian — hadapi tenang pasti lewat; hari ini jangan lawan orang frontal','Cocok: kerja berat, olahraga, tidur cepat ｜ Hindari: berdebat, nekat, sok kuat'],
- '正官':['Berkah jabatan dan surat resmi — patuh aturan justru dipuji; cocok kontrak, lamar kerja, bertemu senior','Cocok: kontrak, wawancara, laporan, bertemu senior ｜ Hindari: telat, kerja asal-asalan'],
- '偏印':['Pikiran agak berat tapi ide bermunculan — cocok menyendiri dan belajar; kurangi curiga, berkah bertambah','Cocok: baca buku, riset, merenung ｜ Hindari: terlalu curiga, bimbang, percaya gosip'],
- '正印':['Dibantu senior dan orang terhormat; berkah surat dan ilmu — terimalah dengan tenang','Cocok: minta nasihat, ikut pelatihan, urus dokumen ｜ Hindari: sok bisa, menutup diri']
-};
-function renderToday(){
-  var box=$('#todayCard');if(!box)return;
-  var now=new Date();
-  var y=now.getFullYear(),m=now.getMonth()+1,d=now.getDate();
-  var tp=baziCalc(y,m,d,12);
-  var tds=tp.di%10,tdb=tp.di%12;
-  var head='Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y+' · hari '+GAN[tds]+ZHI[tdb]+' · hari '+SXN[tdb];
-  var sv=null;try{sv=JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){}
-  if(!sv||!sv.y){
-    box.innerHTML='<div class="today-card"><div class="today-head"><span class="today-t">✦ Ramalan Hari Ini</span><span class="today-date">'+head+'</span></div>'+
-    '<div class="today-txt">Belum ada data kelahiran — hitung BaZi Anda dulu di bawah. Setelah itu, tiap kali membuka halaman, ramalan harian otomatis tersedia.</div></div>';
-    return;
-  }
-  var p=baziCalc(sv.y,sv.m,sv.d,sv.h);
-  var ds=p.di%10,de=GAN_WX[ds];
-  var tg=tenGod(ds,tds);
-  var tgB=(tg==='食神'||tg==='正财'||tg==='正官'||tg==='正印')?['Berkah','f1']:((tg==='劫财'||tg==='伤官'||tg==='七杀')?['Hati-hati','f3']:['Biasa','f2']);
-  /* 喜用五行（与排盘同法重算） */
-  var w=[0,0,0,0,0],c=[0,0,0,0,0];
-  function cnt(s,b){w[GAN_WX[s]]+=1;c[GAN_WX[s]]++;w[ZHI_WX[b]]+=1.5;c[ZHI_WX[b]]++;}
-  cnt(p.ys,p.yb);cnt(p.ms,p.mb);cnt(p.di%10,p.di%12);
-  w[ZHI_WX[p.mb]]+=0.5;
-  var known=(sv.h>=0&&sv.h<=23);
-  if(known)cnt(p.hs,p.hb);
-  var total=w[0]+w[1]+w[2]+w[3]+w[4];
-  var r=w[de]/total;
-  var strength=r>=0.34?'身强':(r<=0.2?'身弱':'中和');
-  var fav=null;
-  if(strength==='身强')fav=[(de+3)%5,(de+1)%5,(de+2)%5];
-  else if(strength==='身弱')fav=[(de+4)%5,de];
-  var col,num,dir;
-  if(fav){
-    col=fav.slice(0,2).map(function(x){return '<b style="color:'+WXCOL[x]+'">'+WXN[x]+'</b>'}).join(' / ');
-    num=fav.slice(0,2).map(function(x){return WXNUM[x]}).join(' / ');
-    dir=fav.slice(0,2).map(function(x){return WXDIR[x]}).join(' / ');
-  }else{col='unsur seimbang — semua warna cocok';num='5 (jalan tengah)';dir='bebas, arah mana pun';}
-  /* 生肖日冲合 */
-  var zr=zhiRel(p.yb,tdb),zt;
-  if(zr.k==='liuhe')zt='Hari ini berpadu harmonis dengan shio Anda — keberuntungan dari orang lain sedang tinggi, semua lancar';
-  else if(zr.k==='sanhe')zt='Hari ini berpadu tiga dengan shio Anda — pekerjaan lancar, boleh didorong maju';
-  else if(zr.k==='chong')zt='Hari ini menabrak shio Anda — tunda urusan besar, kurangi perjalanan jauh';
-  else if(zr.k==='liuhai')zt='Hari ini merugikan shio Anda — kurangi berdebat, jangan jadi penjamin orang';
-  else if(zr.k==='same')zt='Hari ini sama dengan shio Anda — hari biasa saja';
-  else zt='Hari ini tidak menabrak juga tidak berpadu dengan shio Anda — biasa saja, tak ada dorongan khusus';
-  box.innerHTML='<div class="today-card">'+
-    '<div class="today-head"><span class="today-t">✦ Ramalan Hari Ini</span><span class="today-date">'+head+'</span><span class="today-badge fate '+tgB[1]+'">'+tgB[0]+'</span></div>'+
-    '<div class="today-txt">Hari ini hari <b>'+GAN[tds]+ZHI[tdb]+'</b>, unsurnya <b>'+WXN[GAN_WX[tds]]+'</b>. Bagi Anda (Day Master '+GAN[ds]+' — '+WXN[de]+'), hari ini dipengaruhi「<b>'+TID[tg]+'</b>」— '+TG[tg][0]+'.</div>'+
-    '<div class="today-body">'+
-      '<span class="today-item">Warna hoki　'+col+'</span>'+
-      '<span class="today-item">Angka hoki　<b>'+num+'</b></span>'+
-      '<span class="today-item">Arah berkah　<b>'+dir+'</b></span>'+
-      '<span class="today-item">Hari ini hari '+SXN[tdb]+'　'+zt+'</span>'+
-    '</div>'+
-    '<div class="today-yi">'+TG[tg][1]+'</div>'+
-  '</div>';
-}
-(function(){var b=$('#bazi-btn');if(b)b.addEventListener('click',function(){setTimeout(renderToday,80)});})();
 /* ================= Tanya Suhu ================= */
 var AIP={
   gemini:{n:'Google Gemini · gratis (rekomendasi)',ep:'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',m:'gemini-2.0-flash',web:false,
@@ -1692,7 +911,7 @@ var AIP={
 var AIC={p:'gemini',ep:AIP.gemini.ep,m:AIP.gemini.m,k:'',web:false};
 try{var _asv=JSON.parse(localStorage.getItem('xjid_ai2')||'null');if(_asv&&_asv.p&&_asv.k)AIC=_asv;}catch(e){}
 var AIH=[];
-var AISUGG=['Karier apa yang cocok untuk saya? Cek dari BaZi saya','Semalam mimpi ular, apa artinya?','Ramalan rezeki 6 bulan ke depan','Jelaskan「Day Master」dengan bahasa sederhana'];
+var AISUGG=['Semalam mimpi ular, apa artinya?','Ramalan rezeki 6 bulan ke depan','Karier apa yang cocok untuk saya?','Bagaimana agar mimpi bisa diingat dengan jelas?'];
 function aiEsc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function aiFmt(t){
   t=aiEsc(t);
@@ -1724,16 +943,7 @@ function aiFmt(t){
   return out;
 }
 function aiSys(){
-  var s='Anda adalah「Suhu」di Rumah Rahasia — menguasai BaZi (empat pilar), pembacaan wajah, tafsir mimpi gaya Tionghoa, dan pengetahuan umum. Aturan bertutur: 1、selalu Bahasa Indonesia santai yang mudah dipahami, seperti kawan lama yang paham dunia — tanpa kata kaku, tanpa istilah menumpuk; 2、kesimpulan dulu, alasan belakangan, hal penting di depan; 3、bila terpaksa memakai istilah fengshui (Day Master, Shi Shen, unsur berkah), langsung jelaskan artinya dengan bahasa manusia; 4、kalimat pendek, tiap paragraf maksimal tiga baris; 5、saran harus konkret: apa yang boleh dilakukan, apa yang dihindari, langkah pertama apa; 6、urusan medis, hukum, dan uang besar — ingatkan untuk berkonsultasi dengan profesional; 7、jangan menakut-nakuti, jangan mendewakan takdir — sering katakan「takdir bisa diubah dengan usaha」; 8、Anda adalah Suhu itu sendiri, sebut diri「Suhu」, jangan menyebut diri sebagai AI, model, atau program. Maksimal 500 kata; kesimpulan terpenting tandai dengan【】.';
-  try{
-    var sv=JSON.parse(localStorage.getItem('xjid_bazi')||'null');
-    if(sv&&sv.y){
-      var p=baziCalc(sv.y,sv.m,sv.d,sv.h);
-      var ds=p.di%10,known=(sv.h>=0&&sv.h<=23);
-      var b8=GAN[p.ys]+ZHI[p.yb]+' '+GAN[p.ms]+ZHI[p.mb]+' '+GAN[ds]+ZHI[p.di%12]+(known?' '+GAN[p.hs]+ZHI[p.hb]:'');
-      s+='【Papan nasib penanya sudah tersimpan oleh Suhu】'+b8+' ('+(sv.n||'Sahabat')+', '+(sv.g==='女'?'wanita':'pria')+', lahir tahun '+sv.y+'); Day Master '+GAN[ds]+' ('+WXN[GAN_WX[ds]]+'), unsur tahun '+NAYIN[Math.floor(p.yi/2)]+', shio '+SXN[p.yb]+'. Saat ditanya takdir dan rezeki, jawab berdasarkan papan ini; pertanyaan lain tak perlu dipaksakan ke soal takdir.';
-    }
-  }catch(e){}
+  var s='Anda adalah「Suhu」di Rumah Rahasia — menguasai tafsir mimpi gaya Tionghoa (Zhou Gong Jie Meng), ramalan takdir dan rezeki, serta pengetahuan umum. Aturan bertutur: 1、selalu Bahasa Indonesia santai yang mudah dipahami, seperti kawan lama yang paham dunia — tanpa kata kaku, tanpa istilah menumpuk; 2、kesimpulan dulu, alasan belakangan, hal penting di depan; 3、bila terpaksa memakai istilah budaya Tionghoa (shio, lima unsur), langsung jelaskan artinya dengan bahasa manusia; 4、kalimat pendek, tiap paragraf maksimal tiga baris; 5、saran harus konkret: apa yang boleh dilakukan, apa yang dihindari, langkah pertama apa; 6、urusan medis, hukum, dan uang besar — ingatkan untuk berkonsultasi dengan profesional; 7、jangan menakut-nakuti, jangan mendewakan takdir — sering katakan「takdir bisa diubah dengan usaha」; 8、Anda adalah Suhu itu sendiri, sebut diri「Suhu」, jangan menyebut diri sebagai AI, model, atau program. Maksimal 500 kata; kesimpulan terpenting tandai dengan【】.';
   return s;
 }
 function aiMsg(role,html){
@@ -1757,8 +967,7 @@ function aiHistLoad(){
   return false;
 }
 function aiWelcome(){
-  var hasB=false;try{hasB=!!JSON.parse(localStorage.getItem('xjid_bazi')||'null')}catch(e){}
-  var html='Saya Suhu dari Rumah Rahasia — <b>tanya apa saja</b>: takdir dan rezeki, cinta dan karier, kesehatan, pengetahuan umum.'+(hasB?' BaZi Anda sudah tersimpan — tanya takdir, saya jawab berdasarkan papan lahir Anda.':' Sebaiknya hitung dulu BaZi Anda di tab「☰ BaZi」— setelah itu jawaban soal takdir jauh lebih tepat.')+'<br>Aturannya tiga saja: <b>kesimpulan dulu baru alasan; bicara lugas tanpa berputar; saran bisa langsung dijalankan.</b>';
+  var html='Saya Suhu dari Rumah Rahasia — <b>tanya apa saja</b>: takdir dan rezeki, cinta dan karier, mimpi, kesehatan, pengetahuan umum.<br>Aturannya tiga saja: <b>kesimpulan dulu baru alasan; bicara lugas tanpa berputar; saran bisa langsung dijalankan.</b>';
   if(!AIC.k)html+='<br><span style="color:var(--amber)">※ Suhu belum terhubung — klik「⚙ Atur Koneksi」di atas, ikuti panduannya 2-3 menit untuk mengambil kunci gratis, lalu kita mulai berbincang.</span>';
   aiMsg('ai',html);
 }
@@ -1921,7 +1130,7 @@ function initAi(){
   });
 }
 /* ================= 初始化 ================= */
-initBazi();initXiang();initDream();initAi();renderToday();
+initDream();initAi();
 </script>
 </body>
 </html>
