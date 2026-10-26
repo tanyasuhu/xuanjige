@@ -1213,7 +1213,9 @@ function qianCat(a){
   a=a.toLowerCase();
   for(var i=0;i<QCAT.length;i++){
     for(var j=0;j<QCAT[i].kw.length;j++){
-      if(a.indexOf(QCAT[i].kw[j])>=0)return QCAT[i];
+      var w=QCAT[i].kw[j];
+      if(/^[a-z ]+$/i.test(w)){if(new RegExp('(^|[^a-z])'+w.replace(/ /g,'\\s+')+'([^a-z]|$)').test(a))return QCAT[i];}
+      else{if(a.indexOf(w)>=0)return QCAT[i];}
     }
   }
   return null;
