@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rumah Rahasia · Mimpi, Tanya Suhu</title>
+<title>Rumah Rahasia · Mimpi, Qian, Tanya Suhu</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230b0616'/%3E%3Cpath d='M50 8a42 42 0 0 1 0 84 21 21 0 0 1 0-42 21 21 0 0 0 0-42z' fill='%23d9b45b'/%3E%3Ccircle cx='50' cy='29' r='6' fill='%230b0616'/%3E%3Ccircle cx='50' cy='71' r='6' fill='%23d9b45b'/%3E%3C/svg%3E">
 <style>
 /* ========== 基础 ========== */
@@ -401,8 +401,8 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 .qian-tube i:nth-child(5){left:63px;transform:rotate(9deg)}
 .qian-tube.shake{animation:qianShake 1.6s ease}
 @keyframes qianShake{0%,100%{transform:rotate(0)}8%{transform:rotate(-7deg) translateX(-3px)}18%{transform:rotate(6deg) translateX(3px)}28%{transform:rotate(-8deg) translateX(-4px)}40%{transform:rotate(7deg) translateX(4px)}52%{transform:rotate(-6deg) translateX(-3px)}64%{transform:rotate(5deg) translateX(2px)}76%{transform:rotate(-4deg) translateX(-2px)}88%{transform:rotate(3deg) translateX(1px)}}
-.qian-poem{font-family:var(--kai);font-size:17px;color:#e8ddc0;line-height:2.15;letter-spacing:3px;margin:12px 0}
-.qian-pi{font-size:12.5px;color:var(--text2);font-style:italic;line-height:1.8;margin:6px 0 14px}
+.qian-poem{font-family:var(--kai);font-size:13px;color:rgba(232,221,192,.55);line-height:2.1;letter-spacing:2px;margin:10px 0 2px}
+.qian-pi{font-size:15.5px;color:#e8ddc0;font-style:italic;line-height:1.95;margin:12px 0 8px}
 
 /* ========== 打印 & 动效偏好 ========== */
 @media print{
@@ -427,10 +427,10 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   <div class="intro-noVideo" id="introNoVideo"></div>
   <div class="intro-veil"></div>
   <div class="intro-center">
-    <svg id="introBagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="太极八卦法阵"></svg>
+    <svg id="introBagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="Formasi bagua taiji"></svg>
     <h1 class="intro-title">RUMAH RAHASIA</h1>
     <span class="accent-line" aria-hidden="true"></span>
-    <p class="intro-sub">Mimpi · Tanya Suhu</p>
+    <p class="intro-sub">Mimpi · Qian · Tanya Suhu</p>
   </div>
   <button class="intro-enter" id="introEnter">M A S U K</button>
   <button class="intro-skip" id="introSkip">Lewati ✦</button>
@@ -442,11 +442,11 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   <span class="vtxt l" aria-hidden="true">Membaca Langit</span>
   <span class="vtxt r" aria-hidden="true">Menapaki Takdir</span>
   <div class="hero-inner">
-    <svg id="bagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="太极八卦图"></svg>
+    <svg id="bagua" class="bagua" viewBox="0 0 200 200" role="img" aria-label="Diagram bagua taiji"></svg>
     <h1>RUMAH RAHASIA</h1>
-    <p class="sub">Ramalan Mimpi · Tanya Suhu</p>
+    <p class="sub">Ramalan Mimpi · Qian · Tanya Suhu</p>
     <div class="accent-line"></div>
-    <p>Tenangkan hati · dua cara bertanya · takdir di tangan sendiri</p>
+    <p>Tenangkan hati · tiga cara bertanya · takdir di tangan sendiri</p>
   </div>
   <div class="scroll-hint">▼ Gulir untuk memulai</div>
 </section>
@@ -454,7 +454,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 <!-- ===== 切换 ===== -->
 <nav class="tab-nav" role="tablist" aria-label="cara ramalan">
   <button class="tab-btn active" data-tab="dream" role="tab" aria-selected="true">🌙 Mimpi</button>
-  <button class="tab-btn" data-tab="qian" role="tab" aria-selected="false">🪷 Qian 求签</button>
+  <button class="tab-btn" data-tab="qian" role="tab" aria-selected="false">🪷 Qian</button>
   <button class="tab-btn" data-tab="ai" role="tab" aria-selected="false">✦ Tanya Suhu</button>
 </nav>
 
@@ -483,14 +483,14 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <!-- ===== 求签面板 ===== -->
 <section class="tab-panel" id="panel-qian" role="tabpanel">
   <div class="card">
-    <div class="orn" style="margin-bottom:12px">RUANG QIU QIAN 求签</div>
+    <div class="orn" style="margin-bottom:12px">RUANG QIU QIAN</div>
     <div class="qian-wrap">
       <p class="qian-intro">Tutup mata sejenak, pikirkan satu hal yang ingin ditanyakan — lalu goyang tong qian-nya.<br><span style="font-size:12px;color:var(--text2)">Hal yang ditanyakan boleh dituliskan di bawah (boleh juga dikosongkan) — qian yang keluar akan dibaca menurut hal Anda. Satu hal cukup sekali bertanya — ikhlas, tak perlu digoyang berulang kali.</span></p>
       <input type="text" class="qian-ask" id="qianAsk" maxlength="60" placeholder="Hal yang ingin ditanyakan (boleh dikosongkan)">
       <div class="qian-stage">
         <div class="qian-tube" id="qianTube" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
-      <div style="text-align:center"><button class="btn" id="qianBtn">GOYANG TONG QIAN 摇签</button></div>
+      <div style="text-align:center"><button class="btn" id="qianBtn">GOYANG TONG QIAN</button></div>
       <div id="qianResult"></div>
     </div>
   </div>
@@ -545,6 +545,10 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
     <p class="paragraph">Mimpi adalah kata-kata hati yang belum selesai diucap. Di sini tafsir klasik Tionghoa「Zhou Gong Jie Meng」yang di tanah Nusantara berpadu dengan Primbon Jawa, dipasangkan dengan sudut pandang psikologi — seperti bercermin: yang terpantul adalah Anda sendiri. Mimpi ditafsir di komputer ini, tidak disimpan.</p>
   </div>
   <div class="card kcard">
+    <h3>🪷 Qian · Tradisi Kelenteng</h3>
+    <p class="paragraph">Seperti meminta nomor di kelenteng: tenangkan diri, sebut satu hal yang ingin ditanyakan, lalu goyang tong qian sampai satu batang jatuh — nomornya membuka satu puisi bergaya klasik beserta penjelasan dan sarannya. Semua terjadi di komputer Anda, tanpa internet.</p>
+  </div>
+  <div class="card kcard">
     <h3>✦ Tanya Suhu</h3>
     <p class="paragraph">Suhu sakti tahu segalanya — takdir, kabar terkini, pengetahuan umum. Perlu koneksi gratis yang Anda atur sendiri (Gemini dari Google bisa dipakai gratis) — kunci tersimpan hanya di komputer Anda.</p>
   </div>
@@ -559,7 +563,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <section class="title end_page">
   <div class="orn">❖</div>
   <h1>RUMAH RAHASIA</h1>
-  <p>Langit tak memihak · berpihak pada hati yang baik<br>Hindari sial, kejar berkah · mulai dari diri sendiri<br><span style="letter-spacing:6px">积善之家 · 必有余庆</span></p>
+  <p>Langit tak memihak · berpihak pada hati yang baik<br>Hindari sial, kejar berkah · mulai dari diri sendiri<br><span style="letter-spacing:1.5px">Keluarga penabur kebaikan mewarisi berkah limpah</span></p>
 </section>
 
 <script>
@@ -921,7 +925,7 @@ function genDream(){
   adv.push(LIFE[DM.life].adv);
   var seen={};adv=adv.filter(function(a){if(seen[a])return false;seen[a]=1;return true});
   if(adv.length<5)adv.push('Mimpi adalah penasihat pribadi yang gratis — catat mimpi seminggu sekali; tiga bulan kemudian Anda akan paham bahasa diri sendiri.');
-  if(adv.length<5)adv.push('Sisihkan sedikit rezeki untuk dibagikan — dalam ajaran kharma, memberi adalah menabur benih berkah.');
+  if(adv.length<5)adv.push('Sisihkan sedikit rezeki untuk dibagikan — dalam ajaran karma, memberi adalah menabur benih berkah.');
   if(adv.length<5)adv.push('Tiga hal sebelum tidur: kurangi layar, kurangi kenyang, kurangi beban pikiran — kualitas mimpi itulah kualitas tidur.');
   adv=adv.slice(0,5);
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Saran untuk Anda<i>langsung bisa dijalankan</i></div>'+
@@ -997,197 +1001,197 @@ function renderToday(){
   var chong=(zb+6)%12;
   var LUCKDIR={0:'Utara',4:'Utara',8:'Utara',5:'Barat',9:'Barat',1:'Barat',11:'Timur',3:'Timur',7:'Timur',2:'Selatan',6:'Selatan',10:'Selatan'};
   var SHADIR={0:'Selatan',4:'Selatan',8:'Selatan',5:'Timur',9:'Timur',1:'Timur',11:'Barat',3:'Barat',7:'Barat',2:'Utara',6:'Utara',10:'Utara'};
-  var head='Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y+' · hari '+GAN[gs]+ZHI[zb]+' · hari shio '+SXN[zb];
-  box.innerHTML='<div class="today-card"><div class="today-head"><span class="today-t">✦ Kalendar Hari Ini 今日黄历</span><span class="today-date">'+head+'</span></div>'+
+  var head='Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y+' · hari shio '+SXN[zb]+' · kalender Tionghoa';
+  box.innerHTML='<div class="today-card"><div class="today-head"><span class="today-t">✦ Kalendar Hari Ini</span><span class="today-date">'+head+'</span></div>'+
     '<div class="today-body">'+
     '<div class="today-item">Arah baik <b>'+LUCKDIR[zb]+'</b></div>'+
     '<div class="today-item">Shio yang tabrakan <b>'+SXN[chong]+'</b></div>'+
     '<div class="today-item">Arah yang dihindari <b>'+SHADIR[zb]+'</b></div>'+
     '</div>'+
-    '<div class="today-yi"><b>宜 Yang baik:</b> '+TODAY_YI[zb].join(' · ')+'<br><b>忌 Hindari:</b> '+TODAY_JI[zb].join(' · ')+'</div>'+
-    '<div class="today-txt">'+TODAY_TIP[gs]+' <b>Menabur kebaikan hari ini berarti menabur berkah esok — kharma tak pernah keliru hitung.</b></div>'+
+    '<div class="today-yi"><b>Yang baik:</b> '+TODAY_YI[zb].join(' · ')+'<br><b>Hindari:</b> '+TODAY_JI[zb].join(' · ')+'</div>'+
+    '<div class="today-txt">'+TODAY_TIP[gs]+' <b>Menabur kebaikan hari ini berarti menabur berkah esok — karma tak pernah keliru hitung.</b></div>'+
     '</div>';
 }
 
 
 /* ================= 求签（36 qian · 诗体仿古自撰，融佛法因果之理） ================= */
 var QIAN=[
-{no:1,lv:'SS',tm:'旭日东升',poem:'一夜霜风寒雾散，<br>朝霞捧出日轮红。<br>前程莫问凶与吉，<br>步步登高路自通。',
+{no:1,lv:'SS',tm:'旭日东升',ti:'Matahari Terbit dari Timur',poem:'一夜霜风寒雾散，<br>朝霞捧出日轮红。<br>前程莫问凶与吉，<br>步步登高路自通。',
  pi:'Kabut sisa malam terbawa fajar; matahari naik membawa terang baru. Tak perlu menanya untung sial — langkah demi langkah, jalan sendiri terbuka.',
  jie:'Tanda terbaik dari 36 qian. Hal yang lama tersendat akan terbuka; usaha lancar, rezeki mengalir, hubungan yang beku mencair. Yang penting: bergerak, jangan menunggu sempurna.',
  yi:['memulai usaha','menyelesaikan yang tertunda','mengambil keputusan besar'],ji:['ragu-ragu dan menunda','mendengar bisikan orang dengki'],
  tip:'Waktu emas jarang datang dua kali — bertindak selagi hati masih panas; saat berhasil, sodorkan tangan pada yang jatuh.'},
-{no:2,lv:'SS',tm:'枯木逢春',poem:'去年枯木立荒庭，<br>谁信东风绿满枝。<br>莫道天公无眼力，<br>善根深处自逢时。',
+{no:2,lv:'SS',tm:'枯木逢春',ti:'Pohon Kering Bersemi',poem:'去年枯木立荒庭，<br>谁信东风绿满枝。<br>莫道天公无眼力，<br>善根深处自逢时。',
  pi:'Pohon kering tahun lalu berdiri di halaman sepi; siapa sangka angin timur menghijaukan seluruh ranting. Jangan bilang langit tak melihat — di akar yang baik, musim baik datang sendiri.',
  jie:'Yang dianggap selesai akan hidup kembali: usaha mati, hubungan putus, harapan dikubur — semua bisa bersemi ulang. Jangan mengubur apa pun hari ini.',
  yi:['menghidupkan lagi usaha lama','menghubungi kawan lama','menanam harapan baru'],ji:['berkata sudah terlambat','mengubur harapan'],
  tip:'Akarnya masih hidup karena perbuatan baik masa lalu — lanjutkan menyiram dengan kebaikan, musim semi Anda belum selesai.'},
-{no:3,lv:'SS',tm:'金榜题名',poem:'苦读多年灯下影，<br>今朝终见榜头名。<br>东风催马蹄声快，<br>好景连绵接步行。',
+{no:3,lv:'SS',tm:'金榜题名',ti:'Nama di Papan Emas',poem:'苦读多年灯下影，<br>今朝终见榜头名。<br>东风催马蹄声快，<br>好景连绵接步行。',
  pi:'Bertahun belajar di bawah lampu; hari ini nama akhirnya terang di papan emas. Angin timur mempercepat kuda; kebaikan beruntun menyambut langkah.',
  jie:'Hasil kerja keras akan diakui: ujian, promosi, seleksi, pengakuan — momentumnya di pihak Anda. Ucapkan terima kasih pada yang mendukung Anda.',
  yi:['mengikuti ujian dan seleksi','menampilkan hasil kerja','mendaftar sesuatu'],ji:['menyerah di depan garis akhir','menyombongkan diri'],
  tip:'Nama di papan emas bukan akhir — itu pinjaman kepercayaan; pakai untuk mengangkat yang lain, berkahnya berlipat.'},
-{no:4,lv:'SS',tm:'财源广进',poem:'门前活水绕东篱，<br>井底清泉日日滋。<br>不必苦求财自至，<br>只缘心地种莲时。',
+{no:4,lv:'SS',tm:'财源广进',ti:'Rezeki Mengalir Lebar',poem:'门前活水绕东篱，<br>井底清泉日日滋。<br>不必苦求财自至，<br>只缘心地种莲时。',
  pi:'Air hidup mengalir di pagar timur; mata sumur tak pernah kering. Tak perlu dipaksa mencari — rezeki datang sendiri, karena di ladang hati sedang ditanami teratai.',
  jie:'Rezeki datang dari arah tak terduga dan mengalir stabil. Ini bukan rezeki sekali habis, melainkan mata air — pelihara sumbernya, jangan hanya menimbun hasilnya.',
  yi:['melakukan transaksi','membuka pintu peluang','bersyukur dan berbagi'],ji:['menimbun tanpa berbagi','boros karena merasa kaya'],
  tip:'Rezeki yang mengalir adalah titipan — sisihkan sebagian untuk kebaikan, mata air ini justru makin dalam.'},
-{no:5,lv:'SS',tm:'花好月圆',poem:'云散天心月正圆，<br>花开庭院香满筵。<br>良缘不必苦苦觅，<br>红丝一缕系眼前。',
+{no:5,lv:'SS',tm:'花好月圆',ti:'Bunga Segar, Purnama Bulat',poem:'云散天心月正圆，<br>花开庭院香满筵。<br>良缘不必苦苦觅，<br>红丝一缕系眼前。',
  pi:'Awan bersisa, bulan di puncak langit bulat sempurna; bunga di halaman mengharumkan seluruh majelis. Jodoh tak perlu diburu mati-matian — benang merah sudah terikat di depan mata.',
  jie:'Pertanda terbaik untuk cinta dan keluarga: restu akan datang, perkenalan berlanjut serius, rumah tangga harmon. Yang tertunda dalam hubungan akan menemukan titik temu.',
  yi:['menyatakan perasaan','melamar atau restu','merencanakan acara keluarga'],ji:['mendua dan membandingkan','memperlakukan sepele'],
- tip:'Pertemuan yang baik adalah kharma baik yang bertemu — rawat dengan pengertian, jangan dianggap jadi milik sendiri.'},
-{no:6,lv:'SS',tm:'风平浪静',poem:'昨夜风涛拍岸惊，<br>今朝海面平如镜。<br>心若不动浪自息，<br>一帆高挂过沧瀛。',
+ tip:'Pertemuan yang baik adalah karma baik yang bertemu — rawat dengan pengertian, jangan dianggap jadi milik sendiri.'},
+{no:6,lv:'SS',tm:'风平浪静',ti:'Angin Teduh, Laut Tenang',poem:'昨夜风涛拍岸惊，<br>今朝海面平如镜。<br>心若不动浪自息，<br>一帆高挂过沧瀛。',
  pi:'Malam tadi ombak menghantam pantai; pagi ini laut tenang bak cermin. Bila hati tak tergoyak, gelombang padam sendiri — layar terkembang penuh menyeberangi samudra.',
  jie:'Badanai yang kemarin hebat akan reda: konflik mereda, urusan hukum melunak, kesehatan membaik. Ketenangan Anda adalah bagian dari obatnya.',
  yi:['menyelesaikan konflik','memulihkan tubuh','menghadapi pembicaraan sulit'],ji:['mengaduk masalah lama','curiga tanpa alasan'],
  tip:'Laut tenang bukan karena tanpa angin, tapi karena hati berlabuh — jagalah ketenangan ini dengan perbuatan baik diam-diam.'},
-{no:7,lv:'S',tm:'稳中求进',poem:'步步行来步步稳，<br>浅滩行舟莫贪深。<br>守得云开见月日，<br>功成不在一朝心。',
+{no:7,lv:'S',tm:'稳中求进',ti:'Maju dengan Mantap',poem:'步步行来步步稳，<br>浅滩行舟莫贪深。<br>守得云开见月日，<br>功成不在一朝心。',
  pi:'Langkah demi langkah, mantap; perahu di air dangkal, jangan serakah ke tengah. Bertahan sampai awan terbuka — keberhasilan tak lahir dari tergesa-gesa.',
  jie:'Jalannya ada dan mengarah ke atas, tapi harus pelan-pelan. Perbaiki langkah yang ada; jangan serakah memperbesar taruhan sebelum pijakan kokoh.',
  yi:['melanjutkan rencana yang sudah jalan','menabung dan menahan diri','memperkuat fondasi'],ji:['spekulasi besar','ganti haluan mendadak'],
  tip:'Pohon yang tinggi karena akarnya dalam — setiap hari tanam satu kebaikan, kelak tak perlu takut badai.'},
-{no:8,lv:'S',tm:'贵人相助',poem:'独行山路叹艰难，<br>忽有高人指路盘。<br>莫问贵人何处至，<br>前生结善今生还。',
+{no:8,lv:'S',tm:'贵人相助',ti:'Tolongan Orang Baik',poem:'独行山路叹艰难，<br>忽有高人指路盘。<br>莫问贵人何处至，<br>前生结善今生还。',
  pi:'Sendirian di jalanan gunung, mengeluh sulit; tiba-tiba orang bijak menunjuk arah. Jangan ditanya dari mana datangnya — kebaikan yang ditanam dulu, kini kembali membantu.',
  jie:'Akan ada orang yang membuka pintu: senior, kenalan lama, bahkan orang asing. Jangan malu meminta tolong; kesempatan ini datang lewat manusia.',
  yi:['meminta nasihat','hadir di pertemuan','merawat relasi lama'],ji:['sombok bisa sendiri','menghakimi orang dari penampilan'],
  tip:'Pendamping setia adalah pemberian karma — sambut dengan tulus, dan kelak jadilah penunjuk jalan bagi orang lain.'},
-{no:9,lv:'S',tm:'云开月现',poem:'浮云蔽月几多时，<br>云散清辉照旧枝。<br>眼下朦胧终有解，<br>静心再候不多时。',
+{no:9,lv:'S',tm:'云开月现',ti:'Awan Terbuka, Bulan Terlihat',poem:'浮云蔽月几多时，<br>云散清辉照旧枝。<br>眼下朦胧终有解，<br>静心再候不多时。',
  pi:'Awan menutupi bulan entah berapa lama; awan bersisa, cahaya jernih menyinari ranting yang sama. Kejelasan yang suram akhirnya terpecahkan — tenang menunggu, tak lama lagi.',
  jie:'Kebingungan sekarang akan terjawab: kabar yang ditunggu, keputusan yang menggantung, kejelasan hubungan. Jangan memaksa jawaban hari ini.',
  yi:['menunggu kabar dengan tenang','mengumpulkan informasi','merawat kesehatan tidur'],ji:['mendesak jawaban','bertindak karena cemas'],
  tip:'Bulan tak pernah hilang, hanya tertutup — begitu pula jalan Anda; sambil menunggu, bersihkan hati dari prasangka.'},
-{no:10,lv:'S',tm:'苗而秀实',poem:'春种一粒苗青青，<br>夏雨催枝节节生。<br>莫嫌今日果实小，<br>秋来满谷是收成。',
+{no:10,lv:'S',tm:'苗而秀实',ti:'Tunas Tumbuh Berbuah',poem:'春种一粒苗青青，<br>夏雨催枝节节生。<br>莫嫌今日果实小，<br>秋来满谷是收成。',
  pi:'Musim semi menanam sebutir, tunas menghijau; hujan panas menyuburkan ranting demi ranting. Jangan gerimi buah hari ini kecil — musim gugur nanti, lumbung penuh.',
  jie:'Usaha yang baru dirintis tumbuhnya pelan tapi pasti. Jangan bandingkan dengan orang lain yang panen duluan — pohon Anda beda musimnya.',
  yi:['merawat usaha yang masih kecil','belajar terus','mencatat kemajuan'],ji:['mencabut benih karena lambat','membandingkan diri'],
  tip:'Petani sabar memelihara, bukan menarik daun — begitu pula rezeki: dipelihara dengan usaha dan doa, bukan digoda dengan keluhan.'},
-{no:11,lv:'S',tm:'雁塔留名',poem:'笔下文章自有神，<br>何愁考场无故人。<br>勤学自有登科日，<br>洗砚池边候佳音。',
+{no:11,lv:'S',tm:'雁塔留名',ti:'Nama Terukir di Menara',poem:'笔下文章自有神，<br>何愁考场无故人。<br>勤学自有登科日，<br>洗砚池边候佳音。',
  pi:'Di bawah pena ada semangat sendiri; tak perlu cemas ruang ujian tanpa kenalan. Belajar tekun sampai ke hari naik pangkat — di tepi kolam cucian tinta, tunggulah kabar baik.',
  jie:'Untuk belajar dan ujian: persiapan Anda sudah cukup, tinggal menjaga keadaan hati saat hari-H. Jangan begadang sebelum ujian.',
  yi:['belajar dengan tenang','mendaftar sekolah atau beasiswa','mengikuti pelatihan'],ji:['belajar sambil cemas','membandingkan diri dengan orang lain'],
  tip:'Hasil ujian adalah cermin usaha, bukan takdir mati — sudahlah yang bisa diusahakan, sisanya serahkan dengan ikhlas.'},
-{no:12,lv:'S',tm:'良缘将至',poem:'孤雁单飞岁月长，<br>忽闻云外和鸣双。<br>姻缘本是前生定，<br>红线簿中有汝行。',
+{no:12,lv:'S',tm:'良缘将至',ti:'Jodoh Baik Menjelang',poem:'孤雁单飞岁月长，<br>忽闻云外和鸣双。<br>姻缘本是前生定，<br>红线簿中有汝行。',
  pi:'Bangau sendirian terbang bertahun-tahun; tiba-tiba di balik awal terdengar sahut dua suara. Jodoh memang utuh dari kejauhan — di buku benang merah, nama Anda sudah tercatat.',
  jie:'Perjumpaan yang bermakna akan datang — bisa lewat kawan, acara, atau tempat baru. Buka diri sedikit, jangan menutup pintu rapat-rapat.',
  yi:['menerima undangan','memperluas pergaulan','merawat penampilan dan hati'],ji:['menutup diri','masih terikat pada masa lalu'],
  tip:'Jodoh terbaik datang saat hati sudah rapi — kalahkan dulu luka lama dengan memaafkan, ruangnya baru terisi yang lebih baik.'},
-{no:13,lv:'S',tm:'积善余庆',poem:'祖上栽花花满庭，<br>儿孙今日得香盈。<br>莫言福禄从天降，<br>皆是当年善念生。',
+{no:13,lv:'S',tm:'积善余庆',ti:'Berkah Sisa Kebaikan',poem:'祖上栽花花满庭，<br>儿孙今日得香盈。<br>莫言福禄从天降，<br>皆是当年善念生。',
  pi:'Nenek moyang menanam bunga sampai halaman penuh; hari ini anak-cucu mewarisi harumnya. Jangan katakan rejeki turun dari langit — semuanya dari benih niat baik zaman dulu.',
  jie:'Kebahagiaan sekarang bukan kebetulan; itu buah kebaikan keluarga atau kebaikan Anda sendiri masa lalu. Pertanda ini meneguhkan: jalan kebaikan sedang terbuka.',
  yi:['meneruskan tradisi baik keluarga','berbakti pada orang tua','beramal'],ji:['memboroskan warisan','melupakan asal usul'],
  tip:'Pohon ini berdiri karena akar yang tak terlihat — berbakti dan beramal adalah cara menyiram akar, bukan sekadar mengharumkan daun.'},
-{no:14,lv:'S',tm:'迁地为良',poem:'此树移来沃土中，<br>枝头新绿胜旧丛。<br>人挪活来树挪活，<br>何苦死守旧墙东。',
+{no:14,lv:'S',tm:'迁地为良',ti:'Pindah ke Tanah Subur',poem:'此树移来沃土中，<br>枝头新绿胜旧丛。<br>人挪活来树挪活，<br>何苦死守旧墙东。',
  pi:'Pohon ini dipindahkan ke tanah subur; rantingnya lebih hijau dari yang lama. Manusia berpindah menjadi hidup, pohon berpindah menjadi hidup — untuk apa bertahan di tembok lama.',
  jie:'Perubahan lingkungan membawa kebaikan: pindah rumah, ganti pekerjaan, pindah kota. Keengganan berpisah dengan zona nyaman justru yang menahan rezeki.',
  yi:['mempertimbangkan pindah','menerima tawaran baru','menjajaki tempat baru'],ji:['bertahan hanya karena takut','menunda karena kenyamanan'],
  tip:'Pindah pohon butuh hati yang siap — berpamitanlah dengan baik pada yang lama; rezeki baru tidak boleh diawali unggah-ungguh.'},
-{no:15,lv:'S',tm:'静水流深',poem:'浅溪哗哗响不停，<br>深潭默默蓄其声。<br>大器从来晚成就，<br>莫与人争一日鸣。',
+{no:15,lv:'S',tm:'静水流深',ti:'Air Tenang yang Dalam',poem:'浅溪哗哗响不停，<br>深潭默默蓄其声。<br>大器从来晚成就，<br>莫与人争一日鸣。',
  pi:'Kali dangkal berisik sepanjang hari; telaga dalam menyimpan suaranya. Bejana besar selalu selesai lebih lambat — jangan berebut popularitas satu hari.',
  jie:'Anda mungkin merasa tertinggal dari teman-teman. Qian ini bilang: yang dalam matangnya lambat. Fokus menumpuk kemampuan, bukan mencari sorak-sorai.',
  yi:['mengasah keahlian diam-diam','membaca dan belajar','merencanakan jangka panjang'],ji:['pamer setengah jalan','terseret pameran orang lain'],
  tip:'Air diam yang dalam tak pernah kehabisan musim kemarau — kebaikan yang tanpa gemuruh itulah yang paling panjang umurnya.'},
-{no:16,lv:'S',tm:'丹桂迟香',poem:'三秋桂子发幽香，<br>不与春花争艳阳。<br>迟开自有迟开福，<br>冷露之中韵更长。',
+{no:16,lv:'S',tm:'丹桂迟香',ti:'Harum yang Terlambat Datang',poem:'三秋桂子发幽香，<br>不与春花争艳阳。<br>迟开自有迟开福，<br>冷露之中韵更长。',
  pi:'Bunga osmanthus di akhir musim rontok mengeluarkan harum yang dalam; ia tak berebut terang dengan bunga musim semi. Terlambat mekar ada berkahnya sendiri — dalam embun dingin, wanginya lebih panjang.',
  jie:'Hasil atau momen yang datang lebih lambat dari rencana bukan penolakan — waktunya sedang dimatangkan. Yang penting tidak berhenti.',
  yi:['bersabar dengan proses','menikmati musim sekarang','menjaga rutinitas baik'],ji:['memaksa hasil cepat','membuang usaha karena lambat'],
  tip:'Bunga yang mekar paling akhir sering paling tahan — begitu pula perjalanan Anda; sambil menunggu, jadilah harum bagi orang sekitar.'},
-{no:17,lv:'S',tm:'一帆风顺',poem:'扬帆正是好风时，<br>江阔水深路不迷。<br>远行莫愁家中事，<br>平安二字伴君归。',
+{no:17,lv:'S',tm:'一帆风顺',ti:'Layar Terbuka, Angin Baik',poem:'扬帆正是好风时，<br>江阔水深路不迷。<br>远行莫愁家中事，<br>平安二字伴君归。',
  pi:'Membuka layar tepat saat angin baik; sungai lebar, air dalam, jalannya jelas. Perjalanan jauh jangan risaukan rumah — kata「ping an」(selamat) menemani kepulangan.',
  jie:'Untuk bepergian, pindah, atau urusan jarak jauh: jalannya terbuka dan terlindung. Rencanakan matang, sisanya akan lancar.',
  yi:['bepergian','mengurus dokumen perjalanan','memulai kerja sama jarak jauh'],ji:['berangkat tanpa persiapan','mengabaikan kabar keluarga'],
  tip:'Perjalanan selamat adalah berkah yang sering dilupakan — sampai tujuan, sisihkan sedikit untuk beramal sebagai ucapan terima kasih.'},
-{no:18,lv:'S',tm:'否极泰来',poem:'寒冬腊月雪压枝，<br>冻到极时春不迟。<br>苦尽甘来天有数，<br>笑到最后是心慈。',
+{no:18,lv:'S',tm:'否极泰来',ti:'Pahit Habis, Manis Datang',poem:'寒冬腊月雪压枝，<br>冻到极时春不迟。<br>苦尽甘来天有数，<br>笑到最后是心慈。',
  pi:'Di puncak musim dingin salju menekan ranting; membeku sampai titik paling dingin, musim semi tak akan terlambat. Pahit habis, manis datang — yang tertawa paling akhir adalah hati yang lembut.',
  jie:'Anda mungkin sedang di titik paling berat — justru karena itu, kebaikan sudah dekat. Bertahan sedikit lagi; jangan berbalik arah di pintu terakhir.',
  yi:['bertahan dan menjaga kesehatan','meminta bantuan','merapikan diri untuk babak baru'],ji:['menyerah di akhir jalanan','mengasihani diri sendiri'],
  tip:'Ujian yang paling panjang menghasilkan sabar yang paling dalam — sisa sabar itulah modal babak baru Anda.'},
-{no:19,lv:'Z',tm:'舟行浅滩',poem:'轻舟误入浅滩前，<br>进退两难篙不闲。<br>且把锚抛歇一夜，<br>等他潮涨自然还。',
+{no:19,lv:'Z',tm:'舟行浅滩',ti:'Perahu di Air Dangkal',poem:'轻舟误入浅滩前，<br>进退两难篙不闲。<br>且把锚抛歇一夜，<br>等他潮涨自然还。',
  pi:'Perahu kecil tersesat ke air dangkal; maju mundur dua-duanya sulit, galah tak henti bekerja. Jangkar dilempar dulu, beristirahat semalam — tunggu pasang naik, perahu terapung sendiri.',
  jie:'Kondisi macet: maju tak kuat, mundur tak rela. Jangan memaksakan hari ini; kondisi luar (pasang) yang akan berubah — tugas Anda menjaga perahu tetap utuh.',
  yi:['menahan diri dan menunggu','memangkas biaya','menjaga kesehatan'],ji:['memaksakan jalan','membakar tenaga untuk hal mati'],
  tip:'Nelayan tua tahu: melawan air pasang hanya buang tenaga — dia diam-diam memperbaiki jaring. Gunakan masa tunggu untuk memperbaiki diri.'},
-{no:20,lv:'Z',tm:'云遮半月',poem:'半月云遮光不明，<br>似晴似雨说不清。<br>所求之事朦胧态，<br>再候三朝自分明。',
+{no:20,lv:'Z',tm:'云遮半月',ti:'Awan Menutup Separuh Bulan',poem:'半月云遮光不明，<br>似晴似雨说不清。<br>所求之事朦胧态，<br>再候三朝自分明。',
  pi:'Separuh bulan tertutup awan, terangnya tak jelas; seperti cerah seperti hujan, sulit dikatakan. Hal yang ditanyakan masih berkabut — tunggu tiga hari lagi, sendirian terang.',
  jie:'Jawaban belum bisa dipastikan: kabar, hasil, atau perasaan orang masih setengah-setengah. Jangan memaksakan kejelasan hari ini; sekitar tiga hari ke depan akan terlihat.',
  yi:['mengumpulkan fakta','menunggu konfirmasi','menjaga suasana hati'],ji:['mengambil keputusan besar','menebak-nebak sendiri'],
  tip:'Kegelapan hari ini adalah latihan kesabaran — yang melihat jalan tanpa cahaya tapi tetap tak melangkah salah, ia sudah setengah bijak.'},
-{no:21,lv:'Z',tm:'守旧之诫',poem:'树下空等兔再来，<br>田荒终究误花开。<br>旧法若已行不通，<br>变通方是活路开。',
+{no:21,lv:'Z',tm:'守旧之诫',ti:'Peringatan Bertahan pada yang Lama',poem:'树下空等兔再来，<br>田荒终究误花开。<br>旧法若已行不通，<br>变通方是活路开。',
  pi:'Di bawah pohon menunggu kelinci datang lagi; ladang tandus akhirnya merugikan musim bunga. Cara lama bila tak lagi jalan — berubah adalah pintu hidup.',
  jie:'Cara yang dulu berhasil sekarang macet. Qian ini mengingatkan: jangan menunggu keajaiban dari kebiasaan lama; ubah cara, bukan tujuannya.',
  yi:['mencoba cara baru','bertanya pada yang lebih muda','mengikuti pelatihan'],ji:['mengulang cara lama berharap hasil beda','menolak belajar hal baru'],
  tip:'Air yang tak mengalir menjadi keruh — begitu pula cara kerja; keberanian berubah adalah bentuk lain dari syukur atas akal.'},
-{no:22,lv:'Z',tm:'蜜中藏刺',poem:'蜂蜜香甜舌上留，<br>细尝微苦在喉头。<br>眼前好事藏小刺，<br>甜处留心不被钩。',
+{no:22,lv:'Z',tm:'蜜中藏刺',ti:'Madu yang Menyimpan Duri',poem:'蜂蜜香甜舌上留，<br>细尝微苦在喉头。<br>眼前好事藏小刺，<br>甜处留心不被钩。',
  pi:'Madu manis melekat di lidah; dicoba perlahan, ada pahit halus di tenggorokan. Kebaikan di depan mata menyimpan duri kecil — di tempat manis, waspadai kail.',
  jie:'Tawaran atau kabar baik ada jebakannya: kontrak dengan huruf kecil, teman manis dengan niat tersembunyi, keuntungan cepat dengan risiko tersembunyi. Manisnya nyata, tangkai durinya juga nyata.',
  yi:['membaca syarat dengan teliti','meminta pendapat kedua','menunda tanda tangan'],ji:['mengiyakan karena tergiur','percaya karena dibuat senang'],
  tip:'Yang manis dari langit biasanya dikirim lewat pintu yang sah — ketika hati ragu, tunda dulu; itu bukan pengecut, itu waras.'},
-{no:23,lv:'Z',tm:'磨杵成针',poem:'铁杵磨针岁月长，<br>功夫到了自发光。<br>急火难煮好米饭，<br>慢工细活出栋梁。',
+{no:23,lv:'Z',tm:'磨杵成针',ti:'Besi Digosok Jadi Jarum',poem:'铁杵磨针岁月长，<br>功夫到了自发光。<br>急火难煮好米饭，<br>慢工细活出栋梁。',
  pi:'Besi besar digosok jadi jarum, bertahun-tahun lamanya; ketika kungan selesai, hasilnya berkilau. Api besar tak bisa menanak nasi enak — kerja pelan menghasilkan tiang penyangga.',
  jie:'Yang Anda kejar butuh waktu lebih lama dari perkiraan. Kabar baiknya: bakunya memang begitu. Yang perlu dilakukan hanya satu — jangan berhenti menggosok.',
  yi:['melanjutkan usaha yang sudah jalan','membagi target besar jadi kecil','merayakan kemajuan kecil'],ji:['mengubah haluan karena bosan','menginginkan jalan pintas'],
  tip:'Jarum muncul bukan karena besinya istimewa, tapi karena tangan tak berhenti — keajaiban Anda tersimpan di kebosanan yang sanggup Anda lalui.'},
-{no:24,lv:'Z',tm:'岔路问津',poem:'行到岔路口三叉，<br>东西南北路交加。<br>且停且问莫乱闯，<br>指对一门便是家。',
+{no:24,lv:'Z',tm:'岔路问津',ti:'Bertanya di Persimpangan',poem:'行到岔路口三叉，<br>东西南北路交加。<br>且停且问莫乱闯，<br>指对一门便是家。',
  pi:'Berjalan sampai persimpangan tiga cabang; timur barat selatan utara menyilang. Berhenti sejenak, bertanya, jangan menerobos — satu pintu yang benar, itulah rumah.',
  jie:'Anda di depan pilihan: dua tawaran kerja, dua hubungan, dua keputusan besar. Jangan pilih karena takut atau serakah — bertanyalah pada yang berpengalaman, lalu dengarkan tubuh Anda sendiri.',
  yi:['membandingkan pilihan dengan tenang','menulis untung-rugi','meminta pendapat orang bijak'],ji:['memilih terburu-buru','membiarkan orang lain memutuskan'],
  tip:'Pintu mana pun yang dipilih dengan hati jernih bisa jadi rumah — yang membelokkan bukan pilihan, tapi niat yang kotor saat memilih.'},
-{no:25,lv:'Z',tm:'潮起潮落',poem:'潮水来时满港湾，<br>潮水去时见沙滩。<br>财如潮水有起落，<br>落时守得住是关。',
+{no:25,lv:'Z',tm:'潮起潮落',ti:'Pasang dan Surut',poem:'潮水来时满港湾，<br>潮水去时见沙滩。<br>财如潮水有起落，<br>落时守得住是关。',
  pi:'Saat pasang, seluruh teluk penuh air; saat surut, terlihat pasir. Rezeki itu seperti air pasang — ada naik ada turun; saat surut, yang penting adalah sanggup bertahan.',
  jie:'Keuangan akan naik-turun dalam waktu dekat: pendapatan besar diikuti pengeluaran besar. Yang diuji bukan keberuntungan, tapi kedisiplinan menjaga pintu dompet.',
  yi:['menabung saat pasang','memotong pengeluaran tidak penting','membuat catatan keuangan'],ji:['berbelanja besar saat rezeki datang','berinvestasi mengikuti euforia'],
- tip:'Nelayan berhati sama saat pasang dan surut — begitu pula Anda dengan rezeki: datang disyukuri, pergi disimpan; kharma menghitung sikap, bukan hanya jumlah.'},
-{no:26,lv:'Z',tm:'雾里看花',poem:'雾里看花花不明，<br>隔帘望月月朦胧。<br>此段情缘看不准，<br>且慢许诺且慢行。',
+ tip:'Nelayan berhati sama saat pasang dan surut — begitu pula Anda dengan rezeki: datang disyukuri, pergi disimpan; karma menghitung sikap, bukan hanya jumlah.'},
+{no:26,lv:'Z',tm:'雾里看花',ti:'Bunga dalam Kabut',poem:'雾里看花花不明，<br>隔帘望月月朦胧。<br>此段情缘看不准，<br>且慢许诺且慢行。',
  pi:'Melihat bunga dalam kabut, bunga tak jelas; menatap bulan dari balik tirai, bulan samar. Perasaan ini masih belum terang — perlahan saja berjanji, perlahan melangkah.',
  jie:'Hubungan atau perasaan yang sedang dijajaki masih belum jelas arahnya — bisa jadi karena salah satu pihak belum terbuka. Jangan memaksa definisi; beri ruang dan waktu.',
  yi:['menjalin komunikasi jujur','memberi waktu','mengenali diri sendiri dulu'],ji:['memaksa komitmen','menebak isi hati orang'],
  tip:'Hati yang benar tak perlu diterawang-terawang — bila harus selalu menebak, mungkin yang perlu jernih dulu bukan dia, tapi harapan Anda sendiri.'},
-{no:27,lv:'Z',tm:'倦鸟知还',poem:'倦鸟归林暮色沉，<br>歇翅养羽待明晨。<br>力尽之时休硬撑，<br>养足精神再飞腾。',
+{no:27,lv:'Z',tm:'倦鸟知还',ti:'Burung Lelah Pulang ke Sarang',poem:'倦鸟归林暮色沉，<br>歇翅养羽待明晨。<br>力尽之时休硬撑，<br>养足精神再飞腾。',
  pi:'Burung lelah pulang ke hutan saat senja; mengepak sayap untuk memulihkan, menunggu pagi. Saat tenaga habis jangan dipaksakan — pulihkan semangat, nanti terbang lagi.',
  jie:'Tubuh dan pikiran Anda sedang lelah — qian ini menyuruh pulang dan beristirahat, bukan berhenti. Yang memaksakan diri justru akan jatuh lebih lama.',
  yi:['cuti dan istirahat','memperbaiki pola tidur','melepas satu dua beban'],ji:['lembur terus-menerus','menunda pemeriksaan kesehatan'],
  tip:'Istirahat bukan kemalasan, itu memelihara alat — tubuh yang dijaga adalah berkat bagi seluruh keluarga, bukan hanya untuk diri sendiri.'},
-{no:28,lv:'Z',tm:'半栽半收',poem:'种十收五莫叹亏，<br>天年不满人力为。<br>量力而行稳半步，<br>贪多嚼烂反成灰。',
+{no:28,lv:'Z',tm:'半栽半收',ti:'Tanam Sepuluh, Panen Lima',poem:'种十收五莫叹亏，<br>天年不满人力为。<br>量力而行稳半步，<br>贪多嚼烂反成灰。',
  pi:'Menanam sepuluh menuai lima, jangan gerutu rugi; musim tak selalu penuh, manusia mengusahakan sisanya. Ukur kemampuan, melangkah separuh dulu — serakah mengunyah, justru jadi abu.',
  jie:'Hasil sekarang lebih kecil dari usaha yang dikeluarkan. Itu bukan kekalahan — itu tahun penyesuaian. Yang penting: jangan memaksakan target besar dengan modal kecil.',
  yi:['menerima hasil apa adanya','menyesuaikan target','menghemat tenaga dan biaya'],ji:['menambah taruhan untuk balas dendam','membandingkan hasil dengan orang lain'],
  tip:'Petani tidak mengutuk hujan karena panen berkurang — ia menanam lagi dengan lebih bijak; kegagalan setengah adalah guru yang lebih murah dari kegagalan total.'},
-{no:29,lv:'Z',tm:'塞翁之马',poem:'失马勿急叹祸殃，<br>塞翁故事记心房。<br>眼前得失难论定，<br>祸福相倚路正长。',
+{no:29,lv:'Z',tm:'塞翁之马',ti:'Kuda si Tua Benteng',poem:'失马勿急叹祸殃，<br>塞翁故事记心房。<br>眼前得失难论定，<br>祸福相倚路正长。',
  pi:'Kehilangan kuda, jangan buru-buru menangis sial; kisah orang tua di benteng pegunungan, simpan di hati. Untung-rugi hari ini belum bisa dinilai — sial dan berkah berjalan berdampingan.',
  jie:'Yang tampak sebagai kehilangan atau kegagalan hari ini bisa jadi pintu kebaikan — atau sebaliknya, keberhasilan hari ini menyimpan ujian. Jangan terlalu cepat menilai.',
  yi:['menerima keadaan dengan tenang','mencari hikmah','tetap bekerja seperti biasa'],ji:['menangis nasib','besar kepala karena menang'],
- tip:'Hari baik dan hari buruk sama-sama guru — yang bijak berterima kasih pada keduanya, sebab keduanya sama-sama sedang menata kharma Anda.'},
-{no:30,lv:'Z',tm:'明日之诫',poem:'今日事情推明日，<br>明日又有明日事。<br>拖延最是偷时贼，<br>一年转眼无痕迹。',
+ tip:'Hari baik dan hari buruk sama-sama guru — yang bijak berterima kasih pada keduanya, sebab keduanya sama-sama sedang menata karma Anda.'},
+{no:30,lv:'Z',tm:'明日之诫',ti:'Peringatan soal Esok',poem:'今日事情推明日，<br>明日又有明日事。<br>拖延最是偷时贼，<br>一年转眼无痕迹。',
  pi:'Urusan hari ini didorong ke besok; besok ada lagi urusan besok. Menunda adalah pencuri waktu paling jahat — setahun berkedip, tak berbekas.',
  jie:'Sebagian besar kebekuan Anda berasal dari penundaan kecil yang menumpuk. Qian ini menegur dengan lembut: mulai dari yang paling kecil, hari ini juga.',
  yi:['mengerjakan satu hal kecil hari ini','membuat daftar prioritas','mematikan sumber gangguan'],ji:['menunggu suasana hati sempurna','berjanji mulai bulan depan'],
  tip:'Waktu adalah hidup yang diberikan sedikit demi sedikit — memakainya untuk kebaikan hari ini adalah cara paling jujur bersyukur.'},
-{no:31,lv:'X',tm:'浓雾锁路',poem:'浓雾锁路不见津，<br>十步之外白茫茫。<br>此时切莫赶夜路，<br>歇店点灯待天光。',
+{no:31,lv:'X',tm:'浓雾锁路',ti:'Kabut Tebal Mengunci Jalan',poem:'浓雾锁路不见津，<br>十步之外白茫茫。<br>此时切莫赶夜路，<br>歇店点灯待天光。',
  pi:'Kabut tebal mengunci jalan, penyeberangan tak terlihat; sepuluh langkah di luar, putih seluruhnya. Saat seperti ini jangan memaksa jalan malam — singgah di penginapan, nyalakan lampu, tunggu fajar.',
  jie:'Sekarang bukan waktu bergerak: informasi kurang, dukungan kurang, keadaan hati juga belum tenang. Memaksakan jalan di kabut adalah undangan tersesat. Menunggu bukan kalah — itu waras.',
  yi:['menghentikan sementara langkah besar','memelihara kesehatan','menjaga hubungan yang ada'],ji:['keputusan besar','investasi besar','percaya orang yang belum jelas asalnya'],
  tip:'Lampu penginapan itu amal Anda yang dulu — dalam kabut apa pun, kebaikan yang pernah Anda tanam tetap menyala; tunggu fajar dengan tenang.'},
-{no:32,lv:'X',tm:'强弩之末',poem:'强弩之末力已衰，<br>穿透薄绢也艰难。<br>硬撑之事宜早放，<br>蓄力来年再挽弯。',
+{no:32,lv:'X',tm:'强弩之末',ti:'Panah di Ujung Tenaga',poem:'强弩之末力已衰，<br>穿透薄绢也艰难。<br>硬撑之事宜早放，<br>蓄力来年再挽弯。',
  pi:'Panah kuat di ujung lintasan, tenaganya sudah habis; menembus kain tipis pun sulit. Urusan yang dipaksakan sebaiknya dilepaskan — kumpulkan tenaga, tahun depan busur ditarik lagi.',
  jie:'Ada usaha atau hubungan yang sudah lama dipertahankan dengan memaksakan diri. Qian ini menyarankan melepasnya — bukan menyerah, tapi berhenti membakar diri untuk hal yang tak lagi sehat.',
  yi:['menghentikan kerugian','menerima kenyataan','merencanakan bangkit kembali'],ji:['menambah investasi pada hal yang mati','mempertahankan demi gengsi'],
  tip:'Melepas bukan menghina usaha lama — menghormatinya dengan jalan pulang; keberanian berhenti itu juga satu bentuk kebijaksanaan.'},
-{no:33,lv:'X',tm:'缘木求鱼',poem:'爬树捉鱼空费力，<br>方法一错步步错。<br>静下心来想一想，<br>换个方向路自阔。',
+{no:33,lv:'X',tm:'缘木求鱼',ti:'Ikan di Atas Pohon',poem:'爬树捉鱼空费力，<br>方法一错步步错。<br>静下心来想一想，<br>换个方向路自阔。',
  pi:'Memanjat pohon untuk menangkap ikan, tenaga habis sia-sia; cara salah, langkah demi langkah salah. Diamkan sejenak hati, pikirkan baik-baik — ganti arah, jalannya sendiri lebar.',
  jie:'Masalah utama Anda bukan kurang usaha, tapi salah tempat mengusahakan. Cari ikan di air, bukan di pohon: tinjau ulang metode, target, atau orang yang Anda minta tolong.',
  yi:['meninjau ulang cara kerja','bertanya pada ahlinya','berhenti sejenak untuk berpikir'],ji:['menambah usaha dengan cara yang sama','menyalahkan nasib'],
  tip:'Kegagalan yang sama dua kali adalah pesan, bukan sial — alat berpikir yang diberikan langit untuk dipakai, termasuk untuk mengubah cara.'},
-{no:34,lv:'X',tm:'屋漏逢雨',poem:'屋漏偏逢连夜雨，<br>船迟又遇打头风。<br>祸不单行须守静，<br>修补屋漏待日红。',
+{no:34,lv:'X',tm:'屋漏逢雨',ti:'Atap Bocor Kena Hujan',poem:'屋漏偏逢连夜雨，<br>船迟又遇打头风。<br>祸不单行须守静，<br>修补屋漏待日红。',
  pi:'Atap bocor kebetulan bertemu hujan semalaman; perahu lambat lagi-lagi bertemu angin depan. Sial tak datang sendirian — jagalah ketenangan, tambal atap yang bocor, tunggu matahari merah.',
  jie:'Beberapa masalah datang bersamaan: kesehatan, uang, relasi. Qian ini tidak menyangkal beratnya — tapi ingatkan: saat semuanya bocor, prioritas adalah menutup kebocoran terbesar dulu, satu per satu.',
  yi:['fokus pada satu masalah terpenting','meminta bantuan keluarga dekat','memangkas semua yang tidak perlu'],ji:['mengurus semua sekaligus','mengambil pinjaman gelap'],
  tip:'Hujan deras turun pada semua rumah, tapi yang kering duluan adalah yang rajin menambal — sial beruntun hampir selalu berakhir pada yang paling tidak menyerah.'},
-{no:35,lv:'X',tm:'口舌是非',poem:'三人成虎舌如刀，<br>是非只因多开口。<br>闭门修得口上德，<br>风浪自平不用求。',
+{no:35,lv:'X',tm:'口舌是非',ti:'Gosip dan Salah Paham',poem:'三人成虎舌如刀，<br>是非只因多开口。<br>闭门修得口上德，<br>风浪自平不用求。',
  pi:'Tiga orang bisa menjadikan harimau; lidah tajam seperti pisau. Perselisihan lahir karena terlalu banyak bicara — tutup pintu, jaga kebajikan mulut; gelombang tenang sendiri tanpa diminta.',
  jie:'Ada atau akan ada gosip, salah paham, pertengkaran kata. Qian ini menasihati: jangan ikut mengaduk. Diam bukan kalah — itu melindungi diri dari api yang menjalar.',
  yi:['mengurangi bicara di media sosial','menjaga jarak dari sumber gosip','menjernihkan lewat perantara yang dipercaya'],ji:['membalas rumor dengan rumor','berdekat-dekat dengan pemicu drama'],
- tip:'Mulut adalah pintu kharma paling cepat — satu kalimat baik menabur berkah, satu kalimat buruk membakar ladang sendiri; pilihlah yang mana Anda tanam.'},
-{no:36,lv:'X',tm:'冬夜待旦',poem:'冬夜漫长冷似铁，<br>鸡声未动天未白。<br>最暗正是黎明前，<br>守得心灯不灭者。',
+ tip:'Mulut adalah pintu karma paling cepat — satu kalimat baik menabur berkah, satu kalimat buruk membakar ladang sendiri; pilihlah yang mana Anda tanam.'},
+{no:36,lv:'X',tm:'冬夜待旦',ti:'Malam Dingin Menunggu Fajar',poem:'冬夜漫长冷似铁，<br>鸡声未动天未白。<br>最暗正是黎明前，<br>守得心灯不灭者。',
  pi:'Malam musim dingin panjang dan dingin seperti besi; ayam belum berkokok, langit belum terang. Paling gelap justru sesaat sebelum fajar — yang sanggup menjaga lampu hatinya tetap menyala, dialah yang menyaksikan pagi.',
  jie:'Ini qian paling berat di antara 36 — dan pesannya bukan sial, tapi ini: Anda sedang di titik paling gelap, yang berarti fajar paling dekat. Jangan padamkan lampu harapan; rawat dengan hal-hal kecil yang baik.',
  yi:['bertahan dengan rutinitas kecil yang sehat','mendekat pada orang-orang terkasih','menjaga doa atau perenungan'],ji:['melukai diri','mengambil keputusan di puncak keputusasaan','mengasingkan diri total'],
@@ -1236,19 +1240,19 @@ function qianGo(){
 function renderQian(q,ask){
   var lv=QLV[q.lv],cat=qianCat(ask);
   var html='<div class="card bazi-out" style="animation:fadein .7s ease">'+
-    '<div class="b-head"><span class="b-title">Qian ke-'+q.no+' · '+q.tm+'</span><span class="b-sub">tong qian 求签</span></div>'+
+    '<div class="b-head"><span class="b-title">Qian ke-'+q.no+' · '+q.ti+'</span><span class="b-sub">tong qian</span></div>'+
     '<div style="text-align:center;margin:4px 0 2px"><span class="fate '+lv[1]+'" style="font-size:15px;padding:5px 20px">'+lv[0]+'</span></div>'+
-    '<p class="qian-poem">'+q.poem+'</p>'+
     '<p class="qian-pi">'+q.pi+'</p>'+
-    '<div class="rsec"><div class="rt">Jie 解曰</div><p>'+q.jie+'</p></div>'+
+    '<p class="qian-poem">'+q.poem+'</p>'+
+    '<div class="rsec"><div class="rt">Jie · Penjelasan</div><p>'+q.jie+'</p></div>'+
     '<div class="rsec"><div class="rt">Yang dianjurkan & dihindari</div>'+
-    '<p><b style="color:var(--gold-hi)">宜 Yang baik:</b> '+q.yi.join(' · ')+'</p>'+
-    '<p><b style="color:var(--red)">忌 Hindari:</b> '+q.ji.join(' · ')+'</p></div>';
+    '<p><b style="color:var(--gold-hi)">Yang baik:</b> '+q.yi.join(' · ')+'</p>'+
+    '<p><b style="color:var(--red)">Hindari:</b> '+q.ji.join(' · ')+'</p></div>';
   if(cat){
     html+='<div class="rsec"><div class="rt">Untuk hal yang Anda tanyakan</div><p>'+cat.g[q.lv]+'</p></div>';
   }
   html+='<div class="rsec"><div class="rt">Pesan Suhu</div><p>'+q.tip+'</p></div>'+
-    '<p class="bazi-note" style="text-align:left">※ Puisi qian digubah meniru gaya klasik, disertai penjelasan kharma — hiburan budaya untuk menenangkan hati dan mengingatkan pada perbuatan baik, bukan rujukan agama atau dasar keputusan. Hati tenang, qian baru terbaca.</p>'+
+    '<p class="bazi-note" style="text-align:left">※ Puisi qian digubah meniru gaya klasik, disertai penjelasan karma — hiburan budaya untuk menenangkan hati dan mengingatkan pada perbuatan baik, bukan rujukan agama atau dasar keputusan. Hati tenang, qian baru terbaca.</p>'+
     '<div class="gactions"><button class="btn ghost" id="qianAgain">↺ GOYANG LAGI</button></div></div>';
   $('#qianResult').innerHTML=html;
   var ag=$('#qianAgain');
@@ -1315,7 +1319,7 @@ function aiFmt(t){
   return out;
 }
 function aiSys(){
-  var s='Anda adalah「Suhu」di Rumah Rahasia — Suhu keluarga Tionghoa peranakan yang sejak kecil ikut sembahyang di kelenteng: menguasai tafsir mimpi Zhou Gong, paham kharma dan hukum sebab-akibat ajaran Buddha, akrab dengan adat Tionghoa dan primbon Nusantara; juga menguasai ramalan takdir dan rezeki serta pengetahuan umum. Aturan bertutur: 1、selalu Bahasa Indonesia santai yang mudah dipahami, seperti kawan lama yang paham dunia — tanpa kata kaku, tanpa istilah menumpuk; 2、kesimpulan dulu, alasan belakangan, hal penting di depan; 3、bila terpaksa memakai istilah budaya Tionghoa (shio, lima unsur), langsung jelaskan artinya dengan bahasa manusia; 4、kalimat pendek, tiap paragraf maksimal tiga baris; 5、saran harus konkret: apa yang boleh dilakukan, apa yang dihindari, langkah pertama apa; 6、urusan medis, hukum, dan uang besar — ingatkan untuk berkonsultasi dengan profesional; urusan agama dan akhirat — kembalikan pada keyakinan masing-masing, jangan menggurui dan jangan membanding-bandingkan agama; soal perbuatan baik dan karma — silakan jelaskan dengan hukum sebab-akibat: menabur kebaikan menuai keberkahan; 7、jangan menakut-nakuti, jangan mendewakan takdir — sering katakan「takdir bisa diubah dengan usaha」; 8、Anda adalah Suhu itu sendiri, sebut diri「Suhu」, jangan menyebut diri sebagai AI, model, atau program. Maksimal 500 kata; kesimpulan terpenting tandai dengan【】.';
+  var s='Anda adalah「Suhu」di Rumah Rahasia — Suhu keluarga Tionghoa peranakan yang sejak kecil ikut sembahyang di kelenteng: menguasai tafsir mimpi Zhou Gong, pandai membaca qian kelenteng, paham karma dan hukum sebab-akibat ajaran Buddha, akrab dengan adat Tionghoa dan primbon Nusantara; juga menguasai ramalan takdir dan rezeki serta pengetahuan umum. Aturan bertutur: 1、selalu Bahasa Indonesia santai yang mudah dipahami, seperti kawan lama yang paham dunia — tanpa kata kaku, tanpa istilah menumpuk; 2、kesimpulan dulu, alasan belakangan, hal penting di depan; 3、bila terpaksa memakai istilah budaya Tionghoa (shio, lima unsur), langsung jelaskan artinya dengan bahasa manusia; 4、kalimat pendek, tiap paragraf maksimal tiga baris; 5、saran harus konkret: apa yang boleh dilakukan, apa yang dihindari, langkah pertama apa; 6、urusan medis, hukum, dan uang besar — ingatkan untuk berkonsultasi dengan profesional; urusan agama dan akhirat — kembalikan pada keyakinan masing-masing, jangan menggurui dan jangan membanding-bandingkan agama; soal perbuatan baik dan karma — silakan jelaskan dengan hukum sebab-akibat: menabur kebaikan menuai keberkahan; 7、jangan menakut-nakuti, jangan mendewakan takdir — sering katakan「takdir bisa diubah dengan usaha」; 8、Anda adalah Suhu itu sendiri, sebut diri「Suhu」, jangan menyebut diri sebagai AI, model, atau program. Maksimal 500 kata; kesimpulan terpenting tandai dengan【】.';
   return s;
 }
 function aiMsg(role,html){
