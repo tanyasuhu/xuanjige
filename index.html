@@ -404,6 +404,47 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 .qian-poem{font-family:var(--kai);font-size:13px;color:rgba(232,221,192,.55);line-height:2.1;letter-spacing:2px;margin:10px 0 2px}
 .qian-pi{font-size:15.5px;color:#e8ddc0;font-style:italic;line-height:1.95;margin:12px 0 8px}
 
+
+/* ========== 账号 & 积分 & 充值 ========== */
+.acc-bar{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+.acc-btn{padding:9px 22px;background:rgba(30,20,54,.55);border:1px solid rgba(217,180,91,.4);border-radius:999px;
+  color:#d8cfe6;font-size:13.5px;cursor:pointer;font-family:var(--kai);letter-spacing:1px;transition:all .25s}
+.acc-btn:hover{color:var(--gold-hi);border-color:var(--gold)}
+.acc-info{font-size:13.5px;color:#d8cfe6;letter-spacing:.5px;display:flex;align-items:center;gap:6px}
+.acc-info b{color:var(--gold-hi);font-weight:600}
+.acc-mini{padding:6px 14px;background:rgba(30,20,54,.55);border:1px solid rgba(217,180,91,.35);border-radius:999px;
+  color:#cdc4de;font-size:12px;cursor:pointer;transition:all .25s}
+.acc-mini:hover{color:var(--gold-hi);border-color:var(--gold)}
+.modal-layer{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
+  background:rgba(5,2,12,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:18px;overflow-y:auto}
+.modal-card{position:relative;width:100%;max-width:400px;background:linear-gradient(168deg,#1c1136,#0d0619);
+  border:1px solid rgba(217,180,91,.45);border-radius:18px;padding:26px 24px 22px;
+  box-shadow:0 18px 60px rgba(0,0,0,.6), inset 0 0 24px rgba(217,180,91,.05);animation:fadein .35s ease}
+.modal-card .orn{margin-bottom:14px}
+.modal-x{position:absolute;top:12px;right:14px;background:none;border:none;color:rgba(207,194,166,.55);
+  font-size:17px;cursor:pointer;padding:4px 8px}
+.modal-x:hover{color:var(--gold-hi)}
+.m-inp{width:100%;box-sizing:border-box;background:rgba(11,6,20,.55);border:1px solid rgba(217,180,91,.3);border-radius:10px;
+  color:#e6d9b8;padding:11px 14px;font-size:13.5px;outline:none;margin-bottom:10px;letter-spacing:.5px}
+.m-inp:focus{border-color:var(--gold)}
+.m-note{font-size:11.5px;color:var(--text2);line-height:1.7;margin-top:12px}
+.m-err{font-size:12.5px;color:var(--red);min-height:18px;margin:2px 0 6px;line-height:1.5}
+.m-ok{font-size:13px;color:var(--gold-hi);line-height:1.8}
+.auth-switch{font-size:12.5px;color:var(--text2);margin-top:12px;text-align:center}
+.auth-switch a{color:var(--gold);cursor:pointer;text-decoration:underline dotted}
+.pkg-row{display:flex;gap:10px;margin:12px 0 6px}
+.pkg{flex:1;border:1px solid rgba(217,180,91,.35);border-radius:12px;padding:13px 10px;text-align:center;cursor:pointer;
+  background:rgba(11,6,20,.45);transition:all .25s}
+.pkg:hover{border-color:var(--gold)}
+.pkg.sel{border-color:var(--gold-hi);background:rgba(217,180,91,.08);box-shadow:0 0 14px rgba(217,180,91,.15)}
+.pkg .p-amt{font-family:var(--kai);font-size:16.5px;color:var(--gold-hi);letter-spacing:1px}
+.pkg .p-cr{font-size:12.5px;color:#d8cfe6;margin-top:5px}
+.pkg .p-tag{font-size:10.5px;color:var(--amber);margin-top:4px;letter-spacing:1px}
+.qr-slot{border:1.5px dashed rgba(217,180,91,.45);border-radius:12px;padding:16px 12px;text-align:center;margin:10px 0;
+  font-size:12px;color:var(--text2);line-height:1.7;background:rgba(217,180,91,.03)}
+.qr-slot .qr-icon{font-size:26px;color:var(--gold);display:block;margin-bottom:6px}
+.quota-big{font-size:15px;color:#e6d9b8;line-height:1.9;text-align:center;margin:8px 0 4px}
+
 /* ========== 打印 & 动效偏好 ========== */
 @media print{
   body{background:#0b0614;padding:0}
@@ -418,6 +459,46 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 </head>
 <body class="mode-auto" data-palette="violet">
 <div class="stars" id="stars" aria-hidden="true"></div>
+
+
+<!-- ===== 账号/充值/额度 模态层 ===== -->
+<div class="modal-layer" id="authModal" style="display:none">
+  <div class="modal-card">
+    <button class="modal-x" id="authClose">✕</button>
+    <div class="orn" style="margin-bottom:12px" id="authTitle">MASUK AKUN</div>
+    <input type="text" class="m-inp" id="authEmail" placeholder="Alamat email" autocomplete="email">
+    <input type="password" class="m-inp" id="authPass" placeholder="Kata sandi (minimal 6 karakter)" autocomplete="current-password">
+    <div class="m-err" id="authErr"></div>
+    <button class="btn" id="authGo" style="width:100%">MASUK</button>
+    <div class="auth-switch" id="authSwitch">Belum punya akun? <a id="authToggle">Daftar di sini</a> — bonus 3 kredit gratis</div>
+    <p class="m-note">🔒 Data ramalan Anda tetap hanya di perangkat ini — server hanya menyimpan akun, kredit, dan catatan isi ulang. Tidak ada isi chat, mimpi, atau papan lahir yang dikirim.</p>
+  </div>
+</div>
+
+<div class="modal-layer" id="topupModal" style="display:none">
+  <div class="modal-card">
+    <button class="modal-x" id="topupClose">✕</button>
+    <div class="orn" style="margin-bottom:12px">ISI KREDIT</div>
+    <div class="pkg-row">
+      <div class="pkg sel" data-pkg="p10"><div class="p-amt">Rp 22.000</div><div class="p-cr">10 kredit</div></div>
+      <div class="pkg" data-pkg="p50"><div class="p-amt">Rp 100.000</div><div class="p-cr">50 kredit</div><div class="p-tag">✦ HEMAT +5</div></div>
+    </div>
+    <div class="qr-slot"><span class="qr-icon">▣</span>Pembayaran via QRIS — scan kode pembayaran yang ditampilkan setelah pengajuan.<br>1 kredit = 1 kali tafsir mimpi atau qian.</div>
+    <input type="text" class="m-inp" id="topupRef" placeholder="4 angka terakhir nomor transaksi" maxlength="12">
+    <div class="m-err" id="topupErr"></div>
+    <button class="btn" id="topupGo" style="width:100%">AJUKAN PEMBAYARAN</button>
+    <p class="m-note">※ Alur: ajukan di sini → bayar via QRIS → Suhu memeriksa → kredit masuk. Bila sudah membayar, cukup isi 4 angka terakhir nomor transaksi sebagai bukti.</p>
+  </div>
+</div>
+
+<div class="modal-layer" id="quotaModal" style="display:none">
+  <div class="modal-card">
+    <button class="modal-x" id="quotaClose">✕</button>
+    <div class="orn" style="margin-bottom:12px" id="quotaTitle">KUOTA HARIAN HABIS</div>
+    <div class="quota-big" id="quotaMsg"></div>
+    <div style="text-align:center;margin-top:14px" id="quotaBtns"></div>
+  </div>
+</div>
 
 <!-- ===== 开场仪式层 ===== -->
 <div class="intro-layer" id="intro" role="dialog" aria-label="Ritual pembukaan">
@@ -450,6 +531,9 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   </div>
   <div class="scroll-hint">▼ Gulir untuk memulai</div>
 </section>
+
+<!-- ===== 账号条 ===== -->
+<div class="acc-bar" id="accBar"></div>
 
 <!-- ===== 切换 ===== -->
 <nav class="tab-nav" role="tablist" aria-label="cara ramalan">
@@ -871,7 +955,9 @@ function renderDM(){
     if(symQDone&&DM.emo!==null&&DM.life!==null)genDream();
   }
 }
-function dmStart(){
+async function dmStart(){
+  var quota=await requireQuota('dream');
+  if(!quota.ok){showQuotaModal(quota.reason);return;}
   var err=$('#dmErr');err.textContent='';
   var t=$('#dmInp').value.trim();
   if(t.length<8){err.textContent='Ceritanya terlalu pendek — tulis beberapa kalimat lagi; makin detail mimpinya, makin tepat tafsirannya';return;}
@@ -1013,6 +1099,188 @@ function renderToday(){
     '</div>';
 }
 
+
+
+/* ================= 账号 & 积分（Supabase 直连，零依赖） ================= */
+var SB_URL='https://qdwasvwaotwcwxgaovxj.supabase.co';
+var SB_KEY='sb_publishable_3iR7xHtGbx0ij9yMNI4zCA_ECNkQdIz';
+var ACC={uid:null,email:'',credits:null,mode:'login'};
+
+function sbHeaders(tok){var h={'apikey':SB_KEY,'Content-Type':'application/json'};if(tok)h['Authorization']='Bearer '+tok;return h;}
+function accSaveTok(a,r){try{localStorage.setItem('xjid_sb',JSON.stringify({a:a,r:r}))}catch(e){}}
+function accLoadTok(){try{return JSON.parse(localStorage.getItem('xjid_sb')||'null')}catch(e){return null}}
+function accClearTok(){try{localStorage.removeItem('xjid_sb')}catch(e){}}
+
+async function sbRefresh(){
+  var t=accLoadTok();if(!t||!t.r)return null;
+  try{
+    var res=await fetch(SB_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:sbHeaders(),body:JSON.stringify({refresh_token:t.r})});
+    if(!res.ok)throw 0;
+    var j=await res.json();
+    accSaveTok(j.access_token,j.refresh_token);
+    return j.access_token;
+  }catch(e){accClearTok();return null;}
+}
+
+async function sbApi(path,method,body){
+  var t=accLoadTok(),tok=t?t.a:null;
+  var res=await fetch(SB_URL+path,{method:method||'GET',headers:sbHeaders(tok),body:body?JSON.stringify(body):undefined});
+  if(res.status===401&&t&&t.r){
+    tok=await sbRefresh();
+    if(tok)res=await fetch(SB_URL+path,{method:method||'GET',headers:sbHeaders(tok),body:body?JSON.stringify(body):undefined});
+  }
+  return res;
+}
+
+async function accLoadState(){
+  try{
+    var res=await sbApi('/auth/v1/user');
+    if(!res.ok)return false;
+    var u=await res.json();
+    ACC.uid=u.id;ACC.email=u.email||'';
+    var r2=await sbApi('/rest/v1/rpc/get_my_state','POST',{});
+    if(r2.ok){var st=await r2.json();ACC.credits=st.credits;}
+    accRender();
+    return true;
+  }catch(e){return false;}
+}
+
+function accRender(){
+  var bar=$('#accBar');if(!bar)return;
+  if(!ACC.uid){
+    bar.innerHTML='<button class="acc-btn" id="accLoginBtn">👤 Masuk / Daftar · bonus 3 kredit</button>';
+    var b=$('#accLoginBtn');if(b)b.addEventListener('click',function(){authOpen('login')});
+    return;
+  }
+  var em=ACC.email.split('@')[0]||'akun';
+  bar.innerHTML='<span class="acc-info">👤 '+em+' · <b>'+(ACC.credits==null?'…':ACC.credits)+' kredit</b></span>'+
+    '<button class="acc-mini" id="accTopupBtn">+ Isi Kredit</button>'+
+    '<button class="acc-mini" id="accLogoutBtn">Keluar</button>';
+  var t=$('#accTopupBtn');if(t)t.addEventListener('click',topupOpen);
+  var l=$('#accLogoutBtn');if(l)l.addEventListener('click',async function(){await sbApi('/auth/v1/logout','POST');accClearTok();ACC={uid:null,email:'',credits:null,mode:'login'};accRender();});
+}
+
+function authOpen(mode){
+  ACC.mode=mode||'login';
+  $('#authModal').style.display='flex';
+  $('#authErr').textContent='';
+  $('#authPass').value='';
+  if(ACC.mode==='login'){$('#authTitle').textContent='MASUK AKUN';$('#authGo').textContent='MASUK';
+    $('#authSwitch').innerHTML='Belum punya akun? <a id="authToggle">Daftar di sini</a> — bonus 3 kredit gratis';}
+  else{$('#authTitle').textContent='DAFTAR AKUN BARU';$('#authGo').textContent='DAFTAR';
+    $('#authSwitch').innerHTML='Sudah punya akun? <a id="authToggle">Masuk di sini</a>';}
+  var tg=$('#authToggle');if(tg)tg.addEventListener('click',function(){authOpen(ACC.mode==='login'?'signup':'login')});
+}
+
+async function authGo(){
+  var em=$('#authEmail').value.trim(),pw=$('#authPass').value,err=$('#authErr');
+  if(!em||em.indexOf('@')<0){err.textContent='Isi alamat email yang benar';return;}
+  if(!pw||pw.length<6){err.textContent='Kata sandi minimal 6 karakter';return;}
+  err.textContent='Memproses…';
+  try{
+    var path=ACC.mode==='login'?'/auth/v1/token?grant_type=password':'/auth/v1/signup';
+    var res=await sbApi(path,'POST',{email:em,password:pw});
+    var j=await res.json().catch(function(){return{}});
+    if(!res.ok){
+      err.textContent=(j.msg==='Invalid login credentials'&&ACC.mode==='login')?'Email atau kata sandi salah':
+        (j.msg==='User already registered')?'Email ini sudah terdaftar — silakan masuk':
+        (j.msg||j.error_description||j.message||'Gagal — coba lagi sebentar');
+      return;
+    }
+    if(j.access_token){
+      accSaveTok(j.access_token,j.refresh_token);
+      await accLoadState();
+      $('#authModal').style.display='none';
+      if(ACC.mode==='signup'&&ACC.credits!=null){
+        var q=$('#quotaModal');$('#quotaTitle').textContent='SELAMAT DATANG';
+        $('#quotaMsg').innerHTML='Akun berhasil dibuat — <b style="color:var(--gold-hi)">bonus 3 kredit</b> sudah masuk.<br>Setiap hari Anda tetap dapat 1 tafsir mimpi dan 1 qian gratis.';
+        $('#quotaBtns').innerHTML='<button class="btn" id="qOk">MULAI</button>';
+        q.style.display='flex';
+        var ok=$('#qOk');if(ok)ok.addEventListener('click',function(){q.style.display='none'});
+      }
+    }else{
+      err.textContent='Cek email Anda untuk konfirmasi, lalu masuk kembali.';
+    }
+  }catch(e){err.textContent='Koneksi bermasalah — coba lagi';}
+}
+
+var TOPUP_PKG='p10';
+function topupOpen(){
+  if(!ACC.uid){authOpen('login');return;}
+  $('#topupModal').style.display='flex';
+  $('#topupErr').textContent='';$('#topupRef').value='';
+  document.querySelectorAll('.pkg').forEach(function(p){
+    p.classList.toggle('sel',p.getAttribute('data-pkg')===TOPUP_PKG);
+    p.onclick=function(){TOPUP_PKG=p.getAttribute('data-pkg');
+      document.querySelectorAll('.pkg').forEach(function(x){x.classList.toggle('sel',x===p)});};
+  });
+}
+
+async function topupGo(){
+  var ref=$('#topupRef').value.trim(),err=$('#topupErr');
+  if(ref.length<4){err.textContent='Isi minimal 4 angka terakhir nomor transaksi';return;}
+  err.textContent='Mengirim pengajuan…';
+  var idr=TOPUP_PKG==='p50'?100000:22000,cr=TOPUP_PKG==='p50'?50:10;
+  try{
+    var res=await sbApi('/rest/v1/topup_requests','POST',{user_id:ACC.uid,package_id:TOPUP_PKG,idr_amount:idr,credits:cr,ref_code:ref,});
+    if(!res.ok){err.textContent='Gagal mengirim — coba lagi sebentar';return;}
+    $('#topupErr').textContent='';
+    err.className='m-err m-ok';err.textContent='✦ Pengajuan terkirim — setelah pembayaran QRIS diverifikasi Suhu, kredit otomatis masuk. Simpan bukti pembayaran Anda.';
+    setTimeout(function(){err.className='m-err';$('#topupModal').style.display='none';},4000);
+  }catch(e){err.textContent='Koneksi bermasalah — coba lagi';}
+}
+
+function guestQuota(feature){
+  var k='xjid_guest',d=null;
+  try{d=JSON.parse(localStorage.getItem(k)||'null')}catch(e){}
+  var today=new Date().toISOString().slice(0,10);
+  if(!d||d.date!==today)d={date:today,dream:0,qian:0};
+  if((d[feature]||0)>=1){try{localStorage.setItem(k,JSON.stringify(d))}catch(e){}return{ok:false,reason:'guest_limit'};}
+  d[feature]=(d[feature]||0)+1;
+  try{localStorage.setItem(k,JSON.stringify(d))}catch(e){}
+  return{ok:true};
+}
+
+async function requireQuota(feature){
+  if(!ACC.uid)return guestQuota(feature);
+  try{
+    var res=await sbApi('/rest/v1/rpc/feature_use','POST',{p_feature:feature});
+    if(!res.ok)return{ok:false,reason:'error'};
+    var j=await res.json();
+    if(j&&j.ok){ACC.credits=j.balance;accRender();return{ok:true,used:j.used};}
+    return{ok:false,reason:'no_credits',balance:j?j.balance:0};
+  }catch(e){return{ok:false,reason:'error'};}
+}
+
+function showQuotaModal(reason){
+  var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
+  if(reason==='guest_limit'){
+    title.textContent='KUOTA GRATIS HARIAN TERPAKAI';
+    msg.innerHTML='Tafsir mimpi dan qian masing-masing <b>1 kali gratis setiap hari</b>.<br>Daftar akun sekarang — gratis, dan tetap dapat kuota harian + bonus 3 kredit.';
+    btns.innerHTML='<button class="btn" id="qGoAuth">DAFTAR / MASUK</button>';
+    var g=$('#qGoAuth');if(g)g.addEventListener('click',function(){q.style.display='none';authOpen('signup')});
+  }else{
+    title.textContent='KREDIT HABIS';
+    msg.innerHTML='Kuota gratis hari ini sudah terpakai dan kredit Anda kurang.<br>Isi kredit untuk lanjut: <b style="color:var(--gold-hi)">Rp 22.000 = 10 kredit</b> · <b style="color:var(--gold-hi)">Rp 100.000 = 50 kredit</b>';
+    btns.innerHTML='<button class="btn" id="qGoTopup">ISI KREDIT</button>';
+    var t=$('#qGoTopup');if(t)t.addEventListener('click',function(){q.style.display='none';topupOpen()});
+  }
+  q.style.display='flex';
+}
+
+function initAuth(){
+  ['authClose','authGo','topupClose','topupGo','quotaClose'].forEach(function(id){
+    var el=$('#'+id);if(!el)return;
+    el.addEventListener('click',id==='authGo'?authGo:(id==='topupGo'?topupGo:function(){
+      $('#'+id.replace('Close','Modal')).style.display='none';
+    }));
+  });
+  $('#authEmail').addEventListener('keydown',function(e){if(e.key==='Enter')$('#authPass').focus()});
+  $('#authPass').addEventListener('keydown',function(e){if(e.key==='Enter')authGo()});
+  $('#topupRef').addEventListener('keydown',function(e){if(e.key==='Enter')topupGo()});
+  accRender();
+  accLoadState();
+}
 
 /* ================= 求签（36 qian · 诗体仿古自撰，融佛法因果之理） ================= */
 var QIAN=[
@@ -1224,7 +1492,9 @@ function qianCat(a){
   }
   return null;
 }
-function qianGo(){
+async function qianGo(){
+  var quota=await requireQuota('qian');
+  if(!quota.ok){showQuotaModal(quota.reason);return;}
   var ask=$('#qianAsk').value.trim();
   var tube=$('#qianTube'),btn=$('#qianBtn');
   btn.disabled=true;btn.style.opacity=.45;
@@ -1275,17 +1545,19 @@ function initDream(){
 
 /* ================= Tanya Suhu ================= */
 var AIP={
-  gemini:{n:'Google Gemini · gratis (rekomendasi)',ep:'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',m:'gemini-2.0-flash',web:false,
+  gemini:{n:'Google Gemini · gratis (rekomendasi)',ep:'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',m:'gemini-3.8-flash',web:false,
     g:'Paketnya <b>gratis</b> — cukup punya akun Google (Gmail atau Android). Tiga langkah:<br>① <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Klik untuk membuka halaman API Key Google AI Studio</a> — login dengan akun Google Anda<br>② Klik <b>「Create API key」</b> → kunci langsung dibuat<br>③ <b>Salin kuncinya</b>, kembali ke halaman ini, tempel di kolom Kunci di atas → klik「Simpan」→ selesai<br>Kalau kunci terlupakan: buat ulang kapan saja di halaman yang sama.'},
   groq:{n:'Groq · gratis & super cepat',ep:'https://api.groq.com/openai/v1/chat/completions',m:'llama-3.3-70b-versatile',web:false,
     g:'<a href="https://console.groq.com/keys" target="_blank" rel="noopener">Klik untuk membuka Groq Console</a> — daftar gratis dengan email, lalu di halaman「API Keys」klik「Create API Key」dan tempel kuncinya di atas. Kecepatannya juara, dan gratis.'},
-  openrouter:{n:'OpenRouter · banyak model gratis',ep:'https://openrouter.ai/api/v1/chat/completions',m:'google/gemini-2.0-flash-exp:free',web:false,
+  openrouter:{n:'OpenRouter · banyak model gratis',ep:'https://openrouter.ai/api/v1/chat/completions',m:'google/gemma-4-31b-it:free',web:false,
     g:'<a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener">Klik untuk membuka OpenRouter</a> — daftar dengan email, buat kunci di halaman「Keys」, tempel di atas. Pilih model yang berakhiran「:free」supaya gratis.'},
   custom:{n:'API standar lain',ep:'',m:'',web:false,
     g:'Isi alamat API apa pun yang berakhiran /chat/completions, nama modelnya, dan kuncinya — misalnya layanan lokal atau penyedia lain.'}
 };
 var AIC={p:'gemini',ep:AIP.gemini.ep,m:AIP.gemini.m,k:'',web:false};
 try{var _asv=JSON.parse(localStorage.getItem('xjid_ai2')||'null');if(_asv&&_asv.p&&_asv.k)AIC=_asv;}catch(e){}
+if(AIC.p==='gemini'&&AIC.m==='gemini-2.0-flash'){AIC.m='gemini-3.8-flash';try{localStorage.setItem('xjid_ai2',JSON.stringify(AIC))}catch(e){}}
+if(AIC.p==='openrouter'&&AIC.m==='google/gemini-2.0-flash-exp:free'){AIC.m='google/gemma-4-31b-it:free';try{localStorage.setItem('xjid_ai2',JSON.stringify(AIC))}catch(e){}}
 var AIH=[];
 var AISUGG=['Semalam mimpi ular, apa artinya?','Ramalan rezeki 6 bulan ke depan','Karier apa yang cocok untuk saya?','Bagaimana agar mimpi bisa diingat dengan jelas?'];
 function aiEsc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
@@ -1388,7 +1660,7 @@ async function aiSend(){
     var res=await fetch(AIC.ep,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+AIC.k},body:JSON.stringify(body),signal:AIabort.signal});
     if(!res.ok){
       var et='';try{et=await res.text()}catch(e){}
-      var msg=(res.status===401)?'Kunci tidak valid atau kedaluwarsa (401) — periksa di「⚙ Atur Koneksi」':((res.status===429)?'Permintaan terlalu sering atau kuota gratis habis (429) — coba lagi sebentar':'Server menjawab '+res.status+': '+et.substring(0,150));
+      var msg=(res.status===401)?'Kunci tidak valid atau kedaluwarsa (401) — periksa di「⚙ Atur Koneksi」':((res.status===429)?'Permintaan terlalu sering atau kuota gratis habis (429) — coba lagi sebentar':((res.status===404&&/no longer available|not found/i.test(et))?'Model AI ini sudah dimatikan penyedianya — buka「⚙ Atur Koneksi」, ganti「Nama model」menjadi model terbaru (mis. gemini-3.8-flash), lalu Simpan':'Server menjawab '+res.status+': '+et.substring(0,150)));
       err.textContent=msg;
       bub.innerHTML='<span style="color:var(--red)">✕ 此问未成——'+aiEsc(msg)+'</span>';
       aiEnd();
@@ -1506,7 +1778,7 @@ function initAi(){
   });
 }
 /* ================= 初始化 ================= */
-initDream();initAi();initQian();renderToday();
+initAuth();initDream();initAi();initQian();renderToday();
 </script>
 </body>
 </html>
