@@ -403,6 +403,34 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 @keyframes qianShake{0%,100%{transform:rotate(0)}8%{transform:rotate(-7deg) translateX(-3px)}18%{transform:rotate(6deg) translateX(3px)}28%{transform:rotate(-8deg) translateX(-4px)}40%{transform:rotate(7deg) translateX(4px)}52%{transform:rotate(-6deg) translateX(-3px)}64%{transform:rotate(5deg) translateX(2px)}76%{transform:rotate(-4deg) translateX(-2px)}88%{transform:rotate(3deg) translateX(1px)}}
 .qian-poem{font-family:var(--kai);font-size:13px;color:rgba(232,221,192,.55);line-height:2.1;letter-spacing:2px;margin:10px 0 2px}
 .qian-pi{font-size:15.5px;color:#e8ddc0;font-style:italic;line-height:1.95;margin:12px 0 8px}
+.qian-themes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:2px 0 16px}
+.qth{padding:8px 15px;background:rgba(30,20,54,.55);border:1px solid rgba(217,180,91,.35);border-radius:999px;
+  color:#cdc4de;font-size:12.5px;cursor:pointer;transition:all .25s;font-family:var(--kai);letter-spacing:.5px;line-height:1.4}
+.qth:hover{color:var(--gold-hi);border-color:var(--gold)}
+.qth.sel{border-color:var(--gold-hi);color:var(--gold-hi);background:rgba(217,180,91,.1);box-shadow:0 0 12px rgba(217,180,91,.18)}
+
+/* ========== Riwayat（解梦/求签历史 · 本地保存） ========== */
+.hist-box{max-width:620px;margin:16px auto 0}
+.hist-toggle{width:100%;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;padding:11px 18px;
+  background:rgba(30,20,54,.4);border:1px solid rgba(217,180,91,.3);border-radius:12px;color:#cdc4de;
+  font-size:13px;cursor:pointer;font-family:var(--kai);letter-spacing:1px;transition:all .25s}
+.hist-toggle:hover{border-color:var(--gold);color:var(--gold-hi)}
+.hist-toggle i{font-style:normal;font-size:11px;transition:transform .25s;color:var(--text2)}
+.hist-box.open .hist-toggle i{transform:rotate(180deg)}
+.hist-list{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+.hist-item{border:1px solid rgba(217,180,91,.22);border-radius:12px;background:rgba(11,6,20,.4);overflow:hidden}
+.hist-h{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;transition:background .25s}
+.hist-h:hover{background:rgba(217,180,91,.05)}
+.hist-h .h-ic{font-size:16px;flex:none}
+.hist-h .h-main{flex:1;min-width:0}
+.hist-h .h-t{font-size:13px;color:#e6d9b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hist-h .h-w{font-size:11px;color:var(--text2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hist-item.open .hist-h{border-bottom:1px dashed rgba(217,180,91,.18)}
+.hist-b{display:none;padding:4px 14px 14px}
+.hist-item.open .hist-b{display:block;animation:fadein .4s ease}
+.hist-clear{background:none;border:1px solid rgba(217,180,91,.3);border-radius:999px;color:#cdc4de;font-size:12px;
+  padding:7px 18px;cursor:pointer;letter-spacing:.5px;transition:all .25s}
+.hist-clear:hover{color:var(--red);border-color:var(--red)}
 
 
 /* ========== 账号 & 积分 & 充值 ========== */
@@ -553,13 +581,14 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 
 Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terjadi, apa yang Anda lakukan, terasa seperti apa"></textarea>
       <div class="dm-sub">Lambang mimpi yang dikenali: air · ular · buaya · kotoran · gigi copot · terbang · jatuh · dikejar · ujian · orang meninggal · menikah · hamil · uang · api · ikan · rumah · tersesat · hantu · naga · gunung · laba-laba · kucing & anjing · cermin · rambut……
-        <br>🔒 Mimpi ditafsir hanya di komputer ini — tanpa internet, tanpa unggah, tanpa disimpan</div>
+        <br>🔒 Mimpi ditafsir hanya di komputer ini — tanpa internet, tanpa unggah; riwayat tafsir tersimpan di komputer sendiri dan bisa dihapus kapan saja</div>
       <div style="text-align:center;margin-top:10px"><button class="btn" id="dmBtn">TAFSIRKAN MIMPIKU</button></div>
       <div class="bazi-err" id="dmErr"></div>
       <div class="dm-echo" id="dmEcho" style="display:none"></div>
       <div class="dm-resp" id="dmMaster"></div>
       <div class="qa-flow" id="dmFlow"></div>
       <div id="dmResult"></div>
+      <div id="dmHist"></div>
     </div>
   </div>
 </section>
@@ -569,13 +598,23 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
   <div class="card">
     <div class="orn" style="margin-bottom:12px">RUANG QIU QIAN</div>
     <div class="qian-wrap">
-      <p class="qian-intro">Tutup mata sejenak, pikirkan satu hal yang ingin ditanyakan — lalu goyang tong qian-nya.<br><span style="font-size:12px;color:var(--text2)">Hal yang ditanyakan boleh dituliskan di bawah (boleh juga dikosongkan) — qian yang keluar akan dibaca menurut hal Anda. Satu hal cukup sekali bertanya — ikhlas, tak perlu digoyang berulang kali.</span></p>
-      <input type="text" class="qian-ask" id="qianAsk" maxlength="60" placeholder="Hal yang ingin ditanyakan (boleh dikosongkan)">
+      <p class="qian-intro">Tutup mata sejenak, pikirkan satu hal yang ingin ditanyakan — pilih topiknya di bawah, lalu goyang tong qian-nya.<br><span style="font-size:12px;color:var(--text2)">Topik bisa dipilih, hal spesifiknya boleh dituliskan di bawahnya (boleh juga dikosongkan) — qian yang keluar akan dibaca menurut hal Anda. Satu hal cukup sekali bertanya — ikhlas, tak perlu digoyang berulang kali.</span></p>
+      <div class="qian-themes" id="qianThemes">
+        <button class="qth sel" data-i="-1" type="button">🪙 Bebas · hal apa saja</button>
+        <button class="qth" data-i="3" type="button">💰 Rezeki & keuangan</button>
+        <button class="qth" data-i="0" type="button">💼 Usaha & karier</button>
+        <button class="qth" data-i="1" type="button">❤️ Cinta & jodoh</button>
+        <button class="qth" data-i="2" type="button">🌿 Kesehatan</button>
+        <button class="qth" data-i="4" type="button">📚 Belajar & ujian</button>
+        <button class="qth" data-i="5" type="button">✈️ Perjalanan & pindah</button>
+      </div>
+      <input type="text" class="qian-ask" id="qianAsk" maxlength="60" placeholder="Hal yang ingin ditanyakan — boleh dikosongkan">
       <div class="qian-stage">
         <div class="qian-tube" id="qianTube" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
       <div style="text-align:center"><button class="btn" id="qianBtn">GOYANG TONG QIAN</button></div>
       <div id="qianResult"></div>
+      <div id="qianHist"></div>
     </div>
   </div>
 </section>
@@ -626,7 +665,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <div class="knowledge">
   <div class="card kcard">
     <h3>🌙 Mimpi · Tafsir Zhou Gong</h3>
-    <p class="paragraph">Mimpi adalah kata-kata hati yang belum selesai diucap. Di sini tafsir klasik Tionghoa「Zhou Gong Jie Meng」yang di tanah Nusantara berpadu dengan Primbon Jawa, dipasangkan dengan sudut pandang psikologi — seperti bercermin: yang terpantul adalah Anda sendiri. Mimpi ditafsir di komputer ini, tidak disimpan.</p>
+    <p class="paragraph">Mimpi adalah kata-kata hati yang belum selesai diucap. Di sini tafsir klasik Tionghoa「Zhou Gong Jie Meng」yang di tanah Nusantara berpadu dengan Primbon Jawa, dipasangkan dengan sudut pandang psikologi — seperti bercermin: yang terpantul adalah Anda sendiri. Mimpi ditafsir di komputer ini; riwayat tafsir tersimpan sendiri di komputer dan bisa dihapus kapan saja.</p>
   </div>
   <div class="card kcard">
     <h3>🪷 Qian · Tradisi Kelenteng</h3>
@@ -655,6 +694,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 var $=function(s){return document.querySelector(s)};
 var sleep=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
 var rand=function(n){return Math.floor(Math.random()*n)};
+var esc=function(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
 
 /* ================= 星空 ================= */
 (function(){
@@ -969,46 +1009,48 @@ async function dmStart(){
   else{$('#dmEcho').style.display='none';renderDM();}
 }
 function dreamLuckCls(l){return l==='Sangat Baik'?'f0':(l==='Berkah'?'f1':(l==='Biasa'?'f2':'f3'));}
-function dreamType(){
-  var lucks=DM.ids.slice(0,3).map(function(i){return SYM[i].v[DM.vars[i]].luck});
+function dreamType(st){
+  st=st||DM;
+  var lucks=st.ids.slice(0,3).map(function(i){return SYM[i].v[st.vars[i]].luck});
   var hasJ=lucks.some(function(l){return l==='Berkah'||l==='Sangat Baik'});
   var hasX=lucks.some(function(l){return l==='Hati-hati'});
-  var emoNeg=DM.emo===1||DM.emo===2||DM.emo===4;
-  var emoPos=DM.emo===0||DM.emo===3;
+  var emoNeg=st.emo===1||st.emo===2||st.emo===4;
+  var emoPos=st.emo===0||st.emo===3;
   if(hasX&&emoNeg)return{t:'Mimpi Peringatan',cls:'f3',d:'Mimpi ini surat kilat dari bawah sadar — lambang dan perasaan berkata hal yang sama: ada satu urusan yang tak bisa lagi ditunda. Kabar baiknya, terbangun berarti setengah jalan sudah lepas.'};
   if(hasJ&&emoPos)return{t:'Mimpi Kabar Baik',cls:'f0',d:'Lambang baik dan hati tenang — mimpi kelas atas: bawah sadar sedang memutar pratinjau masa depan yang lancar. Biarkan kabar baiknya datang bertahap; tak perlu diperbesar-besarkan — berkah makin awet bila dirawat diam-diam.'};
   if(hasJ&&emoNeg)return{t:'Mimpi Menyiapkan Hati',cls:'f1',d:'Lambangnya baik tapi hati cemas — kabar baik di depan mata, hanya Anda belum siap memercayainya. Mimpi menunjukkan rasa takut agar hati ditenangkan dulu sebelum menyambut perubahan.'};
   if(hasX&&emoPos)return{t:'Mimpi Bahagia dengan Catatan',cls:'f2',d:'Hati lega tapi ada duri di lambang — besar aman, kecilnya berkarang. Bawa suasana baik itu, sambil waspada satu hal kecil yang ditunjukkan mimpi.'};
-  if(DM.emo===5)return{t:'Mimpi Berpikir Berlebih',cls:'f2',d:'Perasaan belum menetap membuat mimpi tak jernih — ini bukan pertanda, melainkan permintaan tolong karena pengurangan beban gagal. Kurangi dulu, mimpinya jernih sendiri.'};
+  if(st.emo===5)return{t:'Mimpi Berpikir Berlebih',cls:'f2',d:'Perasaan belum menetap membuat mimpi tak jernih — ini bukan pertanda, melainkan permintaan tolong karena pengurangan beban gagal. Kurangi dulu, mimpinya jernih sendiri.'};
   return{t:'Mimpi Refleksi',cls:'f2',d:'Lambang datar dan hati tenang — tanpa suka tanpa duka; bawah sadar sedang meninjau ulang hari-hari Anda. Tak perlu digali dalam — tidur nyenyak adalah jawabannya.'};
 }
-function genDream(){
+function dreamBodyHTML(st){
+  st=st||DM;
   var outs=[];var secN=0;
   function SN(){return '123456'.charAt(secN++)+'. ';};
-  var qIds=DM.ids.slice(0,3);
-  var dt=dreamType();
-  var lucks=qIds.map(function(i){return SYM[i].v[DM.vars[i]].luck});
+  var qIds=st.ids.slice(0,3);
+  var dt=dreamType(st);
+  var lucks=qIds.map(function(i){return SYM[i].v[st.vars[i]].luck});
   var worst=lucks.indexOf('Hati-hati')>=0?'Hati-hati':(lucks.indexOf('Berkah')>=0||lucks.indexOf('Sangat Baik')>=0?'Berkah':'Biasa');
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Ringkasan Mimpi<i>mimpi tipe apa ini</i></div>'+
     '<p><span class="fate '+dt.cls+'">'+dt.t+'</span>　'+dt.d+' Menurut seluruh lambang, nilai keseluruhan mimpi ini: <span class="fate '+dreamLuckCls(worst)+'">'+worst+'</span>.</p>'+
-    '<p>Lambang utama dalam mimpi: <b>'+qIds.map(function(i){return SYM[i].ic+'「'+SYM[i].k+' — '+SYM[i].v[DM.vars[i]].t+'」'}).join(', ')+'</b>; perasaan saat terbangun: <b>「'+EMO[DM.emo].t+'」</b>. Lambang adalah tulang mimpinya, perasaan adalah jantungnya — digabung, barulah mimpi yang utuh.</p></div>');
+    '<p>Lambang utama dalam mimpi: <b>'+qIds.map(function(i){return SYM[i].ic+'「'+SYM[i].k+' — '+SYM[i].v[st.vars[i]].t+'」'}).join(', ')+'</b>; perasaan saat terbangun: <b>「'+EMO[st.emo].t+'」</b>. Lambang adalah tulang mimpinya, perasaan adalah jantungnya — digabung, barulah mimpi yang utuh.</p></div>');
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Tafsir Tiap Lambang<i>satu lambang satu penjelasan</i></div>'+
     qIds.map(function(i){
-      var s=SYM[i],v=s.v[DM.vars[i]];
+      var s=SYM[i],v=s.v[st.vars[i]];
       return '<p><b>'+s.ic+' '+s.k+' ('+v.t+'):</b></p>'+
         '<p style="padding-left:14px">〔Kata orang tua〕'+v.trad+'</p>'+
         '<p style="padding-left:14px">〔Sudut pandang psikologi〕'+v.psy+'</p>'+
         '<p style="padding-left:14px"><span class="fate '+dreamLuckCls(v.luck)+'">'+v.luck+'</span></p>';
     }).join('')+'</div>');
-  var emoObj=EMO[DM.emo];
+  var emoObj=EMO[st.emo];
   var domOrgan=qIds.map(function(i){return SYM[i].organ})[0]||'Jantung';
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Perasaan dan Tubuh<i>emosi dan fisik</i></div>'+
     '<p>Perasaan saat terbangun「<b>'+emoObj.t+'」</b>: '+emoObj.psy+'</p>'+
     '<p>Menurut pengobatan tradisional Tiongkok, lima organ mengurus lima emosi: mimpi ini paling berhubungan dengan <b>'+domOrgan+'</b>, sedangkan perasaan Anda berhubungan dengan <b>'+emoObj.organ+'</b>. Bila mimpi semacam ini sering muncul akhir-akhir ini, itu tubuh mengingatkan lewat mimpi — kualitas tidur sedang membayar tagihan tekanan siang hari.</p></div>');
   var adv=[];
-  qIds.forEach(function(i){adv.push(SYM[i].v[DM.vars[i]].adv)});
+  qIds.forEach(function(i){adv.push(SYM[i].v[st.vars[i]].adv)});
   adv.push(emoObj.adv);
-  adv.push(LIFE[DM.life].adv);
+  adv.push(LIFE[st.life].adv);
   var seen={};adv=adv.filter(function(a){if(seen[a])return false;seen[a]=1;return true});
   if(adv.length<5)adv.push('Mimpi adalah penasihat pribadi yang gratis — catat mimpi seminggu sekali; tiga bulan kemudian Anda akan paham bahasa diri sendiri.');
   if(adv.length<5)adv.push('Sisihkan sedikit rezeki untuk dibagikan — dalam ajaran karma, memberi adalah menabur benih berkah.');
@@ -1016,9 +1058,13 @@ function genDream(){
   adv=adv.slice(0,5);
   outs.push('<div class="rsec"><div class="rt">'+SN()+'Saran untuk Anda<i>langsung bisa dijalankan</i></div>'+
     adv.map(function(a){return '<div class="rli">'+a+'</div>'}).join('')+'</div>');
+  return outs.join('');
+}
+function genDream(){
+  var st={ids:DM.ids.slice(0,3),vars:DM.vars,emo:DM.emo,life:DM.life};
   var html='<div class="card bazi-out" style="animation:fadein .7s ease">'+
     '<div class="b-head"><span class="b-title">Laporan Mimpi · Tafsir Lengkap</span></div>'+
-    outs.join('')+
+    dreamBodyHTML(st)+
     '<p class="bazi-note" style="text-align:left">※ Tafsir lambang mimpi diambil dari buku mimpi klasik Tionghoa「Zhou Gong Jie Meng」yang berpadu dengan Primbon Jawa serta psikologi modern — hiburan budaya untuk mengenali diri, bukan rujukan agama, medis, atau dasar keputusan. Mimpi lahir dari hati — hati yang ditenangkan dengan perbuatan baik, mimpinya pun jernih. Yang dipikirkan siang hari hadir dalam mimpi malam — mimpi lahir dari hati, dan bisa berubah mengikuti hati.</p>'+
     '<div class="gactions"><button class="btn ghost" id="dmAgain">↺ TAFSIR MIMPI LAIN</button></div></div>';
   $('#dmResult').innerHTML=html;
@@ -1029,6 +1075,8 @@ function genDream(){
     $('#dmEcho').style.display='none';$('#dmMaster').textContent='';
     $('#dmInp').value='';
   });
+  histAdd({k:'dream',ts:Date.now(),txt:DM.text.slice(0,80),ids:st.ids,vars:st.vars,emo:st.emo,life:st.life});
+  renderHist('dream');
   setTimeout(function(){$('#dmResult').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
 }
 
@@ -1077,6 +1125,30 @@ var TODAY_TIP=[
   'Air mengalir ke tempat rendah lalu menjadi laut — rendah hati justru mengumpulkan berkah.',
   'Embun menyiram diam-diam sebelum fajar — kebaikan yang tak diberitakan, berkahnya paling awet.'
 ];
+/* ---- 农历数据表（kalender Tionghoa）· 由 zhdate 库生成，覆盖 2019-02-05 ~ 2039-01-23 ----
+   每项 [春节日序(相对2000-01-01), 年份码]；年份码：bit4-15=1~12月大小(1为30天)，bit0-3=闰月(0无)，bit16=闰月大 */
+var LUNAR_TAB=[[6975,43312],[7329,31060],[7713,27296],[8067,44368],[8422,23378],[8806,19296],[9160,42726],[9544,42208],[9898,53856],[10252,60005],[10636,54576],[10991,23200],[11345,30371],[11729,38608],[12084,19195],[12468,19152],[12822,42192],[13176,118966],[13560,53840],[13914,54560]];
+var LUNAR_Y0=2019;
+function solarToLunar(y,m,d){
+  var t=Math.round((Date.UTC(y,m-1,d)-Date.UTC(2000,0,1))/86400000);
+  var i=LUNAR_TAB.length-1;
+  while(i>0&&LUNAR_TAB[i][0]>t)i--;
+  if(LUNAR_TAB[i][0]>t)return null;
+  var code=LUNAR_TAB[i][1],ly=LUNAR_Y0+i;
+  var dp=t-LUNAR_TAB[i][0];
+  var md=[];
+  for(var mm=1;mm<=12;mm++)md.push(((code>>(16-mm))&1)?30:29);
+  var lp=code&0xf;
+  if(lp)md.splice(lp,0,(code>>16)?30:29);
+  var tot=0;for(var q=0;q<md.length;q++)tot+=md[q];
+  if(dp+1>tot)return null;
+  var cum=0,mi=0,dd=0;
+  for(var p=0;p<md.length;p++){cum+=md[p];if(dp+1<=cum){mi=p+1;dd=md[p]-(cum-dp)+1;break;}}
+  var lm,isl=false;
+  if(lp===0||mi<=lp)lm=mi;else lm=mi-1;
+  if(lp!==0&&mi===lp+1)isl=true;
+  return {y:ly,m:lm,d:dd,leap:isl};
+}
 function renderToday(){
   var box=$('#todayCard');if(!box)return;
   var now=new Date();
@@ -1087,12 +1159,22 @@ function renderToday(){
   var chong=(zb+6)%12;
   var LUCKDIR={0:'Utara',4:'Utara',8:'Utara',5:'Barat',9:'Barat',1:'Barat',11:'Timur',3:'Timur',7:'Timur',2:'Selatan',6:'Selatan',10:'Selatan'};
   var SHADIR={0:'Selatan',4:'Selatan',8:'Selatan',5:'Timur',9:'Timur',1:'Timur',11:'Barat',3:'Barat',7:'Barat',2:'Utara',6:'Utara',10:'Utara'};
-  var head='Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y+' · hari shio '+SXN[zb]+' · kalender Tionghoa';
+  var lu=solarToLunar(y,m,d);
+  var luStr=lu?('Bulan '+(lu.leap?lu.m+' (kedua), hari ':lu.m+', hari ')+lu.d):'';
+  var head='Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y+(luStr?' · kalender Tionghoa: '+luStr:'')+' · hari shio '+SXN[zb];
+  var luckHtml='';
+  if(lu){
+    var HETU=[['3','8'],['2','7'],['5','10'],['4','9'],['1','6']];
+    var el=Math.floor(gs/2);
+    var extra=String(((lu.d-1)%9)+1);
+    luckHtml='<div class="today-item">Angka baik hari ini <b>'+HETU[el][0]+' · '+HETU[el][1]+' · '+extra+'</b></div>';
+  }
   box.innerHTML='<div class="today-card"><div class="today-head"><span class="today-t">✦ Kalendar Hari Ini</span><span class="today-date">'+head+'</span></div>'+
     '<div class="today-body">'+
     '<div class="today-item">Arah baik <b>'+LUCKDIR[zb]+'</b></div>'+
     '<div class="today-item">Shio yang tabrakan <b>'+SXN[chong]+'</b></div>'+
     '<div class="today-item">Arah yang dihindari <b>'+SHADIR[zb]+'</b></div>'+
+    luckHtml+
     '</div>'+
     '<div class="today-yi"><b>Yang baik:</b> '+TODAY_YI[zb].join(' · ')+'<br><b>Hindari:</b> '+TODAY_JI[zb].join(' · ')+'</div>'+
     '<div class="today-txt">'+TODAY_TIP[gs]+' <b>Menabur kebaikan hari ini berarti menabur berkah esok — karma tak pernah keliru hitung.</b></div>'+
@@ -1492,6 +1574,23 @@ function qianCat(a){
   }
   return null;
 }
+var QTHEME=-1;
+function qianBodyHTML(q,cat){
+  var lv=QLV[q.lv];
+  var html='<div class="b-head"><span class="b-title">Qian ke-'+q.no+' · '+q.ti+'</span><span class="b-sub">tong qian</span></div>'+
+    '<div style="text-align:center;margin:4px 0 2px"><span class="fate '+lv[1]+'" style="font-size:15px;padding:5px 20px">'+lv[0]+'</span></div>'+
+    '<p class="qian-pi">'+q.pi+'</p>'+
+    '<p class="qian-poem">'+q.poem+'</p>'+
+    '<div class="rsec"><div class="rt">Jie · Penjelasan</div><p>'+q.jie+'</p></div>'+
+    '<div class="rsec"><div class="rt">Yang dianjurkan & dihindari</div>'+
+    '<p><b style="color:var(--gold-hi)">Yang baik:</b> '+q.yi.join(' · ')+'</p>'+
+    '<p><b style="color:var(--red)">Hindari:</b> '+q.ji.join(' · ')+'</p></div>';
+  if(cat){
+    html+='<div class="rsec"><div class="rt">Untuk hal yang Anda tanyakan · '+cat.t+'</div><p>'+cat.g[q.lv]+'</p></div>';
+  }
+  html+='<div class="rsec"><div class="rt">Pesan Suhu</div><p>'+q.tip+'</p></div>';
+  return html;
+}
 async function qianGo(){
   var quota=await requireQuota('qian');
   if(!quota.ok){showQuotaModal(quota.reason);return;}
@@ -1508,33 +1607,49 @@ async function qianGo(){
   },1600);
 }
 function renderQian(q,ask){
-  var lv=QLV[q.lv],cat=qianCat(ask);
+  var cat=(QTHEME>=0)?QCAT[QTHEME]:qianCat(ask);
   var html='<div class="card bazi-out" style="animation:fadein .7s ease">'+
-    '<div class="b-head"><span class="b-title">Qian ke-'+q.no+' · '+q.ti+'</span><span class="b-sub">tong qian</span></div>'+
-    '<div style="text-align:center;margin:4px 0 2px"><span class="fate '+lv[1]+'" style="font-size:15px;padding:5px 20px">'+lv[0]+'</span></div>'+
-    '<p class="qian-pi">'+q.pi+'</p>'+
-    '<p class="qian-poem">'+q.poem+'</p>'+
-    '<div class="rsec"><div class="rt">Jie · Penjelasan</div><p>'+q.jie+'</p></div>'+
-    '<div class="rsec"><div class="rt">Yang dianjurkan & dihindari</div>'+
-    '<p><b style="color:var(--gold-hi)">Yang baik:</b> '+q.yi.join(' · ')+'</p>'+
-    '<p><b style="color:var(--red)">Hindari:</b> '+q.ji.join(' · ')+'</p></div>';
-  if(cat){
-    html+='<div class="rsec"><div class="rt">Untuk hal yang Anda tanyakan</div><p>'+cat.g[q.lv]+'</p></div>';
-  }
-  html+='<div class="rsec"><div class="rt">Pesan Suhu</div><p>'+q.tip+'</p></div>'+
+    qianBodyHTML(q,cat)+
     '<p class="bazi-note" style="text-align:left">※ Puisi qian digubah meniru gaya klasik, disertai penjelasan karma — hiburan budaya untuk menenangkan hati dan mengingatkan pada perbuatan baik, bukan rujukan agama atau dasar keputusan. Hati tenang, qian baru terbaca.</p>'+
-    '<div class="gactions"><button class="btn ghost" id="qianAgain">↺ GOYANG LAGI</button></div></div>';
+    '<div class="gactions"><button class="btn" id="qianSuhu">✦ TANYA SUHU SOAL QIAN INI</button><button class="btn ghost" id="qianAgain">↺ GOYANG LAGI</button></div></div>';
   $('#qianResult').innerHTML=html;
   var ag=$('#qianAgain');
   if(ag)ag.addEventListener('click',function(){
     $('#qianResult').innerHTML='';$('#qianAsk').value='';
   });
+  var sb=$('#qianSuhu');
+  if(sb)sb.addEventListener('click',function(){qianToSuhu(q,cat,ask)});
+  histAdd({k:'qian',ts:Date.now(),no:q.no,ask:ask,th:QTHEME});
+  renderHist('qian');
   setTimeout(function(){$('#qianResult').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
+}
+function gotoTab(id){
+  document.querySelectorAll('.tab-btn').forEach(function(b){
+    var on=b.getAttribute('data-tab')===id;
+    b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');
+  });
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.toggle('active',p.id==='panel-'+id)});
+}
+function qianToSuhu(q,cat,ask){
+  var poem=String(q.poem).replace(/<br\s*\/?>/gi,' / ');
+  var msg='Suhu, saya baru mengundi Qian ke-'+q.no+'「'+q.ti+'」('+QLV[q.lv][0]+')'+(cat?' untuk hal: '+cat.t:'')+'.\nPuisinya berbunyi: '+poem+'\nPenjelasan singkatnya: '+q.jie+'\n'+(ask?('Hal yang saya tanyakan: '+ask+'\n'):'')+'Mohon baca lebih dalam qian ini untuk keadaan saya: apa intinya, apa yang perlu diwaspadai, dan langkah pertama yang sebaiknya saya ambil.';
+  gotoTab('ai');
+  $('#aiInp').value=msg;
+  try{$('#panel-ai').scrollIntoView({behavior:'smooth'})}catch(e){}
+  if(!AIbusy)aiSend();
 }
 function initQian(){
   var b=$('#qianBtn');
   if(!b)return;
   b.addEventListener('click',qianGo);
+  var tw=$('#qianThemes');
+  if(tw)tw.querySelectorAll('.qth').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      tw.querySelectorAll('.qth').forEach(function(x){x.classList.remove('sel')});
+      btn.classList.add('sel');
+      QTHEME=parseInt(btn.getAttribute('data-i'),10);
+    });
+  });
 }
 
 function initDream(){
@@ -1777,8 +1892,83 @@ function initAi(){
     if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing&&e.keyCode!==229){e.preventDefault();aiSend();}
   });
 }
+/* ================= Riwayat（解梦/求签历史 · 只存本地，最多 30 条） ================= */
+var HIST=[];
+try{var _hv=JSON.parse(localStorage.getItem('xjid_hist')||'[]');if(_hv&&_hv.length)HIST=_hv.slice(-30);}catch(e){}
+var MONTH_ID_S=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+function histSave(){try{localStorage.setItem('xjid_hist',JSON.stringify(HIST))}catch(e){}}
+function histAdd(rec){
+  HIST.push(rec);
+  if(HIST.length>30)HIST=HIST.slice(-30);
+  histSave();
+}
+function histWhen(ts){
+  var d=new Date(ts);
+  function p2(x){return (x<10?'0':'')+x}
+  return d.getDate()+' '+MONTH_ID_S[d.getMonth()]+' '+d.getFullYear()+' · '+p2(d.getHours())+':'+p2(d.getMinutes());
+}
+function histFindQ(no){
+  for(var i=0;i<QIAN.length;i++){if(QIAN[i].no===no)return QIAN[i];}
+  return null;
+}
+function histRecHTML(h,kind){
+  if(kind==='dream'){
+    var tp='';
+    try{tp=dreamType(h).t}catch(e){}
+    return '<div class="h-t">'+esc(h.txt||'(mimpi)')+'</div><div class="h-w">'+histWhen(h.ts)+(tp?' · '+tp:'')+'</div>';
+  }
+  var q=histFindQ(h.no);
+  if(!q)return '<div class="h-t">Riwayat qian</div><div class="h-w">tak bisa dibaca</div>';
+  var lab=(h.th>=0&&QCAT[h.th])?QCAT[h.th].t:(h.ask?esc(h.ask):'hal bebas');
+  return '<div class="h-t">Qian ke-'+q.no+' · '+q.ti+' · '+QLV[q.lv][0]+'</div><div class="h-w">'+histWhen(h.ts)+' · '+lab+'</div>';
+}
+function histBodyHTML(h,kind){
+  if(kind==='dream'){
+    try{
+      return '<div class="card bazi-out" style="margin-top:10px"><div class="b-head"><span class="b-title">Laporan Mimpi · '+histWhen(h.ts)+'</span></div>'+dreamBodyHTML(h)+'</div>';
+    }catch(e){return '<p style="font-size:12.5px;color:var(--text2)">Riwayat ini rusak dan tak bisa dibaca lagi.</p>'}
+  }
+  var q=histFindQ(h.no);
+  if(!q)return '<p style="font-size:12.5px;color:var(--text2)">Riwayat ini rusak dan tak bisa dibaca lagi.</p>';
+  var cat=(h.th>=0&&QCAT[h.th])?QCAT[h.th]:qianCat(h.ask);
+  return '<div class="card bazi-out" style="margin-top:10px">'+qianBodyHTML(q,cat)+'</div>';
+}
+function renderHist(kind){
+  var box=$(kind==='dream'?'#dmHist':'#qianHist');
+  if(!box)return;
+  var list=HIST.filter(function(h){return h.k===kind}).slice().reverse();
+  if(!list.length){box.innerHTML='';return;}
+  var html='<div class="hist-box"><button class="hist-toggle" type="button">📜 Riwayat '+(kind==='dream'?'mimpi':'qian')+' ('+list.length+')<i>▼</i></button><div class="hist-list">'+
+    list.map(function(h){
+      return '<div class="hist-item" data-ts="'+h.ts+'"><div class="hist-h"><span class="h-ic">'+(kind==='dream'?'🌙':'🪷')+'</span><span class="h-main">'+histRecHTML(h,kind)+'</span><span style="font-size:11px;color:var(--text2)">▼</span></div><div class="hist-b"></div></div>';
+    }).join('')+
+    '<div style="text-align:center;margin-top:4px"><button class="hist-clear" type="button">🗑 Hapus semua riwayat '+(kind==='dream'?'mimpi':'qian')+'</button></div></div></div>';
+  box.innerHTML=html;
+  var hbx=box.querySelector('.hist-box');
+  var tgl=box.querySelector('.hist-toggle');
+  if(tgl)tgl.addEventListener('click',function(){hbx.classList.toggle('open')});
+  box.querySelectorAll('.hist-h').forEach(function(hh){
+    hh.addEventListener('click',function(){
+      var item=hh.parentNode;
+      var body=item.querySelector('.hist-b');
+      if(!item.classList.contains('open')&&!body.innerHTML){
+        var ts=parseInt(item.getAttribute('data-ts'),10);
+        var rec=null;
+        for(var i=0;i<HIST.length;i++){if(HIST[i].ts===ts&&HIST[i].k===kind){rec=HIST[i];break}}
+        body.innerHTML=rec?histBodyHTML(rec,kind):'';
+      }
+      item.classList.toggle('open');
+    });
+  });
+  var clr=box.querySelector('.hist-clear');
+  if(clr)clr.addEventListener('click',function(){
+    HIST=HIST.filter(function(h){return h.k!==kind});
+    histSave();
+    renderHist(kind);
+  });
+}
 /* ================= 初始化 ================= */
-initAuth();initDream();initAi();initQian();renderToday();
+initAuth();initDream();initAi();initQian();renderToday();renderHist('dream');renderHist('qian');
 </script>
 </body>
 </html>
