@@ -1894,7 +1894,7 @@ function initAi(){
 }
 /* ================= Riwayat（解梦/求签历史 · 只存本地，最多 30 条） ================= */
 var HIST=[];
-try{var _hv=JSON.parse(localStorage.getItem('xjid_hist')||'[]');if(_hv&&_hv.length)HIST=_hv.slice(-30);}catch(e){}
+try{var _hv=JSON.parse(localStorage.getItem('xjid_hist')||'[]');if(Array.isArray(_hv)&&_hv.length)HIST=_hv.slice(-30).filter(function(h){return h&&typeof h==='object'&&typeof h.k==='string'});}catch(e){}
 var MONTH_ID_S=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
 function histSave(){try{localStorage.setItem('xjid_hist',JSON.stringify(HIST))}catch(e){}}
 function histAdd(rec){
@@ -1903,7 +1903,9 @@ function histAdd(rec){
   histSave();
 }
 function histWhen(ts){
+  if(typeof ts!=='number'||!isFinite(ts))return '';
   var d=new Date(ts);
+  if(isNaN(d.getTime()))return '';
   function p2(x){return (x<10?'0':'')+x}
   return d.getDate()+' '+MONTH_ID_S[d.getMonth()]+' '+d.getFullYear()+' · '+p2(d.getHours())+':'+p2(d.getMinutes());
 }
@@ -1936,11 +1938,12 @@ function histBodyHTML(h,kind){
 function renderHist(kind){
   var box=$(kind==='dream'?'#dmHist':'#qianHist');
   if(!box)return;
-  var list=HIST.filter(function(h){return h.k===kind}).slice().reverse();
+  var list=HIST.filter(function(h){return h&&h.k===kind}).slice().reverse();
   if(!list.length){box.innerHTML='';return;}
   var html='<div class="hist-box"><button class="hist-toggle" type="button">📜 Riwayat '+(kind==='dream'?'mimpi':'qian')+' ('+list.length+')<i>▼</i></button><div class="hist-list">'+
     list.map(function(h){
-      return '<div class="hist-item" data-ts="'+h.ts+'"><div class="hist-h"><span class="h-ic">'+(kind==='dream'?'🌙':'🪷')+'</span><span class="h-main">'+histRecHTML(h,kind)+'</span><span style="font-size:11px;color:var(--text2)">▼</span></div><div class="hist-b"></div></div>';
+      var tsAttr=(typeof h.ts==='number'&&isFinite(h.ts))?h.ts:0;
+      return '<div class="hist-item" data-ts="'+tsAttr+'"><div class="hist-h"><span class="h-ic">'+(kind==='dream'?'🌙':'🪷')+'</span><span class="h-main">'+histRecHTML(h,kind)+'</span><span style="font-size:11px;color:var(--text2)">▼</span></div><div class="hist-b"></div></div>';
     }).join('')+
     '<div style="text-align:center;margin-top:4px"><button class="hist-clear" type="button">🗑 Hapus semua riwayat '+(kind==='dream'?'mimpi':'qian')+'</button></div></div></div>';
   box.innerHTML=html;
