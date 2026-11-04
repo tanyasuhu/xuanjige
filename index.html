@@ -472,6 +472,9 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
   font-size:12px;color:var(--text2);line-height:1.7;background:rgba(217,180,91,.03)}
 .qr-slot .qr-icon{font-size:26px;color:var(--gold);display:block;margin-bottom:6px}
 .quota-big{font-size:15px;color:#e6d9b8;line-height:1.9;text-align:center;margin:8px 0 4px}
+.quota-btns .btn{display:block;margin:8px auto;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+.invite-code{display:inline-block;font-family:var(--kai);font-size:26px;font-weight:700;letter-spacing:6px;color:var(--gold-hi);
+  background:rgba(217,180,91,.08);border:1px solid rgba(217,180,91,.4);border-radius:10px;padding:10px 22px 10px 28px;margin:10px 0 4px}
 
 /* ========== 打印 & 动效偏好 ========== */
 @media print{
@@ -496,6 +499,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
     <div class="orn" style="margin-bottom:12px" id="authTitle">MASUK AKUN</div>
     <input type="text" class="m-inp" id="authEmail" placeholder="Alamat email" autocomplete="email">
     <input type="password" class="m-inp" id="authPass" placeholder="Kata sandi (minimal 6 karakter)" autocomplete="current-password">
+    <input type="text" class="m-inp" id="authInvite" placeholder="Kode undangan teman (opsional)" maxlength="6" autocomplete="off" style="display:none;text-transform:uppercase">
     <div class="m-err" id="authErr"></div>
     <button class="btn" id="authGo" style="width:100%">MASUK</button>
     <div class="auth-switch" id="authSwitch">Belum punya akun? <a id="authToggle">Daftar di sini</a> — bonus 3 kredit gratis</div>
@@ -524,7 +528,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
     <button class="modal-x" id="quotaClose">✕</button>
     <div class="orn" style="margin-bottom:12px" id="quotaTitle">KUOTA HARIAN HABIS</div>
     <div class="quota-big" id="quotaMsg"></div>
-    <div style="text-align:center;margin-top:14px" id="quotaBtns"></div>
+    <div style="text-align:center;margin-top:14px" id="quotaBtns" class="quota-btns"></div>
   </div>
 </div>
 
@@ -1161,7 +1165,7 @@ function renderToday(){
   var SHADIR={0:'Selatan',4:'Selatan',8:'Selatan',5:'Timur',9:'Timur',1:'Timur',11:'Barat',3:'Barat',7:'Barat',2:'Utara',6:'Utara',10:'Utara'};
   var lu=solarToLunar(y,m,d);
   var luStr=lu?('Bulan '+(lu.leap?lu.m+' (kedua), hari ':lu.m+', hari ')+lu.d):'';
-  var head='Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y+(luStr?' · kalender Tionghoa: '+luStr:'')+' · hari shio '+SXN[zb];
+  var head=(luStr?('Hari ini, '+luStr+' · tahun '+SXN[((lu.y-4)%12+12)%12]+' · '+d+' '+MONTH_ID[m-1]+' '+y):('Hari ini, '+d+' '+MONTH_ID[m-1]+' '+y))+' · hari shio '+SXN[zb];
   var luckHtml='';
   if(lu){
     var HETU=[['3','8'],['2','7'],['5','10'],['4','9'],['1','6']];
@@ -1247,10 +1251,12 @@ function authOpen(mode){
   $('#authModal').style.display='flex';
   $('#authErr').textContent='';
   $('#authPass').value='';
+  var iv=$('#authInvite');if(iv){iv.value='';iv.style.display=ACC.mode==='signup'?'block':'none';}
   if(ACC.mode==='login'){$('#authTitle').textContent='MASUK AKUN';$('#authGo').textContent='MASUK';
     $('#authSwitch').innerHTML='Belum punya akun? <a id="authToggle">Daftar di sini</a> — bonus 3 kredit gratis';}
   else{$('#authTitle').textContent='DAFTAR AKUN BARU';$('#authGo').textContent='DAFTAR';
-    $('#authSwitch').innerHTML='Sudah punya akun? <a id="authToggle">Masuk di sini</a>';}
+    $('#authSwitch').innerHTML='Sudah punya akun? <a id="authToggle">Masuk di sini</a>';
+    var eb=$('#authEmail');if(eb&&iv&&iv.style.display==='block')setTimeout(function(){eb.focus()},50);}
   var tg=$('#authToggle');if(tg)tg.addEventListener('click',function(){authOpen(ACC.mode==='login'?'signup':'login')});
 }
 
@@ -1274,8 +1280,19 @@ async function authGo(){
       await accLoadState();
       $('#authModal').style.display='none';
       if(ACC.mode==='signup'&&ACC.credits!=null){
+        var invMsg='';
+        var ivEl=$('#authInvite');
+        var inv=ivEl?(ivEl.value||'').trim().toUpperCase():'';
+        if(inv){
+          try{
+            var r=await sbApi('/rest/v1/rpc/apply_invite_code','POST',{p_code:inv});
+            var aj=r.ok?await r.json():null;
+            if(aj&&aj.ok){await accLoadState();invMsg='<b style="color:var(--gold-hi)">+1 kredit undangan teman</b> juga sudah masuk.';}
+            else invMsg='※ Kode undangan tidak valid — bonus undangan tidak masuk.';
+          }catch(e){invMsg='※ Kode undangan belum terverifikasi — cek menu undangan nanti.';}
+        }
         var q=$('#quotaModal');$('#quotaTitle').textContent='SELAMAT DATANG';
-        $('#quotaMsg').innerHTML='Akun berhasil dibuat — <b style="color:var(--gold-hi)">bonus 3 kredit</b> sudah masuk.<br>Setiap hari Anda tetap dapat 1 tafsir mimpi dan 1 qian gratis.';
+        $('#quotaMsg').innerHTML='Akun berhasil dibuat — <b style="color:var(--gold-hi)">bonus 3 kredit</b> sudah masuk.'+(invMsg?'<br>'+invMsg:'')+'<br>Setiap hari Anda tetap dapat 1 tafsir mimpi dan 1 qian gratis.';
         $('#quotaBtns').innerHTML='<button class="btn" id="qOk">MULAI</button>';
         q.style.display='flex';
         var ok=$('#qOk');if(ok)ok.addEventListener('click',function(){q.style.display='none'});
@@ -1338,16 +1355,46 @@ function showQuotaModal(reason){
   var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
   if(reason==='guest_limit'){
     title.textContent='KUOTA GRATIS HARIAN TERPAKAI';
-    msg.innerHTML='Tafsir mimpi dan qian masing-masing <b>1 kali gratis setiap hari</b>.<br>Daftar akun sekarang — gratis, dan tetap dapat kuota harian + bonus 3 kredit.';
+    msg.innerHTML='Tafsir mimpi dan qian masing-masing <b>1 kali gratis setiap hari</b>.<br>Daftar akun sekarang — gratis, bonus 3 kredit.<br>Punya kode undangan teman? Isi saat mendaftar untuk <b style="color:var(--gold-hi)">+1 kredit lagi</b>.';
     btns.innerHTML='<button class="btn" id="qGoAuth">DAFTAR / MASUK</button>';
     var g=$('#qGoAuth');if(g)g.addEventListener('click',function(){q.style.display='none';authOpen('signup')});
   }else{
     title.textContent='KREDIT HABIS';
-    msg.innerHTML='Kuota gratis hari ini sudah terpakai dan kredit Anda kurang.<br>Isi kredit untuk lanjut: <b style="color:var(--gold-hi)">Rp 22.000 = 10 kredit</b> · <b style="color:var(--gold-hi)">Rp 100.000 = 50 kredit</b>';
-    btns.innerHTML='<button class="btn" id="qGoTopup">ISI KREDIT</button>';
+    msg.innerHTML='Kuota gratis hari ini sudah terpakai.<br>Ada dua jalan untuk lanjut — undang teman (gratis), atau isi kredit:';
+    btns.innerHTML='<button class="btn" id="qGoInvite">🎁 UNDANG TEMAN · GRATIS +1</button>'+
+      '<button class="btn ghost" id="qGoTopup">ISI KREDIT · Rp 22.000 = 10</button>';
+    var iv=$('#qGoInvite');
+    if(iv)iv.addEventListener('click',showInvitePanel);
     var t=$('#qGoTopup');if(t)t.addEventListener('click',function(){q.style.display='none';topupOpen()});
   }
   q.style.display='flex';
+}
+function showInvitePanel(){
+  var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
+  title.textContent='UNDANG TEMAN, DAPAT KREDIT';
+  msg.innerHTML='<span style="color:var(--text2)">Memuat kode undangan Anda…</span>';
+  btns.innerHTML='';
+  q.style.display='flex';
+  sbApi('/rest/v1/rpc/get_my_invite_code','POST',{}).then(async function(r){
+    if(!r.ok){msg.innerHTML='<span style="color:var(--red)">Gagal memuat kode — coba lagi sebentar.</span>';return;}
+    var code=(await r.text()).replace(/[\"\s]/g,'');
+    var share='Suhu! Ayo coba Rumah Rahasia — tafsir mimpi, qian, dan kalendar Tionghoa. Daftar pakai kode undangan saya '+code+' — kamu & saya sama-sama dapat +1 kredit gratis. https://tanyasuhu.github.io/xuanjige/';
+    msg.innerHTML='Bagikan kode ini ke teman Anda:<br><span class="invite-code" id="invCode">'+code+'</span><br>'+
+      'Teman yang mendaftar dengan kode Anda membuat Anda dan teman <b style="color:var(--gold-hi)">sama-sama +1 kredit gratis</b>.';
+    btns.innerHTML='<button class="btn" id="qCopyInvite">SALIN TEKS UNDANGAN</button>'+
+      '<button class="btn ghost" id="qInviteBack">KEMBALI</button>';
+    var c=$('#qCopyInvite');
+    if(c)c.addEventListener('click',function(){
+      copyText(share);
+      c.textContent='✓ SUDAH DISALIN';
+      setTimeout(function(){c.textContent='SALIN TEKS UNDANGAN'},2500);
+    });
+    var bk=$('#qInviteBack');if(bk)bk.addEventListener('click',function(){showQuotaModal('no_credits')});
+  }).catch(function(){msg.innerHTML='<span style="color:var(--red)">Gagal memuat kode — cek koneksi Anda.</span>';});
+}
+function copyText(t){
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});return;}
+  try{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}catch(e){}
 }
 
 function initAuth(){
@@ -1907,7 +1954,10 @@ function histWhen(ts){
   var d=new Date(ts);
   if(isNaN(d.getTime()))return '';
   function p2(x){return (x<10?'0':'')+x}
-  return d.getDate()+' '+MONTH_ID_S[d.getMonth()]+' '+d.getFullYear()+' · '+p2(d.getHours())+':'+p2(d.getMinutes());
+  var t=p2(d.getHours())+':'+p2(d.getMinutes());
+  var lu=solarToLunar(d.getFullYear(),d.getMonth()+1,d.getDate());
+  if(lu)return 'Bulan '+(lu.leap?lu.m+' (kedua), hari ':lu.m+', hari ')+lu.d+' · '+t;
+  return d.getDate()+' '+MONTH_ID_S[d.getMonth()]+' '+d.getFullYear()+' · '+t;
 }
 function histFindQ(no){
   for(var i=0;i<QIAN.length;i++){if(QIAN[i].no===no)return QIAN[i];}
