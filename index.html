@@ -1329,19 +1329,8 @@ async function topupGo(){
   }catch(e){err.textContent='Koneksi bermasalah — coba lagi';}
 }
 
-function guestQuota(feature){
-  var k='xjid_guest',d=null;
-  try{d=JSON.parse(localStorage.getItem(k)||'null')}catch(e){}
-  var today=new Date().toISOString().slice(0,10);
-  if(!d||d.date!==today)d={date:today,dream:0,qian:0};
-  if((d[feature]||0)>=1){try{localStorage.setItem(k,JSON.stringify(d))}catch(e){}return{ok:false,reason:'guest_limit'};}
-  d[feature]=(d[feature]||0)+1;
-  try{localStorage.setItem(k,JSON.stringify(d))}catch(e){}
-  return{ok:true};
-}
-
 async function requireQuota(feature){
-  if(!ACC.uid)return guestQuota(feature);
+  if(!ACC.uid)return{ok:false,reason:'need_login'};
   try{
     var res=await sbApi('/rest/v1/rpc/feature_use','POST',{p_feature:feature});
     if(!res.ok)return{ok:false,reason:'error'};
@@ -1353,9 +1342,9 @@ async function requireQuota(feature){
 
 function showQuotaModal(reason){
   var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
-  if(reason==='guest_limit'){
-    title.textContent='KUOTA GRATIS HARIAN TERPAKAI';
-    msg.innerHTML='Tafsir mimpi dan qian masing-masing <b>1 kali gratis setiap hari</b>.<br>Daftar akun sekarang — gratis, bonus 3 kredit.<br>Punya kode undangan teman? Isi saat mendaftar untuk <b style="color:var(--gold-hi)">+1 kredit lagi</b>.';
+  if(reason==='need_login'||reason==='guest_limit'){
+    title.textContent='MASUK DULU UNTUK MEMAKAI';
+    msg.innerHTML='Tafsir mimpi dan qian hanya untuk yang sudah punya akun.<br>Daftar gratis — langsung dapat <b style="color:var(--gold-hi)">3 kredit</b> + setiap hari tetap 1 tafsir mimpi & 1 qian gratis.<br>Punya kode undangan teman? Isi saat mendaftar untuk <b style="color:var(--gold-hi)">+1 kredit lagi</b>.';
     btns.innerHTML='<button class="btn" id="qGoAuth">DAFTAR / MASUK</button>';
     var g=$('#qGoAuth');if(g)g.addEventListener('click',function(){q.style.display='none';authOpen('signup')});
   }else{
