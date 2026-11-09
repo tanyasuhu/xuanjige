@@ -1260,10 +1260,14 @@ function authOpen(mode){
   var tg=$('#authToggle');if(tg)tg.addEventListener('click',function(){authOpen(ACC.mode==='login'?'signup':'login')});
 }
 
+var AUTHbusy=false;
 async function authGo(){
+  if(AUTHbusy)return;
   var em=$('#authEmail').value.trim(),pw=$('#authPass').value,err=$('#authErr');
   if(!em||em.indexOf('@')<0){err.textContent='Isi alamat email yang benar';return;}
   if(!pw||pw.length<6){err.textContent='Kata sandi minimal 6 karakter';return;}
+  AUTHbusy=true;
+  var gb=$('#authGo');if(gb){gb.disabled=true;gb.style.opacity=.45;}
   err.textContent='Memproses…';
   try{
     var path=ACC.mode==='login'?'/auth/v1/token?grant_type=password':'/auth/v1/signup';
@@ -1301,6 +1305,7 @@ async function authGo(){
       err.textContent='Cek email Anda untuk konfirmasi, lalu masuk kembali.';
     }
   }catch(e){err.textContent='Koneksi bermasalah — coba lagi';}
+  finally{AUTHbusy=false;if(gb){gb.disabled=false;gb.style.opacity=1;}}
 }
 
 var TOPUP_PKG='p10';
@@ -1315,9 +1320,13 @@ function topupOpen(){
   });
 }
 
+var TOPUPbusy=false;
 async function topupGo(){
+  if(TOPUPbusy)return;
   var ref=$('#topupRef').value.trim(),err=$('#topupErr');
   if(ref.length<4){err.textContent='Isi minimal 4 angka terakhir nomor transaksi';return;}
+  TOPUPbusy=true;
+  var tb=$('#topupGo');if(tb){tb.disabled=true;tb.style.opacity=.45;}
   err.textContent='Mengirim pengajuan…';
   var idr=TOPUP_PKG==='p50'?100000:22000,cr=TOPUP_PKG==='p50'?50:10;
   try{
@@ -1327,6 +1336,7 @@ async function topupGo(){
     err.className='m-err m-ok';err.textContent='✦ Pengajuan terkirim — setelah pembayaran QRIS diverifikasi Suhu, kredit otomatis masuk. Simpan bukti pembayaran Anda.';
     setTimeout(function(){err.className='m-err';$('#topupModal').style.display='none';},4000);
   }catch(e){err.textContent='Koneksi bermasalah — coba lagi';}
+  finally{TOPUPbusy=false;if(tb){tb.disabled=false;tb.style.opacity=1;}}
 }
 
 async function requireQuota(feature){
@@ -1366,7 +1376,7 @@ function showInvitePanel(){
   q.style.display='flex';
   sbApi('/rest/v1/rpc/get_my_invite_code','POST',{}).then(async function(r){
     if(!r.ok){msg.innerHTML='<span style="color:var(--red)">Gagal memuat kode — coba lagi sebentar.</span>';return;}
-    var code=(await r.text()).replace(/[\"\s]/g,'');
+    var code=(await r.text()).replace(/[^A-Za-z0-9]/g,'').toUpperCase().slice(0,8);
     var share='Suhu! Ayo coba Rumah Rahasia — tafsir mimpi, qian, dan kalendar Tionghoa. Daftar pakai kode undangan saya '+code+' — kamu & saya sama-sama dapat +1 kredit gratis. https://tanyasuhu.github.io/xuanjige/';
     msg.innerHTML='Bagikan kode ini ke teman Anda:<br><span class="invite-code" id="invCode">'+code+'</span><br>'+
       'Teman yang mendaftar dengan kode Anda membuat Anda dan teman <b style="color:var(--gold-hi)">sama-sama +1 kredit gratis</b>.';
