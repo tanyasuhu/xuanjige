@@ -77,6 +77,25 @@ body>*{position:relative;z-index:1}
 .today-date{font-size:12.5px;color:var(--text2);letter-spacing:1px}
 .today-badge{margin-left:auto}
 .today-txt{font-size:13.5px;color:#d8cfe6;line-height:1.95;margin-top:10px}
+/* ========== Cari Hari Baik（择日助手） ========== */
+.xz-card{margin-top:12px;background:linear-gradient(165deg,rgba(30,20,54,.62),rgba(11,6,20,.72));border:1px solid rgba(217,180,91,.35);
+  border-radius:16px;padding:16px 18px;backdrop-filter:blur(8px)}
+.xz-title{font-family:var(--kai);font-size:19px;color:var(--gold-hi);letter-spacing:3px}
+.xz-sub{font-size:12.5px;color:var(--text2);margin-top:4px;line-height:1.8}
+.xz-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.xz-b{padding:9px 16px;background:rgba(11,6,20,.5);border:1px solid rgba(217,180,91,.3);border-radius:999px;
+  color:#cdc4de;font-size:13px;cursor:pointer;transition:all .25s;font-family:var(--kai);letter-spacing:.5px}
+.xz-b:hover{color:var(--gold-hi);border-color:var(--gold)}
+.xz-b.sel{border-color:var(--gold-hi);color:var(--gold-hi);background:rgba(217,180,91,.1);box-shadow:0 0 12px rgba(217,180,91,.18)}
+.xz-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.xz-day{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 14px;background:rgba(11,6,20,.45);
+  border:1px solid rgba(217,180,91,.22);border-radius:12px;animation:fadein .4s ease}
+.xz-day.best{border-color:rgba(217,180,91,.5)}
+.xz-date{font-size:14.5px;color:#e6d9b8;font-weight:600;letter-spacing:.5px;min-width:150px}
+.xz-lunar{font-size:12px;color:var(--text2)}
+.xz-grade{font-size:12px;color:var(--gold-hi);letter-spacing:1px;white-space:nowrap}
+.xz-chong{font-size:11.5px;color:#cdc4de;border-left:1px dashed rgba(217,180,91,.3);padding-left:10px}
+.xz-note{margin-top:10px;font-size:11.5px;color:var(--text2);line-height:1.8}
 .today-txt b{color:var(--gold-hi);font-weight:600}
 .today-body{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
 .today-item{display:flex;align-items:center;gap:6px;background:rgba(11,6,20,.5);border:1px solid rgba(217,180,91,.2);border-radius:10px;
@@ -577,6 +596,7 @@ h2.heading::after{content:'';position:absolute;left:50%;bottom:0;transform:trans
 <!-- ===== 解梦阁面板（默认页） ===== -->
 <section class="tab-panel active" id="panel-dream" role="tabpanel">
   <div id="todayCard"></div>
+  <div id="xzCard"></div>
   <div class="card">
     <div class="orn" style="margin-bottom:12px">TAFSIR MIMPI</div>
     <div class="dream-wrap">
@@ -1152,6 +1172,91 @@ function solarToLunar(y,m,d){
   if(lp===0||mi<=lp)lm=mi;else lm=mi-1;
   if(lp!==0&&mi===lp+1)isl=true;
   return {y:ly,m:lm,d:dd,leap:isl};
+}
+/* ================= Cari Hari Baik（择日助手 · 通书建除十二神，免登录） ================= */
+/* 月支近似表（节气年均±1天，择日影响极小）：[起始月,起始日,月支]，含子月 12/7 起；1/1~1/5 兜底返回 0 */
+var TERM_MZ=[[1,6,1],[2,4,2],[3,6,3],[4,5,4],[5,6,5],[6,6,6],[7,7,7],[8,8,8],[9,8,9],[10,9,10],[11,8,11],[12,7,0]];
+function monthZhi(m,d){
+  for(var i=TERM_MZ.length-1;i>=0;i--){
+    if(m>TERM_MZ[i][0]||(m===TERM_MZ[i][0]&&d>=TERM_MZ[i][1]))return TERM_MZ[i][2];
+  }
+  return 0;
+}
+/* 建除十二神（索引：0建 1除 2满 3平 4定 5执 6破 7危 8成 9收 10开 11闭） */
+var JC_N=['Jian','Chu','Man','Ping','Ding','Zhi','Po','Wei','Cheng','Shou','Kai','Bi'];
+var JC_ID=['hari mulai','hari bersih','hari penuh','hari seimbang','hari tetap','hari pegang','hari pecah','hari hati-hati','hari lengkap','hari panen','hari terbuka','hari tertutup'];
+var XZ_RULES={
+  nikah:{ic:'💍',t:'Menikah',best:[8,4],good:[9],no:[6,11],jiW:[]},
+  pindah:{ic:'🏠',t:'Pindah Rumah',best:[10,4,8],good:[9],no:[6],jiW:['pindahan']},
+  usaha:{ic:'🏪',t:'Buka Usaha',best:[10,8,2],good:[9],no:[6,11],jiW:[]}
+};
+var WEEK_ID=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+var MONTH_ID_X=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+function xzDayInfo(y,m,d){
+  var dn=Math.round((Date.UTC(y,m-1,d)-Date.UTC(2000,0,1))/86400000);
+  var n=((dn+54)%60+60)%60;
+  var zb=n%12;
+  var mz=monthZhi(m,d);
+  return{zb:zb,jc:(zb-mz+12)%12,lu:solarToLunar(y,m,d)};
+}
+var XZcur=null;
+function renderXZ(){
+  var box=$('#xzCard');if(!box)return;
+  var btns=Object.keys(XZ_RULES).map(function(k){
+    return '<button class="xz-b'+(XZcur===k?' sel':'')+'" data-k="'+k+'" type="button">'+XZ_RULES[k].ic+' '+XZ_RULES[k].t+'</button>';
+  }).join('');
+  box.innerHTML='<div class="xz-card">'+
+    '<div class="xz-title">✦ Cari Hari Baik</div>'+
+    '<div class="xz-sub">Pilih urusan Anda — Suhu pilihkan hari baik 60 hari ke depan menurut kitab kalender tradisional (tong shu).</div>'+
+    '<div class="xz-btns">'+btns+'</div>'+
+    '<div class="xz-list" id="xzList"></div>'+
+    '<div class="xz-note">※ Pilihan hari menurut tradisi tong shu — hari pecah (po) tak pernah direkomendasikan. Bila shio yang bertabrakan adalah shio orang tua atau pengantin, pilih hari lain. Hati yang tenang dan niat yang baik tetap yang paling utama.</div>'+
+    '</div>';
+  box.querySelectorAll('.xz-b').forEach(function(b){
+    b.addEventListener('click',function(){xzPick(b.getAttribute('data-k'))});
+  });
+  if(XZcur)xzPick(XZcur,true);
+}
+function xzPick(kind,keepScroll){
+  XZcur=kind;
+  document.querySelectorAll('.xz-b').forEach(function(b){b.classList.toggle('sel',b.getAttribute('data-k')===kind)});
+  var rule=XZ_RULES[kind];
+  var list=$('#xzList');if(!list)return;
+  var now=new Date();
+  var picks=[];
+  for(var i=1;i<=60;i++){
+    var dt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
+    var y=dt.getFullYear(),m=dt.getMonth()+1,d=dt.getDate();
+    var info=xzDayInfo(y,m,d);
+    var grade=null;
+    if(rule.no.indexOf(info.jc)>=0)continue;
+    if(rule.jiW.length&&rule.jiW.some(function(w){return TODAY_JI[info.zb].indexOf(w)>=0}))continue;
+    if(rule.best.indexOf(info.jc)>=0)grade=3;
+    else if(rule.good.indexOf(info.jc)>=0)grade=2;
+    if(!grade)continue;
+    var lu=info.lu;
+    var luStr=lu?('kalender Tionghoa: Bulan '+(lu.leap?lu.m+' (kedua), hari ':lu.m+', hari ')+lu.d):'';
+    var lucky8=(d%10===8||[8,18,28].indexOf(d)>=0||(lu&&[8,18,28].indexOf(lu.d)>=0));
+    picks.push({y:y,m:m,d:d,wd:dt.getDay(),grade:grade,jc:info.jc,zb:info.zb,luStr:luStr,lucky8:lucky8});
+  }
+  var top=picks.filter(function(p){return p.grade===3}).slice(0,8);
+  if(top.length<3)top=top.concat(picks.filter(function(p){return p.grade===2}).slice(0,8-top.length));
+  if(!top.length){
+    list.innerHTML='<div class="xz-sub" style="margin-top:8px">Tidak ditemukan hari khusus — Suhu menyarankan menunggu bulan berikutnya, atau tanya langsung lewat Tanya Suhu.</div>';
+    return;
+  }
+  list.innerHTML='<div class="xz-sub" style="margin-top:4px">Hari baik untuk <b style="color:var(--gold-hi)">'+rule.t+'</b> — 60 hari ke depan:</div>'+
+    top.map(function(p){
+      var stars=p.grade===3?'★★★':'★★';
+      var cls=p.grade===3?' xz-day best':' xz-day';
+      return '<div class="'+cls.trim()+'">'+
+        '<span class="xz-date">'+WEEK_ID[p.wd]+', '+p.d+' '+MONTH_ID_X[p.m-1]+' '+p.y+(p.lucky8?' <span style="color:var(--gold-hi)">✦</span>':'')+'</span>'+
+        '<span class="xz-lunar">'+p.luStr+'</span>'+
+        '<span class="xz-grade">'+stars+' '+JC_N[p.jc]+' · '+JC_ID[p.jc]+'</span>'+
+        '<span class="xz-chong">shio tabrakan: '+SXN[(p.zb+6)%12]+'</span>'+
+        '</div>';
+    }).join('');
+  if(!keepScroll)try{list.scrollIntoView({behavior:'smooth',block:'nearest'})}catch(e){}
 }
 function renderToday(){
   var box=$('#todayCard');if(!box)return;
@@ -2020,7 +2125,7 @@ function renderHist(kind){
   });
 }
 /* ================= 初始化 ================= */
-initAuth();initDream();initAi();initQian();renderToday();renderHist('dream');renderHist('qian');
+initAuth();initDream();initAi();initQian();renderToday();renderXZ();renderHist('dream');renderHist('qian');
 </script>
 </body>
 </html>
