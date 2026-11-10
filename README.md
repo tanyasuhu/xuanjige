@@ -2,21 +2,25 @@
 
 Situs resmi: https://tanyasuhu.github.io/xuanjige/
 
-Xuanji menyediakan peta kelahiran lokal untuk Indonesia, empat tema refleksi,
-12 fase sepuluh tahun, pembacaan tahunan, serta rincian dua belas ruang.
-Pilih **Fase 10 Tahun & Tahunan** dalam laporan lengkap untuk mengganti periode.
-Satu laporan lengkap memakai 25 kredit; mengganti tahun, membaca ulang, dan
-mengunduhnya di akun dan browser yang sama tidak memotong kredit tambahan.
-Akses laporan lama tetap berlaku. Unduhan memuat fase dan tahun yang dipilih.
+Laporan Xuanji kini memiliki empat bagian:
 
-Data lahir diproses di perangkat. Tersedia 28 kota dengan bujur pusat kota dan
-zona waktu historis Indonesia; pilih kota kelahiran dan waktu setempat saat lahir.
-Periode tahunan berganti pada Imlek dan menggunakan usia tradisional.
-Penafsiran simbol untuk refleksi, bukan kepastian kejadian atau hasil keuangan.
+- **Ringkasan**: tema utama, empat penanda kelahiran, dan kombinasi simbol
+  dengan bukti letak sebenarnya. Sepuluh kombinasi diperiksa tanpa skor nasib.
+- **Peta & 12 ruang**: pilih ruang untuk menyoroti hubungan empat ruang,
+  membaca bintang utama, simbol pendukung, dan pertanyaan refleksi kehidupan.
+- **Fase & tahunan**: dua belas fase sepuluh tahun, tahun pilihan, dan rinciannya.
+- **Bandingkan tahun**: dua tahun berdampingan dengan fase panjang masing-masing.
 
-Hari Baik: kalender dan pilihan tanggal umum. Mimpi: penafsiran mimpi.
-Suhu: diskusi refleksi melalui koneksi yang disiapkan pengguna.
-Arsip Qian lama tetap dapat dibaca; tidak tersedia undian baru.
+Peta dan ringkasan awal gratis. Laporan lengkap 25 kredit setelah konfirmasi;
+semua bagian termasuk, tanpa potongan tambahan saat memilih ruang atau tahun.
+Laporan lama tetap dapat dibuka di akun dan browser yang sama. Unduhan memuat
+semua ruang kelahiran, periode pilihan, dan kedua tahun pembanding.
 
-Lisensi perangkat lunak tercantum pada THIRD-PARTY-NOTICES.txt.
-Versi: 2026-11-10-xuanji-cycles.
+Data lahir tetap diproses di perangkat; tersedia 28 kota Indonesia dengan
+bujur pusat kota dan zona waktu historis. Tahun mengikuti Imlek dan usia
+tradisional. Interpretasi adalah refleksi budaya, bukan kepastian masa depan,
+diagnosis, penilaian pasangan, atau jaminan hasil keuangan.
+
+Hari Baik, Mimpi, dan Suhu tetap tersedia. Arsip Qian lama tetap dapat dibaca.
+Lisensi perangkat lunak: THIRD-PARTY-NOTICES.txt.
+Versi: 2026-11-10-xuanji-enrich.
