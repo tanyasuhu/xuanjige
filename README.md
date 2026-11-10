@@ -1,5 +1,11 @@
 # Rumah Rahasia · Xuanji
 
+Beranda baru berwarna ungu dan emas dengan empat pintasan layanan, animasi
+meteor halus, dan Taiji yang berputar serta berganti warna perlahan.
+Tombol jeda menghentikan animasi; preferensi pengurangan gerakan dihormati.
+Pilih Akun untuk saldo, isi kredit, undangan, atau keluar. Tombol Beranda
+kembali ke halaman depan tanpa menghapus laporan atau isian.
+
 Situs resmi: https://tanyasuhu.github.io/xuanjige/
 
 Laporan Xuanji kini memiliki empat bagian:
@@ -23,4 +29,4 @@ diagnosis, penilaian pasangan, atau jaminan hasil keuangan.
 
 Hari Baik, Mimpi, dan Suhu tetap tersedia. Arsip Qian lama tetap dapat dibaca.
 Lisensi perangkat lunak: THIRD-PARTY-NOTICES.txt.
-Versi: 2026-11-10-xuanji-enrich.
+Versi: 2026-11-10-xuanji-home.
