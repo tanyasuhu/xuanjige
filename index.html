@@ -3990,13 +3990,13 @@ function rrEntryStartScene(loaded){
   if(!RR_ENTRY.active||RR_ENTRY.mode!=='loading')return;
   RR_ENTRY.mode='approach';var layer=document.getElementById('rrEntry');layer.dataset.gateArt=String(loaded);layer.dataset.asset=loaded?'ready':'fallback';
   RR_ENTRY.images.forEach(function(image){image.onload=null;image.onerror=null;});
-  if(loaded)['rrEntryDoorLeft','rrEntryDoorRight'].forEach(function(id){document.getElementById(id).style.backgroundImage='url("ancient-gate.png")';});
+  if(loaded)['rrEntryDoorLeft','rrEntryDoorRight'].forEach(function(id){document.getElementById(id).style.backgroundImage='url("ancient-gate.webp")';});
   RR_ENTRY.elapsed=0;RR_ENTRY.lastFrame=0;layer.dataset.state='approach';RR_ENTRY.frame=requestAnimationFrame(rrEntryTick);
 }
 function rrEntryLoadArtwork(){
   var sequence=RR_ENTRY.sequence,image=new Image();RR_ENTRY.images.push(image);
   function done(ok){if(sequence!==RR_ENTRY.sequence||!RR_ENTRY.active||RR_ENTRY.mode!=='loading')return;image.onload=null;image.onerror=null;rrEntryStartScene(ok);}
-  image.onload=function(){done(image.naturalWidth>0)};image.onerror=function(){done(false)};image.src='ancient-gate.png';
+  image.onload=function(){done(image.naturalWidth>0)};image.onerror=function(){done(false)};image.src='ancient-gate.webp';
   rrEntryLater(function(){rrEntryStartScene(false)},4500);
 }
 function rrEntryOpen(manual){
