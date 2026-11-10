@@ -191,3 +191,27 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+--- GeoNames city reference data ---
+This product includes selected city reference coordinates from GeoNames:
+https://www.geonames.org/
+Source: https://download.geonames.org/export/dump/cities15000.zip
+Retrieved: 2026-11-10
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Changes: a 68-city subset has been selected; app IDs, Indonesian/Pinyin labels,
+menu regions and civil-clock choices have been added. Urumqi has separate
+Beijing-clock and Xinjiang-clock options sharing one geographic reference point.
+GeoNames has not endorsed this product. City centres are approximate reference
+points, not birth addresses. The existing Indonesian reference points are unchanged.
+Detailed record IDs, coordinates and source provenance are recorded in
+data/china-city-sources.json in the source package.
+
+Historical clock offsets are resolved locally using the browser's IANA timezone
+database through Intl.DateTimeFormat. Rule reference:
+https://github.com/eggert/tz/blob/2026f/asia
+Pre-1970 historical offsets are reference estimates; local historical birth
+records may require verification. The menu group does not determine timezone:
+Hong Kong, Macau, Taiwan and Xinjiang local time retain separate IANA zones.
