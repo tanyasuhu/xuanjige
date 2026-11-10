@@ -1,26 +1,43 @@
-# 玄机阁 · 免费在线八字排盘 / 观相 / 解梦 / AI 问天
+# Rumah Rahasia
 
-> 打开即用的古风占卜网页——生辰、照片、梦境全部本地处理，不上传、不联网（AI 问天除外，需自配免费 Key）。
+Pengalaman budaya Tionghoa dalam Bahasa Indonesia: Mimpi, Qian, Xuanji, dan Tanya Suhu.
 
-**🔗 在线使用：https://2590388220-maker.github.io/xuanjige/**
+[Buka situs resmi](https://tanyasuhu.github.io/xuanjige/)
 
-## 功能
+## Fitur
 
-- ☰ 八字排盘 —— 四柱、十神、五行、喜用、大运流年（八步大运+近五年流年）、今日运势、姓名五格
-- 👁 观相 —— 照片点三停或镜前自答 10 问，出面相详批，可与八字互参
-- 🌙 解梦 —— 22 象梦典、逐象追问、梦命互参，章节式大白话报告
-- ✦ AI 问天 —— 联网 AI 阁主什么都能问，问命理自动带命盘（需免费领智谱 Key，指引见页面内）
+- **Mimpi:** tafsir simbol dan pertanyaan refleksi. Akun diperlukan; satu kali gratis setiap hari, lalu 1 kredit per penggunaan.
+- **Qian:** 36 puisi beserta penjelasan Bahasa Indonesia. Akun diperlukan; satu kali gratis setiap hari, lalu 1 kredit per penggunaan.
+- **Xuanji:** peta kelahiran tradisional dengan 28 kota Indonesia, zona waktu historis, dan penyesuaian waktu matahari. Ringkasan gratis; laporan lengkap empat tema menggunakan 25 kredit setelah konfirmasi.
+- **Kalender dan pemilihan hari umum:** gratis.
+- **Tanya Suhu:** memakai layanan dan kunci koneksi pilihan pengguna.
 
-## 特点
+## Kredit
 
-- 单文件自包含（index.html），零依赖、零构建，双击即用
-- 隐私优先：生辰/照片/梦境/Key 全部只存本机浏览器
-- 全面大白话，命理术语必有括号解释
+| Paket | Harga | Kredit |
+|---|---:|---:|
+| p10 | Rp22.000 | 10 |
+| p25 | Rp55.000 | 25 |
+| p50 | Rp100.000 | 50 |
 
-## 使用
+Akun baru memperoleh 3 kredit. Pembayaran QRIS diperiksa pengelola secara manual; kode QRIS belum tersedia di halaman. Jangan membayar sebelum menerima kode resmi dari pengelola.
 
-直接打开上方链接；或下载本仓库的 index.html 与 intro.mp4 放同一目录，双击 index.html。
+## Data dan laporan
 
-## 声明
+Tanggal, jam, kota lahir, serta isi laporan Xuanji diproses di browser. Server akun menyimpan akun, kredit, dan catatan transaksi. Tanya Suhu mengirim pesan dan riwayat percakapan ke layanan yang dipilih pengguna saat digunakan.
 
-仅供传统文化体验与娱乐参考，请勿作为人生重大决策依据。命运终在自己手中。
+Laporan lengkap dan bukti akses tersimpan di browser yang dipakai membukanya. Unduh salinan laporan sebelum menghapus data browser atau pindah perangkat; akses web tidak dapat dipulihkan dari server. Permintaan pembelian yang belum dikonfirmasi dapat diperiksa kembali menggunakan bukti permintaan yang sama.
+
+## Menjalankan
+
+Buka situs resmi, atau simpan `index.html` dan `intro.mp4` dalam satu folder lalu buka `index.html` dengan browser terbaru. Login dan kredit memerlukan internet. Pembelian Xuanji memerlukan dukungan Web Locks agar permintaan dari beberapa tab tidak menggandakan potongan kredit.
+
+## Komponen sumber terbuka
+
+Mesin perhitungan disertakan secara lokal di `index.html`; lihat [pemberitahuan lisensi](THIRD-PARTY-NOTICES.txt). Penjelasan Bahasa Indonesia ditulis untuk fitur Xuanji. Kutipan nonkomersial dari sumber lain tidak disertakan.
+
+Karena perhitungan dan penjelasan berjalan di perangkat, penguncian laporan di halaman bukan perlindungan salinan terhadap pengguna yang dapat menjalankan kode sendiri.
+
+## Catatan
+
+Hasil adalah bahan refleksi dan pengalaman budaya, bukan kepastian masa depan atau dasar tunggal keputusan penting. Pilihan, usaha, dan perbuatan baik tetap berarti.
