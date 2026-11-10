@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumah Rahasia · Xuanji, Hari Baik, Mimpi, Suhu</title>
-<meta name="rr-version" content="2026-11-10-customer-upgrade">
+<meta name="rr-version" content="2026-11-10-cinematic-entry">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230b0616'/%3E%3Cpath d='M50 8a42 42 0 0 1 0 84 21 21 0 0 1 0-42 21 21 0 0 0 0-42z' fill='%23d9b45b'/%3E%3Ccircle cx='50' cy='29' r='6' fill='%230b0616'/%3E%3Ccircle cx='50' cy='71' r='6' fill='%23d9b45b'/%3E%3C/svg%3E">
 <style>
 /* ========== 基础 ========== */
@@ -700,8 +700,126 @@ body.rr-site:not(.rr-at-home) .rr-app-nav .tab-btn svg{width:20px;height:20px}
 .rr-local-check{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.6;color:var(--text);margin-top:18px}.rr-local-check input{accent-color:#d5b16b;flex-shrink:0;width:17px;height:17px;margin-top:2px}
 
 </style>
+<style id="rrEntryStyle">
+/* The welcome uses its own selectors; application geometry stays unchanged. */
+#rrEntryApp{display:contents}
+.rr-entry[hidden],.rr-entry [hidden]{display:none!important}
+.rr-entry{--entry-gold:#d6ba80;position:fixed;inset:0;z-index:1200;isolation:isolate;overflow:hidden;display:grid;place-items:center;min-height:100svh;background:transparent;color:#f2e4c4;opacity:1;transition:opacity .7s ease,background-color 1.2s ease;overscroll-behavior:contain;font-family:var(--sans,Arial,sans-serif)}
+.rr-entry-sanctum,.rr-entry-shade{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.rr-entry-sanctum{z-index:0;transition:opacity 1.5s ease;perspective:1600px}
+.rr-entry-sanctum:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 77%,#53365055,transparent 65%),repeating-linear-gradient(2deg,transparent 0 78px,#91706606 80px,#0002 82px,transparent 86px),linear-gradient(110deg,#100c14,#251b2b 47%,#120e17);transition:opacity 1.8s ease}
+.rr-entry-world{--gate-width:min(80vw,48svh,580px);position:absolute;inset:0;transform:scale(.64);transform-origin:50% 59%;perspective:1500px;transform-style:preserve-3d;will-change:transform}
+.rr-entry-threshold{box-sizing:content-box;position:absolute;z-index:3;top:55%;left:50%;width:var(--gate-width);height:calc(var(--gate-width) * 1.5);transform:translate(-50%,-50%);border:clamp(10px,2.6vw,24px) solid #201a22;border-top-color:#39303a;box-shadow:0 0 0 2px #74604255,0 0 0 7px #0b090d,0 0 70px 12px #0009,inset 0 0 60px #000;perspective:1200px;background:transparent;transform-style:preserve-3d}
+.rr-entry-threshold:before{content:"";position:absolute;left:-8%;right:-8%;top:calc(clamp(10px,2.6vw,24px) * -1 - 17px);height:19px;background:repeating-linear-gradient(92deg,transparent 0 34px,#92827a0a 35px 36px),linear-gradient(#41343d,#221a24 42%,#514047 48%,#19121e 61%);border:1px solid #7e6b5440;box-shadow:0 8px 18px #0008}
+.rr-entry-column{position:absolute;z-index:2;top:calc(55% - var(--gate-width) * .79);width:clamp(24px,5.6vw,53px);height:calc(var(--gate-width) * 1.61);background:repeating-linear-gradient(7deg,transparent 0 77px,#0005 78px,#87757122 80px,transparent 82px),repeating-linear-gradient(89deg,transparent 0 5px,#9885780b 6px 7px),linear-gradient(90deg,#17121c,#45343f 20%,#302430 47%,#1b1420 82%,#0d0a11);border:1px solid #68514742;box-shadow:4px 0 12px #0009,inset 2px 0 0 #76635125;transition:opacity 1.5s ease}
+.rr-entry-column-left{right:calc(50% + var(--gate-width) * .5 + 17px)}
+.rr-entry-column-right{left:calc(50% + var(--gate-width) * .5 + 17px)}
+.rr-entry-column:before,.rr-entry-column:after{content:"";position:absolute;left:-6px;right:-6px;height:23px;background:linear-gradient(#50404a,#241c29 28%,#41333d 37%,#1c1521 70%);border:1px solid #68514755;box-shadow:0 5px 9px #0006}
+.rr-entry-column:before{top:-12px}.rr-entry-column:after{bottom:-10px;height:29px}
+.rr-entry-steps{position:absolute;z-index:1;left:50%;top:calc(55% + var(--gate-width) * .72);width:calc(var(--gate-width) * 1.85);height:calc(var(--gate-width) * .51);transform:translateX(-50%);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);background:repeating-linear-gradient(180deg,#66505a33 0 1px,#28202b 2px 16%,#100d18 17% 21%,#53434e66 22% 23%);box-shadow:inset 0 -45px 40px #130d20;opacity:.8;transition:opacity 1.5s ease}
+.rr-entry-lantern{position:absolute;z-index:4;top:calc(55% - var(--gate-width) * .31);width:clamp(23px,5.5vw,40px);height:clamp(33px,8vw,59px);border:2px solid #5f4832;border-radius:16% 16% 24% 24%;background:repeating-linear-gradient(90deg,#8b693744 0 1px,transparent 2px 20%),radial-gradient(ellipse at 50% 62%,#dfbd7985,#86604155 47%,#2a1c2444 80%);box-shadow:0 0 28px 5px #c1944720,inset 0 0 10px #2e181d;transform:translateX(-50%);transition:opacity 1.5s ease}
+.rr-entry-lantern-left{left:calc(50% - var(--gate-width) * .5 - 22px)}
+.rr-entry-lantern-right{left:calc(50% + var(--gate-width) * .5 + 22px)}
+.rr-entry-lantern:before{content:"";position:absolute;top:-50px;left:50%;width:1px;height:47px;background:linear-gradient(#9d7b4840,#ad8a555e);box-shadow:1px 0 #000b}
+.rr-entry-lantern:after{content:"";position:absolute;left:-5px;right:-5px;top:-7px;height:8px;background:linear-gradient(#756040,#2a1b21);clip-path:polygon(15% 0,85% 0,100% 100%,0 100%)}
+.rr-entry-lantern i{position:absolute;left:25%;right:25%;top:32%;bottom:18%;border-radius:50%;background:#e2ba6a55;filter:blur(5px);animation:rrEntryFlame 3.2s ease-in-out infinite alternate}
+.rr-entry-lantern b{position:absolute;bottom:-12px;left:48%;width:2px;height:10px;background:#8e643f66;box-shadow:3px 0 #54374d}
+.rr-entry-door-art{position:absolute;inset:0;background-repeat:no-repeat;background-size:200% 100%;z-index:1;backface-visibility:hidden}
+.rr-entry-door-art:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,#5320442b,transparent 48%,#b18d3412);mix-blend-mode:soft-light}
+.rr-entry-door-left .rr-entry-door-art{background-position:0 50%}.rr-entry-door-right .rr-entry-door-art{background-position:100% 50%}
+.rr-entry[data-gate-art="true"] .rr-entry-door:before,.rr-entry[data-gate-art="true"] .rr-entry-door:after,.rr-entry[data-gate-art="true"] .rr-entry-door i,.rr-entry[data-gate-art="true"] .rr-entry-door b{display:none}
+
+.rr-entry-light{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 52%,#d6af6b6b 0%,#6c455a3d 28%,#1a1123 68%);box-shadow:inset 0 0 100px #07050d;opacity:.85;transition:opacity 1.8s ease}
+.rr-entry-door{position:absolute;top:0;bottom:0;width:50%;background:repeating-linear-gradient(89deg,transparent 0 15px,#b8a07905 16px 17px,#0002 18px 19px,transparent 20px 43px),repeating-linear-gradient(92deg,#1e1821 0 31px,#382a2b 34px,#251e26 36px,#17131c 65px);border:1px solid #77603c66;box-shadow:inset 0 0 35px #09070c,0 0 18px #000b;backface-visibility:hidden;transform-style:preserve-3d}
+.rr-entry-door:before{content:"";position:absolute;inset:9% 12%;border:1px solid #a28c5c55;box-shadow:0 0 0 7px #09080b77,0 0 0 8px #75603b44,inset 0 0 0 11px #09070b66,inset 0 0 0 12px #6f583c44}
+.rr-entry-door:after{content:"";position:absolute;left:12%;right:12%;height:3px;top:27%;background:linear-gradient(90deg,#75604344,#c7a76977,#75604344);box-shadow:0 36vh 0 #8b6d3a44}
+.rr-entry-door-left{left:0;transform-origin:left center;border-right-color:#e0bd7a99}
+.rr-entry-door-right{right:0;transform-origin:right center;border-left-color:#e0bd7a99}
+.rr-entry-door i{position:absolute;top:58%;width:clamp(18px,4vw,40px);height:clamp(25px,5vw,48px);border:4px solid #9e8050;border-radius:50%;box-shadow:0 2px 4px #000b,inset 0 0 3px #dfcda259;background:#110d1655;opacity:.8}
+.rr-entry-door-left i{right:16%}.rr-entry-door-right i{left:16%}
+.rr-entry-door b{position:absolute;top:17%;left:20%;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#b59862,#4c3e2b 70%);box-shadow:0 12vh 0 #8d734a,0 24vh 0 #806740,0 48vh 0 #806740,0 60vh 0 #806740;opacity:.55}
+.rr-entry-door-right b{left:auto;right:20%}
+.rr-entry-mist{position:absolute;z-index:2;left:-30%;width:160%;height:45%;bottom:-15%;background:radial-gradient(ellipse,#69507535,transparent 65%);filter:blur(24px);animation:rrEntryMist 12s ease-in-out infinite alternate}
+.rr-entry-mist-two{left:-10%;bottom:3%;height:23%;opacity:.55;animation-delay:-6s;animation-direction:alternate-reverse}
+.rr-entry-dust{position:absolute;inset:0;opacity:.3;background-image:radial-gradient(1px 1px at 12% 34%,#ddc28b 0 65%,transparent),radial-gradient(1px 1px at 73% 17%,#ddc28b 0 65%,transparent),radial-gradient(1px 1px at 63% 70%,#ddc28b 0 65%,transparent),radial-gradient(1px 1px at 22% 81%,#ddc28b 0 65%,transparent),radial-gradient(1px 1px at 84% 62%,#ddc28b 0 65%,transparent);background-size:370px 550px;animation:rrEntryDust 18s linear infinite}
+.rr-entry-shade{z-index:2;background:linear-gradient(180deg,#0d091449 0%,#120c1b16 27%,transparent 54%,#100b1973 100%),radial-gradient(ellipse at 50% 45%,transparent 15%,#0b071736 68%,#08051096 100%);transition:opacity 1s ease}
+.rr-entry-brand{position:absolute;z-index:3;top:clamp(80px,10svh,125px);left:20px;right:20px;text-align:center;pointer-events:none;text-shadow:0 2px 18px #08050fee;opacity:1;transform:translateY(0);transition:opacity .85s ease,transform 1.1s ease;animation:rrEntryBrand 1.3s ease}
+.rr-entry-name{margin:0 0 13px;font:500 10px/1.5 var(--sans,Arial,sans-serif);letter-spacing:.31em;text-indent:.31em;color:#decda8}
+.rr-entry h1{margin:0;font:500 clamp(42px,9.4vw,64px)/1.12 Georgia,"Times New Roman",serif;letter-spacing:.16em;text-indent:.16em;color:#e6c88d;filter:drop-shadow(0 1px 1px #120c1d)}
+.rr-entry-rule{display:block;width:92px;height:1px;background:linear-gradient(90deg,transparent,#d3b27799,transparent);margin:16px auto 11px}
+.rr-entry-tagline{margin:0;color:#eadcc0;font:400 clamp(12px,2.9vw,14px)/1.6 var(--sans,Arial,sans-serif);letter-spacing:.08em}
+.rr-entry-skip{position:absolute;z-index:5;top:max(15px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));min-height:44px;min-width:88px;padding:10px 15px;border:1px solid #d4b77955;border-radius:999px;background:#100c19a3;color:#f2e4c4;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font:400 12px/1.5 var(--sans,Arial,sans-serif);letter-spacing:.06em;cursor:pointer}
+.rr-entry-skip span{margin-left:7px;color:#e5c385}
+.rr-entry-skip:hover{background:#2a1e32d9;border-color:#d4b779ad}
+.rr-entry-skip:focus-visible,.rr-entry-enter:focus-visible,#homeIntroReplay:focus-visible{outline:2px solid #f3ddb1;outline-offset:5px}
+.rr-entry-bottom{position:absolute;z-index:4;bottom:max(31px,calc(env(safe-area-inset-bottom) + 20px));left:20px;right:20px;text-align:center;transition:opacity .6s ease}
+.rr-entry-enter{min-height:46px;max-width:100%;padding:12px 27px;border:1px solid #aa895c;border-radius:5px;background:linear-gradient(135deg,#342733ed,#1b1425eb);color:#ecd5a8;font:500 13px/1.5 var(--sans,Arial,sans-serif);letter-spacing:.07em;cursor:pointer;margin:0 auto 15px}
+.rr-entry-enter span{margin-left:14px}
+.rr-entry-enter:disabled{opacity:.68;cursor:default}
+.rr-entry-status{margin:0;color:#dbccb2;font:400 11px/1.7 var(--sans,Arial,sans-serif);letter-spacing:.07em}
+.rr-entry[data-state="opening"] .rr-entry-brand,.rr-entry[data-state="opening"] .rr-entry-bottom{opacity:0;transform:translateY(-8px)}
+.rr-entry[data-state="opening"] .rr-entry-shade{opacity:.3}
+.rr-entry[data-state="approach"] .rr-entry-world{animation:rrEntryApproach 2.4s cubic-bezier(.18,.4,.24,1) both}
+.rr-entry[data-state="ready"] .rr-entry-world,.rr-entry[data-static="true"] .rr-entry-world{transform:scale(1)}
+.rr-entry[data-opened="true"] .rr-entry-door-left{animation:rrEntryDoorLeft 6.2s cubic-bezier(.4,0,.5,1) both}
+.rr-entry[data-opened="true"] .rr-entry-door-right{animation:rrEntryDoorRight 6.2s cubic-bezier(.4,0,.5,1) both}
+.rr-entry[data-opened="true"] .rr-entry-world{animation:rrEntryAdvance 6.2s ease-in both}
+.rr-entry[data-reveal="true"] .rr-entry-sanctum:before,.rr-entry[data-reveal="true"] .rr-entry-light,.rr-entry[data-reveal="true"] .rr-entry-shade{opacity:0}
+.rr-entry[data-reveal="true"] .rr-entry-column,.rr-entry[data-reveal="true"] .rr-entry-steps,.rr-entry[data-reveal="true"] .rr-entry-lantern{opacity:0}
+.rr-entry[data-state="arriving"] .rr-entry-sanctum,.rr-entry[data-state="arriving"] .rr-entry-shade,.rr-entry[data-state="arriving"] .rr-entry-brand,.rr-entry[data-state="arriving"] .rr-entry-bottom{opacity:0}
+body.rr-entry-arriving #homeFrame{animation:rrEntryHomeArrives 1.3s ease both}
+.rr-entry[data-state="leaving"]{opacity:0;pointer-events:none}
+.rr-entry[data-state="leaving"] .rr-entry-brand,.rr-entry[data-state="leaving"] .rr-entry-bottom{opacity:0}
+.rr-entry[data-motion="paused"] *{animation-play-state:paused!important}
+.rr-entry[data-static="true"] *{animation:none!important;transition:none!important}
+.rr-entry-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+button.rr-brand{appearance:none;border:0;border-radius:3px;background:none;padding:0;box-shadow:none;color:inherit;text-align:left;cursor:pointer;font:inherit;letter-spacing:normal}
+button.rr-brand:hover{background:none;border:0;box-shadow:none}
+@keyframes rrEntryHomeArrives{from{opacity:.28;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rrEntryBrand{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rrEntryMist{to{transform:translate(6%,-8%) scale(1.12)}}
+@keyframes rrEntryDust{to{background-position:0 -120px}}
+@keyframes rrEntryFlame{0%,100%{opacity:.68;transform:scale(.93)}48%{opacity:1;transform:scale(1.06)}}
+@keyframes rrEntryDoorLeft{0%,9%{transform:rotateY(0)}24%{transform:rotateY(3deg)}44%{transform:rotateY(16deg)}72%{transform:rotateY(45deg)}100%{transform:rotateY(83deg)}}
+@keyframes rrEntryDoorRight{0%,9%{transform:rotateY(0)}24%{transform:rotateY(-3deg)}44%{transform:rotateY(-16deg)}72%{transform:rotateY(-45deg)}100%{transform:rotateY(-83deg)}}
+@keyframes rrEntryApproach{from{transform:scale(.64)}to{transform:scale(1)}}
+@keyframes rrEntryAdvance{0%,20%{transform:scale(1)}70%{transform:scale(1.05)}100%{transform:scale(1.2)}}
+body.rr-entry-open #homeScreen *{animation-play-state:paused!important}
+body.rr-entry-open.rr-entry-arriving #homeFrame{animation-play-state:running!important}
+@media(max-height:600px){.rr-entry-brand{top:40px}.rr-entry h1{font-size:40px}.rr-entry-name{margin-bottom:6px;font-size:9px}.rr-entry-rule{margin:12px auto 9px}.rr-entry-bottom{bottom:18px}}
+@media(min-width:900px){.rr-entry-brand{top:6svh}.rr-entry-name{font-size:11px;margin-bottom:8px}.rr-entry-rule{margin:12px auto 8px}.rr-entry-skip{top:28px;right:32px}.rr-entry-bottom{bottom:35px}}
+@media(prefers-reduced-motion:reduce){.rr-entry,.rr-entry *{animation:none!important;transition:none!important}}
+@media print{.rr-entry{display:none!important}#rrEntryApp{display:contents!important}}
+
+</style>
 </head>
 <body class="mode-auto rr-site rr-at-home" data-palette="violet">
+<!-- A brief, optional welcome. Account callbacks bypass this layer. -->
+<section id="rrEntry" class="rr-entry" hidden role="dialog" aria-modal="true" aria-labelledby="rrEntryTitle" aria-describedby="rrEntryDescription" data-state="waiting" data-motion="paused">
+ <div class="rr-entry-sanctum" aria-hidden="true">
+  <div class="rr-entry-mist rr-entry-mist-one"></div><div class="rr-entry-mist rr-entry-mist-two"></div>
+  <div class="rr-entry-world" id="rrEntryWorld">
+   <div class="rr-entry-steps"></div>
+   <div class="rr-entry-column rr-entry-column-left"></div><div class="rr-entry-column rr-entry-column-right"></div>
+   <div class="rr-entry-lantern rr-entry-lantern-left"><i></i><b></b></div><div class="rr-entry-lantern rr-entry-lantern-right"><i></i><b></b></div>
+   <div class="rr-entry-threshold" id="rrEntryGate"><div class="rr-entry-light"></div><div class="rr-entry-door rr-entry-door-left"><div class="rr-entry-door-art" id="rrEntryDoorLeft"></div><i></i><b></b></div><div class="rr-entry-door rr-entry-door-right"><div class="rr-entry-door-art" id="rrEntryDoorRight"></div><i></i><b></b></div></div>
+  </div>
+  <div class="rr-entry-dust"></div>
+ </div>
+ <div class="rr-entry-shade" aria-hidden="true"></div>
+ <div class="rr-entry-brand">
+
+  <p class="rr-entry-name">RUMAH RAHASIA</p>
+  <h1 id="rrEntryTitle">XUANJI</h1>
+  <span class="rr-entry-rule" aria-hidden="true"></span>
+  <p class="rr-entry-tagline">Kenali diri. Temukan arah.</p>
+ </div>
+ <p id="rrEntryDescription" class="rr-entry-sr">Gerbang Xuanji. Ketuk Buka gerbang untuk membuka dengan suara, atau Lewati untuk langsung ke halaman utama.</p>
+ <button id="rrEntrySkip" class="rr-entry-skip" type="button" aria-label="Lewati pembuka">Lewati <span aria-hidden="true">→</span></button>
+ <div class="rr-entry-bottom"><button id="rrEntryEnter" class="rr-entry-enter" type="button">Buka gerbang <span aria-hidden="true">→</span></button><p id="rrEntryStatus" class="rr-entry-status" role="status">Ketuk untuk membuka dengan suara</p></div>
+</section>
+
+<div id="rrEntryApp">
 
 
 
@@ -781,7 +899,7 @@ body.rr-site:not(.rr-at-home) .rr-app-nav .tab-btn svg{width:20px;height:20px}
   <i class="rr-meteor" style="--x:89%;--y:79%;--length:86px;--duration:12s;--delay:-2.5s"></i>
  </div>
  
- <header class="rr-app-header"><div class="rr-brand"><svg class="rr-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 14c6-1 10-5 13-10 3 5 7 9 13 10H3ZM8 14v13m16-13v13M5 28h22M7 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><span class="rr-brand-name">Xuanji</span><span class="rr-brand-sub">Rumah Rahasia <span id="homeBalance" class="rr-home-balance" hidden></span></span></div></div><div class="rr-header-actions"><button class="rr-motion-toggle" id="homeMotionToggle" type="button" aria-label="Jeda animasi" title="Jeda animasi" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="rr-login" id="homeAccount" type="button">Masuk</button></div></header>
+ <header class="rr-app-header"><button id="homeIntroReplay" class="rr-brand" type="button" aria-label="Putar pembuka Xuanji" title="Putar pembuka Xuanji"><svg class="rr-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 14c6-1 10-5 13-10 3 5 7 9 13 10H3ZM8 14v13m16-13v13M5 28h22M7 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><span class="rr-brand-name">Xuanji</span><span class="rr-brand-sub">Rumah Rahasia <span id="homeBalance" class="rr-home-balance" hidden></span></span></div></button><div class="rr-header-actions"><button class="rr-motion-toggle" id="homeMotionToggle" type="button" aria-label="Jeda animasi" title="Jeda animasi" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="rr-login" id="homeAccount" type="button">Masuk</button></div></header>
  <section class="rr-hero" aria-labelledby="homeHeroTitle">
   <h1 id="homeHeroTitle"><span>Kenali diri.</span><span>Rencanakan hari.</span></h1>
   <p class="rr-hero-copy">Mulai dari peta kelahiran gratis.</p>
@@ -977,6 +1095,8 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
   <label class="rra-label" for="rraConfirmPassword">Ulangi kata sandi baru</label><input class="m-inp" id="rraConfirmPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Tulis kembali kata sandi">
   <p class="m-err" id="rraRecoveryStatus" role="status"></p><button class="btn" id="rraSavePassword" type="button">SIMPAN KATA SANDI</button>
  </div>
+</div>
+
 </div>
 
 <script>
@@ -3786,8 +3906,130 @@ function rrLocalInit(){
   window.addEventListener('storage',function(e){if(e.key===RR_LOCAL.key){rrSavedDaysRender();if(XZcur)xzPick(XZcur,true);}});rrSavedDaysRender();
 }
 
+/* Optional local welcome. Only a deliberate tap can enable its short sound. */
+var RR_ENTRY={active:false,closing:false,initialized:false,authReturn:false,mode:null,sequence:0,timers:[],images:[],frame:null,elapsed:0,lastFrame:0,focus:null,overflow:null,appInert:false,appAria:null,startedAt:0,media:null,seenKey:'xuanji_entry_seen_v1',force:false,pendingOpen:false,sound:null,soundNodes:[],soundStarted:false};
+function rrEntryCapture(){
+  try{var hash=new URLSearchParams(location.hash.slice(1)),query=new URLSearchParams(location.search);RR_ENTRY.authReturn=['access_token','refresh_token','error','error_code','code'].some(function(k){return hash.has(k)||query.has(k)})||['recovery','signup','email_change','magiclink'].some(function(type){return hash.get('type')===type||query.get('type')===type;});RR_ENTRY.force=query.get('intro')==='1';}catch(e){RR_ENTRY.authReturn=true;}
+}
+function rrEntryMotionAllowed(){
+  var reduced=RR_ENTRY.media&&RR_ENTRY.media.matches,paused=false;try{paused=localStorage.getItem('rr_motion')==='paused';}catch(e){}return !reduced&&!paused;
+}
+function rrEntryLater(fn,ms){var seq=RR_ENTRY.sequence,id=setTimeout(function(){if(seq===RR_ENTRY.sequence)fn();},ms);RR_ENTRY.timers.push(id);return id;}
+function rrEntryMarkSeen(){try{sessionStorage.setItem(RR_ENTRY.seenKey,'1');}catch(e){}}
+function rrEntrySeen(){try{return sessionStorage.getItem(RR_ENTRY.seenKey)==='1';}catch(e){return false;}}
+function rrEntrySoundRelease(){
+  var context=RR_ENTRY.sound;RR_ENTRY.sound=null;RR_ENTRY.soundStarted=false;
+  RR_ENTRY.soundNodes.forEach(function(node){try{if(node.stop)node.stop();node.disconnect();}catch(e){}});RR_ENTRY.soundNodes=[];
+  if(context&&context.state!=='closed')try{var closed=context.close();if(closed&&closed.catch)closed.catch(function(){});}catch(e){}
+}
+function rrEntrySoundUnlock(){
+  if(!RR_ENTRY.active||!rrEntryMotionAllowed()||RR_ENTRY.sound)return;
+  var Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;
+  try{var context=new Audio();RR_ENTRY.sound=context;var resumed=context.resume();if(resumed&&resumed.then)resumed.then(function(){if(RR_ENTRY.sound===context&&RR_ENTRY.active&&RR_ENTRY.mode==='opening'&&RR_ENTRY.elapsed<400)rrEntrySoundStart();}).catch(function(){if(RR_ENTRY.sound===context)rrEntrySoundRelease();});}catch(e){rrEntrySoundRelease();}
+}
+function rrEntrySoundStart(){
+  var context=RR_ENTRY.sound;if(!context||context.state!=='running'||RR_ENTRY.soundStarted||!RR_ENTRY.active||RR_ENTRY.mode!=='opening')return;
+  RR_ENTRY.soundStarted=true;
+  try{
+    var now=context.currentTime,master=context.createGain();master.gain.setValueAtTime(.38,now);master.gain.setValueAtTime(.38,now+5.85);master.gain.linearRampToValueAtTime(0,now+6.18);master.connect(context.destination);RR_ENTRY.soundNodes.push(master);
+    function tone(type,frequency,endFrequency,start,duration,peaks){var source=context.createOscillator(),gain=context.createGain();source.type=type;source.frequency.setValueAtTime(frequency,now+start);source.frequency.exponentialRampToValueAtTime(endFrequency,now+start+duration);gain.gain.setValueAtTime(0,now+start);peaks.forEach(function(p){gain.gain.linearRampToValueAtTime(p[1],now+start+p[0]);});gain.gain.linearRampToValueAtTime(0,now+start+duration);source.connect(gain);gain.connect(master);source.start(now+start);source.stop(now+start+duration+.02);RR_ENTRY.soundNodes.push(source,gain);}
+    function wood(start,duration,volume,cutoff){var length=Math.ceil(context.sampleRate*duration),buffer=context.createBuffer(1,length,context.sampleRate),data=buffer.getChannelData(0),brown=0;for(var i=0;i<length;i++){brown=(brown+(Math.random()*2-1)*.025)/1.025;data[i]=brown*3.2;}var source=context.createBufferSource(),filter=context.createBiquadFilter(),gain=context.createGain();source.buffer=buffer;filter.type='lowpass';filter.frequency.setValueAtTime(cutoff,now+start);filter.Q.value=.65;gain.gain.setValueAtTime(0,now+start);gain.gain.linearRampToValueAtTime(volume,now+start+Math.min(.4,duration*.18));gain.gain.linearRampToValueAtTime(volume*.48,now+start+duration*.74);gain.gain.linearRampToValueAtTime(0,now+start+duration);source.connect(filter);filter.connect(gain);gain.connect(master);source.start(now+start);source.stop(now+start+duration+.02);RR_ENTRY.soundNodes.push(source,filter,gain);}
+    tone('sine',83,46,.12,5.25,[[.45,.1],[2.8,.11],[4.6,.065]]);
+    wood(.3,5.05,.19,580);
+    tone('triangle',208,116,.6,4.55,[[.3,.015],[.7,.042],[1.15,.013],[1.9,.036],[2.5,.012],[3.1,.031],[3.8,.008]]);
+    tone('sine',94,31,5.22,.79,[[.035,.21],[.13,.12],[.4,.028]]);
+    wood(5.22,.38,.16,430);
+    tone('sine',58,40,5.3,.86,[[.06,.07],[.27,.033],[.58,.009]]);
+  }catch(e){rrEntrySoundRelease();}
+}
+function rrEntryReleaseMedia(){
+  if(RR_ENTRY.frame!==null)cancelAnimationFrame(RR_ENTRY.frame);RR_ENTRY.frame=null;rrEntrySoundRelease();
+  RR_ENTRY.images.forEach(function(image){image.onload=null;image.onerror=null;image.removeAttribute('src');});RR_ENTRY.images=[];
+  ['rrEntryDoorLeft','rrEntryDoorRight'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.backgroundImage='';});
+}
+function rrEntryClose(immediate,restoreFocus){
+  if(!RR_ENTRY.active&&!RR_ENTRY.closing)return;
+  var layer=document.getElementById('rrEntry'),app=document.getElementById('rrEntryApp'),world=document.getElementById('rrEntryWorld');
+  if(!layer.hidden&&world)world.style.transform=getComputedStyle(world).transform;
+  RR_ENTRY.timers.forEach(clearTimeout);RR_ENTRY.timers=[];RR_ENTRY.sequence++;RR_ENTRY.active=false;RR_ENTRY.closing=true;RR_ENTRY.mode=null;RR_ENTRY.pendingOpen=false;if(RR_ENTRY.frame!==null)cancelAnimationFrame(RR_ENTRY.frame);RR_ENTRY.frame=null;rrEntrySoundRelease();layer.dataset.motion='paused';layer.dataset.state='leaving';rrEntryMarkSeen();
+  function finish(){
+    layer.hidden=true;RR_ENTRY.closing=false;rrEntryReleaseMedia();
+    app.inert=RR_ENTRY.appInert;if(RR_ENTRY.appAria===null)app.removeAttribute('aria-hidden');else app.setAttribute('aria-hidden',RR_ENTRY.appAria);
+    if(RR_ENTRY.overflow!==null)document.body.style.overflow=RR_ENTRY.overflow;RR_ENTRY.overflow=null;document.body.classList.remove('rr-entry-open','rr-entry-arriving');
+    if(typeof rrHomeMotion==='function')rrHomeMotion();
+    if(restoreFocus!==false){var target=RR_ENTRY.focus;if(!target||target===document.body||!document.contains(target)||!target.getClientRects().length)target=document.getElementById('startXuanji');if(target&&!target.closest('[inert]'))target.focus({preventScroll:true});}
+    RR_ENTRY.focus=null;
+  }
+  if(immediate||!rrEntryMotionAllowed())finish();else rrEntryLater(finish,720);
+}
+function rrEntryBeginOpening(){
+  if(!RR_ENTRY.active||RR_ENTRY.mode!=='ready')return;
+  RR_ENTRY.mode='opening';RR_ENTRY.elapsed=0;RR_ENTRY.lastFrame=0;var layer=document.getElementById('rrEntry');layer.dataset.state='playing';layer.dataset.opened='true';document.getElementById('rrEntryStatus').textContent='Selamat datang di Xuanji.';rrEntrySoundStart();RR_ENTRY.frame=requestAnimationFrame(rrEntryTick);
+}
+function rrEntryRequestOpen(withSound){
+  if(!RR_ENTRY.active||RR_ENTRY.closing)return;if(RR_ENTRY.mode==='static'){rrEntryClose(true,true);return;}
+  if(RR_ENTRY.pendingOpen||RR_ENTRY.mode==='opening')return;
+  RR_ENTRY.pendingOpen=true;if(withSound)rrEntrySoundUnlock();
+  var button=document.getElementById('rrEntryEnter');button.disabled=true;button.textContent='Membuka gerbang…';document.getElementById('rrEntryStatus').textContent='Selamat datang di Xuanji.';if(document.activeElement===button)document.getElementById('rrEntrySkip').focus({preventScroll:true});
+  if(RR_ENTRY.mode==='ready')rrEntryBeginOpening();
+}
+function rrEntryTick(now){
+  if(!RR_ENTRY.active||(RR_ENTRY.mode!=='approach'&&RR_ENTRY.mode!=='opening'))return;
+  if(!document.hidden&&RR_ENTRY.lastFrame)RR_ENTRY.elapsed+=Math.max(0,now-RR_ENTRY.lastFrame);RR_ENTRY.lastFrame=now;
+  var layer=document.getElementById('rrEntry');
+  if(RR_ENTRY.mode==='approach'){
+    if(RR_ENTRY.elapsed>=2400){RR_ENTRY.mode='ready';RR_ENTRY.frame=null;RR_ENTRY.lastFrame=0;layer.dataset.state='ready';if(RR_ENTRY.pendingOpen)rrEntryBeginOpening();return;}
+  }else{
+    if(RR_ENTRY.elapsed>=6200){rrEntryClose(false,true);return;}
+    if(RR_ENTRY.elapsed>=3900){layer.dataset.reveal='true';document.body.classList.add('rr-entry-arriving');}
+    if(RR_ENTRY.elapsed>=5200)layer.dataset.state='arriving';else if(RR_ENTRY.elapsed>=1100)layer.dataset.state='opening';
+  }
+  RR_ENTRY.frame=requestAnimationFrame(rrEntryTick);
+}
+function rrEntryStartScene(loaded){
+  if(!RR_ENTRY.active||RR_ENTRY.mode!=='loading')return;
+  RR_ENTRY.mode='approach';var layer=document.getElementById('rrEntry');layer.dataset.gateArt=String(loaded);layer.dataset.asset=loaded?'ready':'fallback';
+  RR_ENTRY.images.forEach(function(image){image.onload=null;image.onerror=null;});
+  if(loaded)['rrEntryDoorLeft','rrEntryDoorRight'].forEach(function(id){document.getElementById(id).style.backgroundImage='url("ancient-gate.png")';});
+  RR_ENTRY.elapsed=0;RR_ENTRY.lastFrame=0;layer.dataset.state='approach';RR_ENTRY.frame=requestAnimationFrame(rrEntryTick);
+}
+function rrEntryLoadArtwork(){
+  var sequence=RR_ENTRY.sequence,image=new Image();RR_ENTRY.images.push(image);
+  function done(ok){if(sequence!==RR_ENTRY.sequence||!RR_ENTRY.active||RR_ENTRY.mode!=='loading')return;image.onload=null;image.onerror=null;rrEntryStartScene(ok);}
+  image.onload=function(){done(image.naturalWidth>0)};image.onerror=function(){done(false)};image.src='ancient-gate.png';
+  rrEntryLater(function(){rrEntryStartScene(false)},4500);
+}
+function rrEntryOpen(manual){
+  if(RR_ENTRY.active||RR_ENTRY.closing||RR_ENTRY.authReturn)return false;
+  var layer=document.getElementById('rrEntry'),app=document.getElementById('rrEntryApp');if(!layer||!app)return false;
+  var allowed=rrEntryMotionAllowed();if(!manual&&(!allowed||(!RR_ENTRY.force&&rrEntrySeen())))return false;
+  if(Array.from(document.querySelectorAll('.modal-layer,#rraRecovery,#rraCenter,#rrLocalModal')).some(function(el){return !el.hidden&&el.getClientRects().length&&getComputedStyle(el).display!=='none';}))return false;
+  RR_ENTRY.sequence++;RR_ENTRY.active=true;RR_ENTRY.closing=false;RR_ENTRY.mode=allowed?'loading':'static';RR_ENTRY.pendingOpen=false;RR_ENTRY.elapsed=0;RR_ENTRY.lastFrame=0;RR_ENTRY.startedAt=Date.now();RR_ENTRY.focus=document.activeElement;RR_ENTRY.overflow=document.body.style.overflow;RR_ENTRY.appInert=app.inert;RR_ENTRY.appAria=app.getAttribute('aria-hidden');
+  document.body.style.overflow='hidden';document.body.classList.add('rr-entry-open');app.inert=true;app.setAttribute('aria-hidden','true');layer.hidden=false;layer.dataset.state=allowed?'waiting':'fallback';layer.dataset.static=String(!allowed);layer.dataset.motion=allowed&&!document.hidden?'running':'paused';layer.dataset.gateArt='false';layer.dataset.reveal='false';layer.dataset.opened='false';layer.dataset.asset=allowed?'loading':'none';document.getElementById('rrEntryWorld').style.transform='';
+  var enter=document.getElementById('rrEntryEnter');enter.hidden=false;enter.disabled=false;enter.textContent=allowed?'Buka gerbang  →':'Buka Xuanji  →';document.getElementById('rrEntryStatus').textContent=allowed?'Ketuk untuk membuka dengan suara':'Pembuka tanpa animasi.';
+  rrEntryMarkSeen();document.getElementById('rrEntrySkip').focus({preventScroll:true});
+  var home=document.getElementById('homeScreen');if(home)home.dataset.motion='paused';
+  if(!allowed)return true;
+  rrEntryLoadArtwork();rrEntryLater(function(){rrEntryRequestOpen(false)},9000);rrEntryLater(function(){rrEntryClose(true,!document.hidden)},16000);return true;
+}
+function rrEntryInit(){
+  if(RR_ENTRY.initialized)return;RR_ENTRY.initialized=true;
+  var layer=document.getElementById('rrEntry'),skip=document.getElementById('rrEntrySkip'),enter=document.getElementById('rrEntryEnter'),replay=document.getElementById('homeIntroReplay');
+  RR_ENTRY.media=window.matchMedia('(prefers-reduced-motion: reduce)');
+  skip.addEventListener('click',function(){rrEntryClose(false,true);});enter.addEventListener('click',function(event){rrEntryRequestOpen(event.isTrusted===true);});if(replay)replay.addEventListener('click',function(){rrEntryOpen(true);});
+  layer.addEventListener('keydown',function(e){if(e.key==='Escape'){e.preventDefault();rrEntryClose(false,true);return;}if(e.key!=='Tab')return;var buttons=[skip,enter].filter(function(el){return !el.hidden&&!el.disabled;}),first=buttons[0],last=buttons[buttons.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}});
+  document.addEventListener('visibilitychange',function(){if(!RR_ENTRY.active)return;layer.dataset.motion=!document.hidden&&rrEntryMotionAllowed()?'running':'paused';RR_ENTRY.lastFrame=0;var context=RR_ENTRY.sound;if(context&&context.state!=='closed')try{var changed=document.hidden?context.suspend():context.resume();if(changed&&changed.catch)changed.catch(function(){});}catch(e){}if(!document.hidden){var home=document.getElementById('homeScreen');if(home)home.dataset.motion='paused';if(Date.now()-RR_ENTRY.startedAt>16000)rrEntryClose(true,true);}});
+  function preferenceChanged(){if(RR_ENTRY.active&&!rrEntryMotionAllowed())rrEntryClose(true,true);}
+  if(RR_ENTRY.media.addEventListener)RR_ENTRY.media.addEventListener('change',preferenceChanged);else if(RR_ENTRY.media.addListener)RR_ENTRY.media.addListener(preferenceChanged);
+  window.addEventListener('storage',function(e){if(e.key==='rr_motion')preferenceChanged();});
+  window.addEventListener('pagehide',function(){rrEntryClose(true,false);});window.addEventListener('pageshow',function(e){if(e.persisted)rrEntryClose(true,false);});
+  rrEntryOpen(false);
+}
+
 /* ================= 初始化 ================= */
+rrEntryCapture();
 rrInitHome();initXuanji();initAuth();initDream();initAi();renderToday();renderXZ();renderHist('dream');renderHist('qian');rrLocalInit();
+rrEntryInit();
 </script>
 </body>
 </html>
