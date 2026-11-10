@@ -1,32 +1,17 @@
-# Rumah Rahasia · Xuanji
+# Xuanji · Rumah Rahasia
 
-Beranda baru berwarna ungu dan emas dengan empat pintasan layanan, animasi
-meteor halus, dan Taiji yang berputar serta berganti warna perlahan.
-Tombol jeda menghentikan animasi; preferensi pengurangan gerakan dihormati.
-Pilih Akun untuk saldo, isi kredit, undangan, atau keluar. Tombol Beranda
-kembali ke halaman depan tanpa menghapus laporan atau isian.
+Versi: 2026-11-10-customer-upgrade.
 
-Situs resmi: https://tanyasuhu.github.io/xuanjige/
+Buka [Xuanji](https://tanyasuhu.github.io/xuanjige/) untuk peta kelahiran, Hari Baik, Mimpi, dan Suhu.
 
-Laporan Xuanji kini memiliki empat bagian:
+Menu Akun menampilkan saldo, riwayat kredit, status pengajuan isi kredit, dan undangan.
+Pemulihan kata sandi dan email konfirmasi sudah tersedia melalui alamat email akun.
+Bonus pendaftaran 3 kredit diterima setelah email terverifikasi. Bonus undangan 1 kredit untuk masing-masing pihak diterima setelah teman memenuhi verifikasi dan penggunaan pertama; maksimal 10 bonus undangan per bulan untuk pengundang.
 
-- **Ringkasan**: tema utama, empat penanda kelahiran, dan kombinasi simbol
-  dengan bukti letak sebenarnya. Sepuluh kombinasi diperiksa tanpa skor nasib.
-- **Peta & 12 ruang**: pilih ruang untuk menyoroti hubungan empat ruang,
-  membaca bintang utama, simbol pendukung, dan pertanyaan refleksi kehidupan.
-- **Fase & tahunan**: dua belas fase sepuluh tahun, tahun pilihan, dan rinciannya.
-- **Bandingkan tahun**: dua tahun berdampingan dengan fase panjang masing-masing.
+Cadangan & pemulihan menyimpan berkas pribadi di perangkat Anda. Untuk memulihkan laporan akun, gunakan cadangan dan akun yang sama. Riwayat mimpi serta arsip lama dipakai bersama oleh semua akun pada browser ini dan tidak disertakan secara otomatis. Berkas cadangan tidak memuat sesi masuk, kata sandi, kunci koneksi, atau percakapan Suhu. Simpan berkas sendiri dengan aman. Data lahir dan isi laporan tidak dikirim ke server akun.
 
-Peta dan ringkasan awal gratis. Laporan lengkap 25 kredit setelah konfirmasi;
-semua bagian termasuk, tanpa potongan tambahan saat memilih ruang atau tahun.
-Laporan lama tetap dapat dibuka di akun dan browser yang sama. Unduhan memuat
-semua ruang kelahiran, periode pilihan, dan kedua tahun pembanding.
+Hari Baik mendukung tanggal tersimpan serta unduhan kalender .ics. Buka berkas tersebut di aplikasi kalender Anda untuk menambahkan tanggal dan mengatur pengingat.
 
-Data lahir tetap diproses di perangkat; tersedia 28 kota Indonesia dengan
-bujur pusat kota dan zona waktu historis. Tahun mengikuti Imlek dan usia
-tradisional. Interpretasi adalah refleksi budaya, bukan kepastian masa depan,
-diagnosis, penilaian pasangan, atau jaminan hasil keuangan.
+Peta dan ringkasan Xuanji tetap gratis. Laporan lengkap tetap 25 kredit. Pembelian dan pengajuan pembayaran menggunakan alur yang sudah ada. Suhu memakai pengaturan koneksi yang sudah tersedia; layanan terkelola belum diaktifkan.
 
-Hari Baik, Mimpi, dan Suhu tetap tersedia. Arsip Qian lama tetap dapat dibaca.
-Lisensi perangkat lunak: THIRD-PARTY-NOTICES.txt.
-Versi: 2026-11-10-xuanji-home.
+Xuanji adalah pengalaman budaya untuk refleksi diri, bukan kepastian masa depan atau pengganti nasihat profesional.

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumah Rahasia · Xuanji, Hari Baik, Mimpi, Suhu</title>
-<meta name="rr-version" content="2026-11-10-xuanji-home">
+<meta name="rr-version" content="2026-11-10-customer-upgrade">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230b0616'/%3E%3Cpath d='M50 8a42 42 0 0 1 0 84 21 21 0 0 1 0-42 21 21 0 0 0 0-42z' fill='%23d9b45b'/%3E%3Ccircle cx='50' cy='29' r='6' fill='%230b0616'/%3E%3Ccircle cx='50' cy='71' r='6' fill='%23d9b45b'/%3E%3C/svg%3E">
 <style>
 /* ========== 基础 ========== */
@@ -673,6 +673,32 @@ body.rr-site:not(.rr-at-home) .rr-app-nav .tab-btn svg{width:20px;height:20px}
 @media(max-width:350px){.rr-hero h1{font-size:29px}.rr-hero-copy{font-size:12px}.rr-content{padding-left:12px;padding-right:12px}.rr-service{gap:8px;padding-left:9px;padding-right:8px}.rr-service svg{width:24px;height:24px}.rr-service strong{font-size:14px}.rr-service small{font-size:12px}.rr-report{padding-left:11px;padding-right:11px}.rr-report h2{font-size:17px}.rr-report p{font-size:12px}.rr-app-header{padding-left:14px;padding-right:14px;gap:6px}.rr-brand{gap:6px}.rr-brand-mark{width:29px;padding-right:5px}.rr-header-actions{gap:1px}.rr-login{padding-left:10px;padding-right:10px}.rr-home-balance{margin-left:4px;font-size:9px}}
 @media(prefers-reduced-motion:reduce){.rr-app-nav .tab-btn{transition:none}}
 
+.rra-modal[hidden]{display:none!important}.rra-modal{z-index:1400;display:flex;padding:18px 12px;align-items:center}.rra-card{width:min(100%,620px);max-width:620px}.rra-modal .modal-card{max-height:calc(100dvh - 36px);overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box}.rra-muted{color:var(--text2);font-size:13px;line-height:1.6;overflow-wrap:anywhere}.rra-balance{display:flex;gap:9px;align-items:baseline;justify-content:center;flex-wrap:wrap;margin:20px 0;padding:18px 12px;border:1px solid rgba(214,180,102,.35);border-radius:14px;color:var(--gold-hi)}.rra-balance>span:first-child{flex-basis:100%;text-align:center;color:var(--text2);font-size:12px}.rra-balance strong{font:600 38px/1.2 var(--serif);overflow-wrap:anywhere;max-width:100%}.rra-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.rra-actions button{min-width:0;white-space:normal;padding:12px 8px;font-size:12px;letter-spacing:.4px;line-height:1.4}.rra-note{font-size:13px;line-height:1.7;padding:12px 0;color:var(--text2)}.rra-note p{margin:5px 0}.rra-rules{font-size:13px;line-height:1.7;border:1px solid var(--line);border-radius:10px;padding:12px;margin:5px 0 20px}.rra-rules summary{cursor:pointer;color:var(--gold-hi)}.rra-rules ul{padding-left:20px;margin:12px 0 0}.rra-rules li{margin:8px 0}.rra-tabs{display:flex;gap:5px;border-bottom:1px solid var(--line);margin-top:20px}.rra-tab{flex:1;min-width:0;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--text2);padding:12px 4px;font:500 12px/1.5 var(--sans);cursor:pointer}.rra-tab[aria-selected=true]{color:var(--gold-hi);border-bottom-color:var(--gold)}.rra-list{min-height:100px}.rra-entry{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;overflow-wrap:anywhere}.rra-entry-head{display:flex;gap:12px;justify-content:space-between;align-items:baseline}.rra-entry-head strong{min-width:0}.rra-entry-head>span{flex-shrink:0;color:var(--gold-hi)}.rra-entry time,.rra-entry small{display:block;color:var(--text2);font-size:12px;line-height:1.7;margin-top:4px}.rra-status{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:3px 9px;font-size:11px;margin-top:6px}.rra-pages{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:15px 0;font-size:12px}.rra-pages button{min-height:38px}.rra-pages button:disabled{opacity:.4;cursor:default}.rra-bottom{margin-top:22px}.rra-label{display:block;font-size:12px;color:var(--text2);text-align:left;margin:14px 0 6px}.rra-link{border:0;background:transparent;color:var(--gold-hi);font:inherit;cursor:pointer;text-decoration:underline;padding:8px 3px;min-height:38px}.rra-auth-links{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:12px}.rra-modal button:focus-visible,.rra-link:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}.rra-empty{padding:20px 0;color:var(--text2);font-size:13px;line-height:1.7}#rraRecovery .btn{width:100%}#authModal [hidden]{display:none!important}@media(max-width:380px){.rra-actions{grid-template-columns:1fr}.rra-entry-head{gap:6px}.rra-pages{gap:4px}.rra-pages button{font-size:10px;padding:8px}.rra-modal .modal-card{padding:24px 16px}.rra-tabs{gap:0}}
+
+.rr-local-card{width:min(560px,calc(100vw - 28px));max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;text-align:left;padding:30px 22px;box-sizing:border-box}
+.rr-local-card h2{font:600 25px/1.3 var(--serif);color:var(--gold-hi);padding-right:28px;margin:0 0 15px}
+.rr-local-muted{font-size:13px;line-height:1.65;color:var(--text2);overflow-wrap:anywhere}
+.rr-local-notice{font-size:13px;line-height:1.6;color:var(--gold-hi);border:1px solid rgba(213,177,107,.3);border-radius:10px;padding:12px;background:rgba(213,177,107,.06)}
+.rr-local-summary{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.rr-local-summary span{padding:6px 9px;border-radius:8px;background:rgba(207,184,228,.09);font-size:12px;color:var(--text2)}
+.rr-local-card>.btn,.rr-local-import>.btn{width:100%;min-height:44px;letter-spacing:.04em;font-size:13px;white-space:normal}
+.rr-local-import{margin-top:22px;padding-top:20px;border-top:1px solid rgba(213,177,107,.2)}
+.rr-local-import label{display:block;font-size:13px;line-height:1.5;color:var(--text);margin:0 0 10px}
+.rr-local-import input[type=file]{display:block;width:100%;box-sizing:border-box;max-width:100%;color:var(--text2);font:13px/1.5 var(--sans);margin-bottom:12px}
+.rr-local-import input::file-selector-button{background:rgba(207,184,228,.13);border:1px solid rgba(213,177,107,.35);color:var(--gold-hi);border-radius:8px;min-height:40px;margin-right:10px;padding:8px 10px;cursor:pointer}
+.rr-local-preview{font-size:13px;line-height:1.65;padding:12px;border-radius:10px;background:rgba(207,184,228,.08);margin-bottom:12px;overflow-wrap:anywhere}
+.rr-local-status{font-size:13px;line-height:1.6;color:var(--gold-hi);margin:15px 0 0;overflow-wrap:anywhere}
+.rr-local-card button:disabled{opacity:.45;cursor:default}
+.rr-local-launch{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.rr-local-launch h3{margin:0 0 8px;color:var(--gold-hi);font-size:17px}.rr-local-launch p{margin:0;max-width:620px}.rr-local-launch button{min-height:44px}
+.rr-day-actions{display:flex;gap:8px;grid-column:1/-1;flex-wrap:wrap;margin-top:8px}.rr-day-actions button{min-height:38px;font-size:12px;line-height:1.4;border:1px solid rgba(213,177,107,.35);background:rgba(213,177,107,.06);color:var(--gold-hi);padding:8px 12px;border-radius:8px;cursor:pointer}.rr-day-actions button[aria-pressed=true]{background:rgba(213,177,107,.18)}
+.rr-saved-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}.rr-saved-head h3{margin:0;color:var(--gold-hi);font-size:18px}.rr-saved-head button{min-height:42px;white-space:normal}
+.rr-saved-list{display:grid;gap:12px;margin-top:14px}.rr-saved-day{padding:13px;border:1px solid rgba(213,177,107,.22);border-radius:10px;background:rgba(207,184,228,.04)}.rr-saved-day strong{color:var(--text);font-size:14px}.rr-saved-day p{margin:6px 0;color:var(--text2);font-size:13px}
+.rr-local-launch button:focus-visible,.rr-local-card button:focus-visible,.rr-saved-day button:focus-visible,.rr-day-actions button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+@media(max-width:420px){.rr-local-card{padding:28px 16px}.rr-local-launch{display:block}.rr-local-launch button{width:100%;margin-top:14px}.rr-day-actions button{flex:1}.rr-saved-head>button{width:100%}}
+
+.rr-local-import input[type=file][hidden]{display:none}.rr-file-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;min-width:0}.rr-file-row button{min-height:44px;flex-shrink:0}.rr-file-row span{font-size:12px;color:var(--text2);overflow-wrap:anywhere;min-width:0}
+
+.rr-local-check{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.6;color:var(--text);margin-top:18px}.rr-local-check input{accent-color:#d5b16b;flex-shrink:0;width:17px;height:17px;margin-top:2px}
+
 </style>
 </head>
 <body class="mode-auto rr-site rr-at-home" data-palette="violet">
@@ -684,12 +710,14 @@ body.rr-site:not(.rr-at-home) .rr-app-nav .tab-btn svg{width:20px;height:20px}
   <div class="modal-card">
     <button class="modal-x" id="authClose">✕</button>
     <div class="orn" style="margin-bottom:12px" id="authTitle">MASUK AKUN</div>
-    <input type="text" class="m-inp" id="authEmail" placeholder="Alamat email" autocomplete="email">
-    <input type="password" class="m-inp" id="authPass" placeholder="Kata sandi (minimal 6 karakter)" autocomplete="current-password">
-    <input type="text" class="m-inp" id="authInvite" placeholder="Kode undangan teman (opsional)" maxlength="6" autocomplete="off" style="display:none;text-transform:uppercase">
-    <div class="m-err" id="authErr"></div>
+    <input type="text" class="m-inp" id="authEmail" aria-label="Alamat email" inputmode="email" placeholder="Alamat email" autocomplete="email">
+    <input type="password" class="m-inp" id="authPass" aria-label="Kata sandi" placeholder="Kata sandi" autocomplete="current-password">
+    <input type="text" class="m-inp" id="authInvite" aria-label="Kode undangan teman (opsional)" placeholder="Kode undangan teman (opsional)" maxlength="8" autocomplete="off" style="display:none;text-transform:uppercase">
+    <div class="m-err" id="authErr" role="status"></div>
     <button class="btn" id="authGo" style="width:100%">MASUK</button>
-    <div class="auth-switch" id="authSwitch">Belum punya akun? <a id="authToggle">Daftar di sini</a> — bonus 3 kredit gratis</div>
+    <div class="auth-switch" id="authSwitch">Belum punya akun? <button class="rra-link" id="authToggle" type="button">Daftar di sini</button></div>
+    <p id="rraAuthHint" class="m-note" role="status"></p>
+    <div class="rra-auth-links"><button class="rra-link" id="rraAuthForgot" type="button">Lupa kata sandi?</button><button class="rra-link" id="rraAuthResend" type="button">Kirim ulang konfirmasi</button></div>
     <p class="m-note">🔒 Data ramalan Anda tetap hanya di perangkat ini — server akun hanya menyimpan akun, kredit, dan catatan transaksi. Isi mimpi dan data lahir tidak dikirim ke server akun. Tanya Suhu mengirim pesan ke layanan pilihan Anda saat digunakan.</p>
   </div>
 </div>
@@ -727,6 +755,7 @@ body.rr-site:not(.rr-at-home) .rr-app-nav .tab-btn svg{width:20px;height:20px}
     <p id="homeAccountEmail" style="overflow-wrap:anywhere;margin:16px 0;color:#d2c2d9"></p>
     <p style="font-size:24px;margin:20px 0;color:#ead0a0"><strong id="homeAccountCredits">…</strong> kredit</p>
     <div style="display:grid;gap:12px">
+      <button class="btn" id="homeAccountCenter" type="button">AKUN & RIWAYAT KREDIT</button>
       <button class="btn" id="homeAccountTopup" type="button">ISI KREDIT</button>
       <button class="btn ghost" id="homeAccountInvite" type="button">UNDANG TEMAN</button>
       <button class="acc-mini" id="homeAccountLogout" type="button" style="min-height:42px">Keluar</button>
@@ -764,7 +793,7 @@ body.rr-site:not(.rr-at-home) .rr-app-nav .tab-btn svg{width:20px;height:20px}
   <button class="rr-service" type="button" data-home-target="calendar"><svg aria-hidden="true"><use href="#rr-icon-calendar"/></svg><span class="rr-service-text"><strong>Hari Baik</strong><small>Pilih tanggal penting</small></span></button>
   <button class="rr-service" type="button" data-home-target="dream"><svg aria-hidden="true"><use href="#rr-icon-moon"/></svg><span class="rr-service-text"><strong>Mimpi</strong><small>1 kali gratis setiap hari</small></span></button>
   <button class="rr-service" type="button" data-home-target="ai"><svg aria-hidden="true"><use href="#rr-icon-chat"/></svg><span class="rr-service-text"><strong>Suhu</strong><small>Ruang tanya</small></span></button>
- </div><section class="rr-report" aria-labelledby="homeReportTitle"><div class="rr-report-head"><h2 id="homeReportTitle">Laporan Xuanji</h2><span class="rr-price">25 kredit</span></div><p>12 ruang kehidupan · Fase 10 tahun · Tahunan</p><button class="rr-report-link" type="button" id="homeReport">Lihat isi laporan <svg aria-hidden="true"><use href="#rr-icon-arrow"/></svg></button></section><button class="rr-signup" id="homeSignup" type="button">Daftar &amp; dapatkan 3 kredit</button></div>
+ </div><section class="rr-report" aria-labelledby="homeReportTitle"><div class="rr-report-head"><h2 id="homeReportTitle">Laporan Xuanji</h2><span class="rr-price">25 kredit</span></div><p>12 ruang kehidupan · Fase 10 tahun · Tahunan</p><button class="rr-report-link" type="button" id="homeReport">Lihat isi laporan <svg aria-hidden="true"><use href="#rr-icon-arrow"/></svg></button></section><button class="rr-signup" id="homeSignup" type="button">Daftar · bonus setelah verifikasi</button></div>
 </section>
 <div id="homeNavigation" class="rr-home-navigation">
  <button type="button" id="homeBack" class="rr-home-back" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Beranda</button>
@@ -805,6 +834,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <section class="tab-panel" id="panel-calendar" role="tabpanel" aria-labelledby="tabCalendar">
   <div class="card feature-heading"><h2>Rencanakan hari penting</h2><p>Pilih tanggal untuk pernikahan, pindah rumah, atau membuka usaha. Kalender umum ini gratis dan tidak menggunakan data kelahiran Anda. Cocokkan pilihan tradisi dengan kesiapan keluarga, tempat, dan rencana nyata.</p></div>
   <div id="xzCard"></div>
+  <div class="card" id="rrSavedDays"><div class="rr-saved-head"><h3>Tanggal tersimpan</h3><button class="acc-mini" id="rrSavedAll" type="button">Ekspor semua ke kalender</button></div><p class="rr-local-muted">Simpan pilihan tanggal di perangkat ini. Berkas kalender memakai tanggal sehari penuh dan tidak mengubah jadwal Anda sampai Anda mengimpornya.</p><div class="rr-saved-list" id="rrSavedList"></div><p id="rrSavedStatus" class="rr-local-status" role="status" aria-live="polite"></p></div>
   <div id="todayCard"></div>
 </section>
 
@@ -834,6 +864,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
   </div>
   <div id="xjResult" aria-live="polite"></div>
   <div class="card xj-library"><div class="xj-library-head"><h3>Laporan di perangkat ini</h3><button type="button" class="xj-link" id="xjErase">Hapus data lokal</button></div><p class="xj-muted">Laporan lengkap tersimpan di perangkat ini. Unduh salinannya untuk disimpan sendiri. Server hanya mencatat pembelian kredit dan akses laporan, tanpa tanggal lahir atau isi laporan.</p><div id="xjHistory"></div></div>
+  <div class="card rr-local-launch"><div><h3>Jaga salinan laporan Anda</h3><p class="rr-local-muted">Cadangkan data sebelum berganti perangkat. Laporan akun dipulihkan dengan berkas cadangan dan akun yang sama.</p></div><button class="acc-mini" id="rrLocalLaunch" type="button">Cadangan & pemulihan</button></div>
   <details class="card" id="qianArchive" hidden><summary>Arsip Qian lama di perangkat ini</summary><p class="xj-muted">Fitur undian Qian sudah dihentikan. Riwayat lama tetap dapat dibaca tanpa biaya. Pembacaan karakter, pekerjaan, keuangan, dan hubungan kini tersedia di Xuanji.</p><div id="qianHist"></div></details>
   <p class="bazi-note">Xuanji adalah pengalaman budaya untuk refleksi diri, bukan kepastian masa depan atau dasar tunggal keputusan penting. Tidak menilai kecocokan pasangan dan tidak menggantikan nasihat profesional.</p>
 </section>
@@ -900,6 +931,54 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 </section>
 
 </div><!-- appContent -->
+<div class="modal-layer rr-local-modal" id="rrLocalModal" hidden style="display:none" role="dialog" aria-modal="true" aria-labelledby="rrLocalTitle">
+  <div class="modal-card rr-local-card">
+    <button class="modal-x" id="rrLocalClose" type="button" aria-label="Tutup cadangan">✕</button>
+    <h2 id="rrLocalTitle">Cadangan & pemulihan</h2>
+    <p class="rr-local-muted">Simpan berkas cadangan sebelum mengganti ponsel atau menghapus data browser. Untuk memulihkan laporan akun, masuk kembali dengan akun yang sama lalu pilih berkas Anda.</p>
+    <p class="rr-local-notice">Berkas berisi data lahir dan riwayat pribadi dari perangkat ini. Simpan sendiri di tempat yang aman. Kata sandi, sesi masuk, kunci koneksi, dan percakapan Suhu tidak disertakan.</p>
+    <label class="rr-local-check"><input id="rrBackupHistory" type="checkbox"> Sertakan riwayat mimpi & arsip lama</label>
+    <p class="rr-local-muted">Riwayat tersebut dipakai bersama oleh semua akun pada browser ini dan dapat berisi catatan orang lain. Pilihan ini tidak dicentang otomatis. Laporan akun yang dicadangkan tetap hanya milik akun yang sedang masuk.</p>
+    <div class="rr-local-summary" id="rrLocalSummary"></div>
+    <button class="btn" id="rrBackupExport" type="button">UNDUH CADANGAN</button>
+    <div class="rr-local-import">
+      <label for="rrBackupFile">Pulihkan dari cadangan Xuanji (.json, maksimal 2 MB)</label>
+      <input id="rrBackupFile" type="file" accept=".json,application/json" hidden>
+      <div class="rr-file-row"><button class="acc-mini" id="rrBackupPick" type="button">Pilih berkas</button><span id="rrBackupName">Belum ada berkas dipilih</span></div>
+      <div id="rrBackupPreview" class="rr-local-preview" hidden></div>
+      <button class="btn ghost" id="rrBackupRestore" type="button" disabled>GABUNGKAN CADANGAN</button>
+    </div>
+    <p class="rr-local-muted">Pemulihan memakai berkas Anda, bukan mengambil data lahir dari server. Tanpa berkas cadangan, akses web yang hilang tidak dapat dipulihkan otomatis. Pemulihan tidak mengubah saldo kredit. Isian lahir, riwayat lama, dan tanggal tersimpan bersifat lokal pada browser ini, bukan dipisahkan per akun.</p>
+    <p id="rrLocalStatus" class="rr-local-status" role="status" aria-live="polite"></p>
+  </div>
+</div>
+
+<div class="modal-layer rra-modal" id="rraCenter" hidden role="dialog" aria-modal="true" aria-labelledby="rraTitle">
+ <div class="modal-card rra-card">
+  <button class="modal-x" id="rraClose" type="button" aria-label="Tutup pusat akun">✕</button>
+  <h2 class="orn" id="rraTitle">AKUN & RIWAYAT KREDIT</h2>
+  <p id="rraEmail" class="rra-muted"></p>
+  <div class="rra-balance"><span>Saldo tersedia</span><strong id="rraBalance">…</strong><span>kredit</span></div>
+  <div class="rra-actions"><button class="btn" id="rraTopup" type="button">ISI KREDIT</button><button class="btn ghost" id="rraRefresh" type="button">PERBARUI</button></div>
+  <div id="rraRewards" class="rra-note" role="status">Memuat status bonus…</div>
+  <details class="rra-rules"><summary>Gratis, biaya, dan aturan kredit</summary><ul><li>Peta dan ringkasan Xuanji serta Hari Baik gratis.</li><li>Mimpi: 1 kali gratis setiap hari per akun, mengikuti waktu Jakarta. Sesudahnya 1 kredit per tafsir.</li><li>Laporan Xuanji lengkap: 25 kredit. Membaca bagian atau mengganti tahun di laporan yang sudah terbuka tidak dikenai biaya lagi.</li><li>Bonus pendaftaran: 3 kredit setelah email diverifikasi. <span id="rraEmailServiceNote">Layanan verifikasi email belum dibuka; bonus baru ditunda dan belum masuk ke saldo. Saldo lama dan jatah gratis harian tetap dapat digunakan.</span></li><li>Undangan: masing-masing 1 kredit setelah teman baru memverifikasi email dan memakai Mimpi untuk pertama kali. Maksimal 10 undangan berhadiah per bulan bagi pengundang, mengikuti waktu Jakarta. Mengirim tautan saja tidak memberi kredit.</li><li>Kredit pembelian dan bonus masuk ke saldo yang sama. Saat ini kredit tidak memiliki masa kedaluwarsa dan tidak ada urutan pemakaian khusus antara bonus dan pembelian.</li><li>Rp 22.000 = 10 kredit · Rp 55.000 = 25 kredit · Rp 100.000 = 50 kredit. Pengajuan isi kredit menunggu pemeriksaan pembayaran; belum berarti saldo bertambah.</li><li>Simpan cadangan sebelum berganti perangkat. Data kelahiran dan isi laporan tidak disimpan di server akun.</li></ul></details>
+  <div class="rra-tabs" role="tablist" aria-label="Riwayat akun"><button id="rraTabTransactions" class="rra-tab" type="button" role="tab" aria-selected="true" aria-controls="rraTransactions">Riwayat kredit</button><button id="rraTabOrders" class="rra-tab" type="button" role="tab" aria-selected="false" aria-controls="rraOrders" tabindex="-1">Pengajuan isi kredit</button></div>
+  <section id="rraTransactions" role="tabpanel" aria-labelledby="rraTabTransactions"><div id="rraTransactionsList" class="rra-list" aria-live="polite"></div><div class="rra-pages"><button class="acc-mini" id="rraTxPrev" type="button">Sebelumnya</button><span id="rraTxPage"></span><button class="acc-mini" id="rraTxNext" type="button">Berikutnya</button></div></section>
+  <section id="rraOrders" role="tabpanel" aria-labelledby="rraTabOrders" hidden><div id="rraOrdersList" class="rra-list" aria-live="polite"></div><div class="rra-pages"><button class="acc-mini" id="rraOrderPrev" type="button">Sebelumnya</button><span id="rraOrderPage"></span><button class="acc-mini" id="rraOrderNext" type="button">Berikutnya</button></div></section>
+  <div class="rra-actions rra-bottom"><button class="btn ghost" id="rraInvite" type="button">UNDANG TEMAN</button><button class="btn ghost" id="rraBackup" type="button">CADANGAN & PEMULIHAN</button></div>
+ </div>
+</div>
+<div class="modal-layer rra-modal" id="rraRecovery" hidden role="dialog" aria-modal="true" aria-labelledby="rraRecoveryTitle">
+ <div class="modal-card">
+  <button class="modal-x" id="rraRecoveryClose" type="button" aria-label="Tutup pemulihan kata sandi">✕</button>
+  <h2 class="orn" id="rraRecoveryTitle">KATA SANDI BARU</h2>
+  <p id="rraRecoveryEmail" class="rra-muted"></p>
+  <label class="rra-label" for="rraNewPassword">Kata sandi baru</label><input class="m-inp" id="rraNewPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Minimal 8 karakter">
+  <label class="rra-label" for="rraConfirmPassword">Ulangi kata sandi baru</label><input class="m-inp" id="rraConfirmPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Tulis kembali kata sandi">
+  <p class="m-err" id="rraRecoveryStatus" role="status"></p><button class="btn" id="rraSavePassword" type="button">SIMPAN KATA SANDI</button>
+ </div>
+</div>
+
 <script>
 /*!
 Third-party software notices for the local Xuanji chart engine
@@ -1987,6 +2066,7 @@ function xzPick(kind,keepScroll){
         '<span class="xz-lunar">'+p.luStr+'</span>'+
         '<span class="xz-grade">'+stars+' '+JC_N[p.jc]+' · '+JC_ID[p.jc]+'</span>'+
         '<span class="xz-chong">shio tabrakan: '+SXN[(p.zb+6)%12]+'</span>'+
+        rrDayActions(p.y+'-'+String(p.m).padStart(2,'0')+'-'+String(p.d).padStart(2,'0'),kind)+
         '</div>';
     }).join('');
   if(!keepScroll)try{list.scrollIntoView({behavior:'smooth',block:'nearest'})}catch(e){}
@@ -2027,17 +2107,7 @@ function accSaveTok(a,r){try{localStorage.setItem('xjid_sb',JSON.stringify({a:a,
 function accLoadTok(){try{return JSON.parse(localStorage.getItem('xjid_sb')||'null')}catch(e){return null}}
 function accClearTok(){try{localStorage.removeItem('xjid_sb')}catch(e){}}
 
-async function sbRefresh(){
-  var t=accLoadTok();if(!t||!t.r)return null;
-  try{
-    var res=await fetch(SB_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:sbHeaders(),body:JSON.stringify({refresh_token:t.r})});
-    if(!res.ok)throw 0;
-    var j=await res.json();
-    var current=accLoadTok();if(!current||current.r!==t.r)return null;
-    accSaveTok(j.access_token,j.refresh_token);
-    return j.access_token;
-  }catch(e){accClearTok();return null;}
-}
+
 
 function accTokenUid(token){try{return JSON.parse(atob(token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))).sub||null;}catch(e){return null;}}
 async function sbApi(path,method,body,expectedUid){
@@ -2053,100 +2123,14 @@ async function sbApi(path,method,body,expectedUid){
 }
 
 var ACCepoch=0;
-async function accLoadState(){
-  var epoch=++ACCepoch;
-  try{
-    var res=await sbApi('/auth/v1/user');
-    if(!res.ok)return false;
-    var u=await res.json();
-    if(epoch!==ACCepoch)return false;
-    ACC.uid=u.id;ACC.email=u.email||'';
-    var r2=await sbApi('/rest/v1/rpc/get_my_state','POST',{});
-    if(r2.ok){var st=await r2.json();if(epoch!==ACCepoch)return false;ACC.credits=st.credits;}
-    if(epoch!==ACCepoch)return false;
-    accRender();
-    return true;
-  }catch(e){return false;}
-}
 
-function accRender(){
-  var bar=$('#accBar');if(!bar)return;
-  rrHomeRenderAccount();
-  xjAuthChanged();
-  if(!ACC.uid){
-    bar.innerHTML='<button class="acc-btn" id="accLoginBtn">👤 Masuk / Daftar · bonus 3 kredit</button>';
-    var b=$('#accLoginBtn');if(b)b.addEventListener('click',function(){authOpen('login')});
-    return;
-  }
-  var em=ACC.email.split('@')[0]||'akun';
-  bar.innerHTML='<span class="acc-info">👤 '+esc(em)+' · <b>'+esc(ACC.credits==null?'…':ACC.credits)+' kredit</b></span>'+
-    '<button class="acc-mini" id="accTopupBtn">+ Isi Kredit</button>'+
-    '<button class="acc-mini" id="accLogoutBtn">Keluar</button>';
-  var t=$('#accTopupBtn');if(t)t.addEventListener('click',topupOpen);
-  var l=$('#accLogoutBtn');if(l)l.addEventListener('click',accLogout);
-}
 
-function authOpen(mode){
-  ACC.mode=mode||'login';
-  $('#authModal').style.display='flex';
-  $('#authErr').textContent='';
-  $('#authPass').value='';
-  var iv=$('#authInvite');if(iv){iv.value='';iv.style.display=ACC.mode==='signup'?'block':'none';}
-  if(ACC.mode==='login'){$('#authTitle').textContent='MASUK AKUN';$('#authGo').textContent='MASUK';
-    $('#authSwitch').innerHTML='Belum punya akun? <a id="authToggle">Daftar di sini</a> — bonus 3 kredit gratis';}
-  else{$('#authTitle').textContent='DAFTAR AKUN BARU';$('#authGo').textContent='DAFTAR';
-    $('#authSwitch').innerHTML='Sudah punya akun? <a id="authToggle">Masuk di sini</a>';
-    var eb=$('#authEmail');if(eb&&iv&&iv.style.display==='block')setTimeout(function(){eb.focus()},50);}
-  var tg=$('#authToggle');if(tg)tg.addEventListener('click',function(){authOpen(ACC.mode==='login'?'signup':'login')});
-}
+
+
+
 
 var AUTHbusy=false;
-async function authGo(){
-  if(AUTHbusy)return;
-  var em=$('#authEmail').value.trim(),pw=$('#authPass').value,err=$('#authErr');
-  if(!em||em.indexOf('@')<0){err.textContent='Isi alamat email yang benar';return;}
-  if(!pw||pw.length<6){err.textContent='Kata sandi minimal 6 karakter';return;}
-  AUTHbusy=true;
-  var gb=$('#authGo');if(gb){gb.disabled=true;gb.style.opacity=.45;}
-  err.textContent='Memproses…';
-  try{
-    var path=ACC.mode==='login'?'/auth/v1/token?grant_type=password':'/auth/v1/signup';
-    var res=await sbApi(path,'POST',{email:em,password:pw});
-    var j=await res.json().catch(function(){return{}});
-    if(!res.ok){
-      err.textContent=(j.msg==='Invalid login credentials'&&ACC.mode==='login')?'Email atau kata sandi salah':
-        (j.msg==='User already registered')?'Email ini sudah terdaftar — silakan masuk':
-        (j.msg||j.error_description||j.message||'Gagal — coba lagi sebentar');
-      return;
-    }
-    if(j.access_token){
-      accSaveTok(j.access_token,j.refresh_token);
-      await accLoadState();
-      $('#authModal').style.display='none';
-      if(ACC.mode==='signup'&&ACC.credits!=null){
-        var invMsg='';
-        var ivEl=$('#authInvite');
-        var inv=ivEl?(ivEl.value||'').trim().toUpperCase():'';
-        if(inv){
-          try{
-            var r=await sbApi('/rest/v1/rpc/apply_invite_code','POST',{p_code:inv});
-            var aj=r.ok?await r.json():null;
-            if(aj&&aj.ok){await accLoadState();invMsg='<b style="color:var(--gold-hi)">+1 kredit undangan teman</b> juga sudah masuk.';}
-            else invMsg='※ Kode undangan tidak valid — bonus undangan tidak masuk.';
-          }catch(e){invMsg='※ Kode undangan belum terverifikasi — cek menu undangan nanti.';}
-        }
-        var q=$('#quotaModal');$('#quotaTitle').textContent='SELAMAT DATANG';
-        $('#quotaMsg').innerHTML='Akun berhasil dibuat — <b style="color:var(--gold-hi)">bonus 3 kredit</b> sudah masuk.'+(invMsg?'<br>'+invMsg:'')+'<br>Setiap hari Anda tetap dapat 1 tafsir mimpi gratis.';
-        $('#quotaBtns').innerHTML='<button class="btn" id="qOk">MULAI</button>';
-        q.style.display='flex';
-        var ok=$('#qOk');if(ok)ok.addEventListener('click',function(){q.style.display='none'});
-      }
-    }else{
-      err.textContent='Cek email Anda untuk konfirmasi, lalu masuk kembali.';
-    }
-  }catch(e){err.textContent='Koneksi bermasalah — coba lagi';}
-  finally{AUTHbusy=false;if(gb){gb.disabled=false;gb.style.opacity=1;}}
-}
+
 
 var TOPUP_PKG='p10';
 function topupOpen(){
@@ -2181,77 +2165,16 @@ async function topupGo(){
   finally{TOPUPbusy=false;if(tb){tb.disabled=false;tb.style.opacity=1;}}
 }
 
-async function requireQuota(feature){
-  if(!ACC.uid)return{ok:false,reason:'need_login'};
-  try{
-    var res=await sbApi('/rest/v1/rpc/feature_use','POST',{p_feature:feature});
-    if(!res.ok)return{ok:false,reason:'error'};
-    var j=await res.json();
-    if(j&&j.ok){ACC.credits=j.balance;accRender();return{ok:true,used:j.used};}
-    return{ok:false,reason:'no_credits',balance:j?j.balance:0};
-  }catch(e){return{ok:false,reason:'error'};}
-}
 
-function showQuotaModal(reason){
-  var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
-  if(reason==='error'){title.textContent='KONEKSI BELUM BERHASIL';msg.textContent='Status kuota belum dapat diperiksa. Periksa koneksi dan saldo akun sebelum mencoba lagi.';btns.innerHTML='<button class="btn" id="qRetryClose">TUTUP</button>';$('#qRetryClose').onclick=function(){q.style.display='none';};}
-  else if(reason==='need_login'||reason==='guest_limit'){
-    title.textContent='MASUK DULU UNTUK MEMAKAI';
-    msg.innerHTML='Masuk untuk menafsirkan mimpi. Peta dan ringkasan Xuanji tetap gratis tanpa akun.<br>Daftar gratis — langsung dapat <b style="color:var(--gold-hi)">3 kredit</b> + setiap hari tetap 1 tafsir mimpi gratis.<br>Punya kode undangan teman? Isi saat mendaftar untuk <b style="color:var(--gold-hi)">+1 kredit lagi</b>.';
-    btns.innerHTML='<button class="btn" id="qGoAuth">DAFTAR / MASUK</button>';
-    var g=$('#qGoAuth');if(g)g.addEventListener('click',function(){q.style.display='none';authOpen('signup')});
-  }else{
-    title.textContent='KREDIT HABIS';
-    msg.innerHTML='Kuota gratis hari ini sudah terpakai.<br>Ada dua jalan untuk lanjut — undang teman (gratis), atau isi kredit:';
-    btns.innerHTML='<button class="btn" id="qGoInvite">🎁 UNDANG TEMAN · GRATIS +1</button>'+
-      '<button class="btn ghost" id="qGoTopup">ISI KREDIT · Rp 22.000 = 10</button>';
-    var iv=$('#qGoInvite');
-    if(iv)iv.addEventListener('click',showInvitePanel);
-    var t=$('#qGoTopup');if(t)t.addEventListener('click',function(){q.style.display='none';topupOpen()});
-  }
-  q.style.display='flex';
-}
-function showInvitePanel(){
-  var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
-  title.textContent='UNDANG TEMAN, DAPAT KREDIT';
-  msg.innerHTML='<span style="color:var(--text2)">Memuat kode undangan Anda…</span>';
-  btns.innerHTML='';
-  q.style.display='flex';
-  sbApi('/rest/v1/rpc/get_my_invite_code','POST',{}).then(async function(r){
-    if(!r.ok){msg.innerHTML='<span style="color:var(--red)">Gagal memuat kode — coba lagi sebentar.</span>';return;}
-    var code=(await r.text()).replace(/[^A-Za-z0-9]/g,'').toUpperCase().slice(0,8);
-    var share='Suhu! Ayo coba Rumah Rahasia — Xuanji, tafsir mimpi, dan kalender Hari Baik. Daftar pakai kode undangan saya '+code+' — kamu & saya sama-sama dapat +1 kredit gratis. https://tanyasuhu.github.io/xuanjige/';
-    msg.innerHTML='Bagikan kode ini ke teman Anda:<br><span class="invite-code" id="invCode">'+code+'</span><br>'+
-      'Teman yang mendaftar dengan kode Anda membuat Anda dan teman <b style="color:var(--gold-hi)">sama-sama +1 kredit gratis</b>.';
-    btns.innerHTML='<button class="btn" id="qCopyInvite">SALIN TEKS UNDANGAN</button>'+
-      '<button class="btn ghost" id="qInviteBack">KEMBALI</button>';
-    var c=$('#qCopyInvite');
-    if(c)c.addEventListener('click',function(){
-      copyText(share);
-      c.textContent='✓ SUDAH DISALIN';
-      setTimeout(function(){c.textContent='SALIN TEKS UNDANGAN'},2500);
-    });
-    var bk=$('#qInviteBack');if(bk)bk.addEventListener('click',function(){showQuotaModal('no_credits')});
-  }).catch(function(){msg.innerHTML='<span style="color:var(--red)">Gagal memuat kode — cek koneksi Anda.</span>';});
-}
+
+
+
 function copyText(t){
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});return;}
   try{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}catch(e){}
 }
 
-function initAuth(){
-  ['authClose','authGo','topupClose','topupGo','quotaClose'].forEach(function(id){
-    var el=$('#'+id);if(!el)return;
-    el.addEventListener('click',id==='authGo'?authGo:(id==='topupGo'?topupGo:function(){
-      $('#'+id.replace('Close','Modal')).style.display='none';
-    }));
-  });
-  $('#authEmail').addEventListener('keydown',function(e){if(e.key==='Enter')$('#authPass').focus()});
-  $('#authPass').addEventListener('keydown',function(e){if(e.key==='Enter')authGo()});
-  $('#topupRef').addEventListener('keydown',function(e){if(e.key==='Enter')topupGo()});
-  accRender();
-  accLoadState();
-}
+
 
 /* ================= 求签（36 qian · 诗体仿古自撰，融佛法因果之理） ================= */
 var QIAN=[
@@ -3338,7 +3261,7 @@ function xjRequestPurchase(){
   var pending=xjFind(XJ.current.input,ACC.uid);
   if(pending&&!pending.paid){xjConfirm('Periksa akses laporan','Permintaan sebelumnya akan diperiksa lagi. Jika sudah berhasil, tidak ada potongan baru. Jika belum, laporan dibuka dengan 25 kredit. Gunakan perangkat dan data lahir yang sama.',xjPurchase,'PERIKSA & LANJUTKAN');return;}
   if(ACC.credits!=null&&ACC.credits<XJ.cost){xjConfirm('Kredit belum cukup','Laporan lengkap membutuhkan 25 kredit. Saldo Anda '+ACC.credits+' kredit. Pilih paket isi ulang, lalu kembali ke ringkasan ini.',function(){TOPUP_PKG='p25';topupOpen();},'LIHAT PAKET KREDIT');return;}
-  xjConfirm('Buka laporan lengkap?','Sebanyak 25 kredit akan digunakan untuk satu Laporan Xuanji dengan data lahir yang baru Anda isi. Termasuk fase sepuluh tahun dan tahunan; mengganti tahun dan membaca ulang di browser ini gratis. Unduh salinannya: jika data browser dihapus atau Anda pindah perangkat, akses web tidak dapat dipulihkan dan perlu pembelian baru. Data lahir dan isi laporan tetap di perangkat ini.',xjPurchase,'GUNAKAN 25 KREDIT');
+  xjConfirm('Buka laporan lengkap?','Sebanyak 25 kredit akan digunakan untuk satu Laporan Xuanji dengan data lahir yang baru Anda isi. Termasuk fase sepuluh tahun dan tahunan; mengganti tahun dan membaca ulang di browser ini gratis. Unduh laporan dan berkas cadangan: pemulihan di perangkat lain membutuhkan cadangan serta akun yang sama. Tanpa cadangan, akses web yang hilang tidak dapat dipulihkan otomatis. Data lahir dan isi laporan tetap di perangkat ini.',xjPurchase,'GUNAKAN 25 KREDIT');
 }
 function xjUuid(){if(window.crypto&&crypto.randomUUID)return crypto.randomUUID();if(!window.crypto||!crypto.getRandomValues)throw new Error('crypto');var a=new Uint8Array(16);crypto.getRandomValues(a);a[6]=(a[6]&15)|64;a[8]=(a[8]&63)|128;return Array.from(a).map(function(n,i){return ([4,6,8,10].indexOf(i)>=0?'-':'')+n.toString(16).padStart(2,'0')}).join('');}
 async function xjPurchase(){
@@ -3403,7 +3326,7 @@ function initXuanji(){
   var draft=xjLoad().draft;if(draft&&xjCity(draft.cityId)){try{$('#xjDate').value=draft.year+'-'+String(draft.month).padStart(2,'0')+'-'+String(draft.day).padStart(2,'0');$('#xjTime').value=String(draft.hour).padStart(2,'0')+':'+String(draft.minute).padStart(2,'0');$('#xjGender').value=draft.gender;$('#xjCity').value=draft.cityId;$('#xjRemember').checked=true;}catch(e){}}
   $('#xjForm').addEventListener('submit',xjPreview);
   $('#xjRemember').addEventListener('change',function(){if(!this.checked){var d=xjLoad();d.draft=null;xjSave(d);}});
-  $('#xjErase').onclick=function(){if(XJ.busy)return;xjConfirm('Hapus data Xuanji di perangkat ini?','Unduh laporan Anda terlebih dahulu. Isian, laporan, dan bukti akses lokal semua akun di browser ini akan dihapus. Akses web tidak dapat dipulihkan dari server; membuka kembali perlu pembelian baru. Unduhan dan saldo kredit tetap ada.',xjEraseData,'HAPUS DATA LOKAL');};
+  $('#xjErase').onclick=function(){if(XJ.busy)return;xjConfirm('Hapus data Xuanji di perangkat ini?','Unduh laporan dan berkas cadangan terlebih dahulu. Isian, laporan, dan bukti akses lokal semua akun di browser ini akan dihapus. Tanpa cadangan, akses web tidak dapat dipulihkan dari server. Unduhan dan saldo kredit tetap ada.',xjEraseData,'HAPUS DATA LOKAL');};
   xjRenderHistory();
   window.addEventListener('storage',function(e){if(e.key===XJ.key||e.key===null){xjRenderHistory();if(XJ.current)xjRender();}if(e.key==='xjid_sb'||e.key===null){ACCepoch++;ACC={uid:null,email:'',credits:null,mode:'login'};accRender();if(accLoadTok())accLoadState();}});
 }
@@ -3417,17 +3340,7 @@ function rrHomeMotion(){
   var button=$('#homeMotionToggle');
   if(button){var label=RR_HOME.wantsMotion?'Jeda animasi':'Putar animasi';button.setAttribute('aria-pressed',RR_HOME.wantsMotion?'true':'false');button.setAttribute('aria-label',label);button.title=label;button.textContent=RR_HOME.wantsMotion?'Ⅱ':'▷';}
 }
-function rrHomeRenderAccount(){
-  var button=$('#homeAccount'),balance=$('#homeBalance'),signup=$('#homeSignup');
-  if(!button||typeof ACC==='undefined')return;
-  button.textContent=ACC.uid?'Akun':'Masuk';
-  button.setAttribute('aria-label',ACC.uid?'Buka akun dan kredit':'Masuk atau daftar');
-  if(balance){balance.textContent=ACC.uid?(ACC.credits==null?'Memuat…':String(ACC.credits)+' kredit'):'';balance.hidden=!ACC.uid;}
-  if(signup)signup.textContent=ACC.uid?'Undang teman · bonus 1 kredit':'Daftar & dapatkan 3 kredit';
-  var modalBalance=$('#homeAccountCredits');if(modalBalance)modalBalance.textContent=ACC.credits==null?'…':String(ACC.credits);
-  var email=$('#homeAccountEmail');if(email)email.textContent=ACC.email||'';
-  if(!ACC.uid)rrCloseAccount();
-}
+
 function rrShowHome(focus){
   $('#homeScreen').hidden=false;$('#appContent').hidden=true;
   document.body.classList.add('rr-at-home');$('#homeBack').hidden=true;
@@ -3452,10 +3365,7 @@ function rrOpenAccount(){
   rrHomeRenderAccount();RR_HOME.accountFocus=document.activeElement;
   var modal=$('#homeAccountModal');modal.hidden=false;modal.style.display='flex';$('#homeAccountClose').focus();
 }
-async function accLogout(){
-  ACCepoch++;try{await sbApi('/auth/v1/logout','POST');}catch(e){}
-  accClearTok();ACC={uid:null,email:'',credits:null,mode:'login'};accRender();
-}
+
 function rrInitHome(){
   RR_HOME.media=window.matchMedia('(prefers-reduced-motion: reduce)');
   var paused=false;try{paused=localStorage.getItem('rr_motion')==='paused';}catch(e){}
@@ -3487,8 +3397,397 @@ function rrInitHome(){
   rrShowHome(false);
 }
 
+/* Account tools. The report paywall and payment approval flow are unchanged. */
+var RRA={uid:null,seq:0,txPage:0,orderPage:0,pageSize:20,rewards:null,returnFocus:null,authFocus:null,recover:null,recoverySeq:0,authSeq:0,emailCooldown:{},claiming:null};
+var RRA_SITE='https://tanyasuhu.github.io/xuanjige/';
+var RR_EMAIL_READY=true;
+async function sbRefresh(){
+  var t=accLoadTok();if(!t||!t.r)return null;
+  try{
+    var res=await fetch(SB_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:sbHeaders(),body:JSON.stringify({refresh_token:t.r})});
+    if(!res.ok)throw new Error('refresh_failed');var j=await res.json();
+    var current=accLoadTok();if(!current||current.r!==t.r)return null;
+    if(!j.access_token||!j.refresh_token)throw new Error('invalid_session');accSaveTok(j.access_token,j.refresh_token);return j.access_token;
+  }catch(e){var current=accLoadTok();if(current&&current.r===t.r)accClearTok();return null;}
+}
+function rrSafeEmail(v){return typeof v==='string'?v.trim().toLowerCase():'';}
+function rrEmailValid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)&&v.length<=254;}
+function rrAuthError(j,status){
+  var code=j&&j.code,msg=j&&(j.msg||j.error_description||j.message)||'';
+  if(status===429||code==='over_email_send_rate_limit'||code==='over_request_rate_limit')return 'Terlalu banyak permintaan. Tunggu beberapa saat sebelum mencoba lagi.';
+  if(code==='email_not_confirmed'||/Email not confirmed/i.test(msg))return 'Konfirmasikan email terlebih dahulu. Anda dapat mengirim ulang email konfirmasi di bawah.';
+  if(code==='invalid_credentials'||/Invalid login credentials/i.test(msg))return 'Email atau kata sandi salah.';
+  if(code==='weak_password')return 'Gunakan kata sandi yang lebih kuat, minimal 8 karakter.';
+  if(/already registered/i.test(msg))return 'Coba masuk atau gunakan pemulihan kata sandi untuk email ini.';
+  return 'Permintaan belum berhasil. Coba lagi nanti; jika perlu, hubungi pengelola.';
+}
+function rrPendingInvite(email,code){
+  try{var raw=JSON.parse(localStorage.getItem('xjid_pending_invites')||'{}'),d=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};if(code===null)delete d[email];else if(/^[A-Z0-9]{6,8}$/.test(code))d[email]={code:code,at:Date.now()};var entries=Object.keys(d).filter(function(k){return d[k]&&typeof d[k].at==='number'&&Date.now()-d[k].at<30*86400000}).slice(-5),out={};entries.forEach(function(k){out[k]=d[k]});localStorage.setItem('xjid_pending_invites',JSON.stringify(out));}catch(e){}
+}
+async function rrApplyPendingInvite(uid,email){
+  var rec;try{var d=JSON.parse(localStorage.getItem('xjid_pending_invites')||'{}');rec=d&&d[rrSafeEmail(email)];}catch(e){}
+  if(!rec||!rec.code||Date.now()-rec.at>30*86400000||ACC.uid!==uid)return;
+  try{var r=await sbApi('/rest/v1/rpc/apply_invite_code','POST',{p_code:rec.code},uid),j=r.ok?await r.json():null;if(ACC.uid!==uid)return;if(j&&(j.ok||['already_registered','already_used','bad_code','self','legacy'].indexOf(j.reason)>=0))rrPendingInvite(rrSafeEmail(email),null);}catch(e){}
+}
+async function rrClaimRewards(uid){
+  if(!uid||ACC.uid!==uid)return null;
+  if(RRA.claiming&&RRA.claiming.uid===uid)return RRA.claiming.promise;
+  var timer,operation=(async function(){try{var r=await sbApi('/rest/v1/rpc/claim_account_rewards','POST',{},uid);if(!r.ok)return null;return await r.json();}catch(e){return null;}})();
+  var task=Promise.race([operation,new Promise(function(resolve){timer=setTimeout(function(){resolve(null)},4000)})]);
+  RRA.claiming={uid:uid,promise:task};try{var j=await task;if(ACC.uid!==uid)return null;if(j&&Number.isFinite(j.credits))ACC.credits=j.credits;return j;}finally{clearTimeout(timer);if(RRA.claiming&&RRA.claiming.promise===task)RRA.claiming=null;}
+}
+async function accLoadState(){
+  var epoch=++ACCepoch;
+  try{
+    var res=await sbApi('/auth/v1/user');if(!res.ok)return false;
+    var u=await res.json();if(epoch!==ACCepoch||!u||typeof u.id!=='string')return false;
+    ACC.uid=u.id;ACC.email=u.email||'';
+    await rrApplyPendingInvite(u.id,ACC.email);if(epoch!==ACCepoch)return false;
+    await rrClaimRewards(u.id);if(epoch!==ACCepoch)return false;
+    var r2=await sbApi('/rest/v1/rpc/get_my_state','POST',{},u.id);
+    if(r2.ok){var st=await r2.json();if(epoch!==ACCepoch)return false;ACC.credits=typeof st.credits==='number'?st.credits:null;}
+    if(epoch!==ACCepoch)return false;accRender();return true;
+  }catch(e){return false;}
+}
+function accRender(){
+  var bar=$('#accBar');if(!bar)return;
+  rrHomeRenderAccount();rrAccountAuthChanged();xjAuthChanged();
+  if(!ACC.uid){bar.innerHTML='<button class="acc-btn" id="accLoginBtn">👤 Masuk / Daftar</button>';$('#accLoginBtn').onclick=function(){authOpen('login')};return;}
+  var em=ACC.email.split('@')[0]||'akun';
+  bar.innerHTML='<span class="acc-info">👤 '+esc(em)+' · <b>'+esc(ACC.credits==null?'…':ACC.credits)+' kredit</b></span><button class="acc-mini" id="accCenterBtn">Akun & riwayat</button><button class="acc-mini" id="accTopupBtn">+ Isi Kredit</button><button class="acc-mini" id="accLogoutBtn">Keluar</button>';
+  $('#accCenterBtn').onclick=rrAccountOpen;$('#accTopupBtn').onclick=topupOpen;$('#accLogoutBtn').onclick=accLogout;
+}
+function rrHomeRenderAccount(){
+  var button=$('#homeAccount'),balance=$('#homeBalance'),signup=$('#homeSignup');if(!button||typeof ACC==='undefined')return;
+  button.textContent=ACC.uid?'Akun':'Masuk';button.setAttribute('aria-label',ACC.uid?'Buka akun dan kredit':'Masuk atau daftar');
+  if(balance){balance.textContent=ACC.uid?(ACC.credits==null?'Memuat…':String(ACC.credits)+' kredit'):'';balance.hidden=!ACC.uid;}
+  if(signup)signup.textContent=ACC.uid?'Undang teman · lihat syarat bonus':'Daftar · bonus setelah verifikasi';
+  var mb=$('#homeAccountCredits');if(mb)mb.textContent=ACC.credits==null?'…':String(ACC.credits);
+  var em=$('#homeAccountEmail');if(em)em.textContent=ACC.email||'';if(!ACC.uid)rrCloseAccount();
+}
+async function accLogout(){
+  ACCepoch++;RRA.authSeq++;rrAccountClose();rrRecoveryClose();
+  var t=accLoadTok();accClearTok();ACC={uid:null,email:'',credits:null,mode:'login'};accRender();
+  try{if(t&&t.a)await fetch(SB_URL+'/auth/v1/logout',{method:'POST',headers:sbHeaders(t.a)});}catch(e){}
+}
+function authOpen(mode){
+  if(AUTHbusy)return;
+  RRA.authSeq++;RRA.authFocus=document.activeElement;ACC.mode=['login','signup','recover'].indexOf(mode)>=0?mode:'login';
+  $('#authModal').style.display='flex';$('#authErr').textContent='';$('#authPass').value='';
+  var signup=ACC.mode==='signup',recover=ACC.mode==='recover',iv=$('#authInvite');
+  iv.value='';iv.style.display=signup?'block':'none';$('#authPass').hidden=recover;$('#authPass').autocomplete=signup?'new-password':'current-password';$('#authPass').placeholder=signup?'Kata sandi (minimal 8 karakter)':'Kata sandi';
+  $('#authTitle').textContent=recover?'PULIHKAN KATA SANDI':signup?'DAFTAR AKUN BARU':'MASUK AKUN';
+  $('#authGo').textContent=recover?'KIRIM TAUTAN PEMULIHAN':signup?'DAFTAR':'MASUK';$('#authGo').disabled=recover&&!RR_EMAIL_READY;
+  $('#authSwitch').innerHTML=recover?'Ingat kata sandinya? <button type="button" class="rra-link" id="authToggle">Kembali masuk</button>':signup?'Sudah punya akun? <button type="button" class="rra-link" id="authToggle">Masuk di sini</button>':'Belum punya akun? <button type="button" class="rra-link" id="authToggle">Daftar di sini</button>';
+  $('#authToggle').onclick=function(){authOpen(ACC.mode==='login'?'signup':'login')};
+  $('#rraAuthForgot').hidden=recover||signup;$('#rraAuthResend').hidden=recover;$('#rraAuthResend').disabled=!RR_EMAIL_READY;
+  $('#rraAuthHint').textContent=recover?'Jika email terdaftar, tautan untuk mengganti kata sandi akan dikirim. Periksa juga folder spam.':signup?'Gunakan email milik Anda. Bonus 3 kredit diproses setelah verifikasi email; undangan memiliki syarat tambahan.':'Masuk untuk melihat saldo dan riwayat akun Anda.';
+  if(!RR_EMAIL_READY)$('#rraAuthHint').textContent=recover?'Pemulihan melalui email belum dibuka karena layanan pengiriman belum tersedia. Hubungi pengelola jika Anda tidak bisa masuk.':signup?'Anda tetap dapat mendaftar dan memakai jatah gratis harian. Bonus baru ditunda sampai layanan verifikasi email tersedia; belum langsung masuk ke saldo.':'Layanan verifikasi dan pemulihan email belum dibuka. Akun yang sudah ada tetap dapat masuk seperti biasa.';
+  setTimeout(function(){$('#authEmail').focus()},0);
+}
+function rrAuthClose(){if(AUTHbusy)return;RRA.authSeq++;$('#authModal').style.display='none';if(RRA.authFocus&&document.contains(RRA.authFocus))RRA.authFocus.focus({preventScroll:true});}
+async function rrSendEmail(kind){
+  var email=rrSafeEmail($('#authEmail').value),err=$('#authErr');if(!RR_EMAIL_READY){err.textContent='Layanan email belum tersedia. Permintaan belum dikirim; hubungi pengelola untuk bantuan.';return;}if(!rrEmailValid(email)){err.textContent='Isi alamat email yang benar.';return;}
+  var key=kind+':'+email,now=Date.now(),last=RRA.emailCooldown[key]||0;if(now-last<60000){err.textContent='Tunggu '+Math.ceil((60000-now+last)/1000)+' detik sebelum mengirim ulang.';return;}
+  RRA.emailCooldown[key]=now;var seq=RRA.authSeq;
+  try{var path=kind==='recover'?'/auth/v1/recover':'/auth/v1/resend',body=kind==='recover'?{email:email}:{type:'signup',email:email};
+    var r=await fetch(SB_URL+path+'?redirect_to='+encodeURIComponent(RRA_SITE),{method:'POST',headers:sbHeaders(),body:JSON.stringify(body)});
+    if(seq!==RRA.authSeq)return;
+    if(r.status===429){err.textContent='Batas pengiriman email tercapai. Tunggu beberapa saat, lalu coba lagi.';return;}
+    if(!r.ok){err.textContent='Email belum dapat dikirim. Coba lagi nanti atau hubungi pengelola.';return;}
+    err.textContent=kind==='recover'?'Jika email tersebut terdaftar, tautan pemulihan akan dikirim. Periksa kotak masuk dan folder spam.':'Jika akun tersebut memerlukan konfirmasi, email konfirmasi akan dikirim. Periksa kotak masuk dan folder spam.';
+  }catch(e){if(seq===RRA.authSeq)err.textContent='Koneksi bermasalah. Coba lagi sebentar.';}
+}
+async function authGo(){
+  if(AUTHbusy)return;
+  var email=rrSafeEmail($('#authEmail').value),pw=$('#authPass').value,err=$('#authErr'),mode=ACC.mode,seq=RRA.authSeq;
+  if(!rrEmailValid(email)){err.textContent='Isi alamat email yang benar.';return;}
+  if(mode!=='recover'&&(!pw||pw.length<(mode==='signup'?8:6))){err.textContent=mode==='signup'?'Kata sandi minimal 8 karakter.':'Isi kata sandi Anda.';return;}
+  var code=($('#authInvite').value||'').trim().toUpperCase();if(mode==='signup'&&code&&!/^[A-Z0-9]{6,8}$/.test(code)){err.textContent='Kode undangan terdiri dari 6–8 huruf atau angka.';return;}
+  AUTHbusy=true;$('#authGo').disabled=true;$('#authGo').style.opacity=.45;err.textContent='Memproses…';
+  try{
+    if(mode==='recover'){await rrSendEmail('recover');return;}
+    var path=mode==='login'?'/auth/v1/token?grant_type=password':'/auth/v1/signup?redirect_to='+encodeURIComponent(RRA_SITE),body={email:email,password:pw};if(mode==='signup')body.data={invite_code:code};
+    var res=await fetch(SB_URL+path,{method:'POST',headers:sbHeaders(),body:JSON.stringify(body)}),j=await res.json().catch(function(){return{}});
+    if(seq!==RRA.authSeq)return;if(!res.ok){err.textContent=rrAuthError(j,res.status);return;}
+    $('#authPass').value='';if(mode==='signup'&&code)rrPendingInvite(email,code);
+    if(j.access_token&&j.refresh_token){
+      ACCepoch++;accSaveTok(j.access_token,j.refresh_token);var ok=await accLoadState();if(seq!==RRA.authSeq)return;
+      if(!ok){err.textContent='Sesi belum dapat dimuat. Coba masuk kembali.';return;}
+      $('#authModal').style.display='none';if(mode==='signup')rrAccountOpen();
+    }else{err.textContent='Jika pendaftaran dapat diproses, email konfirmasi akan dikirim. Buka tautannya, lalu masuk. Bonus belum diberikan sebelum verifikasi.';}
+  }catch(e){if(seq===RRA.authSeq)err.textContent='Koneksi bermasalah — coba lagi.';}
+  finally{AUTHbusy=false;$('#authGo').disabled=ACC.mode==='recover'&&!RR_EMAIL_READY;$('#authGo').style.opacity=1;}
+}
+async function rrAuthHandleReturn(){
+  var hash=new URLSearchParams(location.hash.replace(/^#/,'')),type=hash.get('type'),access=hash.get('access_token'),refresh=hash.get('refresh_token'),error=hash.get('error')||hash.get('error_code');
+  if(!access&&!refresh&&!error)return false;
+  try{history.replaceState(null,'',location.pathname+location.search);}catch(e){location.hash='';}
+  if(error||!access||!refresh||['recovery','signup','email_change'].indexOf(type)<0){authOpen('recover');$('#authErr').textContent='Tautan sudah tidak berlaku atau tidak lengkap. Minta tautan baru dari halaman ini.';return true;}
+  var seq=++RRA.authSeq,rseq=++RRA.recoverySeq;
+  try{var r=await fetch(SB_URL+'/auth/v1/user',{headers:sbHeaders(access)}),u=r.ok?await r.json():null;if(seq!==RRA.authSeq||rseq!==RRA.recoverySeq)return true;if(!u||typeof u.id!=='string'||!u.email)throw new Error('invalid');
+    if(type==='recovery'){
+      RRA.recover={access:access,uid:u.id,email:u.email};$('#rraRecoveryEmail').textContent='Akun: '+u.email;$('#rraNewPassword').value='';$('#rraConfirmPassword').value='';$('#rraRecoveryStatus').textContent='';$('#rraRecovery').hidden=false;$('#rraNewPassword').focus();return true;
+    }
+    /* Confirmation proves mailbox ownership. Password login remains explicit. */
+    authOpen('login');$('#authEmail').value=u.email;$('#authErr').textContent='Email sudah dikonfirmasi. Masuk dengan kata sandi untuk melanjutkan.';return true;
+  }catch(e){if(seq===RRA.authSeq&&rseq===RRA.recoverySeq){authOpen('recover');$('#authErr').textContent='Tautan belum dapat diverifikasi atau sudah kedaluwarsa. Minta tautan baru.';}return true;}
+  finally{access=null;refresh=null;}
+}
+function rrRecoveryClose(){RRA.recoverySeq++;RRA.recover=null;$('#rraRecovery').hidden=true;$('#rraNewPassword').value='';$('#rraConfirmPassword').value='';}
+async function rrSavePassword(){
+  var rec=RRA.recover,pw=$('#rraNewPassword').value,again=$('#rraConfirmPassword').value,status=$('#rraRecoveryStatus'),b=$('#rraSavePassword');if(!rec||b.disabled)return;
+  if(pw.length<8){status.textContent='Kata sandi minimal 8 karakter.';return;}if(pw!==again){status.textContent='Kedua kata sandi belum sama.';return;}
+  b.disabled=true;status.textContent='Menyimpan kata sandi…';
+  try{var r=await fetch(SB_URL+'/auth/v1/user',{method:'PUT',headers:sbHeaders(rec.access),body:JSON.stringify({password:pw})}),j=await r.json().catch(function(){return{}});if(RRA.recover!==rec)return;
+    if(!r.ok){status.textContent=r.status===401||r.status===403?'Tautan kedaluwarsa. Tutup dan minta tautan pemulihan baru.':rrAuthError(j,r.status);return;}
+    var email=rec.email;rrRecoveryClose();ACCepoch++;accClearTok();ACC={uid:null,email:'',credits:null,mode:'login'};accRender();authOpen('login');$('#authEmail').value=email;$('#authErr').textContent='Kata sandi sudah diganti. Masuk kembali dengan kata sandi baru.';
+  }catch(e){if(RRA.recover===rec)status.textContent='Koneksi bermasalah. Kata sandi belum dapat dipastikan berubah; coba lagi.';}
+  finally{b.disabled=false;}
+}
+function rrRewardStatusText(status,kind){
+  var map={granted:'Bonus sudah masuk.',already_granted:'Bonus sudah diterima.',verification_required:'Menunggu verifikasi email yang memenuhi syarat bonus. Jika email sudah dikonfirmasi tetapi status ini tetap muncul, hubungi pengelola untuk pemeriksaan.',paused:'Pemrosesan bonus baru sementara ditunda. Saldo yang sudah ada tetap dapat digunakan.',legacy:'Bonus akun lama mengikuti riwayat yang sudah tercatat.',first_use_required:'Menunggu teman memakai Mimpi untuk pertama kali.',monthly_limit:'Batas hadiah pengundang bulan ini sudah tercapai. Periksa lagi bulan berikutnya.',not_registered:'Tidak ada undangan yang terdaftar.',pending:'Undangan terdaftar; syarat hadiah belum lengkap.'};
+  return map[status]||'Status bonus belum tersedia.';
+}
+function rrRewardHTML(s){
+  if(!s||typeof s!=='object')return '<p>Status bonus belum dapat dimuat. Pilih Perbarui untuk mencoba lagi.</p>';
+  var count=Number.isInteger(s.invite_month_count)?s.invite_month_count:0,limit=Number.isInteger(s.invite_month_limit)?s.invite_month_limit:10;
+  return '<p><b>Bonus pendaftaran:</b> '+esc(rrRewardStatusText(s.signup_status,'signup'))+'</p><p><b>Bonus undangan:</b> '+esc(rrRewardStatusText(s.invite_status,'invite'))+'</p><p>Hadiah sebagai pengundang bulan ini: <b>'+esc(count)+' / '+esc(limit)+'</b> · waktu Jakarta.</p>';
+}
+async function requireQuota(feature){
+  if(!ACC.uid)return{ok:false,reason:'need_login'};var uid=ACC.uid;
+  try{var res=await sbApi('/rest/v1/rpc/feature_use','POST',{p_feature:feature},uid);if(!res.ok||ACC.uid!==uid)return{ok:false,reason:'error'};var j=await res.json();if(ACC.uid!==uid)return{ok:false,reason:'error'};
+    if(j&&j.ok){ACC.credits=j.balance;accRender();rrClaimRewards(uid).then(function(){if(ACC.uid===uid)accRender()});return{ok:true,used:j.used};}
+    return{ok:false,reason:'no_credits',balance:j?j.balance:0};
+  }catch(e){return{ok:false,reason:'error'};}
+}
+function showQuotaModal(reason){
+  var q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');
+  if(reason==='error'){title.textContent='KONEKSI BELUM BERHASIL';msg.textContent='Status kuota belum dapat diperiksa. Periksa koneksi dan saldo akun sebelum mencoba lagi.';btns.innerHTML='<button class="btn" id="qRetryClose">TUTUP</button>';$('#qRetryClose').onclick=function(){q.style.display='none'};}
+  else if(reason==='need_login'||reason==='guest_limit'){title.textContent='MASUK DULU UNTUK MEMAKAI';msg.innerHTML='Masuk untuk menafsirkan mimpi. Peta dan ringkasan Xuanji tetap gratis tanpa akun.<br>Setiap akun mendapat 1 tafsir mimpi gratis per hari. Bonus pendaftaran 3 kredit diproses setelah verifikasi email.<br>Bonus undangan memiliki syarat verifikasi dan penggunaan pertama.';btns.innerHTML='<button class="btn" id="qGoAuth">DAFTAR / MASUK</button>';$('#qGoAuth').onclick=function(){q.style.display='none';authOpen('signup')};}
+  else{title.textContent='KREDIT HABIS';msg.innerHTML='Kuota gratis hari ini sudah terpakai. Anda bisa isi kredit atau kembali besok.<br>Undangan memberi bonus setelah teman memenuhi syarat, bukan saat tautan dibagikan.';btns.innerHTML='<button class="btn" id="qGoInvite">LIHAT BONUS UNDANGAN</button><button class="btn ghost" id="qGoTopup">ISI KREDIT · Rp 22.000 = 10</button>';$('#qGoInvite').onclick=showInvitePanel;$('#qGoTopup').onclick=function(){q.style.display='none';topupOpen()};}
+  q.style.display='flex';
+}
+async function showInvitePanel(){
+  if(!ACC.uid){authOpen('login');return;}var uid=ACC.uid,seq=++RRA.seq,q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');title.textContent='UNDANG TEMAN, DAPAT KREDIT';msg.textContent='Memuat kode dan status undangan…';btns.innerHTML='';q.style.display='flex';
+  try{await rrClaimRewards(uid);var results=await Promise.all([sbApi('/rest/v1/rpc/get_my_invite_code','POST',{},uid),sbApi('/rest/v1/rpc/get_my_reward_state','POST',{},uid)]);if(uid!==ACC.uid||seq!==RRA.seq)return;
+    if(!results[0].ok)throw new Error('request');var code=(await results[0].text()).replace(/[^A-Za-z0-9]/g,'').toUpperCase().slice(0,8),state=results[1].ok?await results[1].json():null;if(uid!==ACC.uid||seq!==RRA.seq)return;if(!/^[A-Z0-9]{6,8}$/.test(code))throw new Error('code');
+    var share='Coba Xuanji di Rumah Rahasia. Kode undangan saya: '+code+'. Masing-masing mendapat 1 kredit setelah teman baru memverifikasi email dan pertama kali memakai Mimpi. Pengundang mendapat hadiah untuk maksimal 10 teman per bulan. '+RRA_SITE;
+    msg.innerHTML='Bagikan kode ini kepada teman baru:<br><span class="invite-code" id="invCode">'+esc(code)+'</span><p>Masing-masing mendapat <b>1 kredit</b> setelah teman memverifikasi email dan memakai Mimpi untuk pertama kali. Hadiah pengundang maksimal <b>10 per bulan</b> (waktu Jakarta). Membagikan tautan saja tidak memberi kredit.</p>'+rrRewardHTML(state);
+    btns.innerHTML='<button class="btn" id="qCopyInvite">SALIN TEKS UNDANGAN</button><button class="btn ghost" id="qInviteBack">AKUN & RIWAYAT</button>';
+    $('#qCopyInvite').onclick=function(){copyText(share);this.textContent='TEKS UNDANGAN DISALIN'};$('#qInviteBack').onclick=function(){q.style.display='none';rrAccountOpen()};accRender();
+  }catch(e){if(uid===ACC.uid&&seq===RRA.seq){msg.textContent='Kode belum dapat dimuat. Periksa koneksi lalu coba lagi.';btns.innerHTML='<button class="btn" id="qInviteRetry">COBA LAGI</button>';$('#qInviteRetry').onclick=showInvitePanel;}}
+}
+function rrAccountAuthChanged(){
+  if(RRA.uid!==ACC.uid){rrRecoveryClose();RRA.seq++;RRA.uid=ACC.uid;RRA.rewards=null;RRA.txPage=0;RRA.orderPage=0;var box=$('#rraCenter');if(box&&!box.hidden)rrAccountClose();['rraTransactionsList','rraOrdersList','rraEmail'].forEach(function(id){var n=$('#'+id);if(n)n.textContent=''});}
+  if($('#rraBalance'))$('#rraBalance').textContent=ACC.credits==null?'…':String(ACC.credits);
+}
+function rrAccountOpen(){
+  if(!ACC.uid){authOpen('login');return;}rrCloseAccount();RRA.returnFocus=document.activeElement;RRA.uid=ACC.uid;RRA.txPage=0;RRA.orderPage=0;$('#rraCenter').hidden=false;$('#rraEmail').textContent=ACC.email;rrAccountTab('transactions');$('#rraClose').focus();rrAccountRefresh();
+}
+function rrAccountClose(){
+  RRA.seq++;var box=$('#rraCenter');if(box)box.hidden=true;if(RRA.returnFocus&&document.contains(RRA.returnFocus))RRA.returnFocus.focus({preventScroll:true});RRA.returnFocus=null;
+}
+function rrAccountTab(which){
+  var orders=which==='orders';$('#rraTransactions').hidden=orders;$('#rraOrders').hidden=!orders;
+  ['Transactions','Orders'].forEach(function(n){var selected=(n==='Orders')===orders,b=$('#rraTab'+n);b.setAttribute('aria-selected',selected?'true':'false');b.tabIndex=selected?0:-1;});
+}
+function rrAccountTime(value){try{var date=new Date(value);if(!Number.isFinite(date.getTime()))return 'Waktu tidak tersedia';return new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Jakarta'}).format(date)+' WIB';}catch(e){return 'Waktu tidak tersedia';}}
+function rrIDR(n){return Number.isFinite(Number(n))?'Rp '+Number(n).toLocaleString('id-ID'):'—';}
+function rrTransactionHTML(row){
+  var names={signup_bonus:'Bonus pendaftaran',invite_bonus:'Bonus undangan',topup:'Isi kredit',spend:'Pemakaian kredit'},amount=Number(row.amount),name=names[row.kind]||'Perubahan saldo';if(row.kind==='spend'&&row.note&&/xuanji/i.test(row.note))name='Laporan Xuanji';else if(row.kind==='spend'&&row.note&&/dream|mimpi/i.test(row.note))name='Tafsir mimpi';
+  return '<article class="rra-entry"><div class="rra-entry-head"><strong>'+esc(name)+'</strong><span>'+esc(Number.isFinite(amount)?(amount>0?'+':'')+amount:'—')+' kredit</span></div><time>'+esc(rrAccountTime(row.created_at))+'</time><small>Saldo setelah transaksi: '+esc(Number.isFinite(Number(row.balance_after))?row.balance_after:'—')+' kredit · ID '+esc(String(row.id||''))+'</small></article>';
+}
+function rrOrderHTML(row){
+  var labels={pending:'Menunggu pemeriksaan',approved:'Disetujui',rejected:'Ditolak'},status=labels[row.status]||'Status belum tersedia';
+  return '<article class="rra-entry"><div class="rra-entry-head"><strong>'+esc(rrIDR(row.idr_amount))+'</strong><span>'+esc(row.credits)+' kredit</span></div><span class="rra-status">'+esc(status)+'</span><time>Diajukan: '+esc(rrAccountTime(row.created_at))+'</time>'+(row.reviewed_at?'<small>Diperiksa: '+esc(rrAccountTime(row.reviewed_at))+'</small>':'')+'<small>Pengajuan #'+esc(String(row.id||''))+' · Referensi '+esc(String(row.ref_code||'—'))+'</small>'+(row.status==='pending'?'<small>Saldo bertambah setelah pembayaran diperiksa pengelola.</small>':'')+'</article>';
+}
+async function rrAccountPage(kind,page){
+  if(!ACC.uid||$('#rraCenter').hidden)return;var uid=ACC.uid,seq=RRA.seq,orders=kind==='orders',list=$('#'+(orders?'rraOrdersList':'rraTransactionsList')),prefix=orders?'rraOrder':'rraTx',key=orders?'orderPage':'txPage';page=Math.max(0,page|0);RRA[key]=page;list.textContent='Memuat riwayat…';$('#'+prefix+'Prev').disabled=true;$('#'+prefix+'Next').disabled=true;$('#'+prefix+'Page').textContent='';
+  var table=orders?'topup_requests':'transactions',fields=orders?'id,package_id,idr_amount,credits,ref_code,status,created_at,reviewed_at':'id,amount,kind,balance_after,note,created_at';
+  try{var path='/rest/v1/'+table+'?select='+fields+'&user_id=eq.'+encodeURIComponent(uid)+'&order=created_at.desc,id.desc&limit='+(RRA.pageSize+1)+'&offset='+(page*RRA.pageSize),r=await sbApi(path,'GET',null,uid),rows=r.ok?await r.json():null;if(seq!==RRA.seq||uid!==ACC.uid||RRA[key]!==page)return;
+    if(!Array.isArray(rows))throw new Error('rows');var more=rows.length>RRA.pageSize;rows=rows.slice(0,RRA.pageSize);list.innerHTML=rows.length?rows.map(orders?rrOrderHTML:rrTransactionHTML).join(''):'<p class="rra-empty">'+(orders?'Belum ada pengajuan isi kredit.':'Belum ada perubahan saldo pada halaman ini.')+'</p>';$('#'+prefix+'Page').textContent='Halaman '+(page+1);$('#'+prefix+'Prev').disabled=page===0;$('#'+prefix+'Next').disabled=!more;
+  }catch(e){if(seq===RRA.seq&&uid===ACC.uid&&RRA[key]===page){list.innerHTML='<p class="rra-empty">Riwayat belum dapat dimuat. Pilih Perbarui untuk mencoba lagi.</p>';$('#'+prefix+'Prev').disabled=page===0;}}
+}
+async function rrAccountRefresh(){
+  if(!ACC.uid||$('#rraCenter').hidden)return;var uid=ACC.uid,seq=++RRA.seq;$('#rraRewards').textContent='Memuat status bonus…';$('#rraRefresh').disabled=true;
+  await rrClaimRewards(uid);if(uid!==ACC.uid||seq!==RRA.seq)return;
+  var pending=[rrAccountPage('transactions',RRA.txPage),rrAccountPage('orders',RRA.orderPage),(async function(){try{var r=await sbApi('/rest/v1/rpc/get_my_reward_state','POST',{},uid),s=r.ok?await r.json():null;if(uid!==ACC.uid||seq!==RRA.seq)return;RRA.rewards=s;$('#rraRewards').innerHTML=rrRewardHTML(s);if(s&&Number.isFinite(s.credits)){ACC.credits=s.credits;accRender();}}catch(e){if(uid===ACC.uid&&seq===RRA.seq)$('#rraRewards').innerHTML=rrRewardHTML(null);}})()];
+  await Promise.all(pending);if(uid===ACC.uid&&seq===RRA.seq)$('#rraRefresh').disabled=false;
+}
+function rrOpenLocalAccountTools(){rrAccountClose();if(typeof rrLocalToolsOpen==='function')rrLocalToolsOpen();else if(typeof rrDataOpen==='function')rrDataOpen();}
+function rrModalKeys(e,modal,close){
+  if(e.key==='Escape'){e.preventDefault();close();return;}if(e.key!=='Tab')return;
+  var els=Array.from(modal.querySelectorAll('button:not([disabled]),input:not([disabled]),select,textarea,a[href],[tabindex="0"]')).filter(function(el){return !el.hidden&&el.getClientRects().length}),first=els[0],last=els[els.length-1];if(!first)return;if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+}
+function rrAccountInit(){
+  $('#rraEmailServiceNote').textContent=RR_EMAIL_READY?'Verifikasi email untuk memenuhi syarat bonus. Saldo lama dan jatah gratis harian tetap dapat digunakan.':'Layanan verifikasi email belum dibuka; bonus baru ditunda dan belum masuk ke saldo. Saldo lama dan jatah gratis harian tetap dapat digunakan.';
+  $('#homeAccountCenter').onclick=function(){rrCloseAccount();rrAccountOpen()};$('#rraClose').onclick=rrAccountClose;$('#rraTopup').onclick=function(){rrAccountClose();topupOpen()};$('#rraRefresh').onclick=rrAccountRefresh;$('#rraInvite').onclick=function(){rrAccountClose();showInvitePanel()};$('#rraBackup').onclick=rrOpenLocalAccountTools;
+  $('#rraTabTransactions').onclick=function(){rrAccountTab('transactions')};$('#rraTabOrders').onclick=function(){rrAccountTab('orders')};
+  ['rraTabTransactions','rraTabOrders'].forEach(function(id){$('#'+id).onkeydown=function(e){if(['ArrowLeft','ArrowRight','Home','End'].indexOf(e.key)<0)return;e.preventDefault();var orders=e.key==='End'||(e.key!=='Home'&&id==='rraTabTransactions');rrAccountTab(orders?'orders':'transactions');$('#'+(orders?'rraTabOrders':'rraTabTransactions')).focus();};});
+  $('#rraTxPrev').onclick=function(){rrAccountPage('transactions',RRA.txPage-1)};$('#rraTxNext').onclick=function(){rrAccountPage('transactions',RRA.txPage+1)};$('#rraOrderPrev').onclick=function(){rrAccountPage('orders',RRA.orderPage-1)};$('#rraOrderNext').onclick=function(){rrAccountPage('orders',RRA.orderPage+1)};
+  $('#rraCenter').addEventListener('keydown',function(e){rrModalKeys(e,this,rrAccountClose)});$('#rraCenter').addEventListener('click',function(e){if(e.target===this)rrAccountClose()});
+  $('#authModal').addEventListener('keydown',function(e){rrModalKeys(e,this,rrAuthClose)});$('#authModal').setAttribute('role','dialog');$('#authModal').setAttribute('aria-modal','true');$('#authModal').setAttribute('aria-labelledby','authTitle');
+  $('#rraAuthForgot').onclick=function(){authOpen('recover')};$('#rraAuthResend').onclick=function(){if(!AUTHbusy)rrSendEmail('signup')};
+  $('#rraRecoveryClose').onclick=rrRecoveryClose;$('#rraSavePassword').onclick=rrSavePassword;$('#rraConfirmPassword').onkeydown=function(e){if(e.key==='Enter')rrSavePassword()};$('#rraRecovery').addEventListener('keydown',function(e){rrModalKeys(e,this,rrRecoveryClose)});
+}
+function initAuth(){
+  $('#authClose').onclick=rrAuthClose;$('#authGo').onclick=authGo;$('#topupGo').onclick=topupGo;
+  ['topupClose','quotaClose'].forEach(function(id){$('#'+id).onclick=function(){$('#'+id.replace('Close','Modal')).style.display='none'}});
+  $('#authEmail').addEventListener('keydown',function(e){if(e.key==='Enter'){if(ACC.mode==='recover')authGo();else $('#authPass').focus()}});$('#authPass').addEventListener('keydown',function(e){if(e.key==='Enter')authGo()});$('#topupRef').addEventListener('keydown',function(e){if(e.key==='Enter')topupGo()});
+  rrAccountInit();accRender();rrAuthHandleReturn().then(function(handled){if(!handled)accLoadState()});
+}
+
+/* Local backup + saved calendar dates. No credentials or network calls. */
+var RR_LOCAL={version:1,key:'xjid_saved_days_v1',maxBytes:2097152,maxRecords:200,maxHistory:200,maxDays:50,pending:null,focus:null,readEpoch:0,busy:false};
+function rrLocalFail(message){throw new Error(message||'Berkas cadangan tidak valid. Data belum diubah.');}
+function rrLocalObject(value){return value!==null&&typeof value==='object'&&!Array.isArray(value)&&Object.getPrototypeOf(value)===Object.prototype;}
+function rrLocalKeys(value,allowed,required){if(!rrLocalObject(value)||Object.keys(value).some(function(k){return allowed.indexOf(k)<0;})||(required||[]).some(function(k){return !Object.prototype.hasOwnProperty.call(value,k);}))rrLocalFail();}
+function rrLocalInt(value,min,max){return Number.isInteger(value)&&value>=min&&value<=max;}
+function rrLocalUUID(value){return typeof value==='string'&&/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);}
+function rrLocalStamp(value){return rrLocalInt(value,0,8640000000000000);}
+function rrLocalDateParts(value){
+  if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))rrLocalFail();
+  var a=value.split('-').map(Number),d=new Date(Date.UTC(a[0],a[1]-1,a[2]));
+  if(a[0]<1900||a[0]>2200||d.getUTCFullYear()!==a[0]||d.getUTCMonth()!==a[1]-1||d.getUTCDate()!==a[2])rrLocalFail();
+  return a;
+}
+function rrLocalBirth(p){
+  var fields=['year','month','day','hour','minute','gender','cityId'];rrLocalKeys(p,fields,fields);
+  if(!rrLocalInt(p.year,1900,2200)||!rrLocalInt(p.month,1,12)||!rrLocalInt(p.day,1,31)||!rrLocalInt(p.hour,0,23)||!rrLocalInt(p.minute,0,59)||['male','female'].indexOf(p.gender)<0||typeof p.cityId!=='string'||!xjCity(p.cityId))rrLocalFail();
+  rrLocalDateParts(p.year+'-'+String(p.month).padStart(2,'0')+'-'+String(p.day).padStart(2,'0'));
+  var today=new Date();if(Date.UTC(p.year,p.month-1,p.day)>Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()))rrLocalFail();
+  return {year:p.year,month:p.month,day:p.day,hour:p.hour,minute:p.minute,gender:p.gender,cityId:p.cityId};
+}
+function rrLocalRecord(r,owner){
+  rrLocalKeys(r,['uid','requestId','input','paid','status','createdAt','purchasedAt','version'],['uid','requestId','input','paid']);
+  if(!rrLocalUUID(r.uid)||r.uid!==owner||!rrLocalUUID(r.requestId)||typeof r.paid!=='boolean')rrLocalFail('Bukti laporan tidak valid atau milik akun lain. Data belum diubah.');
+  var out={uid:r.uid,requestId:r.requestId,input:rrLocalBirth(r.input),paid:r.paid};
+  if(r.status!==undefined){if(['pending','paid','unpaid'].indexOf(r.status)<0||(r.status==='paid'&&!r.paid)||(r.paid&&r.status!=='paid'))rrLocalFail();out.status=r.status;}
+  ['createdAt','purchasedAt'].forEach(function(k){if(r[k]!==undefined){if(!rrLocalStamp(r[k]))rrLocalFail();out[k]=r[k];}});
+  if(r.version!==undefined){if(typeof r.version!=='string'||r.version.length>80||!/^[a-zA-Z0-9._-]+$/.test(r.version))rrLocalFail();out.version=r.version;}
+  return out;
+}
+function rrLocalHistory(h){
+  if(!rrLocalObject(h)||!rrLocalStamp(h.ts))rrLocalFail('Ada riwayat yang tidak valid. Data belum diubah.');
+  if(h.k==='dream'){
+    rrLocalKeys(h,['k','ts','txt','ids','vars','emo','life'],['k','ts','txt','ids','vars','emo','life']);
+    if(typeof h.txt!=='string'||h.txt.length>2000||!Array.isArray(h.ids)||h.ids.length<1||h.ids.length>3||!rrLocalObject(h.vars)||!rrLocalInt(h.emo,0,EMO.length-1)||!rrLocalInt(h.life,0,LIFE.length-1))rrLocalFail();
+    var ids=h.ids.slice(),vars={};if(new Set(ids).size!==ids.length||ids.some(function(i){return !rrLocalInt(i,0,SYM.length-1);}))rrLocalFail();
+    Object.keys(h.vars).forEach(function(key){if(!/^\d+$/.test(key)||!rrLocalInt(Number(key),0,SYM.length-1)||ids.indexOf(Number(key))<0||!rrLocalInt(h.vars[key],0,SYM[Number(key)].v.length-1))rrLocalFail();vars[key]=h.vars[key];});
+    if(ids.some(function(id){return !Object.prototype.hasOwnProperty.call(vars,String(id));}))rrLocalFail();
+    return {k:'dream',ts:h.ts,txt:h.txt,ids:ids,vars:vars,emo:h.emo,life:h.life};
+  }
+  if(h.k==='qian'){
+    rrLocalKeys(h,['k','ts','no','ask','th'],['k','ts','no']);
+    if(!rrLocalInt(h.no,1,36)||!histFindQ(h.no)||(h.ask!==undefined&&(typeof h.ask!=='string'||h.ask.length>4000))||(h.th!==undefined&&!rrLocalInt(h.th,-1,QCAT.length-1)))rrLocalFail();
+    var out={k:'qian',ts:h.ts,no:h.no};if(h.ask!==undefined)out.ask=h.ask;if(h.th!==undefined)out.th=h.th;return out;
+  }
+  rrLocalFail();
+}
+function rrLocalDay(item){
+  rrLocalKeys(item,['date','kind','savedAt'],['date','kind','savedAt']);rrLocalDateParts(item.date);
+  if(['nikah','pindah','usaha'].indexOf(item.kind)<0||!rrLocalStamp(item.savedAt))rrLocalFail();
+  return {date:item.date,kind:item.kind,savedAt:item.savedAt};
+}
+function rrLocalRead(key,fallback){var raw=localStorage.getItem(key);if(raw===null)return fallback;try{return JSON.parse(raw);}catch(e){rrLocalFail('Data lokal tidak dapat dibaca. Pemulihan dibatalkan agar data lama tetap aman.');}}
+function rrLocalDays(){var data=rrLocalRead(RR_LOCAL.key,{version:1,items:[]});rrLocalKeys(data,['version','items'],['version','items']);if(data.version!==1||!Array.isArray(data.items)||data.items.length>RR_LOCAL.maxDays)rrLocalFail();return data.items.map(rrLocalDay);}
+function rrLocalValidate(data){
+  rrLocalKeys(data,['format','version','createdAt','ownerId','data'],['format','version','createdAt','ownerId','data']);
+  if(data.format!=='xuanji-local-backup'||data.version!==RR_LOCAL.version||!rrLocalStamp(data.createdAt)||(data.ownerId!==null&&!rrLocalUUID(data.ownerId)))rrLocalFail('Format atau versi cadangan tidak didukung. Data belum diubah.');
+  rrLocalKeys(data.data,['draft','reports','history','savedDays'],['draft','reports','history','savedDays']);
+  var d=data.data;if(!Array.isArray(d.reports)||d.reports.length>RR_LOCAL.maxRecords||!Array.isArray(d.history)||d.history.length>RR_LOCAL.maxHistory||!Array.isArray(d.savedDays)||d.savedDays.length>RR_LOCAL.maxDays||(d.reports.length&&!data.ownerId))rrLocalFail();
+  var normalized={format:data.format,version:1,createdAt:data.createdAt,ownerId:data.ownerId,data:{draft:d.draft===null?null:rrLocalBirth(d.draft),reports:d.reports.map(function(r){return rrLocalRecord(r,data.ownerId);}),history:d.history.map(rrLocalHistory),savedDays:d.savedDays.map(rrLocalDay)}};
+  var records=normalized.data.reports,seen={};records.forEach(function(r){if(seen[r.requestId])rrLocalFail('Cadangan memuat bukti laporan ganda. Data belum diubah.');seen[r.requestId]=true;});
+  return normalized;
+}
+function rrLocalOwnBackup(includeHistory){
+  var all=rrLocalRead(XJ.key,{draft:null,records:[]});rrLocalKeys(all,['draft','records'],['records']);if(!Array.isArray(all.records))rrLocalFail();
+  var owner=ACC.uid||null;if(owner&&!rrLocalUUID(owner))rrLocalFail('Sesi akun tidak valid. Masuk kembali sebelum menyimpan cadangan.');
+  var history=includeHistory===true?rrLocalRead('xjid_hist',[]):[];if(!Array.isArray(history))rrLocalFail();
+  return rrLocalValidate({format:'xuanji-local-backup',version:1,createdAt:Date.now(),ownerId:owner,data:{draft:all.draft||null,reports:all.records.filter(function(r){return r&&r.uid===owner;}),history:history,savedDays:rrLocalDays()}});
+}
+function rrLocalDownload(text,name,type){var blob=new Blob([text],{type:type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);}
+function rrLocalStatus(message){var el=$('#rrLocalStatus');if(el)el.textContent=message||'';}
+function rrLocalSummary(data){var d=data.data;return d.reports.length+' laporan akun · '+d.history.length+' riwayat lokal · '+d.savedDays.length+' tanggal tersimpan'+(d.draft?' · 1 isian lahir':'');}
+function rrLocalToolsOpen(){
+  RR_LOCAL.readEpoch++;RR_LOCAL.pending=null;RR_LOCAL.focus=document.activeElement;
+  if(typeof rrCloseAccount==='function')rrCloseAccount();
+  var modal=$('#rrLocalModal');modal.hidden=false;modal.style.display='flex';$('#rrBackupFile').value='';$('#rrBackupName').textContent='Belum ada berkas dipilih';$('#rrBackupPreview').hidden=true;$('#rrBackupPreview').textContent='';$('#rrBackupRestore').disabled=true;$('#rrBackupHistory').checked=false;rrLocalStatus('');
+  try{var data=rrLocalOwnBackup(false);$('#rrLocalSummary').textContent=rrLocalSummary(data);$('#rrBackupExport').disabled=false;}
+  catch(e){$('#rrLocalSummary').textContent='Cadangan belum dapat dibuat.';$('#rrBackupExport').disabled=true;rrLocalStatus(e.message);}
+  $('#rrLocalClose').focus();
+}
+function rrDataOpen(){rrLocalToolsOpen();}
+function rrLocalClose(){if(RR_LOCAL.busy)return;RR_LOCAL.readEpoch++;RR_LOCAL.pending=null;var modal=$('#rrLocalModal');modal.hidden=true;modal.style.display='none';if(RR_LOCAL.focus&&document.contains(RR_LOCAL.focus))RR_LOCAL.focus.focus({preventScroll:true});RR_LOCAL.focus=null;}
+function rrLocalExport(){try{var data=rrLocalOwnBackup($('#rrBackupHistory').checked),text=JSON.stringify(data,null,2);if(new Blob([text]).size>RR_LOCAL.maxBytes)rrLocalFail('Ukuran cadangan melebihi 2 MB. Simpan laporan unduhan terlebih dahulu.');rrLocalDownload(text,'Cadangan-Xuanji-'+new Date().toISOString().slice(0,10)+'.json','application/json;charset=utf-8');rrLocalStatus('Berkas cadangan disiapkan. Simpan berkas .json ini untuk pemulihan di perangkat lain.');}catch(e){rrLocalStatus(e.message||'Cadangan belum berhasil dibuat.');}}
+async function rrLocalChoose(){
+  var epoch=++RR_LOCAL.readEpoch,owner=ACC.uid||null,file=$('#rrBackupFile').files[0];RR_LOCAL.pending=null;$('#rrBackupRestore').disabled=true;$('#rrBackupPreview').hidden=true;rrLocalStatus('');$('#rrBackupName').textContent=file?file.name:'Belum ada berkas dipilih';if(!file)return;
+  try{
+    if(!/\.json$/i.test(file.name)||file.size<2||file.size>RR_LOCAL.maxBytes)rrLocalFail('Pilih berkas cadangan .json yang berukuran maksimal 2 MB.');
+    var text=await file.text();if(epoch!==RR_LOCAL.readEpoch)return;var data=rrLocalValidate(JSON.parse(text));
+    if(owner!==(ACC.uid||null))rrLocalFail('Akun berubah. Pilih kembali cadangan setelah masuk ke akun yang benar.');
+    if(data.ownerId&&data.ownerId!==owner)rrLocalFail('Cadangan ini milik akun lain. Masuk dengan akun yang digunakan saat membuat cadangan.');
+    RR_LOCAL.pending={backup:data,owner:owner};$('#rrBackupPreview').textContent=rrLocalSummary(data)+'. Data baru akan digabungkan; laporan dan riwayat yang sudah ada tetap disimpan. Isian lahir yang sudah tersimpan tidak ditimpa. Riwayat yang diimpor akan terlihat oleh semua akun pada browser ini.';$('#rrBackupPreview').hidden=false;$('#rrBackupRestore').disabled=false;
+  }catch(e){if(epoch===RR_LOCAL.readEpoch)rrLocalStatus(e instanceof SyntaxError?'Isi berkas bukan cadangan JSON yang valid. Data belum diubah.':e.message||'Cadangan belum dapat dibaca.');}
+}
+function rrLocalMerge(current,incoming,key,max){var out=current.slice(),seen=new Set(current.map(key));incoming.forEach(function(r){var k=key(r);if(!seen.has(k)){seen.add(k);out.push(r);}});if(out.length>max)rrLocalFail('Jumlah data gabungan melebihi batas cadangan. Data lama tidak dihapus.');return out;}
+function rrLocalAtomic(values){
+  var keys=Object.keys(values),old={};keys.forEach(function(k){old[k]=localStorage.getItem(k);});
+  try{keys.forEach(function(k){localStorage.setItem(k,values[k]);if(localStorage.getItem(k)!==values[k])throw new Error('write_failed');});}
+  catch(e){var restored=true;keys.forEach(function(k){try{if(old[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,old[k]);if(localStorage.getItem(k)!==old[k])restored=false;}catch(ignore){restored=false;}});rrLocalFail(restored?'Penyimpanan tidak tersedia atau penuh. Pemulihan dibatalkan dan data lama dipertahankan.':'Penyimpanan mengalami gangguan. Jangan hapus berkas cadangan; periksa ruang browser sebelum melanjutkan.');}
+}
+function rrLocalRestoreNow(pending){
+  if(!pending||pending.owner!==(ACC.uid||null)||(pending.backup.ownerId&&pending.backup.ownerId!==ACC.uid))rrLocalFail('Akun berubah. Pilih kembali berkas untuk akun ini.');
+  if(XJ.busy)rrLocalFail('Tunggu proses laporan selesai sebelum memulihkan cadangan.');
+  var backup=rrLocalValidate(pending.backup),saved=rrLocalRead(XJ.key,{draft:null,records:[]});rrLocalKeys(saved,['draft','records'],['records']);if(!Array.isArray(saved.records)||saved.records.some(function(r){return !rrLocalObject(r)||!rrLocalUUID(r.uid)||!rrLocalUUID(r.requestId);}))rrLocalFail('Data laporan lokal perlu diperiksa. Pemulihan dibatalkan tanpa menghapus data.');
+  var reports=rrLocalMerge(saved.records,backup.data.reports,function(r){return r.uid+':'+r.requestId;},RR_LOCAL.maxRecords);
+  // Keep existing receipts and any pending request UUID. Never replace ownership or payment flags.
+  var currentHistory=rrLocalRead('xjid_hist',[]);if(!Array.isArray(currentHistory))rrLocalFail();currentHistory=currentHistory.map(rrLocalHistory);
+  var history=rrLocalMerge(currentHistory,backup.data.history,function(h){return h.k+':'+h.ts;},RR_LOCAL.maxHistory);
+  var days=rrLocalMerge(rrLocalDays(),backup.data.savedDays,function(d){return d.kind+':'+d.date;},RR_LOCAL.maxDays);
+  var draft=saved.draft||backup.data.draft||null;if(draft)draft=rrLocalBirth(draft);
+  var values={};values[XJ.key]=JSON.stringify({draft:draft,records:reports});values.xjid_hist=JSON.stringify(history);values[RR_LOCAL.key]=JSON.stringify({version:1,items:days});rrLocalAtomic(values);
+  HIST=history;xjRenderHistory();if(XJ.current)xjRender();renderHist('dream');renderHist('qian');rrLocalInit();rrSavedDaysRender();if(XZcur)xzPick(XZcur,true);
+  if(draft&&!$('#xjDate').value){$('#xjDate').value=draft.year+'-'+String(draft.month).padStart(2,'0')+'-'+String(draft.day).padStart(2,'0');$('#xjTime').value=String(draft.hour).padStart(2,'0')+':'+String(draft.minute).padStart(2,'0');$('#xjGender').value=draft.gender;$('#xjCity').value=draft.cityId;$('#xjRemember').checked=true;}
+  return {reports:reports.length,history:history.length,savedDays:days.length};
+}
+async function rrLocalRestore(){
+  if(RR_LOCAL.busy||!RR_LOCAL.pending)return;RR_LOCAL.busy=true;rrLocalStatus('Memulihkan cadangan…');$('#rrBackupRestore').disabled=true;$('#rrBackupFile').disabled=true;$('#rrBackupPick').disabled=true;
+  try{var pending=RR_LOCAL.pending;if(navigator.locks&&navigator.locks.request)await navigator.locks.request('rr-xuanji-data',function(){return rrLocalRestoreNow(pending);});else rrLocalRestoreNow(pending);RR_LOCAL.pending=null;$('#rrBackupPreview').hidden=true;$('#rrBackupFile').value='';$('#rrBackupName').textContent='Belum ada berkas dipilih';$('#rrLocalSummary').textContent=rrLocalSummary(rrLocalOwnBackup($('#rrBackupHistory').checked));rrLocalStatus('Cadangan berhasil digabungkan. Laporan akun dapat dibuka dari daftar laporan di perangkat ini; saldo kredit tidak berubah.');}
+  catch(e){rrLocalStatus(e.message||'Cadangan belum berhasil dipulihkan. Data lama tidak dihapus.');}
+  finally{RR_LOCAL.busy=false;$('#rrBackupFile').disabled=false;$('#rrBackupPick').disabled=false;$('#rrBackupRestore').disabled=!RR_LOCAL.pending;$('#rrLocalClose').focus();}
+}
+function rrSavedDateLabel(date){var a=rrLocalDateParts(date),d=new Date(Date.UTC(a[0],a[1]-1,a[2]));return WEEK_ID[d.getUTCDay()]+', '+a[2]+' '+MONTH_ID_X[a[1]-1]+' '+a[0];}
+function rrSavedStatus(message){var el=$('#rrSavedStatus');if(el)el.textContent=message||'';}
+function rrSavedToggle(date,kind){
+  try{var day=rrLocalDay({date:date,kind:kind,savedAt:Date.now()}),items=rrLocalDays(),idx=items.findIndex(function(d){return d.date===date&&d.kind===kind;});if(idx>=0)items.splice(idx,1);else{if(items.length>=RR_LOCAL.maxDays)rrLocalFail('Maksimal 50 tanggal tersimpan. Hapus satu tanggal untuk menambah yang baru.');items.push(day);}var values={};values[RR_LOCAL.key]=JSON.stringify({version:1,items:items});rrLocalAtomic(values);rrSavedDaysRender();if(XZcur)xzPick(XZcur,true);rrSavedStatus(idx>=0?'Tanggal dihapus dari daftar tersimpan.':'Tanggal disimpan pada perangkat ini.');}
+  catch(e){rrSavedStatus(e.message||'Tanggal belum berhasil disimpan.');}
+}
+function rrCalendarEscape(value){return String(value).replace(/\\/g,'\\\\').replace(/\r\n|\r|\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,');}
+function rrCalendarFold(line){var out='',part='',bytes=0,encoder=new TextEncoder();Array.from(line).forEach(function(ch){var n=encoder.encode(ch).length;if(bytes+n>75){out+=part+'\r\n';part=' ';bytes=1;}part+=ch;bytes+=n;});return out+part;}
+function rrCalendarICS(items,now){
+  var stamp=(now||new Date()).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z'),lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Xuanji//Hari Baik//ID','CALSCALE:GREGORIAN'];
+  items.map(rrLocalDay).forEach(function(item){var a=rrLocalDateParts(item.date),next=new Date(Date.UTC(a[0],a[1]-1,a[2]+1)).toISOString().slice(0,10).replace(/-/g,'');lines=lines.concat(['BEGIN:VEVENT','UID:'+item.kind+'-'+item.date.replace(/-/g,'')+'@xuanji.local','DTSTAMP:'+stamp,'DTSTART;VALUE=DATE:'+item.date.replace(/-/g,''),'DTEND;VALUE=DATE:'+next,'SUMMARY:'+rrCalendarEscape(XZ_RULES[item.kind].t+' · Hari pilihan Xuanji'),'DESCRIPTION:'+rrCalendarEscape('Pilihan kalender tradisional umum. Cocokkan dengan kesiapan keluarga, tempat, dan kebutuhan acara. Bukan jaminan hasil dan bukan jadwal yang sudah dikonfirmasi.'),'TRANSP:TRANSPARENT','STATUS:TENTATIVE','END:VEVENT']);});
+  lines.push('END:VCALENDAR');return lines.map(rrCalendarFold).join('\r\n')+'\r\n';
+}
+function rrCalendarDownload(date,kind){try{var items=date?[{date:date,kind:kind,savedAt:Date.now()}]:rrLocalDays();if(!items.length)rrLocalFail('Belum ada tanggal tersimpan untuk ditambahkan ke kalender.');rrLocalDownload(rrCalendarICS(items),'Hari-Baik-Xuanji'+(date?'-'+date:'')+'.ics','text/calendar;charset=utf-8');rrSavedStatus('Buka berkas .ics dengan aplikasi Kalender Anda untuk menambahkan tanggal. Pengingat diatur di aplikasi Kalender.');}catch(e){rrSavedStatus(e.message||'Berkas kalender belum dapat dibuat.');}}
+function rrDayActions(date,kind){var saved=false;try{saved=rrLocalDays().some(function(d){return d.date===date&&d.kind===kind;});}catch(e){}return '<div class="rr-day-actions"><button type="button" data-day-save="'+date+'" data-day-kind="'+kind+'" aria-pressed="'+saved+'">'+(saved?'✓ Tersimpan':'Simpan tanggal')+'</button><button type="button" data-day-export="'+date+'" data-day-kind="'+kind+'">Tambah ke kalender</button></div>';}
+function rrSavedDaysRender(){
+  var list=$('#rrSavedList');if(!list)return;
+  try{var items=rrLocalDays().slice().sort(function(a,b){return a.date.localeCompare(b.date)||a.kind.localeCompare(b.kind);});$('#rrSavedAll').disabled=!items.length;list.innerHTML=items.length?items.map(function(d){return '<article class="rr-saved-day"><strong>'+esc(XZ_RULES[d.kind].t)+'</strong><p>'+esc(rrSavedDateLabel(d.date))+'</p><div class="rr-day-actions"><button type="button" data-day-export="'+d.date+'" data-day-kind="'+d.kind+'">Tambah ke kalender</button><button type="button" data-day-save="'+d.date+'" data-day-kind="'+d.kind+'">Hapus simpanan</button></div></article>';}).join(''):'<p class="rr-local-muted">Belum ada tanggal tersimpan. Pilih acara di atas, lalu simpan tanggal yang ingin Anda pertimbangkan.</p>';}
+  catch(e){$('#rrSavedAll').disabled=true;list.textContent='Tanggal tersimpan belum dapat dibaca. Data lama tidak dihapus.';}
+}
+function rrLocalInit(){
+  $('#rrBackupHistory').addEventListener('change',function(){try{$('#rrLocalSummary').textContent=rrLocalSummary(rrLocalOwnBackup(this.checked));$('#rrBackupExport').disabled=false;rrLocalStatus('');}catch(e){$('#rrBackupExport').disabled=true;rrLocalStatus(e.message);}});$('#rrLocalLaunch').addEventListener('click',rrLocalToolsOpen);$('#rrLocalClose').addEventListener('click',rrLocalClose);$('#rrBackupExport').addEventListener('click',rrLocalExport);$('#rrBackupFile').addEventListener('change',rrLocalChoose);$('#rrBackupPick').addEventListener('click',function(){$('#rrBackupFile').click();});$('#rrBackupRestore').addEventListener('click',rrLocalRestore);$('#rrSavedAll').addEventListener('click',function(){rrCalendarDownload();});
+  $('#rrLocalModal').addEventListener('click',function(e){if(e.target===this)rrLocalClose();});
+  document.addEventListener('keydown',function(e){var modal=$('#rrLocalModal');if(modal.hidden)return;if(e.key==='Escape'){e.preventDefault();rrLocalClose();return;}if(e.key!=='Tab')return;var nodes=Array.from(modal.querySelectorAll('button:not([disabled]),input:not([disabled])')).filter(function(el){return !el.hidden&&el.getClientRects().length;});var first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}});
+  $('#panel-calendar').addEventListener('click',function(e){var btn=e.target.closest('[data-day-save],[data-day-export]');if(!btn)return;if(btn.hasAttribute('data-day-save'))rrSavedToggle(btn.getAttribute('data-day-save'),btn.getAttribute('data-day-kind'));else rrCalendarDownload(btn.getAttribute('data-day-export'),btn.getAttribute('data-day-kind'));});
+  window.addEventListener('storage',function(e){if(e.key===RR_LOCAL.key){rrSavedDaysRender();if(XZcur)xzPick(XZcur,true);}});rrSavedDaysRender();
+}
+
 /* ================= 初始化 ================= */
-rrInitHome();initXuanji();initAuth();initDream();initAi();renderToday();renderXZ();renderHist('dream');renderHist('qian');
+rrInitHome();initXuanji();initAuth();initDream();initAi();renderToday();renderXZ();renderHist('dream');renderHist('qian');rrLocalInit();
 </script>
 </body>
 </html>
