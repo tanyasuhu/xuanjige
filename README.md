@@ -1,16 +1,17 @@
 # Rumah Rahasia
 
-Pengalaman budaya Tionghoa dalam Bahasa Indonesia: Mimpi, Qian, Xuanji, dan Tanya Suhu.
+Pengalaman budaya Tionghoa dalam Bahasa Indonesia: Xuanji, Hari Baik, Mimpi, dan Suhu.
 
 [Buka situs resmi](https://tanyasuhu.github.io/xuanjige/)
 
 ## Fitur
 
-- **Mimpi:** tafsir simbol dan pertanyaan refleksi. Akun diperlukan; satu kali gratis setiap hari, lalu 1 kredit per penggunaan.
-- **Qian:** 36 puisi beserta penjelasan Bahasa Indonesia. Akun diperlukan; satu kali gratis setiap hari, lalu 1 kredit per penggunaan.
-- **Xuanji:** peta kelahiran tradisional dengan 28 kota Indonesia, zona waktu historis, dan penyesuaian waktu matahari. Ringkasan gratis; laporan lengkap empat tema menggunakan 25 kredit setelah konfirmasi.
-- **Kalender dan pemilihan hari umum:** gratis.
-- **Tanya Suhu:** memakai layanan dan kunci koneksi pilihan pengguna.
+- **Xuanji (halaman utama):** peta kelahiran dengan 12 ruang dan 14 bintang utama, memakai 28 kota Indonesia, zona waktu historis, dan penyesuaian waktu matahari. Peta dan ringkasan gratis. Laporan lengkap empat tema serta rentang usia tradisional: 25 kredit setelah konfirmasi. Rentang usia bukan ramalan tahunan atau jadwal kejadian.
+- **Hari Baik:** kalender dan pilihan tanggal umum untuk menikah, pindah rumah, atau membuka usaha. Gratis dan terpisah dari perhitungan kelahiran.
+- **Mimpi:** refleksi simbol mimpi. Akun diperlukan; satu kali gratis setiap hari, lalu 1 kredit per penggunaan.
+- **Suhu:** membahas refleksi dan langkah berikutnya melalui layanan pilihan pengguna; data lahir tidak disertakan otomatis.
+
+Undian Qian sudah dihentikan. Riwayat Qian lama tetap tersedia di arsip lokal pada halaman Xuanji, tanpa biaya, dan tidak dibuang saat menambah riwayat mimpi. Pembelian Xuanji sebelumnya tetap berlaku di browser dan akun yang sama.
 
 ## Kredit
 
