@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumah Rahasia · Xuanji, Hari Baik, Mimpi, Suhu</title>
-<meta name="rr-version" content="2026-11-12-bilingual">
+<meta name="rr-version" content="2026-11-12-bilingual-review">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230b0616'/%3E%3Cpath d='M50 8a42 42 0 0 1 0 84 21 21 0 0 1 0-42 21 21 0 0 0 0-42z' fill='%23d9b45b'/%3E%3Ccircle cx='50' cy='29' r='6' fill='%230b0616'/%3E%3Ccircle cx='50' cy='71' r='6' fill='%23d9b45b'/%3E%3C/svg%3E">
 <style>
 /* ========== 基础 ========== */
@@ -821,6 +821,29 @@ html[lang="zh-CN"] .rr-hero h1, html[lang="zh-CN"] .rr-brand-name {
   .rr-language-toggle { padding-inline: 4px; }
   .rr-brand-sub { white-space: normal; }
 }
+
+@media (max-width: 740px) and (max-height: 666px) {
+  body.rr-at-home .rr-home-frame { min-height: 100svh; }
+}
+@media (max-width: 420px) and (max-height: 620px) {
+  .rr-app-header { padding-top: 3px; padding-bottom: 3px; }
+  .rr-hero { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 8px; padding: 3px 14px 7px; }
+  .rr-hero h1 { grid-column: 1; font-size: clamp(23px, 6.8vw, 28px); text-align: left; }
+  .rr-hero-copy { grid-column: 1; text-align: left; font-size: 12px; margin: 0; }
+  .rr-hero .rr-taiji-row { grid-column: 2; grid-row: 1 / span 2; height: 56px; width: 56px; margin: 0; }
+  .rr-hero .rr-taiji-row::before, .rr-hero .rr-taiji-row::after { display: none; }
+  .rr-hero .rr-taiji { width: 52px; height: 52px; }
+  .rr-hero .rr-primary { grid-column: 1 / -1; margin: 3px auto 0; }
+  .rr-section-title { margin-bottom: 5px; }
+  .rr-service-grid { gap: 6px; }
+  .rr-service { min-height: 58px; padding-block: 6px; }
+  .rr-report { margin-top: 7px; padding-top: 6px; }
+  .rr-report p { margin-block: 4px; }
+  .rr-signup { margin: 0; padding-block: 3px; min-height: 32px; }
+  .rr-app-nav.tab-nav { padding-block: 3px max(3px,env(safe-area-inset-bottom)); }
+  .rr-app-nav .tab-btn { min-height: 48px; }
+}
+#rrLanguageStatus { color: #ead7ac; margin: 0; padding: 4px 12px; text-align: center; font-size: 13px; }
 </style>
 </head>
 <body class="mode-auto rr-site rr-at-home" data-palette="violet"><template data-rr-language id="rr-ui-id" data-title="Rumah Rahasia · Xuanji, Hari Baik, Mimpi, Suhu">
@@ -856,7 +879,7 @@ html[lang="zh-CN"] .rr-hero h1, html[lang="zh-CN"] .rr-brand-name {
 <!-- ===== 账号/充值/额度 模态层 ===== -->
 <div class="modal-layer" id="authModal" style="display:none">
   <div class="modal-card">
-    <button class="modal-x" id="authClose">✕</button>
+    <button class="modal-x" id="authClose" type="button" aria-label="Tutup formulir akun">✕</button>
     <div class="orn" style="margin-bottom:12px" id="authTitle">MASUK AKUN</div>
     <input type="text" class="m-inp" id="authEmail" aria-label="Alamat email" inputmode="email" placeholder="Alamat email" autocomplete="email">
     <input type="password" class="m-inp" id="authPass" aria-label="Kata sandi" placeholder="Kata sandi" autocomplete="current-password">
@@ -872,7 +895,7 @@ html[lang="zh-CN"] .rr-hero h1, html[lang="zh-CN"] .rr-brand-name {
 
 <div class="modal-layer" id="topupModal" style="display:none">
   <div class="modal-card">
-    <button class="modal-x" id="topupClose">✕</button>
+    <button class="modal-x" id="topupClose" type="button" aria-label="Tutup isi kredit">✕</button>
     <div class="orn" style="margin-bottom:12px">ISI KREDIT</div>
     <div class="pkg-row">
       <div class="pkg sel" data-pkg="p10"><div class="p-amt">Rp 22.000</div><div class="p-cr">10 kredit</div></div>
@@ -880,7 +903,7 @@ html[lang="zh-CN"] .rr-hero h1, html[lang="zh-CN"] .rr-brand-name {
       <div class="pkg" data-pkg="p50"><div class="p-amt">Rp 100.000</div><div class="p-cr">50 kredit</div><div class="p-tag">✦ LEBIH HEMAT</div></div>
     </div>
     <div class="qr-slot"><span class="qr-icon">▣</span>Kode QRIS belum tersedia di halaman ini. Minta kode resmi dari pengelola sebelum membayar. Formulir di bawah hanya untuk pembayaran yang sudah dilakukan.<br>Mimpi: 1 kredit setelah jatah gratis harian · Xuanji lengkap: 25 kredit.</div>
-    <input type="text" class="m-inp" id="topupRef" placeholder="4 angka terakhir nomor transaksi" maxlength="12">
+    <input type="text" class="m-inp" id="topupRef" inputmode="numeric" aria-label="Nomor referensi pembayaran (4–12 angka)" placeholder="Nomor referensi pembayaran (4–12 angka)" maxlength="12">
     <div class="m-err" id="topupErr"></div>
     <button class="btn" id="topupGo" style="width:100%">KIRIM KONFIRMASI PEMBAYARAN</button>
     <p class="m-note">※ Bayar hanya ke QRIS resmi pengelola → isi nomor bukti di sini → pengelola memeriksa pembayaran → kredit ditambahkan. Pengajuan saja tidak menambah kredit. Simpan bukti pembayaran lengkap.</p>
@@ -889,7 +912,7 @@ html[lang="zh-CN"] .rr-hero h1, html[lang="zh-CN"] .rr-brand-name {
 
 <div class="modal-layer" id="quotaModal" style="display:none">
   <div class="modal-card">
-    <button class="modal-x" id="quotaClose">✕</button>
+    <button class="modal-x" id="quotaClose" type="button" aria-label="Tutup jendela ini">✕</button>
     <div class="orn" style="margin-bottom:12px" id="quotaTitle">KUOTA HARIAN HABIS</div>
     <div class="quota-big" id="quotaMsg"></div>
     <div style="text-align:center;margin-top:14px" id="quotaBtns" class="quota-btns"></div>
@@ -1166,7 +1189,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 <!-- ===== 账号/充值/额度 模态层 ===== -->
 <div class="modal-layer" id="authModal" style="display:none">
   <div class="modal-card">
-    <button class="modal-x" id="authClose">✕</button>
+    <button class="modal-x" id="authClose" type="button" aria-label="关闭账号表单">✕</button>
     <div class="orn" style="margin-bottom:12px" id="authTitle">登录账号</div>
     <input type="text" class="m-inp" id="authEmail" aria-label="邮箱地址" inputmode="email" placeholder="邮箱地址" autocomplete="email">
     <input type="password" class="m-inp" id="authPass" aria-label="密码" placeholder="密码" autocomplete="current-password">
@@ -1182,7 +1205,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 
 <div class="modal-layer" id="topupModal" style="display:none">
   <div class="modal-card">
-    <button class="modal-x" id="topupClose">✕</button>
+    <button class="modal-x" id="topupClose" type="button" aria-label="关闭充值窗口">✕</button>
     <div class="orn" style="margin-bottom:12px">充值积分</div>
     <div class="pkg-row">
       <div class="pkg sel" data-pkg="p10"><div class="p-amt">Rp 22.000</div><div class="p-cr">10 积分</div></div>
@@ -1190,7 +1213,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
       <div class="pkg" data-pkg="p50"><div class="p-amt">Rp 100.000</div><div class="p-cr">50 积分</div><div class="p-tag">✦ 更划算</div></div>
     </div>
     <div class="qr-slot"><span class="qr-icon">▣</span>本页暂未提供 QRIS 收款码。请先向管理员索取官方收款码再付款。下方表单仅用于确认已完成的付款。<br>解梦每日免费额度用完后，每次 1 积分。玄机完整报告每份 25 积分。</div>
-    <input type="text" class="m-inp" id="topupRef" placeholder="交易流水号后四位" maxlength="12">
+    <input type="text" class="m-inp" id="topupRef" inputmode="numeric" aria-label="付款流水号（4 至 12 位数字）" placeholder="付款流水号（4 至 12 位数字）" maxlength="12">
     <div class="m-err" id="topupErr"></div>
     <button class="btn" id="topupGo" style="width:100%">提交付款确认</button>
     <p class="m-note">※ 请使用管理员的官方 QRIS 收款码付款，在此填写凭证号码。管理员核对后，积分才会到账。请保留完整付款凭证。</p>
@@ -1199,7 +1222,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 
 <div class="modal-layer" id="quotaModal" style="display:none">
   <div class="modal-card">
-    <button class="modal-x" id="quotaClose">✕</button>
+    <button class="modal-x" id="quotaClose" type="button" aria-label="关闭当前窗口">✕</button>
     <div class="orn" style="margin-bottom:12px" id="quotaTitle">今日免费额度已用完</div>
     <div class="quota-big" id="quotaMsg"></div>
     <div style="text-align:center;margin-top:14px" id="quotaBtns" class="quota-btns"></div>
@@ -1444,38 +1467,105 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 
 </template>
 <script>(function () {
-  const key = 'rr_language';
-  const url = new URL(location.href);
-  const requested = url.searchParams.get('lang');
-  let saved;
-  try { saved = localStorage.getItem(key); } catch (_) {}
+  const preference = 'rr_language';
+  const transfer = 'rr_language_form_once';
+  const requested = new URL(location.href).searchParams.get('lang');
   const known = value => value === 'id' || value === 'zh';
-  const language = known(requested) ? requested : (known(saved) ? saved : 'id');
+  let saved;
+  try { saved = localStorage.getItem(preference); } catch (_) {}
+  const lang = known(requested) ? requested : known(saved) ? saved : 'id';
+  const zh = lang === 'zh';
   if (known(requested)) {
-    try { localStorage.setItem(key, requested); } catch (_) {}
+    try { localStorage.setItem(preference, lang); } catch (_) {}
   }
-
-  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'id';
-  const template = document.getElementById('rr-ui-' + language);
+  document.documentElement.lang = zh ? 'zh-CN' : 'id';
+  const template = document.getElementById('rr-ui-' + lang);
   document.title = template.dataset.title;
   document.currentScript.before(template.content);
   document.querySelectorAll('template[data-rr-language]').forEach(el => el.remove());
 
-  document.getElementById('rrLanguageSwitch').addEventListener('click', function () {
-    const next = language === 'id' ? 'zh' : 'id';
-    let persisted = false;
-    try {
-      localStorage.setItem(key, next);
-      persisted = localStorage.getItem(key) === next;
-    } catch (_) {}
-    const dest = new URL(location.href);
-    if (persisted && !dest.searchParams.has('lang')) {
-      location.reload();
-    } else {
-      dest.searchParams.set('lang', next);
-      location.replace(dest.href);
+  const get = id => document.getElementById(id);
+  const fields = ['xjDate', 'xjTime', 'xjGender', 'xjCountry', 'xjRegion', 'xjCity'];
+  function birthForm() {
+    return Object.fromEntries(fields.map(id => [id, get(id).value]).concat([['remember', get('xjRemember').checked]]));
+  }
+  let transferData;
+  try {
+    const raw = sessionStorage.getItem(transfer);
+    sessionStorage.removeItem(transfer);
+    const data = raw && JSON.parse(raw);
+    if (data && data.lang === lang && data.path === location.pathname &&
+        data.until >= Date.now() && data.until <= Date.now() + 120000) transferData = data;
+  } catch (_) {}
+  const toggle = get('rrLanguageSwitch');
+  toggle.disabled = true;
+
+  // Restore only unfinished form controls for this one language navigation.
+  // Authentication, service keys, quota, payments and reports never enter the handoff.
+  window.rrLanguageReady = function () {
+    const original = JSON.stringify(birthForm());
+    if (transferData) {
+      const b = transferData.birth;
+      if (b && typeof b === 'object') {
+        ['xjDate', 'xjTime', 'xjGender'].forEach(id => {
+          if (typeof b[id] === 'string') get(id).value = b[id];
+        });
+        xjLocationSet(b.xjCountry, b.xjRegion, b.xjCity);
+        get('xjRemember').checked = b.remember === true;
+      }
+      ['dmInp', 'aiInp'].forEach(id => {
+        if (typeof transferData[id] === 'string') get(id).value = transferData[id].slice(0, get(id).maxLength);
+      });
+      transferData = null;
     }
-  });
+    toggle.disabled = false;
+    toggle.addEventListener('click', function () {
+      if (DMbusy || AIbusy || AUTHbusy || TOPUPbusy || XJ.busy) {
+        let status = get('rrLanguageStatus');
+        if (!status) {
+          status = document.createElement('p');
+          status.id = 'rrLanguageStatus';
+          status.setAttribute('role', 'status');
+          toggle.closest('header').after(status);
+        }
+        status.textContent = zh ? '请等当前操作完成后再切换语言。' : 'Tunggu proses saat ini selesai, lalu ganti bahasa.';
+        return;
+      }
+      if (rrDreamHasOpenQuestions() && !confirm(zh
+        ? '这次解梦已经计次。现在切换语言会结束未完成的问答。确定切换吗？'
+        : 'Sesi tafsir ini sudah dihitung. Mengganti bahasa akan mengakhiri tanya jawab yang belum selesai. Tetap ganti bahasa?')) return;
+      const next = zh ? 'id' : 'zh';
+      const data = {};
+      const birth = birthForm();
+      if (JSON.stringify(birth) !== original) data.birth = birth;
+      for (const id of ['dmInp','aiInp']) {
+        const value = get(id).value;
+        if (value && (id !== 'dmInp' || !DM.text || DM.text !== value.trim())) data[id] = value;
+      }
+      if (Object.keys(data).length) {
+        try {
+          sessionStorage.setItem(transfer, JSON.stringify(Object.assign(data, {
+            lang: next, path: location.pathname, until: Date.now() + 120000
+          })));
+        } catch (_) {
+          if (!confirm(zh ? '浏览器无法暂存未提交的输入。要放弃这些输入并切换语言吗？'
+                          : 'Browser tidak dapat menyimpan isian ini sementara. Hapus isian dan ganti bahasa?')) return;
+        }
+      }
+      let persisted = false;
+      try {
+        localStorage.setItem(preference, next);
+        persisted = localStorage.getItem(preference) === next;
+      } catch (_) {}
+      const dest = new URL(location.href);
+      // A forced replay link should play once, then give way to the selected language.
+      if (dest.searchParams.get('intro') === '1') dest.searchParams.delete('intro');
+      if (!persisted || dest.searchParams.has('lang')) dest.searchParams.set('lang', next);
+      if (dest.href === location.href) location.reload();
+      else location.replace(dest.href);
+    });
+    delete window.rrLanguageReady;
+  };
 })();
 </script>
 <script>/*!
@@ -2351,17 +2441,26 @@ function renderDM(){
   }
 }
 var DMbusy=false;
+function rrDreamHasOpenQuestions(){
+  return DMbusy || !!(DM.text && DM.owner===ACC.uid && !DM.record);
+}
 async function dmStart(){
   if(DMbusy)return;
   if(!ACC.uid){showQuotaModal('need_login');return;}
   var err=$('#dmErr'),t=$('#dmInp').value.trim(),btn=$('#dmBtn');err.textContent='';
   if(t.length<8){err.textContent='Ceritanya terlalu pendek — tulis beberapa kalimat lagi.';return;}
+  if(DM.owner===ACC.uid && DM.text===t){
+    var target=$(DM.record?'#dmResult':'#dmFlow');
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+  var owner=ACC.uid;
   DMbusy=true;btn.disabled=true;
   try{
     var quota=await requireQuota('dream');
     if(!quota.ok){showQuotaModal(quota.reason);return;}
     var ids=dmScan(t);
-    DM={text:t,ids:ids,vars:{},emo:null,life:null,picks:[],pickDone:ids.length>0};
+    DM={text:t,owner:owner,ids:ids,vars:{},emo:null,life:null,picks:[],pickDone:ids.length>0};
     $('#dmResult').innerHTML='';dmMaster('start');
     if(DM.ids.length>0){dmEcho();renderDM();}else{$('#dmEcho').style.display='none';renderDM();}
   }finally{DMbusy=false;btn.disabled=false;}
@@ -2433,7 +2532,14 @@ function genDream(){
     $('#dmEcho').style.display='none';$('#dmMaster').textContent='';
     $('#dmInp').value='';
   });
-  histAdd({k:'dream',ts:Date.now(),txt:DM.text.slice(0,80),ids:st.ids,vars:st.vars,emo:st.emo,life:st.life});
+  var answers={ids:st.ids,vars:Object.assign({},st.vars),emo:st.emo,life:st.life};
+  if(!DM.record){
+    DM.record=Object.assign({k:'dream',ts:Date.now(),txt:DM.text.slice(0,80)},answers);
+    histAdd(DM.record);
+  }else if(HIST.indexOf(DM.record)>=0){
+    Object.assign(DM.record,answers);
+    histSave();
+  }
   renderHist('dream');
   setTimeout(function(){$('#dmResult').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
 }
@@ -2691,9 +2797,26 @@ async function topupGo(){
 
 
 
-function copyText(t){
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});return;}
-  try{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}catch(e){}
+async function copyText(text){
+  try {
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch(e) {}
+  var field=document.createElement('textarea'), previous=document.activeElement;
+  field.value=text;
+  field.readOnly=true;
+  field.style.cssText='position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+  try {
+    document.body.appendChild(field);
+    field.select();
+    return document.execCommand('copy')===true;
+  } catch(e) {return false;}
+  finally {
+    field.remove();
+    if(previous && previous.isConnected)previous.focus({preventScroll:true});
+  }
 }
 
 
@@ -3117,45 +3240,70 @@ async function aiSend(){
   }
   aiEnd();
 }
-function aiCfgSave(){
-  AIC={p:$('#aiProv').value,ep:$('#aiEp').value.trim(),m:$('#aiModel').value.trim(),k:$('#aiKey').value.trim(),web:false};
+var aiTestSequence=0;
+function aiMatchKeyTarget(){
+  var input=$('#aiKey'),provider=$('#aiProv').value,endpoint=$('#aiEp').value.trim();
+  if(input.dataset.provider===provider && input.dataset.endpoint===endpoint)return;
+  input.value=provider===AIC.p && endpoint===AIC.ep ? AIC.k||'' : '';
+  input.dataset.provider=provider;
+  input.dataset.endpoint=endpoint;
+}
+function aiReadSettings(){
+  aiMatchKeyTarget();
+  return {p:$('#aiProv').value,ep:$('#aiEp').value.trim(),m:$('#aiModel').value.trim(),k:$('#aiKey').value.trim(),web:false};
+}
+function aiLoadSettings(){
+  $('#aiProv').value=AIC.p;
+  $('#aiEp').value=AIC.ep||AIP[AIC.p].ep;
+  $('#aiModel').value=AIC.m||AIP[AIC.p].m;
+  var key=$('#aiKey');
+  key.dataset.provider=AIC.p;key.dataset.endpoint=$('#aiEp').value.trim();
+  key.value=key.dataset.endpoint===AIC.ep ? AIC.k||'' : '';
+  aiGuide();aiWebChip();
+}
+function aiCfgSave(settings){
+  ++aiTestSequence;
+  AIC=settings||aiReadSettings();
   try{localStorage.setItem('xjid_ai2',JSON.stringify(AIC))}catch(e){}
 }
 async function aiTest(){
   var err=$('#aiErr');
-  var ep=$('#aiEp').value.trim(),mk=$('#aiModel').value.trim(),k=$('#aiKey').value.trim();
+  var settings=aiReadSettings(),ticket=++aiTestSequence;
+  var ep=settings.ep,mk=settings.m,k=settings.k;
+  function current(){return ticket===aiTestSequence && JSON.stringify(settings)===JSON.stringify(aiReadSettings());}
   if(!ep||!k||!mk){err.textContent='Lengkapi dulu alamat API, nama model, dan kuncinya';return;}
   err.textContent='Menguji koneksi…';
   try{
     var res=await fetch(ep,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+k},
       body:JSON.stringify({model:mk,messages:[{role:'user',content:'Balas hanya dua kata: koneksi berhasil'}],max_tokens:20,stream:false})});
-    if(res.ok){aiCfgSave();err.textContent='✦ Koneksi berhasil — pengaturan tersimpan otomatis, silakan bertanya.';}
+    if(!current())return;
+    if(res.ok){aiCfgSave(settings);err.textContent='✦ Koneksi berhasil — pengaturan tersimpan otomatis, silakan bertanya.';}
     else if(res.status===401)err.textContent='✕ Kunci salah (401) — periksa lagi (awas spasi terselip).';
     else if(res.status===404)err.textContent='✕ Alamat tidak ditemukan (404) — periksa alamat API.';
     else err.textContent='✕ Server menjawab '+res.status+': '+(await res.text().catch(function(){return ''})).substring(0,120);
-  }catch(e){err.textContent='✕ Tak bisa terhubung — internet bermasalah atau alamat itu memblokir halaman web.';}
+  }catch(e){if(!current())return;err.textContent='✕ Tak bisa terhubung — internet bermasalah atau alamat itu memblokir halaman web.';}
 }
 function initAi(){
   if(!$('#aiSend'))return;
   var ps='';
   ['gemini','groq','openrouter','custom'].forEach(function(k){ps+='<option value="'+k+'">'+AIP[k].n+'</option>'});
   $('#aiProv').innerHTML=ps;
-  $('#aiProv').value=AIC.p;
-  $('#aiEp').value=AIC.ep||AIP[AIC.p].ep;
-  $('#aiModel').value=AIC.m||AIP[AIC.p].m;
-  $('#aiKey').value=AIC.k||'';
-  aiGuide();aiWebChip();
+  aiLoadSettings();
+  $('#aiEp').addEventListener('input',aiMatchKeyTarget);
+  $('#aiEp').addEventListener('change',aiMatchKeyTarget);
   if(!aiHistLoad())aiWelcome();
   aiSuggInit();
   $('#aiProv').addEventListener('change',function(){
     var k=this.value;
-    $('#aiEp').value=AIP[k].ep;$('#aiModel').value=AIP[k].m;
-    aiGuide();
-    if(AIC.p!==k&&AIC.web&&!AIP[k].web){AIC.web=false;aiWebChip();}
-    AIC.p=k;
+    $('#aiEp').value=k===AIC.p ? AIC.ep||AIP[k].ep : AIP[k].ep;
+    $('#aiModel').value=k===AIC.p ? AIC.m||AIP[k].m : AIP[k].m;
+    aiMatchKeyTarget();aiGuide();
+    $('#aiErr').textContent='';
   });
   $('#aiCfgBtn').addEventListener('click',function(){
-    var c=$('#aiCfgCard');c.style.display=(c.style.display==='none')?'block':'none';
+    var card=$('#aiCfgCard'),opening=card.style.display==='none';
+    if(!opening){++aiTestSequence;aiLoadSettings();$('#aiErr').textContent='';}
+    card.style.display=opening?'block':'none';
   });
   $('#aiSave').addEventListener('click',function(){
     aiCfgSave();
@@ -3395,7 +3543,7 @@ function xjCyclesHTML(cur,forExport){
   var r=xjCycleData(cur),state=XJ.cycleState;
   var html='<section class="xj-cycles"'+(forExport?'':' id="xjCycles"')+'><div class="xj-eyebrow">XUANJI · ARAH PERIODE</div><h2>Fase 10 Tahun & Tahunan</h2><p>Pahami tema jangka panjang dan penekanan setiap tahun melalui peta yang dihitung dari data lahir Anda. Penafsiran simbol adalah bahan refleksi; pilihan, usaha, dan keadaan nyata tetap menentukan langkah Anda.</p>';
   if(forExport){
-    html+='<p>Salinan ini memuat fase dan tahun '+r.year+' yang dipilih saat diunduh. Buka laporan di situs untuk memilih tahun lain tanpa potongan kredit tambahan.</p>'+xjCycleLayerHTML(r,'decade')+xjCycleLayerHTML(r,'annual')+xjCycleTimeline(r,false);
+    html+='<p>Salinan ini memuat fase dan tahun '+r.year+' yang dipilih saat diunduh. Buka laporan di situs untuk memilih tahun lain tanpa potongan kredit tambahan.</p>'+(r.decade?xjCycleLayerHTML(r,'decade'):'')+xjCycleLayerHTML(r,'annual')+xjCycleTimeline(r,false);
   }else{
     var years='';for(var y=r.minYear;y<=r.maxYear;y++)years+='<option value="'+y+'"'+(y===r.year?' selected':'')+'>'+y+'</option>';
     var options='<option value="-1"'+(r.childhood?' selected':'')+'>Fase awal · '+r.minYear+'–'+(r.periods[0].startYear-1)+'</option>'+r.periods.map(function(p){return '<option value="'+p.index+'"'+(p.index===r.decadeIndex?' selected':'')+'>'+p.startYear+'–'+p.endYear+' · usia '+p.startAge+'–'+p.endAge+'</option>';}).join('');
@@ -4158,7 +4306,35 @@ async function showInvitePanel(){
     var share='Coba Xuanji di Rumah Rahasia. Kode undangan saya: '+code+'. Masing-masing mendapat 1 kredit setelah teman baru memverifikasi email dan pertama kali memakai Mimpi. Pengundang mendapat hadiah untuk maksimal 10 teman per bulan. '+RRA_SITE;
     msg.innerHTML='Bagikan kode ini kepada teman baru:<br><span class="invite-code" id="invCode">'+esc(code)+'</span><p>Masing-masing mendapat <b>1 kredit</b> setelah teman memverifikasi email dan memakai Mimpi untuk pertama kali. Hadiah pengundang maksimal <b>10 per bulan</b> (waktu Jakarta). Membagikan tautan saja tidak memberi kredit.</p>'+rrRewardHTML(state);
     btns.innerHTML='<button class="btn" id="qCopyInvite">SALIN TEKS UNDANGAN</button><button class="btn ghost" id="qInviteBack">AKUN & RIWAYAT</button>';
-    $('#qCopyInvite').onclick=function(){copyText(share);this.textContent='TEKS UNDANGAN DISALIN'};$('#qInviteBack').onclick=function(){q.style.display='none';rrAccountOpen()};accRender();
+    $('#qCopyInvite').onclick=async function(){
+      var button=this;
+      button.disabled=true;
+      var copied=await copyText(share);
+      button.disabled=false;
+      if(!button.isConnected || uid!==ACC.uid || q.style.display==='none')return;
+      var manual=msg.querySelector('[data-invite-manual]');
+      if(copied){
+        if(manual)manual.remove();
+        button.textContent='TEKS UNDANGAN DISALIN';
+        return;
+      }
+      button.textContent='Salin lagi';
+      if(!manual){
+        manual=document.createElement('label');
+        manual.setAttribute('data-invite-manual','');
+        manual.textContent='Teks belum tersalin. Pilih dan salin teks undangan di bawah ini.';
+        var field=document.createElement('textarea');
+        field.className='m-inp';
+        field.readOnly=true;
+        field.rows=4;
+        field.value=share;
+        manual.appendChild(field);
+        msg.appendChild(manual);
+      }
+      var selection=manual.querySelector('textarea');
+      selection.focus();
+      selection.select();
+    };$('#qInviteBack').onclick=function(){q.style.display='none';rrAccountOpen()};accRender();
   }catch(e){if(uid===ACC.uid&&seq===RRA.seq){msg.textContent='Kode belum dapat dimuat. Periksa koneksi lalu coba lagi.';btns.innerHTML='<button class="btn" id="qInviteRetry">COBA LAGI</button>';$('#qInviteRetry').onclick=showInvitePanel;}}
 }
 function rrAccountAuthChanged(){
@@ -4530,7 +4706,7 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 $('#startXuanji').addEventListener('click',function(){gotoTab('xuanji');$('#xjForm').scrollIntoView({behavior:'auto',block:'start'});$('#xjDate').focus({preventScroll:true});});
 
 /* ================= 解梦阁数据 ================= */
-var SYM=[{"k":"水","ic":"🌊","kw":["水","洪","河","江","海","游泳","下雨","淹","溺","涨水","潮","air","banjir","sungai","danau","laut","renang","berenang","hujan","tenggelam","gelombang","ombak","tsunami","meluap"],"q":"梦里的水是什么样的？","opts":["清澈平静","浑浊湍急"],"v":[{"t":"清水","trad":"清水在旧时的梦书里借指澄明。","psy":"水面让你安心的那个瞬间，和现实里的哪一刻相似？","luck":"吉","adv":"写下一件已经想清楚的小事，选今天能做的第一步。"},{"t":"浊水","trad":"浊水在民间故事里常用来形容纷杂的心事。","psy":"回想让你不安的是水的颜色、速度，还是看不清前路。","luck":"需留意","adv":"把最近纠缠在一起的两件事分别写下来，一次处理一件。"}],"wx":4},{"k":"鳄鱼","kw":["鳄鱼","鳄","鱷魚","buaya","crocodile"],"q":"梦里的鳄鱼有什么反应？","opts":["安静待着","追赶或扑过来"],"v":[{"t":"鳄鱼静伏","luck":"吉","trad":"在加里曼丹的一些河流传说中，鳄鱼以守护者的形象出现。","psy":"面对强大的动物还能安静停留，也许你关心的是彼此的距离。","adv":"想起一位能让你安心的长辈或朋友，这周找机会问候对方。"},{"t":"鳄鱼追赶","luck":"需留意","trad":"在印尼语里，「buaya darat」也用来形容不真诚的追求者。","psy":"把梦里的紧张和现实区分开，再想想最近哪次相处让你累。","adv":"遇到一时拿不准的承诺，先问清楚内容，给自己考虑的时间。"}],"ic":"🐊","wx":4},{"k":"蛇","ic":"🐍","kw":["蛇","蟒","毒蛇","ular","sanca","kobra","piton"],"q":"梦里你对蛇的感觉是？","opts":["并不害怕","害怕或被咬"],"v":[{"t":"灵蛇","trad":"蛇的蜕皮让它在民间故事中成为更新的象征。","psy":"梦里没有害怕，或许值得留意自己对陌生事物的好奇。","luck":"吉","adv":"列出最近想尝试的一件小事，找一个容易开始的环节。"},{"t":"凶蛇","trad":"故事里的蛇缠绕不去，常被借来描写难以推开的事。","psy":"回想你是想躲、想反抗，还是在等人帮忙。","luck":"需留意","adv":"为一个让你为难的邀约准备一句明确的答复。"}],"wx":1},{"k":"掉牙","ic":"🦷","kw":["掉牙","牙齿","牙掉","牙松","碎牙","gigi","copot","ompong","gigi patah","tanggal gigi"],"q":"牙是怎么掉的？","opts":["松动自然脱落","碎裂或疼痛出血"],"v":[{"t":"自落","trad":"旧时梦书常把牙齿和家人、根基联系在一起。","psy":"自然脱落的片段可以作为谈论变化的起点。","luck":"平","adv":"给近期有变化的一段日常留个记录，看看哪些部分仍然安稳。"},{"t":"碎裂","trad":"齿裂的意象在旧时常承载对亲友的牵挂。","psy":"让你印象最深的是疼痛、惊讶，还是旁人的反应？","luck":"需留意","adv":"想念家人时打个电话，问一件对方最近在意的小事。"}],"wx":3},{"k":"飞翔","ic":"🕊","kw":["飞","翱翔","腾空","飞起来","悬浮","飞上","terbang","melayang","mengambang di udara","sayap"],"q":"飞的时候往下看到的是？","opts":["开阔壮丽的景色","昏暗迷蒙的下方"],"v":[{"t":"景阔","trad":"向高处飞是许多故事里开阔眼界的写法。","psy":"从空中看到的东西，可能正是你平时没空注意的细节。","luck":"吉","adv":"把一个计划用三句话说清，看看全貌。"},{"t":"景晦","trad":"飞过雾气的画面，常被用来形容前路还看不清。","psy":"你想向前，还是更想先找到能落脚的地方？","luck":"平","adv":"为最近的一个计划留出备用时间。"}],"wx":0},{"k":"坠落","ic":"💫","kw":["坠","掉下去","下坠","摔","坠落","jatuh","terjun","jurang","lobang"],"q":"坠落前后是什么感觉？","opts":["失重恐慌","缓缓飘落"],"v":[{"t":"惊坠","trad":"从高处失去支撑，常被借来表达心里没底。","psy":"回想失重发生前一刻，你原本抓住了什么。","luck":"需留意","adv":"找出今天能确认的一件事，先把它落实。"},{"t":"缓落","trad":"缓缓落地的画面，让人想到调整步伐。","psy":"如果落下时感到轻松，可以回想最近放下了什么。","luck":"平","adv":"给忙碌的一天留出一段无安排的休息。"}],"wx":2},{"k":"被追赶","ic":"🏃","kw":["追","逃跑","追赶","被追","逃","dikejar","kejar","kabur","lari dari","menyelamatkan diri"],"q":"追赶你的是什么？","opts":["人或有形之物","说不清的黑影怪物"],"v":[{"t":"有形","trad":"被有形之物追赶，在故事里常对应逼近的任务。","psy":"你认出的追赶者和你最近的忙碌有什么联系？","luck":"需留意","adv":"把待办按期限写下来，先处理最靠前的一项。"},{"t":"无形","trad":"看不清的影子常用来描写尚未命名的担忧。","psy":"可以先说出最鲜明的感受，再试着给它找名字。","luck":"平","adv":"把一个模糊的担心改写成可以核实的问题。"}],"wx":3},{"k":"考试","ic":"📝","kw":["考试","试卷","答题","高考","交卷","考场","ujian","ulangan","tes","ujian nasional","mengerjakan soal"],"q":"考得如何？","opts":["没答完或不会写","顺利交卷"],"v":[{"t":"考难","trad":"考场在许多人的梦里代表检验和期待。","psy":"最难受的是题不会做，还是怕来不及？","luck":"平","adv":"针对那个环节做一次短练习，提前熟悉步骤。"},{"t":"考顺","trad":"顺利交卷的画面常让人想到准备和收尾。","psy":"你在梦里觉得最熟练的部分是什么？","luck":"吉","adv":"记下一个有效的准备方法，下次接着用。"}],"wx":3},{"k":"逝者","ic":"🕯","kw":["死","去世","逝者","故人","棺材","葬礼","已故","亡","亡者","meninggal","mati","jenazah","almarhum","pemakaman","keranda","arwah","kuburan","melayat"],"q":"梦里和去世的人处得怎么样？","opts":["平和叙旧","悲伤或惊惧"],"v":[{"t":"叙旧","trad":"在一些华人家庭的口述故事中，与故人相聚承载着思念。","psy":"梦里哪一句话或哪个小动作，让你想起对方？","luck":"平","adv":"记下一段你想保留的回忆，也可以与亲友分享。"},{"t":"惊惧","trad":"告别的意象常用来安放还没有说完的话。","psy":"允许自己感到难过，回想梦里你最想表达什么。","luck":"需留意","adv":"如果愿意，把那句话写给对方，留给自己。"}],"wx":4},{"k":"结婚","ic":"💍","kw":["结婚","婚礼","新娘","新郎","拜堂","洞房","出嫁","menikah","nikah","pernikahan","pengantin","lamaran","resepsi","manten","wedding"],"q":"梦里结婚的气氛是？","opts":["喜气顺遂","仓促或错乱"],"v":[{"t":"喜顺","trad":"婚礼在民间故事里常代表相聚和新的承诺。","psy":"留意你在梦中盼望和谁分享这个时刻。","luck":"吉","adv":"向一个重要的人表达具体的感谢。"},{"t":"错乱","trad":"仓促的婚礼场景，容易让人联想到来不及准备。","psy":"回想是谁在催促，以及你想按什么节奏进行。","luck":"需留意","adv":"在答应新安排前，先核对自己的时间。"}],"wx":2},{"k":"孕育","ic":"👶","kw":["怀孕","婴儿","宝宝","生子","小孩","抱孩子","产","hamil","bayi","melahirkan","kehamilan","anak kecil","bunting"],"q":"对这份「新生」的感觉是？","opts":["期待欣喜","负担焦虑"],"v":[{"t":"欣喜","trad":"孕育常被借来描写一个新想法逐渐成形。","psy":"梦里你期待的是新生命本身，还是照料它的过程？","luck":"吉","adv":"给手头一个新想法安排十分钟，写出第一步。"},{"t":"负重","trad":"负重的意象可以用来谈论额外的责任。","psy":"最近哪些事让你觉得需要独自承担？","luck":"平","adv":"挑一件可以协作的小事，说明你希望得到哪种帮助。"}],"wx":0},{"k":"排泄物","kw":["粪","屎","大便","厕所","马桶","排泄物","kotoran","tahi","buang air","berak","toilet","jamban","kakus","wc"],"q":"梦里发生了什么？","opts":["看到或清理","踩到或沾上"],"v":[{"t":"清理","luck":"吉","trad":"在部分华人和爪哇民间解梦故事中，粪土会与收成和财富相联。","psy":"清理的动作比物品本身更值得回想，你清理后有什么感觉？","adv":"整理一个一直想收拾的小角落，留意完成时的感受。"},{"t":"沾上","luck":"吉","trad":"民间故事有时会把意外沾上脏东西写成带来好运的笑谈。","psy":"尴尬、嫌弃和好笑会让同一画面有很不同的意味。","adv":"写下你醒来时的第一反应，照自己的感受理解这个梦。"}],"ic":"💩","wx":2},{"k":"钱财","ic":"💰","kw":["钱","捡到","钱包","金子","银子","发财","珠宝","uang","dompet","koin","emas","perak","kaya","rampok","menemukan uang"],"q":"梦里的钱是怎么来的？","opts":["意外之财","散财或被偷"],"v":[{"t":"得财","trad":"拾金的故事常借意外所得探讨机会和取舍。","psy":"是哪件东西让你觉得珍贵？它可能不限于钱。","luck":"吉","adv":"记下一件你想珍惜的资源，以及你准备怎样使用它。"},{"t":"失财","trad":"失去财物的意象常被用来讲述失去掌控的感受。","psy":"梦里你最舍不得的是金额，还是它背后的意义？","luck":"需留意","adv":"整理常用物品和账单，把重要的信息放到容易找到的位置。"}],"wx":3},{"k":"火","ic":"🔥","kw":["火","着火","大火","烧","火焰","火光","api","kebakaran","terbakar","membakar","bara","unggun"],"q":"火势怎么样、你处境如何？","opts":["温暖可控","失控蔓延"],"v":[{"t":"炉火","trad":"炉火在传统意象中常代表团聚和日常照料。","psy":"梦里是火光、温度还是陪伴让你舒服？","luck":"吉","adv":"安排一次不赶时间的饭或聊天。"},{"t":"烈火","trad":"蔓延的火常被用来描写情绪升温。","psy":"你想扑灭火、寻找出口，还是先照顾谁？","luck":"需留意","adv":"遇到紧张对话时，先留一会时间再开口。"}],"wx":1},{"k":"鱼","ic":"🐟","kw":["鱼","捕鱼","抓鱼","鱼群","钓鱼","ikan","memancing","menangkap ikan","nelayan"],"q":"梦里的鱼是什么状态？","opts":["鲜活游动","死鱼或抓不住"],"v":[{"t":"活鱼","trad":"华人年节常用「鱼」取「余」的谐音，表达对丰足的祝愿。","psy":"回想鱼游动时，你是在欣赏它还是想抓住它。","luck":"吉","adv":"给一件喜欢的事留出时间，享受做的过程。"},{"t":"鱼失","trad":"鱼从手里滑走的故事里，常有错过的意味。","psy":"没抓到它的时候，你觉得惋惜还是松了一口气？","luck":"需留意","adv":"想想还有没有第二种选择，把它记下来。"}],"wx":4},{"k":"房屋","ic":"🏠","kw":["房子","房屋","老宅","搬家","宅","漏雨","屋塌","rumah","pindah","bocor","gedung","kontrakan","rumah tua"],"q":"梦里的房子怎么样？","opts":["安稳明亮","破损或坍塌"],"v":[{"t":"宅安","trad":"明亮稳固的房屋常让人想到安顿和归属。","psy":"屋里最熟悉的房间或人物是哪一个？","luck":"吉","adv":"做一件让住处更舒服的小调整。"},{"t":"宅损","trad":"屋漏墙损是故事里描写疏于照料的常见画面。","psy":"先区分房屋本身的印象，和你梦里担心的那件事。","luck":"需留意","adv":"从一项搁置的日常维护入手，尽量把它做完。"}],"wx":2},{"k":"迷路","ic":"🧭","kw":["迷路","找不到","走丢","迷失","绕路","tersesat","nyasar","hilang arah","bingung jalan","jalan berputar"],"q":"迷路时你做了什么？","opts":["停下来问路","一直走一直找"],"v":[{"t":"问路","trad":"迷路时遇人指引，是许多旅行故事的转折。","psy":"你为什么愿意相信那个指路的人？","luck":"平","adv":"把一个卡住的问题问得更具体，再找合适的人请教。"},{"t":"盲走","trad":"反复绕回原处的画面，常让人想到尚未定下的方向。","psy":"留意你一直寻找的究竟是目的地，还是熟悉的标记。","luck":"需留意","adv":"列出接下来最想确认的一条信息，先找这条线索。"}],"wx":2},{"k":"鬼怪","ic":"👻","kw":["鬼","怪","怪物","僵尸","幽灵","压床","恶魔","hantu","kuntilanak","pocong","zombie","genderuwo","setan","roh jahat","ketindihan","tindihan"],"q":"面对鬼怪你是怎么做的？","opts":["对抗或逃开了","僵住无法动"],"v":[{"t":"御鬼","trad":"在印尼和华人民间故事里，鬼怪常用来讲述人如何面对害怕的事。","psy":"你用什么办法让自己脱身？","luck":"平","adv":"记下一种对你有用的安定方式，留到紧张时再用。"},{"t":"被困","trad":"被困住的故事情节让人想到想行动却动不了的无力感。","psy":"醒来后，把梦中画面和此刻周围真实的事物分开看。","luck":"需留意","adv":"先坐稳，慢慢呼吸，注意周围三件熟悉的东西。"}],"wx":4},{"k":"龙","ic":"🐉","kw":["龙","凤","龙凤","神龙","蛟","naga","dragon","loong"],"q":"梦里的龙是什么姿态？","opts":["腾飞或赐福","盘踞或怒目"],"v":[{"t":"龙腾","trad":"云中腾龙是华人文化中常见的进取意象。","psy":"你在仰望、同行，还是站在远处观看？","luck":"大吉","adv":"写下一个你想争取的目标和能准备的一步。"},{"t":"龙蛰","trad":"盘龙常给人蓄势和等待的联想。","psy":"梦里的安静和怒目，哪一个更让你在意？","luck":"平","adv":"给尚不明确的事留出观察时间。"}],"wx":2},{"k":"山","ic":"⛰","kw":["山","爬山","高山","山顶","下山","悬崖","gunung","mendaki","puncak","tebing","pendakian"],"q":"你和山是什么关系？","opts":["登顶或在攀","被困山下"],"v":[{"t":"登山","trad":"登山借指进取，也是印尼各地生活中熟悉的地景。","psy":"回想最有成就感的是登顶，还是走完其中一段。","luck":"吉","adv":"把目标拆成一段今天能走完的路。"},{"t":"困山","trad":"群山挡路常被用来形容看得见目标，却暂时找不到入口。","psy":"梦里有没有同伴、岔路或可以休息的地方？","luck":"平","adv":"找一位有经验的人，询问另一种走法。"}],"wx":2},{"k":"蜘蛛","ic":"🕸","kw":["蜘蛛","蛛网","结网","蛛","laba-laba","laba laba","jaring","sarang laba","spider"],"q":"梦里蜘蛛和网是什么样的？","opts":["结网有序或喜蛛垂丝","被网缠住或惊惧"],"v":[{"t":"网成","trad":"旧时华人文化称某些小蜘蛛为「喜蛛」，借它表达盼望。","psy":"网的形状、蜘蛛的耐心，哪一点最吸引你？","luck":"吉","adv":"回顾最近慢慢累积的一项成果。"},{"t":"网缠","trad":"纠缠的网是形容烦琐事务的常见意象。","psy":"哪一根线让你最想先解开？","luck":"需留意","adv":"删掉一项可以省去的安排，给其余的事留出空间。"}],"wx":2},{"k":"猫狗","ic":"🐕","kw":["猫","狗","小狗","小猫","宠物","犬","kucing","anjing","peliharaan","pet","kitten","puppy"],"q":"梦里猫狗和你的互动怎么样？","opts":["亲昵依偎","吠叫抓咬或让你不安"],"v":[{"t":"亲昵","trad":"家中猫狗相伴的意象，常让人想到熟悉和守候。","psy":"你在梦里是照顾动物，还是从它身边得到安慰？","luck":"吉","adv":"主动联系一位和你相处轻松的人。"},{"t":"惊扰","trad":"吠叫或抓咬在故事里常是边界被打扰的提示。","psy":"分清让你紧张的是声音、突然靠近，还是无法离开。","luck":"需留意","adv":"给一段相处订下一条让自己更舒服的界限。"}],"wx":2},{"k":"镜子","ic":"🪞","kw":["镜子","照镜","镜中","镜子里","对镜","cermin","bercermin","pantulan","wajah di kaca"],"q":"镜子里看到的是？","opts":["清晰如常的自己","模糊破碎或陌生面孔"],"v":[{"t":"镜明","trad":"镜子在许多故事里是认识自己的道具。","psy":"梦里的脸和你熟悉的自己，哪里最相像？","luck":"吉","adv":"写下一项你最近亲眼看到的进步。"},{"t":"镜晦","trad":"模糊的镜面常借来表达暂时看不清自己。","psy":"那张陌生的脸带来的是好奇、不适，还是意外？","luck":"平","adv":"把一个对自己的评价换成具体发生过的事情。"}],"wx":4},{"k":"头发","ic":"💇","kw":["头发","白发","黑发","长发","剪发","掉发","脱发","秃","rambut","botak","rontok","uban","rambut putih","potong rambut"],"q":"梦里的头发是什么样的？","opts":["乌黑浓密在生长","白发脱发或纠结"],"v":[{"t":"发生","trad":"在传统意象里，浓密生长的头发常与活力相联。","psy":"这个画面让你想起什么时期的自己？","luck":"吉","adv":"保留一项最近让你感觉有精神的习惯。"},{"t":"发衰","trad":"白发或落发在故事中常寄托对时间流逝的感受。","psy":"回想更让你在意的是外观变化，还是失去的感觉。","luck":"需留意","adv":"给近期一件消耗精力的事划定结束时间。"}],"wx":0}];
+var SYM=[{"k":"水","ic":"🌊","kw":["水","洪","河","江","海","游泳","下雨","淹","溺","涨水","潮","air","banjir","sungai","danau","laut","renang","berenang","hujan","tenggelam","gelombang","ombak","tsunami","meluap"],"q":"梦里的水是什么样的？","opts":["清澈平静","浑浊湍急"],"v":[{"t":"清水","trad":"清水在旧时的梦书里借指澄明。","psy":"水面让你安心的那个瞬间，和现实里的哪一刻相似？","luck":"吉","adv":"写下一件已经想清楚的小事，选今天能做的第一步。"},{"t":"浊水","trad":"浊水在民间故事里常用来形容纷杂的心事。","psy":"回想让你不安的是水的颜色、速度，还是看不清前路。","luck":"需留意","adv":"把最近纠缠在一起的两件事分别写下来，一次处理一件。"}],"wx":4,"ignoreCompounds":["水果","水平"]},{"k":"鳄鱼","kw":["鳄鱼","鳄","鱷魚","buaya","crocodile"],"q":"梦里的鳄鱼有什么反应？","opts":["安静待着","追赶或扑过来"],"v":[{"t":"鳄鱼静伏","luck":"吉","trad":"在加里曼丹的一些河流传说中，鳄鱼以守护者的形象出现。","psy":"面对强大的动物还能安静停留，也许你关心的是彼此的距离。","adv":"想起一位能让你安心的长辈或朋友，这周找机会问候对方。"},{"t":"鳄鱼追赶","luck":"需留意","trad":"在印尼语里，「buaya darat」也用来形容不真诚的追求者。","psy":"把梦里的紧张和现实区分开，再想想最近哪次相处让你累。","adv":"遇到一时拿不准的承诺，先问清楚内容，给自己考虑的时间。"}],"ic":"🐊","wx":4},{"k":"蛇","ic":"🐍","kw":["蛇","蟒","毒蛇","ular","sanca","kobra","piton"],"q":"梦里你对蛇的感觉是？","opts":["并不害怕","害怕或被咬"],"v":[{"t":"灵蛇","trad":"蛇的蜕皮让它在民间故事中成为更新的象征。","psy":"梦里没有害怕，或许值得留意自己对陌生事物的好奇。","luck":"吉","adv":"列出最近想尝试的一件小事，找一个容易开始的环节。"},{"t":"凶蛇","trad":"故事里的蛇缠绕不去，常被借来描写难以推开的事。","psy":"回想你是想躲、想反抗，还是在等人帮忙。","luck":"需留意","adv":"为一个让你为难的邀约准备一句明确的答复。"}],"wx":1},{"k":"掉牙","ic":"🦷","kw":["掉牙","牙齿","牙掉","牙松","碎牙","gigi","copot","ompong","gigi patah","tanggal gigi"],"q":"牙是怎么掉的？","opts":["松动自然脱落","碎裂或疼痛出血"],"v":[{"t":"自落","trad":"旧时梦书常把牙齿和家人、根基联系在一起。","psy":"自然脱落的片段可以作为谈论变化的起点。","luck":"平","adv":"给近期有变化的一段日常留个记录，看看哪些部分仍然安稳。"},{"t":"碎裂","trad":"齿裂的意象在旧时常承载对亲友的牵挂。","psy":"让你印象最深的是疼痛、惊讶，还是旁人的反应？","luck":"需留意","adv":"想念家人时打个电话，问一件对方最近在意的小事。"}],"wx":3},{"k":"飞翔","ic":"🕊","kw":["飞","翱翔","腾空","飞起来","悬浮","飞上","terbang","melayang","mengambang di udara","sayap"],"q":"飞的时候往下看到的是？","opts":["开阔壮丽的景色","昏暗迷蒙的下方"],"v":[{"t":"景阔","trad":"向高处飞是许多故事里开阔眼界的写法。","psy":"从空中看到的东西，可能正是你平时没空注意的细节。","luck":"吉","adv":"把一个计划用三句话说清，看看全貌。"},{"t":"景晦","trad":"飞过雾气的画面，常被用来形容前路还看不清。","psy":"你想向前，还是更想先找到能落脚的地方？","luck":"平","adv":"为最近的一个计划留出备用时间。"}],"wx":0,"ignoreCompounds":["飞机","飛機"]},{"k":"坠落","ic":"💫","kw":["坠","掉下去","下坠","摔","坠落","jatuh","terjun","jurang","lobang"],"q":"坠落前后是什么感觉？","opts":["失重恐慌","缓缓飘落"],"v":[{"t":"惊坠","trad":"从高处失去支撑，常被借来表达心里没底。","psy":"回想失重发生前一刻，你原本抓住了什么。","luck":"需留意","adv":"找出今天能确认的一件事，先把它落实。"},{"t":"缓落","trad":"缓缓落地的画面，让人想到调整步伐。","psy":"如果落下时感到轻松，可以回想最近放下了什么。","luck":"平","adv":"给忙碌的一天留出一段无安排的休息。"}],"wx":2},{"k":"被追赶","ic":"🏃","kw":["追","逃跑","追赶","被追","逃","dikejar","kejar","kabur","lari dari","menyelamatkan diri"],"q":"追赶你的是什么？","opts":["人或有形之物","说不清的黑影怪物"],"v":[{"t":"有形","trad":"被有形之物追赶，在故事里常对应逼近的任务。","psy":"你认出的追赶者和你最近的忙碌有什么联系？","luck":"需留意","adv":"把待办按期限写下来，先处理最靠前的一项。"},{"t":"无形","trad":"看不清的影子常用来描写尚未命名的担忧。","psy":"可以先说出最鲜明的感受，再试着给它找名字。","luck":"平","adv":"把一个模糊的担心改写成可以核实的问题。"}],"wx":3},{"k":"考试","ic":"📝","kw":["考试","试卷","答题","高考","交卷","考场","ujian","ulangan","tes","ujian nasional","mengerjakan soal"],"q":"考得如何？","opts":["没答完或不会写","顺利交卷"],"v":[{"t":"考难","trad":"考场在许多人的梦里代表检验和期待。","psy":"最难受的是题不会做，还是怕来不及？","luck":"平","adv":"针对那个环节做一次短练习，提前熟悉步骤。"},{"t":"考顺","trad":"顺利交卷的画面常让人想到准备和收尾。","psy":"你在梦里觉得最熟练的部分是什么？","luck":"吉","adv":"记下一个有效的准备方法，下次接着用。"}],"wx":3},{"k":"逝者","ic":"🕯","kw":["去世","逝者","故人","棺材","葬礼","已故","亡者","meninggal","mati","jenazah","almarhum","pemakaman","keranda","arwah","kuburan","melayat","死人","已故亲友","已故亲人","过世","亡故","离世","死去的亲人","死去的朋友"],"q":"梦里和去世的人处得怎么样？","opts":["平和叙旧","悲伤或惊惧"],"v":[{"t":"叙旧","trad":"在一些华人家庭的口述故事中，与故人相聚承载着思念。","psy":"梦里哪一句话或哪个小动作，让你想起对方？","luck":"平","adv":"记下一段你想保留的回忆，也可以与亲友分享。"},{"t":"惊惧","trad":"告别的意象常用来安放还没有说完的话。","psy":"允许自己感到难过，回想梦里你最想表达什么。","luck":"需留意","adv":"如果愿意，把那句话写给对方，留给自己。"}],"wx":4},{"k":"结婚","ic":"💍","kw":["结婚","婚礼","新娘","新郎","拜堂","洞房","出嫁","menikah","nikah","pernikahan","pengantin","lamaran","resepsi","manten","wedding"],"q":"梦里结婚的气氛是？","opts":["喜气顺遂","仓促或错乱"],"v":[{"t":"喜顺","trad":"婚礼在民间故事里常代表相聚和新的承诺。","psy":"留意你在梦中盼望和谁分享这个时刻。","luck":"吉","adv":"向一个重要的人表达具体的感谢。"},{"t":"错乱","trad":"仓促的婚礼场景，容易让人联想到来不及准备。","psy":"回想是谁在催促，以及你想按什么节奏进行。","luck":"需留意","adv":"在答应新安排前，先核对自己的时间。"}],"wx":2},{"k":"孕育","ic":"👶","kw":["怀孕","婴儿","宝宝","生子","小孩","抱孩子","hamil","bayi","melahirkan","kehamilan","anak kecil","bunting","临产","分娩","产房","生孩子"],"q":"对这份「新生」的感觉是？","opts":["期待欣喜","负担焦虑"],"v":[{"t":"欣喜","trad":"孕育常被借来描写一个新想法逐渐成形。","psy":"梦里你期待的是新生命本身，还是照料它的过程？","luck":"吉","adv":"给手头一个新想法安排十分钟，写出第一步。"},{"t":"负重","trad":"负重的意象可以用来谈论额外的责任。","psy":"最近哪些事让你觉得需要独自承担？","luck":"平","adv":"挑一件可以协作的小事，说明你希望得到哪种帮助。"}],"wx":0},{"k":"排泄物","kw":["粪","屎","大便","厕所","马桶","排泄物","kotoran","tahi","buang air","berak","toilet","jamban","kakus","wc"],"q":"梦里发生了什么？","opts":["看到或清理","踩到或沾上"],"v":[{"t":"清理","luck":"吉","trad":"在部分华人和爪哇民间解梦故事中，粪土会与收成和财富相联。","psy":"清理的动作比物品本身更值得回想，你清理后有什么感觉？","adv":"整理一个一直想收拾的小角落，留意完成时的感受。"},{"t":"沾上","luck":"吉","trad":"民间故事有时会把意外沾上脏东西写成带来好运的笑谈。","psy":"尴尬、嫌弃和好笑会让同一画面有很不同的意味。","adv":"写下你醒来时的第一反应，照自己的感受理解这个梦。"}],"ic":"💩","wx":2},{"k":"钱财","ic":"💰","kw":["钱","钱包","金子","银子","发财","珠宝","uang","dompet","koin","emas","perak","kaya","rampok","menemukan uang"],"q":"梦里和钱财有关的是什么事？","opts":["意外之财","散财或被偷"],"v":[{"t":"得财","trad":"拾金的故事常借意外所得探讨机会和取舍。","psy":"是哪件东西让你觉得珍贵？它可能不限于钱。","luck":"吉","adv":"记下一件你想珍惜的资源，以及你准备怎样使用它。"},{"t":"失财","trad":"失去财物的意象常被用来讲述失去掌控的感受。","psy":"梦里你最舍不得的是金额，还是它背后的意义？","luck":"需留意","adv":"整理常用物品和账单，把重要的信息放到容易找到的位置。"}],"wx":3},{"k":"火","ic":"🔥","kw":["火","着火","大火","烧","火焰","火光","api","kebakaran","terbakar","membakar","bara","unggun"],"q":"火势怎么样、你处境如何？","opts":["温暖可控","失控蔓延"],"v":[{"t":"炉火","trad":"炉火在传统意象中常代表团聚和日常照料。","psy":"梦里是火光、温度还是陪伴让你舒服？","luck":"吉","adv":"安排一次不赶时间的饭或聊天。"},{"t":"烈火","trad":"蔓延的火常被用来描写情绪升温。","psy":"你想扑灭火、寻找出口，还是先照顾谁？","luck":"需留意","adv":"遇到紧张对话时，先留一会时间再开口。"}],"wx":1,"ignoreCompounds":["火车","火箭"]},{"k":"鱼","ic":"🐟","kw":["鱼","捕鱼","抓鱼","鱼群","钓鱼","ikan","memancing","menangkap ikan","nelayan"],"q":"梦里的鱼是什么状态？","opts":["鲜活游动","死鱼或抓不住"],"v":[{"t":"活鱼","trad":"华人年节常用「鱼」取「余」的谐音，表达对丰足的祝愿。","psy":"回想鱼游动时，你是在欣赏它还是想抓住它。","luck":"吉","adv":"给一件喜欢的事留出时间，享受做的过程。"},{"t":"鱼失","trad":"鱼从手里滑走的故事里，常有错过的意味。","psy":"没抓到它的时候，你觉得惋惜还是松了一口气？","luck":"需留意","adv":"想想还有没有第二种选择，把它记下来。"}],"wx":4,"ignoreCompounds":["鳄鱼","鱷鱼","鳄魚","鱷魚"]},{"k":"房屋","ic":"🏠","kw":["房子","房屋","老宅","搬家","宅","漏雨","屋塌","rumah","pindah","bocor","gedung","kontrakan","rumah tua"],"q":"梦里的房子怎么样？","opts":["安稳明亮","破损或坍塌"],"v":[{"t":"宅安","trad":"明亮稳固的房屋常让人想到安顿和归属。","psy":"屋里最熟悉的房间或人物是哪一个？","luck":"吉","adv":"做一件让住处更舒服的小调整。"},{"t":"宅损","trad":"屋漏墙损是故事里描写疏于照料的常见画面。","psy":"先区分房屋本身的印象，和你梦里担心的那件事。","luck":"需留意","adv":"从一项搁置的日常维护入手，尽量把它做完。"}],"wx":2},{"k":"迷路","ic":"🧭","kw":["迷路","走丢","迷失","绕路","tersesat","nyasar","hilang arah","bingung jalan","jalan berputar","找不到路","找不到方向","找不到回家的路"],"q":"迷路时你做了什么？","opts":["停下来问路","一直走一直找"],"v":[{"t":"问路","trad":"迷路时遇人指引，是许多旅行故事的转折。","psy":"你为什么愿意相信那个指路的人？","luck":"平","adv":"把一个卡住的问题问得更具体，再找合适的人请教。"},{"t":"盲走","trad":"反复绕回原处的画面，常让人想到尚未定下的方向。","psy":"留意你一直寻找的究竟是目的地，还是熟悉的标记。","luck":"需留意","adv":"列出接下来最想确认的一条信息，先找这条线索。"}],"wx":2},{"k":"鬼怪","ic":"👻","kw":["鬼","怪物","僵尸","幽灵","压床","恶魔","hantu","kuntilanak","pocong","zombie","genderuwo","setan","roh jahat","ketindihan","tindihan","鬼怪","怪兽","妖怪"],"q":"面对鬼怪你是怎么做的？","opts":["对抗或逃开了","僵住无法动"],"v":[{"t":"御鬼","trad":"在印尼和华人民间故事里，鬼怪常用来讲述人如何面对害怕的事。","psy":"你用什么办法让自己脱身？","luck":"平","adv":"记下一种对你有用的安定方式，留到紧张时再用。"},{"t":"被困","trad":"被困住的故事情节让人想到想行动却动不了的无力感。","psy":"醒来后，把梦中画面和此刻周围真实的事物分开看。","luck":"需留意","adv":"先坐稳，慢慢呼吸，注意周围三件熟悉的东西。"}],"wx":4},{"k":"龙","ic":"🐉","kw":["龙","凤","龙凤","神龙","蛟","naga","dragon","loong"],"q":"梦里的龙是什么姿态？","opts":["腾飞或赐福","盘踞或怒目"],"v":[{"t":"龙腾","trad":"云中腾龙是华人文化中常见的进取意象。","psy":"你在仰望、同行，还是站在远处观看？","luck":"大吉","adv":"写下一个你想争取的目标和能准备的一步。"},{"t":"龙蛰","trad":"盘龙常给人蓄势和等待的联想。","psy":"梦里的安静和怒目，哪一个更让你在意？","luck":"平","adv":"给尚不明确的事留出观察时间。"}],"wx":2},{"k":"山","ic":"⛰","kw":["山","爬山","高山","山顶","下山","悬崖","gunung","mendaki","puncak","tebing","pendakian"],"q":"你和山是什么关系？","opts":["登顶或在攀","被困山下"],"v":[{"t":"登山","trad":"登山借指进取，也是印尼各地生活中熟悉的地景。","psy":"回想最有成就感的是登顶，还是走完其中一段。","luck":"吉","adv":"把目标拆成一段今天能走完的路。"},{"t":"困山","trad":"群山挡路常被用来形容看得见目标，却暂时找不到入口。","psy":"梦里有没有同伴、岔路或可以休息的地方？","luck":"平","adv":"找一位有经验的人，询问另一种走法。"}],"wx":2},{"k":"蜘蛛","ic":"🕸","kw":["蜘蛛","蛛网","结网","蛛","laba-laba","laba laba","jaring","sarang laba","spider"],"q":"梦里蜘蛛和网是什么样的？","opts":["结网有序或喜蛛垂丝","被网缠住或惊惧"],"v":[{"t":"网成","trad":"旧时华人文化称某些小蜘蛛为「喜蛛」，借它表达盼望。","psy":"网的形状、蜘蛛的耐心，哪一点最吸引你？","luck":"吉","adv":"回顾最近慢慢累积的一项成果。"},{"t":"网缠","trad":"纠缠的网是形容烦琐事务的常见意象。","psy":"哪一根线让你最想先解开？","luck":"需留意","adv":"删掉一项可以省去的安排，给其余的事留出空间。"}],"wx":2},{"k":"猫狗","ic":"🐕","kw":["猫","狗","小狗","小猫","宠物","犬","kucing","anjing","peliharaan","pet","kitten","puppy"],"q":"梦里猫狗和你的互动怎么样？","opts":["亲昵依偎","吠叫抓咬或让你不安"],"v":[{"t":"亲昵","trad":"家中猫狗相伴的意象，常让人想到熟悉和守候。","psy":"你在梦里是照顾动物，还是从它身边得到安慰？","luck":"吉","adv":"主动联系一位和你相处轻松的人。"},{"t":"惊扰","trad":"吠叫或抓咬在故事里常是边界被打扰的提示。","psy":"分清让你紧张的是声音、突然靠近，还是无法离开。","luck":"需留意","adv":"给一段相处订下一条让自己更舒服的界限。"}],"wx":2},{"k":"镜子","ic":"🪞","kw":["镜子","照镜","镜中","镜子里","对镜","cermin","bercermin","pantulan","wajah di kaca"],"q":"镜子里看到的是？","opts":["清晰如常的自己","模糊破碎或陌生面孔"],"v":[{"t":"镜明","trad":"镜子在许多故事里是认识自己的道具。","psy":"梦里的脸和你熟悉的自己，哪里最相像？","luck":"吉","adv":"写下一项你最近亲眼看到的进步。"},{"t":"镜晦","trad":"模糊的镜面常借来表达暂时看不清自己。","psy":"那张陌生的脸带来的是好奇、不适，还是意外？","luck":"平","adv":"把一个对自己的评价换成具体发生过的事情。"}],"wx":4},{"k":"头发","ic":"💇","kw":["头发","白发","黑发","长发","剪发","掉发","脱发","秃","rambut","botak","rontok","uban","rambut putih","potong rambut"],"q":"梦里的头发是什么样的？","opts":["乌黑浓密在生长","白发脱发或纠结"],"v":[{"t":"头发浓密","trad":"在传统意象里，浓密生长的头发常与活力相联。","psy":"这个画面让你想起什么时期的自己？","luck":"吉","adv":"保留一项最近让你感觉有精神的习惯。"},{"t":"头发变白或脱落","trad":"白发或落发在故事中常寄托对时间流逝的感受。","psy":"回想更让你在意的是外观变化，还是失去的感觉。","luck":"需留意","adv":"给近期一件消耗精力的事划定结束时间。"}],"wx":0}];
 var EMO=[{"t":"平静释然","psy":"醒来时的安稳，可能与梦里熟悉的人或地方有关。","adv":"记下让你安心的那个细节，下次紧张时可以再想起它。"},{"t":"惊慌害怕","psy":"试着回想，梦里真正吓到你的是事情本身，还是来不及反应。","adv":"醒来后先看看身边的环境，给自己一点缓过来的时间。"},{"t":"焦虑不安","psy":"梦里的迟疑，可能呼应最近悬而未决的事。","adv":"写下一个能让你少一点担心的具体行动。"},{"t":"开心振奋","psy":"这份愉快或许能帮你找到近期最期待的事情。","adv":"把梦里让你开心的一幕讲给愿意倾听的人。"},{"t":"难过低落","psy":"有些梦给想念和告别留出了空间。","adv":"对自己温和一点，给这份感受留出时间。"},{"t":"迷茫困惑","psy":"如果记忆零散，可以先抓住一个场景或一种感受。","adv":"今天先减去一件可以推迟的琐事。"}];
 var LIFE=[{"t":"工作或学业正在变化","adv":"列出下一步需要了解的信息，找一个能回答的人。"},{"t":"感情或家庭有些波动","adv":"找一个双方都不忙的时刻，说说自己最近的感受。"},{"t":"牵挂家人的身体","adv":"向家人问候，听听他们最需要怎样的照顾。"},{"t":"面临支出或金钱压力","adv":"把已经确定的支出和还可调整的部分分开记录。"},{"t":"正在期待新的开始","adv":"为新安排留出一个不用赶时间的起点。"},{"t":"日子比较平常","adv":"留意今天一个容易错过的小细节，睡前记下来。"}];
 var MASTER_L={
@@ -4542,9 +4718,12 @@ var MASTER_L={
 var DM={text:'',ids:[],vars:{},emo:null,life:null,picks:[],pickDone:false};
 function dmScan(t){
   var found=[];
-  SYM.forEach(function(s,i){if(s.kw.some(function(w){
+  SYM.forEach(function(s,i){
+    var narrative=t;
+    (s.ignoreCompounds||[]).forEach(function(compound){narrative=narrative.split(compound).join(' ');});
+    if(s.kw.some(function(w){
     if(/^[a-z\- ]+$/i.test(w))return new RegExp('(^|[^a-zA-Z])'+w.replace(/ /g,'\\s+')+'([^a-zA-Z]|$)','i').test(t);
-    return t.indexOf(w)>=0;
+    return narrative.indexOf(w)>=0;
   }))found.push(i)});
   return found;
 }
@@ -4625,17 +4804,26 @@ function renderDM(){
   }
 }
 var DMbusy=false;
+function rrDreamHasOpenQuestions(){
+  return DMbusy || !!(DM.text && DM.owner===ACC.uid && !DM.record);
+}
 async function dmStart(){
   if(DMbusy)return;
   if(!ACC.uid){showQuotaModal('need_login');return;}
   var err=$('#dmErr'),t=$('#dmInp').value.trim(),btn=$('#dmBtn');err.textContent='';
   if(t.length<8){err.textContent='请再写一些梦里的细节，至少输入 8 个字符。';return;}
+  if(DM.owner===ACC.uid && DM.text===t){
+    var target=$(DM.record?'#dmResult':'#dmFlow');
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+  var owner=ACC.uid;
   DMbusy=true;btn.disabled=true;
   try{
     var quota=await requireQuota('dream');
     if(!quota.ok){showQuotaModal(quota.reason);return;}
     var ids=dmScan(t);
-    DM={text:t,ids:ids,vars:{},emo:null,life:null,picks:[],pickDone:ids.length>0};
+    DM={text:t,owner:owner,ids:ids,vars:{},emo:null,life:null,picks:[],pickDone:ids.length>0};
     $('#dmResult').innerHTML='';dmMaster('start');
     if(DM.ids.length>0){dmEcho();renderDM();}else{$('#dmEcho').style.display='none';renderDM();}
   }finally{DMbusy=false;btn.disabled=false;}
@@ -4681,7 +4869,14 @@ function genDream(){
     $('#dmEcho').style.display='none';$('#dmMaster').textContent='';
     $('#dmInp').value='';
   });
-  histAdd({k:'dream',ts:Date.now(),txt:DM.text.slice(0,80),ids:st.ids,vars:st.vars,emo:st.emo,life:st.life});
+  var answers={ids:st.ids,vars:Object.assign({},st.vars),emo:st.emo,life:st.life};
+  if(!DM.record){
+    DM.record=Object.assign({k:'dream',ts:Date.now(),txt:DM.text.slice(0,80)},answers);
+    histAdd(DM.record);
+  }else if(HIST.indexOf(DM.record)>=0){
+    Object.assign(DM.record,answers);
+    histSave();
+  }
   renderHist('dream');
   setTimeout(function(){$('#dmResult').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
 }
@@ -4909,9 +5104,26 @@ async function topupGo(){
 
 
 
-function copyText(t){
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});return;}
-  try{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}catch(e){}
+async function copyText(text){
+  try {
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch(e) {}
+  var field=document.createElement('textarea'), previous=document.activeElement;
+  field.value=text;
+  field.readOnly=true;
+  field.style.cssText='position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+  try {
+    document.body.appendChild(field);
+    field.select();
+    return document.execCommand('copy')===true;
+  } catch(e) {return false;}
+  finally {
+    field.remove();
+    if(previous && previous.isConnected)previous.focus({preventScroll:true});
+  }
 }
 
 
@@ -5140,45 +5352,70 @@ async function aiSend(){
   }
   aiEnd();
 }
-function aiCfgSave(){
-  AIC={p:$('#aiProv').value,ep:$('#aiEp').value.trim(),m:$('#aiModel').value.trim(),k:$('#aiKey').value.trim(),web:false};
+var aiTestSequence=0;
+function aiMatchKeyTarget(){
+  var input=$('#aiKey'),provider=$('#aiProv').value,endpoint=$('#aiEp').value.trim();
+  if(input.dataset.provider===provider && input.dataset.endpoint===endpoint)return;
+  input.value=provider===AIC.p && endpoint===AIC.ep ? AIC.k||'' : '';
+  input.dataset.provider=provider;
+  input.dataset.endpoint=endpoint;
+}
+function aiReadSettings(){
+  aiMatchKeyTarget();
+  return {p:$('#aiProv').value,ep:$('#aiEp').value.trim(),m:$('#aiModel').value.trim(),k:$('#aiKey').value.trim(),web:false};
+}
+function aiLoadSettings(){
+  $('#aiProv').value=AIC.p;
+  $('#aiEp').value=AIC.ep||AIP[AIC.p].ep;
+  $('#aiModel').value=AIC.m||AIP[AIC.p].m;
+  var key=$('#aiKey');
+  key.dataset.provider=AIC.p;key.dataset.endpoint=$('#aiEp').value.trim();
+  key.value=key.dataset.endpoint===AIC.ep ? AIC.k||'' : '';
+  aiGuide();aiWebChip();
+}
+function aiCfgSave(settings){
+  ++aiTestSequence;
+  AIC=settings||aiReadSettings();
   try{localStorage.setItem('xjid_ai2',JSON.stringify(AIC))}catch(e){}
 }
 async function aiTest(){
   var err=$('#aiErr');
-  var ep=$('#aiEp').value.trim(),mk=$('#aiModel').value.trim(),k=$('#aiKey').value.trim();
+  var settings=aiReadSettings(),ticket=++aiTestSequence;
+  var ep=settings.ep,mk=settings.m,k=settings.k;
+  function current(){return ticket===aiTestSequence && JSON.stringify(settings)===JSON.stringify(aiReadSettings());}
   if(!ep||!k||!mk){err.textContent='请填写接口地址、模型名称和密钥。';return;}
   err.textContent='正在测试连接…';
   try{
     var res=await fetch(ep,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+k},
       body:JSON.stringify({model:mk,messages:[{role:'user',content:'请仅回复“连接成功”。'}],max_tokens:20,stream:false})});
-    if(res.ok){aiCfgSave();err.textContent='✦ 连接成功，设置已保存，可以开始提问。';}
+    if(!current())return;
+    if(res.ok){aiCfgSave(settings);err.textContent='✦ 连接成功，设置已保存，可以开始提问。';}
     else if(res.status===401)err.textContent='✕ 密钥无效（401）。请检查是否多复制了空格。';
     else if(res.status===404)err.textContent='✕ 找不到服务（404），请检查接口地址。';
     else err.textContent='✕ 服务返回 '+res.status+': '+(await res.text().catch(function(){return ''})).substring(0,120);
-  }catch(e){err.textContent='✕ 无法连接，请检查网络和接口地址。';}
+  }catch(e){if(!current())return;err.textContent='✕ 无法连接，请检查网络和接口地址。';}
 }
 function initAi(){
   if(!$('#aiSend'))return;
   var ps='';
   ['gemini','groq','openrouter','custom'].forEach(function(k){ps+='<option value="'+k+'">'+AIP[k].n+'</option>'});
   $('#aiProv').innerHTML=ps;
-  $('#aiProv').value=AIC.p;
-  $('#aiEp').value=AIC.ep||AIP[AIC.p].ep;
-  $('#aiModel').value=AIC.m||AIP[AIC.p].m;
-  $('#aiKey').value=AIC.k||'';
-  aiGuide();aiWebChip();
+  aiLoadSettings();
+  $('#aiEp').addEventListener('input',aiMatchKeyTarget);
+  $('#aiEp').addEventListener('change',aiMatchKeyTarget);
   if(!aiHistLoad())aiWelcome();
   aiSuggInit();
   $('#aiProv').addEventListener('change',function(){
     var k=this.value;
-    $('#aiEp').value=AIP[k].ep;$('#aiModel').value=AIP[k].m;
-    aiGuide();
-    if(AIC.p!==k&&AIC.web&&!AIP[k].web){AIC.web=false;aiWebChip();}
-    AIC.p=k;
+    $('#aiEp').value=k===AIC.p ? AIC.ep||AIP[k].ep : AIP[k].ep;
+    $('#aiModel').value=k===AIC.p ? AIC.m||AIP[k].m : AIP[k].m;
+    aiMatchKeyTarget();aiGuide();
+    $('#aiErr').textContent='';
   });
   $('#aiCfgBtn').addEventListener('click',function(){
-    var c=$('#aiCfgCard');c.style.display=(c.style.display==='none')?'block':'none';
+    var card=$('#aiCfgCard'),opening=card.style.display==='none';
+    if(!opening){++aiTestSequence;aiLoadSettings();$('#aiErr').textContent='';}
+    card.style.display=opening?'block':'none';
   });
   $('#aiSave').addEventListener('click',function(){
     aiCfgSave();
@@ -5279,7 +5516,7 @@ function renderHist(kind){
   });
 }
 /* Original Indonesian period interpretation; no external quotation/dataset. */
-var XJ_CYCLE_COPY={"transforms":{"lu":{"label":"化禄 · 助力","reading":"留意眼前可得到的支持，核实机会是否符合自己的能力和需求。","action":"先以一个可承担的小承诺，试验一个现实的机会。"},"quan":{"label":"化权 · 担当","reading":"留意主动性、决定权与责任的范围。带领别人时，也要听取意见和分担工作。","action":"确认一项决定由谁负责，以及怎样听取不同意见。"},"ke":{"label":"化科 · 学习与认可","reading":"以证据、技能和清楚的表达建立信任。能否获得认可仍取决于实际情况。","action":"整理一项可展示的成果，请熟悉的人给出具体反馈。"},"ji":{"label":"化忌 · 需留意","reading":"需要更多耐心的习惯或问题值得及早看见。它不是灾难的预告。","action":"挑一处反复发生的困难，先作一个可执行的小调整。"}},"domains":{"self":{"focus":"个人方向与决策","action":"写下一个想坚持的价值观，再选一件这周能做到的小事。"},"siblings":{"focus":"同辈之间的分工","action":"把一件分工不清的事谈具体，约定何时一起检查进展。"},"partner":{"focus":"亲密关系中的约定","action":"先用自己的感受说出一项需要，再听对方说完。"},"children":{"focus":"照顾与指导","action":"选一次陪伴活动，先了解对方需要，再约定愿意提供的帮助。"},"wealth":{"focus":"财务与资源安排","action":"检查一周的收支和时间安排，选一项负担得起的调整。"},"wellbeing":{"focus":"作息与精力","action":"观察几天的作息，在两项责任之间留一段现实可行的休息。"},"travel":{"focus":"外出与适应","action":"为一次外出写下目的、时间、要准备的物品与可联系的人。"},"friends":{"focus":"朋友与合作","action":"在一次合作开始前，约定成果、分工，以及遇到困难时怎样沟通。"},"career":{"focus":"工作与成长","action":"选一个想改善的工作成果，安排一次小练习，找人给出反馈。"},"home":{"focus":"居所与家庭安排","action":"挑一项家务、维护或共同支出，与相关的人确认分工。"},"inner_life":{"focus":"内心安定与休息","action":"这周留出一段时间做一件能安定身心的小事，结束后记下感受。"},"parents":{"focus":"长辈与支持","action":"找一位信任的长辈听听经历，再辨别什么适合自己的处境。"}},"stars":{"ziwei":["统筹方向并妥善承担责任","事事都想由自己掌控","交出一项适合分担的责任，并就期望成果达成一致。"],"tianji":["有弹性地规划与比较办法","反复比较而延迟行动","为一个可逆的小决定设定期限，选出一种做法试行。"],"taiyang":["分享经验、主动照应别人","付出超出自己的精力","把可投入的时间说清楚，保留必要的休息。"],"wuqu":["务实执行、掌握进度","因目标太严格而忽略变化","选择一个可以核对的指标，同时定下调整计划的时间。"],"tiantong":["体谅他人、维护合作氛围","为了避免冲突而延后决定","温和地说明一件需要讨论的事，并约个时间谈清楚。"],"lianzhen":["辨明原则与界限","因情绪或坚持而难以协商","分清不能退让的原则与可以协商的做法。"],"tianfu":["稳妥管理已有资源","过度维持熟悉的安排","盘点可用资源，更新一项已经不合时宜的安排。"],"taiyin":["细心观察和准备","忧虑累积却难以说出口","写下一项观察，找合适的人核实自己的理解。"],"tanlang":["探索新兴趣、建立联系","同时作出过多承诺","选择一次范围明确的尝试，给自己留出回顾时间。"],"jumen":["提出问题、核对信息","质疑过多或言语造成误会","先用自己的话确认对方的意思，再陈述依据。"],"tianxiang":["协调需求、维护公平","为了求和而承担过多","公开确认合作中的分工与自己能承担的范围。"],"tianliang":["以经验提供保护或指导","未经询问就替人作决定","先询问对方需要什么支持，再分享相关经验。"],"qisha":["在压力中独立行动","仓促作出难以撤回的决定","行动前明确目标、边界和暂停条件。"],"pojun":["试验改变，更新旧做法","未留后路就贸然推翻现状","在一小部分先做试验，并保留能恢复的方案。"]},"helpers":{"wenchang":["文昌 · 条理","通过有条理的记录和查证学习。试着先整理笔记，再作结论。"],"wenqu":["文曲 · 表达","注意语言、感受和表达方式。选择听者容易理解的例子。"],"zuofu":["左辅 · 协作","以合作和分工提供支持。先谈清彼此愿意承担的角色。"],"youbi":["右弼 · 陪伴","通过倾听和反馈获得支持，允许别人提供不同的视角。"],"tiankui":["天魁 · 指点","有经验的人可以提供参考。带着具体问题去请教。"],"tianyue":["天钺 · 援助","信任和联系有助于求助。能说清需要，也要尊重对方能提供的范围。"],"lucun":["禄存 · 储备","留意能够积累的物资和习惯，为必要开销保留余地。"],"qingyang":["擎羊 · 界限","态度明确可以守住界限，先核实情形再行动。"],"tuoluo":["陀罗 · 耐心","反复打磨常需要时间，设一个足够小的检查点。"],"tianma":["天马 · 流动","留意出行、迁移或生活节奏改变带来的需要，事先准备。"],"hongluan":["红鸾 · 亲近","温和而坦诚地建立连接，了解对方的现实想法。"],"tianxi":["天喜 · 同乐","留意共同庆祝和相处的机会，用心安排一段相聚时间。"],"nianjie":["年解 · 年度梳理","回顾今年尚待处理的事项，循序解决并记录进展。"]},"topics":{"personality":{"title":"个人方向","intro":"观察自己如何取舍、分配精力，并为变化留出空间。"},"career":{"title":"工作与事业","intro":"可以借此回顾技能、职责和合作方式。职位与经营结果仍取决于现实条件。"},"money":{"title":"金钱与资源","intro":"回顾当前习惯与计划。此处不承诺收益，也不推荐具体投资。"},"relationships":{"title":"沟通与关系","intro":"观察自己的态度与表达。此处不预测婚期、评价伴侣或断言分离。"}}};
+var XJ_CYCLE_COPY={"transforms":{"lu":{"label":"化禄 · 助力","reading":"留意眼前可得到的支持，核实机会是否符合自己的能力和需求。","action":"先以一个可承担的小承诺，试验一个现实的机会。"},"quan":{"label":"化权 · 担当","reading":"留意主动性、决定权与责任的范围。带领别人时，也要听取意见和分担工作。","action":"确认一项决定由谁负责，以及怎样听取不同意见。"},"ke":{"label":"化科 · 学习与认可","reading":"以证据、技能和清楚的表达建立信任。能否获得认可仍取决于实际情况。","action":"整理一项可展示的成果，请熟悉的人给出具体反馈。"},"ji":{"label":"化忌 · 需留意","reading":"需要更多耐心的习惯或问题值得及早看见。它不是灾难的预告。","action":"挑一处反复发生的困难，先作一个可执行的小调整。"}},"domains":{"self":{"focus":"个人方向与决策","action":"写下一个想坚持的价值观，再选一件这周能做到的小事。"},"siblings":{"focus":"同辈之间的分工","action":"把一件分工不清的事谈具体，约定何时一起检查进展。"},"partner":{"focus":"亲密关系中的约定","action":"先用自己的感受说出一项需要，再听对方说完。"},"children":{"focus":"照顾与指导","action":"选一次陪伴活动，先了解对方需要，再约定愿意提供的帮助。"},"wealth":{"focus":"财务与资源安排","action":"检查一周的收支和时间安排，选一项负担得起的调整。"},"wellbeing":{"focus":"作息与精力","action":"观察几天的作息，在两项责任之间留一段现实可行的休息。"},"travel":{"focus":"外出与适应","action":"为一次外出写下目的、时间、要准备的物品与可联系的人。"},"friends":{"focus":"朋友与合作","action":"在一次合作开始前，约定成果、分工，以及遇到困难时怎样沟通。"},"career":{"focus":"工作与成长","action":"选一个想改善的工作成果，安排一次小练习，找人给出反馈。"},"home":{"focus":"居所与家庭安排","action":"挑一项家务、维护或共同支出，与相关的人确认分工。"},"inner_life":{"focus":"内心安定与休息","action":"这周留出一段时间做一件能安定身心的小事，结束后记下感受。"},"parents":{"focus":"长辈与支持","action":"找一位信任的长辈听听经历，再辨别什么适合自己的处境。"}},"stars":{"ziwei":["统筹方向并妥善承担责任","事事都想由自己掌控","交出一项适合分担的责任，并就期望成果达成一致。"],"tianji":["有弹性地规划与比较办法","反复比较而延迟行动","为一个可逆的小决定设定期限，选出一种做法试行。"],"taiyang":["分享经验、主动照应别人","付出超出自己的精力","把可投入的时间说清楚，保留必要的休息。"],"wuqu":["务实执行、掌握进度","因目标太严格而忽略变化","选择一个可以核对的指标，同时定下调整计划的时间。"],"tiantong":["体谅他人、维护合作氛围","为了避免冲突而延后决定","温和地说明一件需要讨论的事，并约个时间谈清楚。"],"lianzhen":["辨明原则与界限","因情绪或坚持而难以协商","分清不能退让的原则与可以协商的做法。"],"tianfu":["稳妥管理已有资源","过度维持熟悉的安排","盘点可用资源，更新一项已经不合时宜的安排。"],"taiyin":["细心观察和准备","忧虑累积却难以说出口","写下一项观察，找合适的人核实自己的理解。"],"tanlang":["探索新兴趣、建立联系","同时作出过多承诺","选择一次范围明确的尝试，给自己留出回顾时间。"],"jumen":["提出问题、核对信息","质疑过多或言语造成误会","先用自己的话确认对方的意思，再陈述依据。"],"tianxiang":["协调需求、维护公平","为了求和而承担过多","公开确认合作中的分工与自己能承担的范围。"],"tianliang":["以经验提供保护或指导","未经询问就替人作决定","先询问对方需要什么支持，再分享相关经验。"],"qisha":["在压力中独立行动","仓促作出难以撤回的决定","行动前明确目标、边界和暂停条件。"],"pojun":["试验改变，更新旧做法","未留后路就贸然推翻现状","在一小部分先做试验，并保留能恢复的方案。"]},"helpers":{"wenchang":["文昌 · 条理","通过有条理的记录和查证学习。试着先整理笔记，再作结论"],"wenqu":["文曲 · 表达","注意语言、感受和表达方式。选择听者容易理解的例子"],"zuofu":["左辅 · 协作","以合作和分工提供支持。先谈清彼此愿意承担的角色"],"youbi":["右弼 · 陪伴","通过倾听和反馈获得支持，允许别人提供不同的视角"],"tiankui":["天魁 · 指点","有经验的人可以提供参考。带着具体问题去请教"],"tianyue":["天钺 · 援助","信任和联系有助于求助。能说清需要，也要尊重对方能提供的范围"],"lucun":["禄存 · 储备","留意能够积累的物资和习惯，为必要开销保留余地"],"qingyang":["擎羊 · 界限","态度明确可以守住界限，先核实情形再行动"],"tuoluo":["陀罗 · 耐心","反复打磨常需要时间，设一个足够小的检查点"],"tianma":["天马 · 流动","留意出行、迁移或生活节奏改变带来的需要，事先准备"],"hongluan":["红鸾 · 亲近","温和而坦诚地建立连接，了解对方的现实想法"],"tianxi":["天喜 · 同乐","留意共同庆祝和相处的机会，用心安排一段相聚时间"],"nianjie":["年解 · 年度梳理","回顾今年尚待处理的事项，循序解决并记录进展"]},"topics":{"personality":{"title":"个人方向","intro":"观察自己如何取舍、分配精力，并为变化留出空间。"},"career":{"title":"工作与事业","intro":"可以借此回顾技能、职责和合作方式。职位与经营结果仍取决于现实条件。"},"money":{"title":"金钱与资源","intro":"回顾当前习惯与计划。此处不承诺收益，也不推荐具体投资。"},"relationships":{"title":"沟通与关系","intro":"观察自己的态度与表达。此处不预测婚期、评价伴侣或断言分离。"}}};
 
 /* Paid report extension. Changes of period never call the account API. */
 function xjCycleStar(id){var s=xjStar(id),h=XJ_CYCLE_COPY.helpers[id];return s?s.label:(h?h[0]:"辅星");}
@@ -5298,7 +5535,7 @@ function xjCycleData(cur){
 function xjCycleTransforms(layer){
   return '<div class="xj-cycle-transforms">'+layer.transformations.map(function(t){
     var c=XJ_CYCLE_COPY.transforms[t.type];
-    return '<div class="xj-cycle-change"><b>'+esc(c.label)+'</b><span>'+esc(xjCycleStar(t.starId))+"</span><p>运限宫位："+esc(xjCyclePalace(t.periodPalaceId))+" ·本命宫位："+esc(xjCyclePalace(t.natalPalaceId))+'.</p><p>'+esc(c.reading)+'</p><small>'+esc(c.action)+'</small></div>';
+    return '<div class="xj-cycle-change"><b>'+esc(c.label)+'</b><span>'+esc(xjCycleStar(t.starId))+"</span><p>运限宫位："+esc(xjCyclePalace(t.periodPalaceId))+" · 本命宫位："+esc(xjCyclePalace(t.natalPalaceId))+"。</p><p>"+esc(c.reading)+'</p><small>'+esc(c.action)+'</small></div>';
   }).join('')+'</div>';
 }
 function xjCycleTopic(layer,key){
@@ -5308,7 +5545,7 @@ function xjCycleTopic(layer,key){
   if(t.source==='opposite')html+="<p class=\"xj-muted\">本宫无主星，参考对宫的"+esc(xjCyclePalace(t.sourcePalaceId))+"。本宫的其他星曜仍按原位解读。</p>";
   t.primaryStars.forEach(function(s){
     var c=XJ_CYCLE_COPY.stars[s.id];if(!c)return;
-    html+='<div class="xj-cycle-star"><b>'+esc(xjCycleStar(s.id))+'</b><p>'+(long?"从十年方向来看，":"就所选流年来看，")+"这组星曜提示你关注"+esc(c[0])+"。也请留意这样的倾向："+esc(c[1])+'.</p><p class="xj-muted">'+esc((xjStar(s.id)[key]||{}).reading||'')+"</p><div class=\"xj-action\"><b>可以试试：</b> "+esc(c[2])+'</div></div>';
+    html+='<div class="xj-cycle-star"><b>'+esc(xjCycleStar(s.id))+'</b><p>'+(long?"从十年方向来看，":"就所选流年来看，")+"这组星曜提示你关注"+esc(c[0])+"。也请留意这样的倾向："+esc(c[1])+"。</p><p class=\"xj-muted\">"+esc((xjStar(s.id)[key]||{}).reading||'')+"</p><div class=\"xj-action\"><b>可以试试：</b> "+esc(c[2])+'</div></div>';
   });
   if(!t.primaryStars.length)html+="<p>主星资料不足，无法作具体解读。请以现实情况为依据。</p>";
   if(t.relatedTransformations.length){
@@ -5327,22 +5564,22 @@ function xjCycleHouses(layer){
     var reference=major,opposite=layer.palaces.find(function(q){return q.branch===(p.branch+6)%12});
     if(!major.length&&opposite)reference=opposite.stars.filter(function(s){return s.type==='major'});
     var reading=reference.map(function(s){var c=XJ_CYCLE_COPY.stars[s.id];return c?'<p><b>'+esc(xjCycleStar(s.id))+":</b>围绕"+esc(domain.focus)+"，可以着重"+esc(c[0])+"。也请留意"+esc(c[1])+"。"+esc(c[2])+'</p>':'';}).join('');
-    return '<details class="xj-cycle-house" data-cycle-branch="'+p.branch+'"><summary>'+esc(xjCyclePalace(p.id))+" <small>本命："+esc(xjCyclePalace(p.natalPalaceId))+"</small></summary><p>思考方向："+esc(domain.focus)+'.</p><p>'+esc(domain.action)+"</p><p><b>本命星曜：</b> "+esc(major.length?major.map(function(s){return xjCycleStar(s.id)}).join(' · '):"本宫无主星，参考对宫："+xjCyclePalace(opposite.id)+"。")+'</p>'+reading+(p.transformations.length?"<p><b>运限四化：</b></p>"+p.transformations.map(function(t){var c=XJ_CYCLE_COPY.transforms[t.type];return '<p>'+esc(xjCycleStar(t.starId)+' · '+c.label)+"。"+esc(c.reading)+' '+esc(c.action)+'</p>';}).join(''):'')+(p.movingStars.length?"<p><b>其他星曜：</b> "+p.movingStars.map(function(s){var h=XJ_CYCLE_COPY.helpers[s.id];return esc(xjCycleStar(s.id)+(h?' — '+h[1]:''));}).join("；")+"。</p>":'')+'</details>';
+    return '<details class="xj-cycle-house" data-cycle-branch="'+p.branch+'"><summary>'+esc(xjCyclePalace(p.id))+" <small>本命："+esc(xjCyclePalace(p.natalPalaceId))+"</small></summary><p>思考方向："+esc(domain.focus)+"。</p><p>"+esc(domain.action)+"</p><p><b>本命星曜：</b> "+esc(major.length?major.map(function(s){return xjCycleStar(s.id)}).join(' · '):"本宫无主星，参考对宫："+xjCyclePalace(opposite.id)+"。")+'</p>'+reading+(p.transformations.length?"<p><b>运限四化：</b></p>"+p.transformations.map(function(t){var c=XJ_CYCLE_COPY.transforms[t.type];return '<p>'+esc(xjCycleStar(t.starId)+' · '+c.label)+"。"+esc(c.reading)+' '+esc(c.action)+'</p>';}).join(''):'')+(p.movingStars.length?"<p><b>其他星曜：</b> "+p.movingStars.map(function(s){var h=XJ_CYCLE_COPY.helpers[s.id];return esc(xjCycleStar(s.id)+(h?' — '+h[1]:''));}).join("；")+"。</p>":'')+'</details>';
   }).join('')+'</div></details>';
 }
 function xjCycleCombined(r){
   if(!r.decade)return "<div class=\"xj-cycle-combined\"><h4>起限之前</h4><p>虚岁"+r.age+"尚未进入第一个十年大限。这个阶段可单独查看流年。为孩子阅读时，可从日常照顾和陪伴的角度理解。</p></div>";
   var d=r.decade.topics.personality,a=r.annual.topics.personality;
-  var html="<div class=\"xj-cycle-combined\"><h4>大限与流年的联系"+r.year+"</h4><p>这一大限着重于"+esc(xjCycleDomain(d.natalPalaceId).focus)+"。所选流年则着重于"+esc(xjCycleDomain(a.natalPalaceId).focus)+"。"+(d.branch===a.branch?"两者指向同一宫位，可以结合当年的经历，重新审视这一阶段的方向。":"当年的关注点可能与十年的方向不同，可以根据现实需要调整眼前的优先次序。")+'</p><div class="xj-action">'+esc(xjCycleDomain(a.natalPalaceId).action)+'</div>';
+  var html="<div class=\"xj-cycle-combined\"><h4>"+r.year+"年流年与大限的联系</h4><p>这一大限着重于"+esc(xjCycleDomain(d.natalPalaceId).focus)+"。所选流年则着重于"+esc(xjCycleDomain(a.natalPalaceId).focus)+"。"+(d.branch===a.branch?"两者指向同一宫位，可以结合当年的经历，重新审视这一阶段的方向。":"当年的关注点可能与十年的方向不同，可以根据现实需要调整眼前的优先次序。")+'</p><div class="xj-action">'+esc(xjCycleDomain(a.natalPalaceId).action)+'</div>';
   if(r.overlaps.length)html+="<details class=\"xj-help\"><summary>大限与流年四化的交集</summary><p>下列标记落在同一本命宫位。获得支持与需要花心思处理的事可以并存，无须给年份排吉凶。</p><ul>"+r.overlaps.map(function(o){return '<li>'+esc(xjCyclePalace(o.natalPalaceId))+"："+esc(xjCycleStar(o.decadeStarId))+' — '+esc(XJ_CYCLE_COPY.transforms[o.decadeType].label)+" （大限）；"+esc(xjCycleStar(o.annualStarId))+' — '+esc(XJ_CYCLE_COPY.transforms[o.annualType].label)+" （流年）。</li>";}).join('')+'</ul></details>';
   return html+'</div>';
 }
 function xjCycleLayerHTML(r,mode){
   var layer=mode==='decade'?r.decade:r.annual,period=r.periods[r.decadeIndex];
   if(!layer)return xjCycleCombined(r);
-  var heading=mode==='decade'?"大限"+period.startYear+'–'+period.endYear:"流年解读"+r.year;
+  var heading=mode==='decade'?period.startYear+'–'+period.endYear+'年大限':r.year+'年流年解读';
   var focus=layer.topics.personality;
-  var html='<div class="xj-cycle-reading" data-cycle-layer="'+mode+'"><h3>'+esc(heading)+'</h3><p class="xj-muted">'+(mode==='decade'?"虚岁"+period.startAge+'–'+period.endAge+"，这一大限共包含十个农历年。":"适用日期"+xjCycleDate(r.dates.start)+"至"+xjCycleDate(r.dates.end)+" ·虚岁"+r.age+"。")+"</p><div class=\"xj-cycle-focus\"><b>主要主题</b><p>这一阶段着重于"+esc(xjCycleDomain(focus.natalPalaceId).focus)+"。"+(mode==='decade'?"循序建立习惯，每年回顾一次方向。":"选一个力所能及的重点，年内定期检查进展。")+'</p></div>';
+  var html='<div class="xj-cycle-reading" data-cycle-layer="'+mode+'"><h3>'+esc(heading)+'</h3><p class="xj-muted">'+(mode==='decade'?"虚岁"+period.startAge+'–'+period.endAge+"，这一大限共包含十个农历年。":"适用日期："+xjCycleDate(r.dates.start)+"至"+xjCycleDate(r.dates.end)+" · 虚岁"+r.age+"。")+"</p><div class=\"xj-cycle-focus\"><b>主要主题</b><p>这一阶段着重于"+esc(xjCycleDomain(focus.natalPalaceId).focus)+"。"+(mode==='decade'?"循序建立习惯，每年回顾一次方向。":"选一个力所能及的重点，年内定期检查进展。")+'</p></div>';
   if(mode==='annual')html+=xjCycleCombined(r);
   html+="<h4 class=\"xj-cycle-subhead\">四化主题</h4>"+xjCycleTransforms(layer);
   ['personality','career','money','relationships'].forEach(function(key){html+=xjCycleTopic(layer,key);});
@@ -5359,10 +5596,10 @@ function xjCyclesHTML(cur,forExport){
   var r=xjCycleData(cur),state=XJ.cycleState;
   var html='<section class="xj-cycles"'+(forExport?'':' id="xjCycles"')+"><div class=\"xj-eyebrow\">玄机·运限解读</div><h2>十年大限与流年</h2><p>从出生资料排出的命盘，了解较长阶段的主题与每一年的关注点。传统象征供你反思，现实选择由你自己作主。</p>";
   if(forExport){
-    html+="<p>此副本包含下载时选定的大限与流年："+r.year+"。回到网站可切换其他年份，已解锁的报告无需再次扣积分。</p>"+xjCycleLayerHTML(r,'decade')+xjCycleLayerHTML(r,'annual')+xjCycleTimeline(r,false);
+    html+="<p>此副本包含下载时选定的大限与流年："+r.year+"。回到网站可切换其他年份，已解锁的报告无需再次扣积分。</p>"+(r.decade?xjCycleLayerHTML(r,'decade'):'')+xjCycleLayerHTML(r,'annual')+xjCycleTimeline(r,false);
   }else{
     var years='';for(var y=r.minYear;y<=r.maxYear;y++)years+='<option value="'+y+'"'+(y===r.year?' selected':'')+'>'+y+'</option>';
-    var options='<option value="-1"'+(r.childhood?' selected':'')+">起限前· "+r.minYear+'–'+(r.periods[0].startYear-1)+'</option>'+r.periods.map(function(p){return '<option value="'+p.index+'"'+(p.index===r.decadeIndex?' selected':'')+'>'+p.startYear+'–'+p.endYear+" ·虚岁"+p.startAge+'–'+p.endAge+'</option>';}).join('');
+    var options='<option value="-1"'+(r.childhood?' selected':'')+">起限前· "+r.minYear+'–'+(r.periods[0].startYear-1)+'</option>'+r.periods.map(function(p){return '<option value="'+p.index+'"'+(p.index===r.decadeIndex?' selected':'')+'>'+p.startYear+'–'+p.endYear+" · 虚岁"+p.startAge+'–'+p.endAge+'</option>';}).join('');
     html+="<p class=\"xj-muted\">完整报告已包含此功能，切换大限或流年无需另付积分。</p><div class=\"xj-cycle-controls\"><label for=\"xjCyclePeriod\">选择大限<select id=\"xjCyclePeriod\">"+options+"</select></label><label for=\"xjCycleYear\">农历年份<select id=\"xjCycleYear\">"+years+'</select></label></div><div class="xj-cycle-navigation"><button type="button" id="xjCyclePrev" class="acc-mini"'+(r.year===r.minYear?' disabled':'')+" aria-label=\"上一年\">←上一年</button><button type=\"button\" id=\"xjCycleNow\" class=\"acc-mini\""+(r.currentYear<r.minYear||r.currentYear>r.maxYear?' disabled':'')+">今年</button><button type=\"button\" id=\"xjCycleNext\" class=\"acc-mini\""+(r.year===r.maxYear?' disabled':'')+">下一年→</button></div><div class=\"xj-cycle-views\" role=\"group\" aria-label=\"选择运限类型\"><button type=\"button\" data-cycle-mode=\"decade\" aria-pressed=\""+(state.mode==='decade')+"\">十年大限</button><button type=\"button\" data-cycle-mode=\"annual\" aria-pressed=\""+(state.mode==='annual')+"\">流年· "+r.year+'</button></div><div id="xjCycleStatus" class="xj-muted" role="status">'+(r.childhood?"尚未进入第一个十年大限。":"大限"+r.periods[r.decadeIndex].startYear+'–'+r.periods[r.decadeIndex].endYear+" ·年份"+r.year)+"。"+(r.currentYear>r.maxYear?"今年已超出十二个大限的范围，当前显示可查看的最后一年。":'')+'</div>'+xjCycleLayerHTML(r,state.mode)+xjCycleTimeline(r,true);
   }
   html+="<details class=\"xj-help\"><summary>运限如何计算</summary><p>流年从农历正月初一开始。虚岁出生时计一岁，此后每逢农历新年加一岁。十年大限依命盘的传统规则排序。</p><p>流年宫位从当年地支起算，大限四化由大限宫干推算，流年四化由流年天干推算。本命星曜保留原位，运限标记另列。</p><p>健康、家庭与关系宫位仅供理解传统象征。诊疗、择偶或人生决定，请结合实际经历及适当的专业意见。</p></details></section>";
@@ -5421,7 +5658,7 @@ function xjPatternsHTML(cur){
   var relation={self:"命宫",trine:"相隔四宫的关联宫位",opposite:"对宫",adjacent_before:"命宫前一宫",adjacent_after:"命宫后一宫"};
   var html="<section class=\"xj-patterns\"><h3>你的星曜组合</h3><p class=\"xj-muted\">下列组合按本盘实际星位检出，可用于理解星曜关系。组合数量和名称无法衡量个人价值，也不能保证结果。</p>";
   if(!patterns.length)return html+"<p>本盘没有匹配到目前提供的十种组合。每张命盘都可以从各宫的星曜和关联宫位继续阅读。</p></section>";
-  return html+'<div class="xj-pattern-grid">'+patterns.map(function(p){var c=XJ_PATTERN_COPY[p.id];if(!c)return '';return '<article class="xj-pattern" data-pattern="'+esc(p.id)+'"><h4>'+esc(c.label)+'</h4><p>'+esc(c.meaning)+'</p><p class="xj-action">'+esc(c.action)+"</p><details class=\"xj-help\"><summary>查看匹配条件</summary><p>"+esc(c.condition)+'</p><ul>'+p.evidence.map(function(e){return '<li>'+esc(xjDepthStar(e.starId).label)+' · '+esc(xjCyclePalace(e.palaceId))+"（"+esc(relation[e.relation]||"本命位置")+')'+(e.transformation?' · '+esc(XJ_CYCLE_COPY.transforms[e.transformation].label):'')+'.</li>';}).join('')+'</ul></details></article>';}).join('')+"</div><p class=\"xj-muted\">匹配按星曜的原始位置计算，不计从对宫参考的主星。这里收录部分结构组合，供理解排盘方式。</p></section>";
+  return html+'<div class="xj-pattern-grid">'+patterns.map(function(p){var c=XJ_PATTERN_COPY[p.id];if(!c)return '';return '<article class="xj-pattern" data-pattern="'+esc(p.id)+'"><h4>'+esc(c.label)+'</h4><p>'+esc(c.meaning)+'</p><p class="xj-action">'+esc(c.action)+"</p><details class=\"xj-help\"><summary>查看匹配条件</summary><p>"+esc(c.condition)+'</p><ul>'+p.evidence.map(function(e){return '<li>'+esc(xjDepthStar(e.starId).label)+' · '+esc(xjCyclePalace(e.palaceId))+"（"+esc(relation[e.relation]||"本命位置")+"）"+(e.transformation?' · '+esc(XJ_CYCLE_COPY.transforms[e.transformation].label):'')+"。</li>";}).join('')+'</ul></details></article>';}).join('')+"</div><p class=\"xj-muted\">匹配按星曜的原始位置计算，不计从对宫参考的主星。这里收录部分结构组合，供理解排盘方式。</p></section>";
 }
 function xjDepthHouse(cur,branch,forExport){
   var chart=cur.calc.chart,p=chart.palaces.find(function(q){return q.branch===branch}),d=XJ_DEPTH_COPY.domains[p.id];
@@ -5452,7 +5689,7 @@ function xjCompareData(cur){
 }
 function xjCompareYear(r){
   var p=r.periods[r.decadeIndex];
-  return '<article class="xj-compare-year" data-comparison-year="'+r.year+"\"><div class=\"xj-eyebrow\">农历年份</div><h3>"+r.year+'</h3><p class="xj-muted">'+xjCycleDate(r.dates.start)+' – '+xjCycleDate(r.dates.end)+'</p><p>'+ (p?"大限"+p.startYear+'–'+p.endYear+" ·虚岁"+r.age:"起限前·虚岁"+r.age)+"</p><h4>主要关注点</h4><p>"+esc(xjCycleDomain(r.annual.topics.personality.natalPalaceId).focus)+'.</p><div class="xj-action">'+esc(xjCycleDomain(r.annual.topics.personality.natalPalaceId).action)+"</div><h4>流年四化</h4><ul>"+r.annual.transformations.map(function(t){return '<li><b>'+esc(XJ_CYCLE_COPY.transforms[t.type].label)+"：</b>"+esc(xjCyclePalace(t.periodPalaceId))+' · '+esc(xjDepthStar(t.starId).label)+'</li>';}).join('')+'</ul></article>';
+  return '<article class="xj-compare-year" data-comparison-year="'+r.year+"\"><div class=\"xj-eyebrow\">农历年份</div><h3>"+r.year+'</h3><p class="xj-muted">'+xjCycleDate(r.dates.start)+' – '+xjCycleDate(r.dates.end)+'</p><p>'+ (p?"大限"+p.startYear+'–'+p.endYear+" · 虚岁"+r.age:"起限前·虚岁"+r.age)+"</p><h4>主要关注点</h4><p>"+esc(xjCycleDomain(r.annual.topics.personality.natalPalaceId).focus)+"。</p><div class=\"xj-action\">"+esc(xjCycleDomain(r.annual.topics.personality.natalPalaceId).action)+"</div><h4>流年四化</h4><ul>"+r.annual.transformations.map(function(t){return '<li><b>'+esc(XJ_CYCLE_COPY.transforms[t.type].label)+"：</b>"+esc(xjCyclePalace(t.periodPalaceId))+' · '+esc(xjDepthStar(t.starId).label)+'</li>';}).join('')+'</ul></article>';
 }
 function xjCompareHTML(cur,forExport){
   var rows=xjCompareData(cur),a=rows[0],b=rows[1],state=xjDepthState(cur);
@@ -5460,7 +5697,7 @@ function xjCompareHTML(cur,forExport){
   var html='<section class="xj-compare"'+(forExport?'':' id="xjCompare"')+"><div class=\"xj-eyebrow\">观察变化</div><h2>对比两个年份</h2><p>并排查看两个年份的主题与星曜，可以为各年拟定不同的问题和行动。</p>";
   if(!forExport)html+="<div class=\"xj-compare-controls\"><label for=\"xjCompareA\">第一个年份<select id=\"xjCompareA\">"+options(state.yearA)+"</select></label><label for=\"xjCompareB\">第二个年份<select id=\"xjCompareB\">"+options(state.yearB)+'</select></label></div>';
   html+='<p class="xj-muted"'+(forExport?'':' role="status"')+'>'+(a.year===b.year?"两个选项是同一年，所以解读相同。"+(forExport?'':"请选择不同年份来观察变化。"):a.childhood&&b.childhood?"这两年都在第一个十年大限之前，可分别查看流年。":a.childhood||b.childhood?"其中一年在起限之前，另一年已进入十年大限。":a.decadeIndex===b.decadeIndex?"这两年处于同一个大限。":"这两年处于不同的大限，分别采用各自对应的十年背景。")+'</p><div class="xj-compare-grid">'+rows.map(xjCompareYear).join('')+"</div><h3>四个主题对照</h3><div class=\"xj-compare-topics\">";
-  XJ_TOPICS.forEach(function(topic){var x=a.annual.topics[topic[0]],y=b.annual.topics[topic[0]];html+='<section><h4>'+esc(topic[2])+'</h4><div class="xj-compare-grid">'+[[a,x],[b,y]].map(function(pair){var r=pair[0],t=pair[1];return '<div><b>'+r.year+"</b><p>所在本命宫："+esc(xjCyclePalace(t.natalPalaceId))+'.</p><p>'+esc(t.primaryStars.map(function(s){return xjDepthStar(s.id).label}).join(' · ')||"本宫无主星")+'</p>'+(t.source==='opposite'?"<small>主星参考自对宫。</small>":'')+'<p class="xj-muted">'+esc(xjCycleDomain(t.natalPalaceId).action)+'</p></div>';}).join('')+'</div></section>';});
+  XJ_TOPICS.forEach(function(topic){var x=a.annual.topics[topic[0]],y=b.annual.topics[topic[0]];html+='<section><h4>'+esc(topic[2])+'</h4><div class="xj-compare-grid">'+[[a,x],[b,y]].map(function(pair){var r=pair[0],t=pair[1];return '<div><b>'+r.year+"</b><p>所在本命宫："+esc(xjCyclePalace(t.natalPalaceId))+"。</p><p>"+esc(t.primaryStars.map(function(s){return xjDepthStar(s.id).label}).join(' · ')||"本宫无主星")+'</p>'+(t.source==='opposite'?"<small>主星参考自对宫。</small>":'')+'<p class="xj-muted">'+esc(xjCycleDomain(t.natalPalaceId).action)+'</p></div>';}).join('')+'</div></section>';});
   return html+"</div><p class=\"xj-muted\">切换年份无需积分。想深入了解某一年，可前往“大限与流年”。</p></section>";
 }
 function xjDepthReport(cur,forExport){
@@ -5633,7 +5870,7 @@ function xjMapHTML(calc){
     var tags=(p.isSelf?"<span class=\"xj-chart-tag\">命宫</span>":'')+(p.isBody?"<span class=\"xj-chart-tag\">身宫</span>":'');
     var labels=stars.length?stars.map(function(s){return '<span>'+esc(xjStarLabel(s.id))+(s.transformation?'<em>'+esc(transformations[s.transformation]||'')+'</em>':'')+'</span>';}).join(''):"<span>本宫无主星</span>";
     var detail=stars.map(function(s){var copy=xjStar(s.id);return '<p><b>'+esc(xjStarLabel(s.id))+'</b><br>'+esc(copy?copy.meaning:'')+(brightness[s.brightness]?"<br><small>星曜状态："+esc(brightness[s.brightness])+'</small>':'')+'</p>';}).join('');
-    if(!stars.length)detail="<p>参考宫位："+esc(XJ_PALACES[p.borrowedFromPalaceId]||XJ_PALACES[(list.find(function(q){return q.branch===p.oppositeBranch})||{}).id]||"。")+"。这一星曜结构无关个人优劣。</p>";
+    if(!stars.length)detail="<p>参考宫位："+esc(XJ_PALACES[p.borrowedFromPalaceId]||XJ_PALACES[(list.find(function(q){return q.branch===p.oppositeBranch})||{}).id]||"对宫")+"。这一星曜结构无关个人优劣。</p>";
     return '<details class="xj-palace'+(p.isSelf?' xj-self':'')+'" data-branch="'+branch+'" style="grid-row:'+positions[index][0]+';grid-column:'+positions[index][1]+'"><summary><b>'+esc(XJ_PALACES[p.id]||"命盘宫位")+'</b>'+tags+'<span class="xj-chart-stars">'+labels+"</span><small class=\"xj-chart-hint\">查看星曜+</small></summary><div class=\"xj-palace-detail\">"+detail+'</div></details>';
   }).join('');
   return "<section class=\"xj-chart\"><div class=\"xj-chart-heading\"><h3>你的玄机命盘</h3><span>十二宫·十四主星</span></div><p class=\"xj-muted\">按你的出生日期、时间和地点排盘。点选宫位即可查看其中的星曜及中文释义。</p><div class=\"xj-map xj-chart-grid\">"+center+cells+"</div><p class=\"xj-muted\">命宫是观察个人倾向的传统位置，身宫用来观察行动倾向。星曜供你反思，无法衡量个人价值。</p></section>";
@@ -5980,10 +6217,38 @@ async function showInvitePanel(){
   if(!ACC.uid){authOpen('login');return;}var uid=ACC.uid,seq=++RRA.seq,q=$('#quotaModal'),title=$('#quotaTitle'),msg=$('#quotaMsg'),btns=$('#quotaBtns');title.textContent='邀请好友，领取积分';msg.textContent='正在加载邀请码和奖励状态…';btns.innerHTML='';q.style.display='flex';
   try{await rrClaimRewards(uid);var results=await Promise.all([sbApi('/rest/v1/rpc/get_my_invite_code','POST',{},uid),sbApi('/rest/v1/rpc/get_my_reward_state','POST',{},uid)]);if(uid!==ACC.uid||seq!==RRA.seq)return;
     if(!results[0].ok)throw new Error('request');var code=(await results[0].text()).replace(/[^A-Za-z0-9]/g,'').toUpperCase().slice(0,8),state=results[1].ok?await results[1].json():null;if(uid!==ACC.uid||seq!==RRA.seq)return;if(!/^[A-Z0-9]{6,8}$/.test(code))throw new Error('code');
-    var share='来玄机阁看看你的命盘吧！我的邀请码是 '+code+'。新用户验证邮箱并首次解梦后，我们各获 1 积分。每位邀请人每月最多可获得 10 次邀请奖励。'+RRA_SITE;
+    var share='来玄机阁看看你的命盘吧！我的邀请码是 '+code+'。新用户验证邮箱并首次解梦后，我们各获 1 积分。每位邀请人每月最多可获得 10 次邀请奖励。'+'\n'+RRA_SITE+'?lang=zh';
     msg.innerHTML='把邀请码分享给新朋友：<br><span class="invite-code" id="invCode">'+esc(code)+'</span><p>好友验证邮箱并首次解梦后，你们各获 <b>1 积分</b>。每位邀请人<b>每月最多可获得 10 次奖励</b>（按雅加达时间计算）。仅分享链接不会获得积分。</p>'+rrRewardHTML(state);
     btns.innerHTML='<button class="btn" id="qCopyInvite">复制邀请文案</button><button class="btn ghost" id="qInviteBack">账号与记录</button>';
-    $('#qCopyInvite').onclick=function(){copyText(share);this.textContent='已复制邀请文案'};$('#qInviteBack').onclick=function(){q.style.display='none';rrAccountOpen()};accRender();
+    $('#qCopyInvite').onclick=async function(){
+      var button=this;
+      button.disabled=true;
+      var copied=await copyText(share);
+      button.disabled=false;
+      if(!button.isConnected || uid!==ACC.uid || q.style.display==='none')return;
+      var manual=msg.querySelector('[data-invite-manual]');
+      if(copied){
+        if(manual)manual.remove();
+        button.textContent='已复制邀请文案';
+        return;
+      }
+      button.textContent='重新复制';
+      if(!manual){
+        manual=document.createElement('label');
+        manual.setAttribute('data-invite-manual','');
+        manual.textContent='复制未成功。请选中下方的邀请文案，手动复制。';
+        var field=document.createElement('textarea');
+        field.className='m-inp';
+        field.readOnly=true;
+        field.rows=4;
+        field.value=share;
+        manual.appendChild(field);
+        msg.appendChild(manual);
+      }
+      var selection=manual.querySelector('textarea');
+      selection.focus();
+      selection.select();
+    };$('#qInviteBack').onclick=function(){q.style.display='none';rrAccountOpen()};accRender();
   }catch(e){if(uid===ACC.uid&&seq===RRA.seq){msg.textContent='暂时无法加载邀请码，请检查网络后重试。';btns.innerHTML='<button class="btn" id="qInviteRetry">重试</button>';$('#qInviteRetry').onclick=showInvitePanel;}}
 }
 function rrAccountAuthChanged(){
@@ -6328,6 +6593,7 @@ rrEntryInit();
     script.textContent = source.textContent;
     document.body.appendChild(script);
   });
+  window.rrLanguageReady();
   document.querySelectorAll('script[type="text/plain"][id^="rr-"]').forEach(el => el.remove());
 })();
 </script>
