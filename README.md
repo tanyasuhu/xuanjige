@@ -1,12 +1,16 @@
 # Xuanji · Rumah Rahasia
 
-Versi 2026-11-12-bilingual-review.2.
+Versi 2026-11-12-personal-calendar.
 
 **Bahasa Indonesia / 简体中文**
 
 Di beranda, pilih **中文** untuk memakai bahasa Mandarin Sederhana. Pilih **Bahasa Indonesia** untuk kembali. Browser ini mengingat pilihan bahasa Anda.
 
 在首页右上角轻点 **中文** 即可切换到简体中文。轻点 **Bahasa Indonesia** 可以切回印尼语。当前浏览器会记住你的选择。
+
+Hari Baik menyediakan kalender umum serta pencarian gratis menurut acara, bulan, hari dalam pekan, dan shio peserta. Anda bisa langsung memilih shio atau memakai tanggal lahir Masehi untuk mencari dan mengonfirmasinya di perangkat. Tanggal pilihan dapat disimpan atau diekspor ke kalender.
+
+择日支持免费通用查询，也可以按婚礼、搬家或开业选择月份、可用星期和参与者生肖。可直接选生肖，或在本机输入公历生日换算并确认。每个候选日期会解释入选原因，支持收藏和加入日历。
 
 Buka [Xuanji](https://tanyasuhu.github.io/xuanjige/). Formulir kelahiran kini memisahkan **Indonesia** dan **Tiongkok**. Pilih negara/wilayah, provinsi/wilayah, lalu kota kelahiran. Pilihan Indonesia yang sudah ada tetap tersedia; pilihan Tiongkok mencakup kota-kota utama, tambahan di Guangdong dan Fujian, serta Hong Kong, Makau, dan Taiwan sebagai pilihan geografis.
 

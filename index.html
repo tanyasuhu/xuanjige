@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumah Rahasia · Xuanji, Hari Baik, Mimpi, Suhu</title>
-<meta name="rr-version" content="2026-11-12-bilingual-review.2">
+<meta name="rr-version" content="2026-11-12-personal-calendar">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230b0616'/%3E%3Cpath d='M50 8a42 42 0 0 1 0 84 21 21 0 0 1 0-42 21 21 0 0 0 0-42z' fill='%23d9b45b'/%3E%3Ccircle cx='50' cy='29' r='6' fill='%230b0616'/%3E%3Ccircle cx='50' cy='71' r='6' fill='%23d9b45b'/%3E%3C/svg%3E">
 <style>
 /* ========== 基础 ========== */
@@ -850,6 +850,234 @@ html[lang="zh-CN"] .rr-hero h1, html[lang="zh-CN"] .rr-brand-name {
   .rr-service svg { width: 18px; height: 18px; }
 }
 </style>
+<style>
+#pcModeGroup {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 4px;
+  padding: 4px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(16,10,25,.8);
+}
+#pcModeGroup button, #pcPanel button, #pcPanel select, #pcPanel input {
+  font: inherit;
+  box-sizing: border-box;
+}
+#pcModeGroup button {
+  min-height: 42px;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text2);
+  font-size: 14px;
+  cursor: pointer;
+}
+#pcModeGroup button[aria-pressed="true"] {
+  color: #21152a;
+  border-color: #ecd9b2;
+  background: linear-gradient(115deg,#e3ca99,#d5b077);
+  font-weight: 650;
+}
+#pcPanel[hidden], #xzCard[hidden], #pcPanel [hidden] { display: none !important; }
+#pcPanel {
+  padding: clamp(14px,3vw,26px);
+  color: var(--text);
+}
+#pcPanel h3, #pcPanel h4, #pcPanel h5 { line-height: 1.4; color: var(--gold-hi); margin: 0; letter-spacing: 0; }
+#pcPanel h3 { font-size: 21px; font-family: var(--serif); }
+#pcPanel h4 { font-size: 17px; margin: 3px 0 8px; }
+#pcPanel h5 { font-size: 16px; }
+#pcPanel form { margin-top: 14px; }
+#pcPanel fieldset { margin: 16px 0 0; padding: 0; min-width: 0; border: 0; }
+#pcPanel label, #pcPanel legend { font-size: 14px; font-weight: 600; }
+#pcPanel legend { padding: 0; }
+#pcPanel .pc-plans { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+#pcPanel select, #pcPanel input[type="date"] {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #f1e8dc;
+  background: #21172c;
+  border: 1px solid #6c5677;
+  border-radius: 7px;
+  color-scheme: dark;
+}
+#pcPanel .pc-help, #pcPanel #pcStatus, #pcPanel .pc-reasons { font-size: 13px; line-height: 1.55; color: #d9cbdc; }
+#pcPanel .pc-help { margin: 4px 0 9px; }
+#pcPanel .pc-presets, #pcPanel .pc-week { display: flex; flex-wrap: wrap; gap: 5px; }
+#pcPanel .pc-presets { margin: 4px 0; }
+#pcPanel .pc-presets button, #pcPanel .pc-link, #pcPanel .pc-confirm {
+  min-height: 40px;
+  padding: 5px 7px;
+  border-radius: 5px;
+  color: var(--gold-hi);
+  font-size: 13px;
+  cursor: pointer;
+}
+#pcPanel .pc-presets button, #pcPanel .pc-link { border: 0; background: transparent; text-align: start; }
+#pcPanel .pc-presets button[aria-pressed="true"], #pcPanel .pc-link { text-decoration: underline; text-underline-offset: 3px; }
+#pcPanel .pc-week label { position: relative; display: block; cursor: pointer; }
+#pcPanel .pc-week input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+#pcPanel .pc-week span {
+  display: grid; place-items: center;
+  min-width: 40px; min-height: 40px;
+  padding: 3px 7px; border: 1px solid #695671; border-radius: 7px;
+  background: #1c1425; color: #d2c5d6; font-size: 13px;
+}
+#pcPanel .pc-week input:checked + span { border-color: #d9b775; color: #f6d99f; background: #37293c; box-shadow: inset 0 -2px 0 #b68e54; }
+#pcPanel :focus-visible, #pcModeGroup button:focus-visible,
+#pcPanel .pc-week input:focus-visible + span { outline: 2px solid var(--gold-hi); outline-offset: 2px; }
+#pcPanel #pcParticipants { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); gap: 10px; }
+#pcPanel .pc-person {
+  min-width: 0; padding: 11px 12px 5px; background: rgba(12,7,20,.45);
+  border: 1px solid rgba(183,151,171,.27); border-radius: 10px;
+}
+#pcPanel .pc-link { padding-inline: 0; }
+#pcPanel .pc-birth { padding: 6px 0 9px; border-top: 1px solid var(--border); }
+#pcPanel .pc-confirm { background: #34263a; border: 1px solid #967c54; }
+#pcPanel #pcSearch {
+  min-height: 44px; padding: 9px 18px; margin-top: 16px; font-weight: 650; font-size: 15px;
+  color: #23182a; border: 1px solid #e2c48e; border-radius: 8px; background: linear-gradient(120deg,#e5cb98,#d1ac76); cursor: pointer;
+}
+#pcPanel #pcStatus { margin: 7px 0 0; color: #efd398; }
+#pcPanel #pcStatus:empty { margin: 0; }
+#pcPanel .pc-screen-reader { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#pcPanel #pcResults:not(:empty) { margin-top: 16px; scroll-margin-top: 10px; }
+#pcPanel .pc-date { padding: 13px 14px; border: 1px solid #67506e; background: #21172b; border-radius: 10px; margin: 8px 0; }
+#pcPanel .pc-reasons { margin: 6px 0 8px; padding-inline-start: 1.4em; }
+#pcPanel .pc-reasons li + li { margin-top: 2px; }
+#pcPanel .pc-date .rr-day-actions button { font-size: 13px; }
+@media (max-width: 500px) {
+  #pcPanel .pc-plans, #pcPanel #pcParticipants { grid-template-columns: minmax(0,1fr); }
+  #pcPanel .pc-week span { min-width: 36px; padding-inline: 5px; }
+  #pcModeGroup { display: flex; }
+  #pcModeGroup button { flex: 1 1 auto; padding-inline: 8px; }
+  #pcPanel #pcSearch { width: 100%; }
+}
+
+</style>
+<script>
+/* Personal date selection uses the same event rules and calendar as the free almanac.
+   No personal information is written to storage or requested from a server. */
+var RRPersonalCalendar = (function () {
+  'use strict';
+
+  const firstYear = 1900;
+  // Gregorian MMDD of Lunar New Year, 1900–2100. Generated and checked against
+  // Lunar.fromYmd(year, 1, 1).getSolar() from the shipped lunar-javascript 1.7.7.
+  const newYearDates = [
+    131, 219, 208, 129, 216, 204, 125, 213, 202, 122,
+    210, 130, 218, 206, 126, 214, 203, 123, 211, 201,
+    220, 208, 128, 216, 205, 124, 213, 202, 123, 210,
+    130, 217, 206, 126, 214, 204, 124, 211, 131, 219,
+    208, 127, 215, 205, 125, 213, 202, 122, 210, 129,
+    217, 206, 127, 214, 203, 124, 212, 131, 218, 208,
+    128, 215, 205, 125, 213, 202, 121, 209, 130, 217,
+    206, 127, 215, 203, 123, 211, 131, 218, 207, 128,
+    216, 205, 125, 213, 202, 220, 209, 129, 217, 206,
+    127, 215, 204, 123, 210, 131, 219, 207, 128, 216,
+    205, 124, 212, 201, 122, 209, 129, 218, 207, 126,
+    214, 203, 123, 210, 131, 219, 208, 128, 216, 205,
+    125, 212, 201, 122, 210, 129, 217, 206, 126, 213,
+    203, 123, 211, 131, 219, 208, 128, 215, 204, 124,
+    212, 201, 122, 210, 130, 217, 206, 126, 214, 202,
+    123, 211, 201, 219, 208, 128, 215, 204, 124, 212,
+    202, 121, 209, 129, 217, 205, 126, 214, 203, 123,
+    211, 131, 219, 207, 127, 215, 205, 124, 212, 202,
+    122, 209, 129, 217, 206, 126, 214, 203, 124, 210,
+    130, 218, 207, 127, 215, 205, 125, 212, 201, 121,
+    209
+  ];
+
+  function pad(value) {
+    return String(value).padStart(2, '0');
+  }
+
+  function todayISO() {
+    const now = new Date();
+    return now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+  }
+
+  function validDate(iso) {
+    if (typeof iso !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return false;
+    const date = new Date(iso + 'T00:00:00Z');
+    return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === iso;
+  }
+
+  function birthSign(birthday, today = todayISO()) {
+    if (!validDate(birthday) || !validDate(today) || birthday > today) return null;
+    const year = Number(birthday.slice(0, 4));
+    const newYear = newYearDates[year - firstYear];
+    if (!newYear) return null;
+    const monthDay = Number(birthday.slice(5, 7)) * 100 + Number(birthday.slice(8));
+    const lunarYear = monthDay < newYear ? year - 1 : year;
+    return (lunarYear - 4) % 12;
+  }
+
+  function months(today = todayISO()) {
+    if (!validDate(today)) return [];
+    const year = Number(today.slice(0, 4));
+    const month = Number(today.slice(5, 7));
+    const available = [];
+    for (let offset = 0; offset < 12; offset++) {
+      const lastDay = new Date(Date.UTC(year, month + offset, 0)).toISOString().slice(0, 10);
+      if (lastDay > today) available.push(lastDay.slice(0, 7));
+    }
+    return available;
+  }
+
+  function eventGrade(rule, {zb, jc}) {
+    if (rule.no.includes(jc)) return 0;
+    if (rule.jiW.some(activity => TODAY_JI[zb].includes(activity))) return 0;
+    if (rule.best.includes(jc)) return 3;
+    return rule.good.includes(jc) ? 2 : 0;
+  }
+
+  function search(options, today = todayISO()) {
+    if (!options) return [];
+    const {kind, month, weekdays, signs} = options;
+    if (!Object.prototype.hasOwnProperty.call(XZ_RULES, kind) || !months(today).includes(month)) return [];
+    if (!Array.isArray(weekdays) || !weekdays.length ||
+        !weekdays.every(n => Number.isInteger(n) && n >= 0 && n <= 6)) return [];
+    if (!Array.isArray(signs) || !signs.every(n => Number.isInteger(n) && n >= 0 && n <= 11)) return [];
+
+    const rule = XZ_RULES[kind];
+    const [y, m] = month.split('-').map(Number);
+    const last = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    const matches = [];
+    for (let day = 1; day <= last; day++) {
+      const date = month + '-' + pad(day);
+      if (date <= today) continue;
+      const weekday = new Date(Date.UTC(y, m - 1, day)).getUTCDay();
+      if (!weekdays.includes(weekday)) continue;
+      const info = xzDayInfo(y, m, day);
+      const {zb, jc, lu} = info;
+      const clash = (zb + 6) % 12;
+      if (signs.includes(clash)) continue;
+      const grade = eventGrade(rule, info);
+      if (!grade) continue;
+      matches.push({
+        date, weekday, grade, officer: jc, officerName: JC_N[jc],
+        officerMeaning: JC_ID[jc], clash, lunar: lu
+      });
+    }
+    matches.sort((a, b) => b.grade - a.grade || a.date.localeCompare(b.date));
+    return matches.slice(0, 8);
+  }
+
+  return {todayISO, months, birthSign, signNames: () => SXN.slice(), eventGrade, search};
+})();
+
+</script>
 </head>
 <body class="mode-auto rr-site rr-at-home" data-palette="violet"><template data-rr-language id="rr-ui-id" data-title="Rumah Rahasia · Xuanji, Hari Baik, Mimpi, Suhu">
 <!-- A brief, optional welcome. Account callbacks bypass this layer. -->
@@ -1008,7 +1236,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 
 <!-- General date selection stays separate from the birth chart. -->
 <section class="tab-panel" id="panel-calendar" role="tabpanel" aria-labelledby="tabCalendar">
-  <div class="card feature-heading"><h2>Rencanakan hari penting</h2><p>Pilih tanggal untuk pernikahan, pindah rumah, atau membuka usaha. Kalender umum ini gratis dan tidak menggunakan data kelahiran Anda. Cocokkan pilihan tradisi dengan kesiapan keluarga, tempat, dan rencana nyata.</p></div>
+  <div class="card feature-heading"><h2>Rencanakan hari penting</h2><p>Cari tanggal untuk menikah, pindah rumah, atau membuka usaha. Lihat kalender umum atau pilih tanggal sesuai jadwal dan shio Anda. Keduanya gratis.</p></div>
   <div id="xzCard"></div>
   <div class="card" id="rrSavedDays"><div class="rr-saved-head"><h3>Tanggal tersimpan</h3><button class="acc-mini" id="rrSavedAll" type="button">Ekspor semua ke kalender</button></div><p class="rr-local-muted">Simpan pilihan tanggal di perangkat ini. Berkas kalender memakai tanggal sehari penuh dan tidak mengubah jadwal Anda sampai Anda mengimpornya.</p><div class="rr-saved-list" id="rrSavedList"></div><p id="rrSavedStatus" class="rr-local-status" role="status" aria-live="polite"></p></div>
   <div id="todayCard"></div>
@@ -1318,7 +1546,7 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
 
 <!-- General date selection stays separate from the birth chart. -->
 <section class="tab-panel" id="panel-calendar" role="tabpanel" aria-labelledby="tabCalendar">
-  <div class="card feature-heading"><h2>安排重要日子</h2><p>为婚礼、搬家或开业挑选日子。通用择日日历免费开放，无需出生资料。作决定时，也请考虑家人的时间、场地与实际安排。</p></div>
+  <div class="card feature-heading"><h2>安排重要日子</h2><p>为婚礼、搬家或开业挑选日子。可以直接查通用黄历，也可以按自己的档期和生肖筛选。两种方式都免费。</p></div>
   <div id="xzCard"></div>
   <div class="card" id="rrSavedDays"><div class="rr-saved-head"><h3>收藏的日子</h3><button class="acc-mini" id="rrSavedAll" type="button">全部导出到日历</button></div><p class="rr-local-muted">收藏保存在此设备。导出的日历文件使用全天事件，手动导入后才会加入你的日程。</p><div class="rr-saved-list" id="rrSavedList"></div><p id="rrSavedStatus" class="rr-local-status" role="status" aria-live="polite"></p></div>
   <div id="todayCard"></div>
@@ -1521,6 +1749,12 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
       ['dmInp', 'aiInp'].forEach(id => {
         if (typeof transferData[id] === 'string') get(id).value = transferData[id].slice(0, get(id).maxLength);
       });
+      const calendarState = transferData.calendar;
+      if (calendarState) {
+        document.addEventListener('DOMContentLoaded', function () {
+          window.RRPersonalCalendarUI.restoreLanguageState(calendarState);
+        }, {once:true});
+      }
       transferData = null;
     }
     toggle.disabled = false;
@@ -1541,6 +1775,8 @@ Makin jelas mimpinya, makin tepat tafsirannya — apa yang muncul, apa yang terj
         : 'Sesi tafsir ini sudah dihitung. Mengganti bahasa akan mengakhiri tanya jawab yang belum selesai. Tetap ganti bahasa?')) return;
       const next = zh ? 'id' : 'zh';
       const data = {};
+      const calendar = window.RRPersonalCalendarUI && window.RRPersonalCalendarUI.takeLanguageState();
+      if (calendar) data.calendar = calendar;
       const birth = birthForm();
       if (JSON.stringify(birth) !== original) data.birth = birth;
       for (const id of ['dmInp','aiInp']) {
@@ -2673,11 +2909,7 @@ function xzPick(kind,keepScroll){
     var dt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
     var y=dt.getFullYear(),m=dt.getMonth()+1,d=dt.getDate();
     var info=xzDayInfo(y,m,d);
-    var grade=null;
-    if(rule.no.indexOf(info.jc)>=0)continue;
-    if(rule.jiW.length&&rule.jiW.some(function(w){return TODAY_JI[info.zb].indexOf(w)>=0}))continue;
-    if(rule.best.indexOf(info.jc)>=0)grade=3;
-    else if(rule.good.indexOf(info.jc)>=0)grade=2;
+    var grade=RRPersonalCalendar.eventGrade(rule,info);
     if(!grade)continue;
     var lu=info.lu;
     var luStr=lu?('kalender Tionghoa: Bulan '+(lu.leap?lu.m+' (kedua), hari ':lu.m+', hari ')+lu.d):'';
@@ -4532,7 +4764,7 @@ function rrCalendarEscape(value){return String(value).replace(/\\/g,'\\\\').repl
 function rrCalendarFold(line){var out='',part='',bytes=0,encoder=new TextEncoder();Array.from(line).forEach(function(ch){var n=encoder.encode(ch).length;if(bytes+n>75){out+=part+'\r\n';part=' ';bytes=1;}part+=ch;bytes+=n;});return out+part;}
 function rrCalendarICS(items,now){
   var stamp=(now||new Date()).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z'),lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Xuanji//Hari Baik//ID','CALSCALE:GREGORIAN'];
-  items.map(rrLocalDay).forEach(function(item){var a=rrLocalDateParts(item.date),next=new Date(Date.UTC(a[0],a[1]-1,a[2]+1)).toISOString().slice(0,10).replace(/-/g,'');lines=lines.concat(['BEGIN:VEVENT','UID:'+item.kind+'-'+item.date.replace(/-/g,'')+'@xuanji.local','DTSTAMP:'+stamp,'DTSTART;VALUE=DATE:'+item.date.replace(/-/g,''),'DTEND;VALUE=DATE:'+next,'SUMMARY:'+rrCalendarEscape(XZ_RULES[item.kind].t+' · Hari pilihan Xuanji'),'DESCRIPTION:'+rrCalendarEscape('Pilihan kalender tradisional umum. Cocokkan dengan kesiapan keluarga, tempat, dan kebutuhan acara. Bukan jaminan hasil dan bukan jadwal yang sudah dikonfirmasi.'),'TRANSP:TRANSPARENT','STATUS:TENTATIVE','END:VEVENT']);});
+  items.map(rrLocalDay).forEach(function(item){var a=rrLocalDateParts(item.date),next=new Date(Date.UTC(a[0],a[1]-1,a[2]+1)).toISOString().slice(0,10).replace(/-/g,'');lines=lines.concat(['BEGIN:VEVENT','UID:'+item.kind+'-'+item.date.replace(/-/g,'')+'@xuanji.local','DTSTAMP:'+stamp,'DTSTART;VALUE=DATE:'+item.date.replace(/-/g,''),'DTEND;VALUE=DATE:'+next,'SUMMARY:'+rrCalendarEscape(XZ_RULES[item.kind].t+' · Hari pilihan Xuanji'),'DESCRIPTION:'+rrCalendarEscape('Pilihan tanggal dari kalender tradisional. Konfirmasikan jadwal dengan keluarga dan tempat acara sebelum menetapkannya.'),'TRANSP:TRANSPARENT','STATUS:TENTATIVE','END:VEVENT']);});
   lines.push('END:VCALENDAR');return lines.map(rrCalendarFold).join('\r\n')+'\r\n';
 }
 function rrCalendarDownload(date,kind){try{var items=date?[{date:date,kind:kind,savedAt:Date.now()}]:rrLocalDays();if(!items.length)rrLocalFail('Belum ada tanggal tersimpan untuk ditambahkan ke kalender.');rrLocalDownload(rrCalendarICS(items),'Hari-Baik-Xuanji'+(date?'-'+date:'')+'.ics','text/calendar;charset=utf-8');rrSavedStatus('Buka berkas .ics dengan aplikasi Kalender Anda untuk menambahkan tanggal. Pengingat diatur di aplikasi Kalender.');}catch(e){rrSavedStatus(e.message||'Berkas kalender belum dapat dibuat.');}}
@@ -4980,11 +5212,7 @@ function xzPick(kind,keepScroll){
     var dt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
     var y=dt.getFullYear(),m=dt.getMonth()+1,d=dt.getDate();
     var info=xzDayInfo(y,m,d);
-    var grade=null;
-    if(rule.no.indexOf(info.jc)>=0)continue;
-    if(rule.jiW.length&&rule.jiW.some(function(w){return TODAY_JI[info.zb].indexOf(w)>=0}))continue;
-    if(rule.best.indexOf(info.jc)>=0)grade=3;
-    else if(rule.good.indexOf(info.jc)>=0)grade=2;
+    var grade=RRPersonalCalendar.eventGrade(rule,info);
     if(!grade)continue;
     var lu=info.lu;
     var luStr=lu?zhLunar(lu):'';
@@ -6601,6 +6829,259 @@ rrEntryInit();
   window.rrLanguageReady();
   document.querySelectorAll('script[type="text/plain"][id^="rr-"]').forEach(el => el.remove());
 })();
+</script>
+<script>
+(function () {
+  'use strict';
+  const general = document.getElementById('xzCard');
+  const calendar = window.RRPersonalCalendar;
+  if (!general || !calendar || document.getElementById('pcPanel')) return;
+
+  const zh = document.documentElement.lang.startsWith('zh');
+  const locale = zh ? 'zh-CN' : 'id-ID';
+  const copy = zh ? {
+    modes: '择日方式', general: '通用择日', personal: '按我的情况选', heading: '安排详情',
+    kind: '准备办什么事？', kinds: {nikah: '婚礼', pindah: '搬家入宅', usaha: '开业'},
+    month: '计划月份', period: '只看明天及之后的日期，每个所选月份最多列出 8 个建议。', days: '可用星期', all: '全周', weekend: '仅周末',
+    daysLong: ['周日','周一','周二','周三','周四','周五','周六'],
+    daysShort: ['日','一','二','三','四','五','六'],
+    people: '参与人的生肖（选填）', privacy: '可以直接选生肖。若用公历生日换算，生日仅在此页使用，确认生肖后即清空。',
+    roles: {nikah: ['新人一','新人二'], pindah: ['入住人'], usaha: ['开业负责人']},
+    noSign: '不按此人的生肖筛选', fromBirth: '用生日查生肖', closeBirth: '收起生日输入',
+    birthday: '公历出生日期', confirm: '确认生肖', invalidBirth: '请输入支持范围内的公历生日，或直接选择生肖。',
+    suggestion: s => '按农历新年换算，生肖为' + s + '。也可以在上方直接选择。',
+    pending: '请先确认换算出的生肖，或收起生日输入后继续。', pickDays: '请至少选择一个可用星期。',
+    search: '筛选参考日期', resultTitle: n => '推荐日期（' + n + '）',
+    empty: '没有找到符合全部条件的未来日期。可放宽可用星期，或换一个月份。',
+    schedule: day => day + '在你选择的可用星期内。',
+    rule: (day,kind,primary) => '按传统黄历，' + day + '是' + kind + '的' + (primary ? '优先参考日。' : '可选参考日。'),
+    clash: (against,people) => '当日冲' + against + '，与你选的生肖（' + people + '）均无相冲。',
+    noClashCheck: against => '当日冲' + against + '。你没有选择生肖，这次仅按事项和档期筛选。',
+    who: (role,sign) => role + '属' + sign, separator: '、',
+    note: '依据传统历法筛选，节气交接日期可能相差一天。定下日期前，请与家人及场地方确认。'
+  } : {
+    modes: 'Cara memilih tanggal', general: 'Kalender umum', personal: 'Sesuai rencana saya', heading: 'Rencana acara',
+    kind: 'Jenis acara', kinds: {nikah: 'Pernikahan', pindah: 'Pindah rumah', usaha: 'Pembukaan usaha'},
+    month: 'Bulan acara', period: 'Pilihan dimulai besok. Maksimal 8 tanggal ditampilkan untuk bulan yang Anda pilih.', days: 'Hari yang tersedia', all: 'Semua hari', weekend: 'Akhir pekan',
+    daysLong: ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'],
+    daysShort: ['Min','Sen','Sel','Rab','Kam','Jum','Sab'],
+    people: 'Shio peserta (opsional)', privacy: 'Pilih shio langsung atau cari dari tanggal lahir Masehi. Tanggal lahir hanya digunakan di halaman ini dan dikosongkan setelah shio dikonfirmasi.',
+    roles: {nikah: ['Calon pengantin 1','Calon pengantin 2'], pindah: ['Penghuni rumah'], usaha: ['Penanggung jawab usaha']},
+    noSign: 'Lewati shio ini', fromBirth: 'Cari shio dari tanggal lahir', closeBirth: 'Tutup tanggal lahir',
+    birthday: 'Tanggal lahir Masehi', confirm: 'Konfirmasi shio', invalidBirth: 'Masukkan tanggal lahir Masehi dalam rentang yang didukung, atau pilih shio langsung.',
+    suggestion: s => 'Berdasarkan Tahun Baru Imlek, shionya ' + s + '. Anda juga dapat memilih shio langsung di atas.',
+    pending: 'Konfirmasi shio yang ditemukan, atau tutup isian tanggal lahir untuk melanjutkan.', pickDays: 'Pilih setidaknya satu hari yang tersedia.',
+    search: 'Cari tanggal yang sesuai', resultTitle: n => n + ' tanggal pilihan',
+    empty: 'Belum ada tanggal mendatang yang memenuhi semua pilihan. Coba tambah hari yang tersedia atau ganti bulan acara.',
+    schedule: day => day + ' termasuk hari yang Anda pilih.',
+    rule: (day,kind,primary) => 'Dalam kalender tradisional, ' + day + ' termasuk ' + (primary ? 'pilihan utama' : 'pilihan alternatif') + ' untuk ' + kind.toLocaleLowerCase('id-ID') + '.',
+    clash: (against,people) => 'Shio yang berlawanan pada hari ini adalah ' + against + '. Tidak ada benturan dengan shio yang Anda pilih (' + people + ').',
+    noClashCheck: against => 'Shio yang berlawanan pada hari ini adalah ' + against + '. Karena Anda melewati pilihan shio, penyaringan hanya memakai acara dan jadwal.',
+    who: (role,sign) => role + ' · ' + sign, separator: ', ',
+    note: 'Pilihan mengikuti kalender tradisional. Perkiraan pergantian musim dapat berbeda satu hari. Pastikan kembali jadwal keluarga dan ketersediaan tempat.'
+  };
+  const byId = id => document.getElementById(id);
+  const months = calendar.months();
+  const signs = calendar.signNames();
+  const monthFormat = new Intl.DateTimeFormat(locale, {month:'long', year:'numeric', timeZone:'UTC'});
+  const dayFormat = new Intl.DateTimeFormat(locale, {weekday:'long', day:'numeric', month:'long', year:'numeric', timeZone:'UTC'});
+  const weekOrder = [1,2,3,4,5,6,0];
+  const safeKind = value => Object.prototype.hasOwnProperty.call(copy.kinds, value);
+  const signValue = value => Number.isInteger(value) && value >= 0 && value < signs.length;
+  const rememberedSigns = {nikah:[], pindah:[], usaha:[]};
+  let activeKind = 'nikah';
+
+  const modes = document.createElement('div');
+  modes.id = 'pcModeGroup';
+  modes.setAttribute('role','group');
+  modes.setAttribute('aria-label',copy.modes);
+  modes.innerHTML = '<button type="button" id="pcModeGeneral" aria-controls="xzCard" aria-pressed="true">' + copy.general +
+    '</button><button type="button" id="pcModePersonal" aria-controls="pcPanel" aria-pressed="false">' + copy.personal + '</button>';
+  general.before(modes);
+
+  const panel = document.createElement('section');
+  panel.id = 'pcPanel';
+  panel.className = 'xz-card pc-panel';
+  panel.hidden = true;
+  panel.setAttribute('aria-labelledby','pcHeading');
+  // Only fixed bilingual interface copy is interpolated here. User inputs are read as typed control values.
+  panel.innerHTML = '<h3 id="pcHeading">' + copy.heading + '</h3><form id="pcForm" novalidate autocomplete="off">' +
+    '<div class="pc-plans"><label>' + copy.kind + '<select id="pcKind"></select></label><label>' + copy.month + '<select id="pcMonth" aria-describedby="pcRangeHint"></select></label></div><p class="pc-help" id="pcRangeHint">' + copy.period + '</p>' +
+    '<fieldset class="pc-days"><legend>' + copy.days + '</legend><div class="pc-presets">' +
+    '<button type="button" id="pcAllDays">' + copy.all + '</button><button type="button" id="pcWeekend">' + copy.weekend + '</button></div>' +
+    '<div class="pc-week"></div></fieldset><fieldset class="pc-people"><legend>' + copy.people + '</legend>' +
+    '<p class="pc-help">' + copy.privacy + '</p><div id="pcParticipants"></div></fieldset>' +
+    '<button id="pcSearch" type="submit">' + copy.search + '</button><p id="pcStatus" role="status" aria-live="polite"></p></form>' +
+    '<div id="pcResults"></div><p class="xz-note">' + copy.note + '</p>';
+  general.after(panel);
+  const form = byId('pcForm');
+  const status = byId('pcStatus');
+  const results = byId('pcResults');
+  const kindSelect = byId('pcKind');
+  const monthSelect = byId('pcMonth');
+
+  function option(select,value,text) { select.add(new Option(text,String(value))); }
+  Object.entries(copy.kinds).forEach(([value,label]) => option(kindSelect,value,label));
+  months.forEach(month => option(monthSelect,month,monthFormat.format(new Date(month + '-01T12:00:00Z'))));
+
+  const week = panel.querySelector('.pc-week');
+  weekOrder.forEach(day => {
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+    input.type = 'checkbox'; input.name = 'pcWeekday'; input.value = String(day); input.checked = true;
+    input.setAttribute('aria-label', copy.daysLong[day]);
+    const caption = document.createElement('span');
+    caption.textContent = copy.daysShort[day];
+    label.append(input,caption); week.append(label);
+  });
+  const weekdayInputs = Array.from(week.querySelectorAll('input'));
+  function weekdays() { return weekdayInputs.filter(i => i.checked).map(i => Number(i.value)); }
+  function syncPresets() {
+    const selected = weekdays();
+    byId('pcAllDays').setAttribute('aria-pressed',String(selected.length === 7));
+    byId('pcWeekend').setAttribute('aria-pressed',String(selected.length === 2 && selected.includes(0) && selected.includes(6)));
+  }
+  function setWeekdays(values) {
+    weekdayInputs.forEach(input => { input.checked = values.includes(Number(input.value)); });
+    syncPresets();
+  }
+  function clearResults() { results.replaceChildren(); status.classList.remove('pc-screen-reader'); status.textContent = ''; }
+  function preset(days) { setWeekdays(days); clearResults(); }
+  byId('pcAllDays').onclick = () => preset(weekOrder);
+  byId('pcWeekend').onclick = () => preset([0,6]);
+  syncPresets();
+
+  function selectedSigns() {
+    return copy.roles[activeKind].map((_,i) => {
+      const v = byId('pcSign'+i).value;
+      return v === '' ? null : Number(v);
+    });
+  }
+  function showPeople(initial) {
+    const container = byId('pcParticipants');
+    container.replaceChildren();
+    copy.roles[activeKind].forEach((role,i) => {
+      const row = document.createElement('div');
+      row.className = 'pc-person';
+      row.innerHTML = '<label for="pcSign'+i+'">' + role + '</label><select id="pcSign'+i+'"></select>' +
+        '<button type="button" class="pc-link" id="pcFromBirth'+i+'" aria-expanded="false" aria-controls="pcBirthBox'+i+'">' + copy.fromBirth + '</button>' +
+        '<div id="pcBirthBox'+i+'" class="pc-birth" hidden><label for="pcBirth'+i+'">' + copy.birthday + '</label>' +
+        '<input type="date" id="pcBirth'+i+'" min="1900-01-01" max="'+calendar.todayISO()+'" autocomplete="off" aria-describedby="pcHint'+i+'">' +
+        '<p class="pc-help" id="pcHint'+i+'" aria-live="polite"></p><button type="button" class="pc-confirm" id="pcConfirm'+i+'" hidden>' + copy.confirm + '</button></div>';
+      container.append(row);
+      const select = byId('pcSign'+i);
+      option(select,'',copy.noSign);
+      signs.forEach((name,n) => option(select,n,name));
+      if (signValue(initial[i])) select.value = String(initial[i]);
+      const birth = byId('pcBirth'+i), box = byId('pcBirthBox'+i);
+      const toggle = byId('pcFromBirth'+i), confirm = byId('pcConfirm'+i), hint = byId('pcHint'+i);
+      function closeBirth() {
+        birth.value = ''; hint.textContent = ''; box.hidden = true; confirm.hidden = true;
+        toggle.setAttribute('aria-expanded','false'); toggle.textContent = copy.fromBirth;
+      }
+      function updateBirth() {
+        const sign = calendar.birthSign(birth.value);
+        confirm.hidden = !signValue(sign);
+        hint.textContent = birth.value ? (signValue(sign) ? copy.suggestion(signs[sign]) : copy.invalidBirth) : '';
+      }
+      toggle.onclick = () => {
+        if (!box.hidden) { closeBirth(); status.textContent = ''; return; }
+        box.hidden = false; toggle.setAttribute('aria-expanded','true'); toggle.textContent = copy.closeBirth; birth.focus();
+      };
+      birth.addEventListener('input',updateBirth);
+      birth.addEventListener('change',updateBirth);
+      confirm.onclick = () => {
+        const sign = calendar.birthSign(birth.value);
+        if (!signValue(sign)) { updateBirth(); return; }
+        select.value = String(sign); closeBirth(); clearResults(); select.focus();
+      };
+      select.addEventListener('change',closeBirth);
+    });
+  }
+  showPeople([]);
+  kindSelect.addEventListener('change',() => {
+    rememberedSigns[activeKind] = selectedSigns();
+    activeKind = kindSelect.value;
+    showPeople(rememberedSigns[activeKind]);
+  });
+  form.addEventListener('input',clearResults);
+  form.addEventListener('change',() => { clearResults();syncPresets(); });
+
+  function mode(personal) {
+    panel.hidden = !personal; general.hidden = personal;
+    byId('pcModeGeneral').setAttribute('aria-pressed',String(!personal));
+    byId('pcModePersonal').setAttribute('aria-pressed',String(personal));
+  }
+  byId('pcModeGeneral').onclick = () => mode(false);
+  byId('pcModePersonal').onclick = () => mode(true);
+
+  function textEl(tag,text,cls) {
+    const el = document.createElement(tag);
+    if (cls) el.className = cls;
+    el.textContent = text; return el;
+  }
+  function renderDates(picks,chosen) {
+    const heading = textEl('h4',copy.resultTitle(picks.length));
+    results.append(heading);
+    const participants = chosen.map((v,i) => signValue(v) ? copy.who(copy.roles[activeKind][i],signs[v]) : '').filter(Boolean).join(copy.separator);
+    picks.forEach(day => {
+      const card = document.createElement('article');
+      card.className = 'pc-date';
+      card.dataset.pcDate = day.date; card.dataset.pcWeekday = day.weekday; card.dataset.pcClash = day.clash;
+      const d = new Date(day.date+'T12:00:00Z');
+      card.append(textEl('h5',dayFormat.format(d)));
+      const reasons = document.createElement('ul'); reasons.className = 'pc-reasons';
+      const officer = zh ? (day.officerName.endsWith('日') ? day.officerName : day.officerName+'日') : day.officerName + ' (' + day.officerMeaning + ')';
+      reasons.append(textEl('li',copy.rule(officer,copy.kinds[activeKind],day.grade === 3)),
+        textEl('li',copy.schedule(copy.daysLong[day.weekday])),
+        textEl('li',participants ? copy.clash(signs[day.clash],participants) : copy.noClashCheck(signs[day.clash])));
+      card.append(reasons);
+      card.insertAdjacentHTML('beforeend',rrDayActions(day.date,activeKind));
+      results.append(card);
+    });
+  }
+  form.addEventListener('submit',e => {
+    e.preventDefault(); clearResults();
+    const days = weekdays();
+    if (!days.length) { status.textContent = copy.pickDays; weekdayInputs[0].focus(); return; }
+    const pending = Array.from(panel.querySelectorAll('.pc-birth:not([hidden]) input'))
+      .find(input => input.value || input.validity.badInput);
+    if (pending) { status.textContent = copy.pending;const confirm = pending.parentElement.querySelector('button'); (confirm.hidden ? pending : confirm).focus(); return; }
+    const chosen = selectedSigns();
+    const picks = calendar.search({kind:activeKind, month:monthSelect.value, weekdays:days, signs:chosen.filter(signValue)});
+    if (!picks.length) { status.textContent = copy.empty; return; }
+    renderDates(picks,chosen);
+    status.textContent = copy.resultTitle(picks.length);
+    status.classList.add('pc-screen-reader');
+    results.scrollIntoView({block:'nearest'});
+  });
+  function refreshSaved() {
+    results.querySelectorAll('[data-day-save]').forEach(btn => {
+      const next = document.createElement('div');
+      next.innerHTML = rrDayActions(btn.dataset.daySave,btn.dataset.dayKind);
+      const updated = next.querySelector('[data-day-save]');
+      btn.setAttribute('aria-pressed',updated.getAttribute('aria-pressed')); btn.textContent = updated.textContent;
+    });
+  }
+  new MutationObserver(refreshSaved).observe(byId('rrSavedList'),{childList:true});
+  window.RRPersonalCalendarUI = {
+    takeLanguageState() {
+      const days = weekdays(), selected = selectedSigns();
+      if (panel.hidden && activeKind === 'nikah' && monthSelect.selectedIndex === 0 && days.length === 7 && selected.every(s => s === null)) return null;
+      return {mode:panel.hidden ? 'general' : 'personal',kind:activeKind,month:monthSelect.value,weekdays:days,signs:selected};
+    },
+    restoreLanguageState(value) {
+      if (!value || !['general','personal'].includes(value.mode) || !safeKind(value.kind) ||
+          !months.includes(value.month) || !Array.isArray(value.weekdays) || value.weekdays.length > 7 ||
+          !value.weekdays.every(v => Number.isInteger(v) && v >= 0 && v <= 6) ||
+          !Array.isArray(value.signs) || value.signs.length !== copy.roles[value.kind].length ||
+          !value.signs.every(v => v === null || signValue(v))) return;
+      activeKind = kindSelect.value = value.kind; monthSelect.value = value.month;
+      setWeekdays(value.weekdays); showPeople(value.signs); clearResults(); mode(value.mode === 'personal');
+    }
+  };
+})();
+
 </script>
 </body>
 </html>
