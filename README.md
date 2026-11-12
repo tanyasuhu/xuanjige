@@ -1,6 +1,6 @@
 # Xuanji · Rumah Rahasia
 
-Versi 2026-11-12-bilingual-review.
+Versi 2026-11-12-bilingual-review.2.
 
 **Bahasa Indonesia / 简体中文**
 
