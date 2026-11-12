@@ -1,6 +1,12 @@
 # Xuanji · Rumah Rahasia
 
-Versi: 2026-11-10-birthplace-expansion.
+Versi 2026-11-12-bilingual.
+
+**Bahasa Indonesia / 简体中文**
+
+Di beranda, pilih **中文** untuk memakai bahasa Mandarin Sederhana. Pilih **Bahasa Indonesia** untuk kembali. Browser ini mengingat pilihan bahasa Anda.
+
+在首页右上角轻点 **中文** 即可切换到简体中文。轻点 **Bahasa Indonesia** 可以切回印尼语。当前浏览器会记住你的选择。
 
 Buka [Xuanji](https://tanyasuhu.github.io/xuanjige/). Formulir kelahiran kini memisahkan **Indonesia** dan **Tiongkok**. Pilih negara/wilayah, provinsi/wilayah, lalu kota kelahiran. Pilihan Indonesia yang sudah ada tetap tersedia; pilihan Tiongkok mencakup kota-kota utama, tambahan di Guangdong dan Fujian, serta Hong Kong, Makau, dan Taiwan sebagai pilihan geografis.
 
